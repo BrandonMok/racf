@@ -23,6 +23,10 @@ sites/*/services.local.yml
 # Ignore SimpleTest multi-site environment.
 sites/simpletest
 
+# Ignore configuration files that may contain sensitive information.
+sites/*/settings*.php
+sites/*/services*.yml
+
 # Packages #
 ############
 *.7z
@@ -60,3 +64,12 @@ Thumbs.db
 # Things in the core directory that Drupal 8 commits in the repository.
 !core/**/*.gz
 
+# Lando #
+.lando
+
+# VSCode #
+.vscode
+
+# Other directories #
+/vendor/
+/modules/

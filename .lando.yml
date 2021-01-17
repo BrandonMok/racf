@@ -1,0 +1,7 @@
+name: racf
+recipe: pantheon
+config:
+  webroot: .
+  framework: drupal8
+  site: racf
+  id: add09455-424e-430d-abad-838d18829a1d

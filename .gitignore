@@ -69,7 +69,3 @@ Thumbs.db
 
 # VSCode #
 .vscode
-
-# Other directories #
-vendor
-modules

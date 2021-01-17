@@ -71,5 +71,5 @@ Thumbs.db
 .vscode
 
 # Other directories #
-/vendor/
-/modules/
+vendor
+modules

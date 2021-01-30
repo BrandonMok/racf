@@ -1,0 +1,10 @@
+racf-styles:
+  version: VERSION
+  css:
+    theme:
+      css/bootstrapcss/bootstrap.css: {}
+      css/styles.css: {}
+  dependencies:
+    - core/jquery
+  js:
+    js/bootstrapjs/bootstrap.js: {}

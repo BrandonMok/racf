@@ -1,0 +1,10 @@
+uuid: b23cdcae-2ecd-45fc-9532-b0c63d10205d
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.branding
+label: Branding
+targetEntityType: media
+cache: true

@@ -4,8 +4,8 @@ description: 'RACF custom theme'
 base theme: classy
 version: VERSION
 core_version_requirement: 8.x
-logo: 'images/'
-favicon: 'images/'
+logo: 'images/logo.png'
+favicon: 'images/logo.png'
 libraries:
   - racf/racf-styles
 regions:

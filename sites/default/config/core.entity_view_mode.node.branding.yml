@@ -1,0 +1,10 @@
+uuid: acd02b15-9fe5-45cc-819b-a71f950d2d81
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.branding
+label: Branding
+targetEntityType: node
+cache: true

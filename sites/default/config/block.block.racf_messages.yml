@@ -1,0 +1,22 @@
+uuid: 299ca12a-bd60-4aa4-ac0f-57d5cb5e8a8a
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - racf
+_core:
+  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
+id: racf_messages
+theme: racf
+region: header
+weight: -1
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

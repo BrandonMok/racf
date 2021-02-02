@@ -1,0 +1,15 @@
+uuid: a0509f9a-bc06-428f-af9c-9f7887be9899
+langcode: en
+status: true
+dependencies: {  }
+name: branding
+label: 'Branding (250x73)'
+effects:
+  c8216457-5d6a-46f9-9469-d54d2a0995c9:
+    uuid: c8216457-5d6a-46f9-9469-d54d2a0995c9
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 250
+      height: 73
+      anchor: center-center

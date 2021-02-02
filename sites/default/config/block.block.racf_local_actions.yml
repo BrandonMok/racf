@@ -1,0 +1,20 @@
+uuid: a7d519f2-2479-422a-9cdb-23c0696bfeed
+langcode: en
+status: false
+dependencies:
+  theme:
+    - racf
+_core:
+  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
+id: racf_local_actions
+theme: racf
+region: content
+weight: -1
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

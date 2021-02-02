@@ -1,0 +1,22 @@
+uuid: a31e399d-aed2-43f4-a067-dceacc25f32d
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - racf
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: racf_content
+theme: racf
+region: content
+weight: -5
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

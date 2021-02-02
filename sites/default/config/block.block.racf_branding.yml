@@ -1,0 +1,25 @@
+uuid: 71a6e916-3dfa-4bdc-a5b6-a47f5a917488
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - racf
+_core:
+  default_config_hash: NDwadleLD3YVSbDUaakxyYZyINYtkFtOVGShfq4kWy8
+id: racf_branding
+theme: racf
+region: header
+weight: -6
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: true
+visibility: {  }

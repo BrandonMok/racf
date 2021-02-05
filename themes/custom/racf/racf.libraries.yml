@@ -2,9 +2,23 @@ racf-styles:
   version: VERSION
   css:
     theme:
-      css/bootstrapcss/bootstrap.css: {}
+      https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css: {type:external}
       css/styles.css: {}
   dependencies:
     - core/jquery
   js:
-    js/bootstrapjs/bootstrap.js: {}
+    https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js: {type:external}
+    https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js: {type:external}
+
+
+racf-material-io:
+  version: VERSION
+  css:
+    theme:
+      https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css: {type:external}
+      '//fonts.googleapis.com/icon?family=Material+Icons': { type:external }
+  js:
+    https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js: {type:external}
+  dependencies:
+    - core/jquery
+    

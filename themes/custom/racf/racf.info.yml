@@ -8,6 +8,7 @@ logo: 'images/logo.png'
 favicon: 'images/logo.png'
 libraries:
   - racf/racf-styles
+  - racf/racf-material-io
 regions:
   header: Header
   content: Content

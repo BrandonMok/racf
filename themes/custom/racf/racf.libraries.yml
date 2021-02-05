@@ -16,7 +16,7 @@ racf-material-io:
   css:
     theme:
       https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css: {type:external}
-      '//fonts.googleapis.com/icon?family=Material+Icons': { type:external }
+      '//fonts.googleapis.com/icon?family=Material+Icons': {type:external}
   js:
     https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js: {type:external}
   dependencies:

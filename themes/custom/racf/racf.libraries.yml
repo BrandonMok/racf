@@ -3,7 +3,7 @@ racf-styles:
   css:
     theme:
       https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css: {type:external}
-      css/styles.css: {}
+      dist/css/main.css: {}
   dependencies:
     - core/jquery
   js:

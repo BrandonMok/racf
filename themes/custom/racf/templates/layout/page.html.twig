@@ -44,34 +44,36 @@
 #}
 <div class="layout-container">
 
-  <header role="banner" class="p-4">
-    <div class="d-flex justify-content-between">
-      {{ page.header.racf_branding }}
-      <div class="header-menus">
-        {{ page.header.racf_main_menu }}
-        {{ page.header.racf_account_menu }}
-      </div>
+  <header role="banner" class="p-4 mdc-top-app-bar">
+    <div class="mdc-top-app-bar__row colorPrimary">
+
+      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+        <span class="mdc-top-app-bar__title">
+          {# <a href="/user/login/"> 
+            <span class="material-icons md-18">account_circle</span> 
+          </a> #}
+          {{ page.header.racf_branding }}
+        </span>
+      </section>
+
+      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+        <div class="header-menus">
+          {{ page.header.racf_main_menu }}
+          {{ page.header.racf_account_menu }}
+        </div>
+      </section>
+
+      {{ page.header|without("racf_branding", "racf_main_menu", "racf_account_menu") }}
     </div>
   </header>
 
-  <main role="main">
+
+  <main role="main" class="mdc-top-app-bar--fixed-adjust">
     <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
 
     <div class="layout-content">
       {{ page.content }}
     </div>{# /.layout-content #}
-
-    {% if page.sidebar_first %}
-      <aside class="layout-sidebar-first" role="complementary">
-        {{ page.sidebar_first }}
-      </aside>
-    {% endif %}
-
-    {% if page.sidebar_second %}
-      <aside class="layout-sidebar-second" role="complementary">
-        {{ page.sidebar_second }}
-      </aside>
-    {% endif %}
   </main>
 
   {% if page.footer %}

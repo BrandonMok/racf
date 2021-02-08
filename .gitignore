@@ -69,3 +69,6 @@ Thumbs.db
 
 # VSCode #
 .vscode
+
+# npm related files #
+node_modules/

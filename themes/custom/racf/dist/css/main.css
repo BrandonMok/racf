@@ -39,6 +39,10 @@ div#block-yumster-local-tasks ul li a {
   background-color: #0058b3;
 }
 
+.secondaryBackground {
+  background-color: #ffffff;
+}
+
 .secondaryTextColor {
   color: #ffffff;
 }

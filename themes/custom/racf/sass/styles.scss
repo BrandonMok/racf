@@ -57,17 +57,16 @@ $margin-large: 8px;
 $margin-small: 4px;
 
 
-$primary: #0058b3;
-$secondary: #ffffff;
-
+$primary-color: #0058b3;
+$secondary-color: #ffffff;
 
 /** Usable CSS classes that use SASS vars **/
 .primaryBackground {
-    background-color: $primary;
+    background-color: $primary-color;
 }
 
 .secondaryTextColor {
-    color: $secondary;
+    color: $secondary-color;
 }
 
 .side-margin {

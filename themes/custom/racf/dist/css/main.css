@@ -25,11 +25,6 @@ div#block-yumster-local-tasks ul li a {
   font-size: 1rem;
 }
 
-.header-menus > * {
-  display: inline-block;
-  padding: 0.5em;
-}
-
 .bottom-nav {
   position: absolute;
   bottom: 0;

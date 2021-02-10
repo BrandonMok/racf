@@ -29,3 +29,26 @@ div#block-yumster-local-tasks ul li a {
   display: inline-block;
   padding: 0.5em;
 }
+
+.bottom-nav {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 4em;
+}
+
+/** Variables **/
+/** Padding **/
+/** Usable CSS classes that use SASS vars **/
+.primaryBackground {
+  background-color: #0058b3;
+}
+
+.secondaryTextColor {
+  color: #ffffff;
+}
+
+.side-margin {
+  margin-left: 8px;
+  margin-right: 8px;
+}

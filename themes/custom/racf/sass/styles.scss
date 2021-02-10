@@ -31,7 +31,48 @@ div#block-yumster-local-tasks {
     }
 }
 
-.header-menus > * {
-    display: inline-block;
-    padding: 0.5em;
+// .header-menus > * {
+//     display: inline-block;
+//     padding: 0.5em;
+// }
+
+.bottom-nav {
+    // position: fixed;
+    // bottom: 0;
+    // left: 0;
+
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 4em; 
 }
+
+
+/** Variables **/
+/** Padding **/
+$padding-large: 8px;
+$padding-small: 4px;
+
+$margin-large: 8px;
+$margin-small: 4px;
+
+
+$primary: #0058b3;
+$secondary: #ffffff;
+
+
+/** Usable CSS classes that use SASS vars **/
+.primaryBackground {
+    background-color: $primary;
+}
+
+.secondaryTextColor {
+    color: $secondary;
+}
+
+.side-margin {
+    margin-left: $margin-large;
+    margin-right: $margin-large;
+}
+
+

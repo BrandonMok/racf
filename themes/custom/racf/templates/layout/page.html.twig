@@ -44,29 +44,10 @@
 #}
 <div class="layout-container">
 
-  <header role="banner" class="p-4 mdc-top-app-bar">
-    <div class="mdc-top-app-bar__row colorPrimary">
-
-      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-        <span class="mdc-top-app-bar__title">
-          {# <a href="/user/login/"> 
-            <span class="material-icons md-18">account_circle</span> 
-          </a> #}
-          {{ page.header.racf_branding }}
-        </span>
-      </section>
-
-      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
-        <div class="header-menus">
-          {{ page.header.racf_main_menu }}
-          {{ page.header.racf_account_menu }}
-        </div>
-      </section>
-
-      {{ page.header|without("racf_branding", "racf_main_menu", "racf_account_menu") }}
-    </div>
-  </header>
-
+  <header role="banner">
+    {{ page.header.racf_main_menu }}
+    {{ page.header|without("racf_branding", "racf_main_menu", "racf_account_menu") }}
+  </header>  
 
   <main role="main" class="mdc-top-app-bar--fixed-adjust">
     <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}

@@ -10,26 +10,26 @@ racf-styles:
   dependencies:
     - core/jquery
 
-
-# racf-material-io:
+# racf-materialize:
 #   version: VERSION
 #   css:
 #     theme:
-#       https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css: {type:external}
+#       https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css: {type:external}
 #       '//fonts.googleapis.com/icon?family=Material+Icons': {type:external}
 #   js:
-#     https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js: {type:external}
+#     https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js: {type:external}
 #   dependencies:
 #     - core/jquery
 
-racf-materialize:
+racf-material-design-lite:
   version: VERSION
   css:
     theme:
-      https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css: {type:external}
+      https://code.getmdl.io/1.3.0/material.indigo-pink.min.css: {type:external}
       '//fonts.googleapis.com/icon?family=Material+Icons': {type:external}
   js:
-    https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js: {type:external}
+    https://code.getmdl.io/1.3.0/material.min.js: {type:external}
   dependencies:
     - core/jquery
+  
     

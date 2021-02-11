@@ -44,23 +44,32 @@
 #}
 <div class="layout-container">
 
-  <header role="banner">
-    {{ page.header.racf_main_menu }}
-    {{ page.header|without("racf_branding", "racf_main_menu", "racf_account_menu") }}
-  </header>  
+  <div class="mdl-layout mdl-js-layout">
+    <header class="mdl-layout__header mdl-layout__header--scroll">
+        <div class="mdl-layout__header-row primary">
+            <span class="mdl-layout-title">
+                <a href="/user/login/"> 
+                    <i class="material-icons icon-large black-text">account_box</i> 
+                </a> 
+            </span>
+        <div class="mdl-layout-spacer"></div>
+            {{ page.header.racf_main_menu }}
+            {{ page.header|without("racf_branding", "racf_main_menu", "racf_account_menu") }}
+        </div>
+    </header>
 
-  <main role="main" class="mdc-top-app-bar--fixed-adjust">
-    <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+    <main role="main" class="mdc-top-app-bar--fixed-adjust">
+        <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
 
-    <div class="layout-content">
-      {{ page.content }}
-    </div>{# /.layout-content #}
-  </main>
+        <div class="layout-content">
+            {{ page.content }}
+        </div>{# /.layout-content #}
+    </main>
 
-  {% if page.footer %}
-    <footer role="contentinfo">
-      {{ page.footer }}
-    </footer>
-  {% endif %}
-
+    {% if page.footer %}
+        <footer role="contentinfo">
+        {{ page.footer }}
+        </footer>
+    {% endif %}
+  </div>
 </div>{# /.layout-container #}

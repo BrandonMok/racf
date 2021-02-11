@@ -31,21 +31,25 @@ div#block-yumster-local-tasks {
     }
 }
 
+.icon-large {
+    font-size: 48px;
+}
+
 // .header-menus > * {
 //     display: inline-block;
 //     padding: 0.5em;
 // }
 
-.bottom-nav {
-    // position: fixed;
-    // bottom: 0;
-    // left: 0;
+// .bottom-nav {
+//     // position: fixed;
+//     // bottom: 0;
+//     // left: 0;
 
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 4em; 
-}
+//     position: absolute;
+//     bottom: 0;
+//     width: 100%;
+//     height: 4em; 
+// }
 
 
 /** Variables **/
@@ -56,20 +60,25 @@ $padding-small: 4px;
 $margin-large: 8px;
 $margin-small: 4px;
 
-
 $primary-color: #0058b3;
 $secondary-color: #ffffff;
 
+$black: #000000;
+
 /** Usable CSS classes that use SASS vars **/
-.primaryBackground {
+.primary {
     background-color: $primary-color;
 }
-.secondaryBackground {
+
+.secondary {
     background-color: $secondary-color;
 }
-
-.secondaryTextColor {
+.secondary-text {
     color: $secondary-color;
+}
+
+.black-text {
+    color: $black;
 }
 
 .side-margin {

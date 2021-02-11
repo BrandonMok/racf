@@ -25,26 +25,27 @@ div#block-yumster-local-tasks ul li a {
   font-size: 1rem;
 }
 
-.bottom-nav {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 4em;
+.icon-large {
+  font-size: 48px;
 }
 
 /** Variables **/
 /** Padding **/
 /** Usable CSS classes that use SASS vars **/
-.primaryBackground {
+.primary {
   background-color: #0058b3;
 }
 
-.secondaryBackground {
+.secondary {
   background-color: #ffffff;
 }
 
-.secondaryTextColor {
+.secondary-text {
   color: #ffffff;
+}
+
+.black-text {
+  color: #000000;
 }
 
 .side-margin {

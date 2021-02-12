@@ -52,7 +52,11 @@
                     <i class="material-icons icon-large black-text">account_box</i> 
                 </a> 
             </span>
-        <div class="mdl-layout-spacer"></div>
+
+            {{ page.header.racf_account_menu }}
+
+            <div class="mdl-layout-spacer"></div>
+
             {{ page.header.racf_main_menu }}
             {{ page.header|without("racf_branding", "racf_main_menu", "racf_account_menu") }}
         </div>

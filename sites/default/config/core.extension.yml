@@ -4,6 +4,7 @@ module:
   big_pipe: 0
   block: 0
   block_content: 0
+  block_list_override: 0
   breakpoint: 0
   ckeditor: 0
   color: 0
@@ -23,6 +24,8 @@ module:
   history: 0
   image: 0
   layout_builder: 0
+  layout_builder_restrictions: 0
+  layout_builder_restrictions_by_region: 0
   layout_discovery: 0
   link: 0
   media: 0

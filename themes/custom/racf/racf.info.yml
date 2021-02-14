@@ -7,10 +7,10 @@ core_version_requirement: 8.x
 logo: 'images/logo.png'
 favicon: 'images/logo.png'
 libraries:
-  # - racf/racf-materialize
   - racf/racf-material-design-lite
   - racf/racf-styles
 regions:
   header: Header
   content: Content
+  sidebar_second: Sidebar_Second
 

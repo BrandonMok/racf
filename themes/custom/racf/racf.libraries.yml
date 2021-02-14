@@ -10,17 +10,6 @@ racf-styles:
   dependencies:
     - core/jquery
 
-# racf-materialize:
-#   version: VERSION
-#   css:
-#     theme:
-#       https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css: {type:external}
-#       '//fonts.googleapis.com/icon?family=Material+Icons': {type:external}
-#   js:
-#     https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js: {type:external}
-#   dependencies:
-#     - core/jquery
-
 racf-material-design-lite:
   version: VERSION
   css:

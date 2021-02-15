@@ -1,0 +1,86 @@
+<?php
+
+/**
+ * @file
+ * Module file for the Logo image style module.
+ */
+
+use Drupal\Core\Block\BlockPluginInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\image\Entity\ImageStyle;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\logo_image_style\LogoBlockViewBuilder;
+
+/**
+ * Implements hook_help().
+ */
+function logo_image_style_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.logo_image_style':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Logo image style allows the site builder to use image styles to render the theme logo. The used image style can be set on a per theme basis.') . '</p>';
+      $output .= '<h3>' . t('Configuration') . '</h3>';
+      $output .= '<ol>
+            <li>Configure settings at Admin > Appearance > Theme settings page</li>
+        </ol>';
+      return $output;
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter() for system_theme_settings().
+ */
+function logo_image_style_form_system_theme_settings_alter(&$form, FormStateInterface $form_state) {
+  $styles = ImageStyle::loadMultiple();
+
+  // Get all image styles as an associative array
+  // And put the '_none' option in front of it.
+  $image_styles = array_merge(['_none' => t('- None -')], array_combine(array_keys($styles), array_keys($styles)));
+  // Insert the logo style select box in the theme settings page.
+  $form['logo']['logo_style'] = [
+    '#type' => 'select',
+    '#title' => t('Image style to use for site logo'),
+    '#options' => $image_styles,
+    '#default_value' => \Drupal::config('system.site')->get('logo_image_style_logo_style'),
+  ];
+  $form['#submit'][] = 'logo_image_style_submit';
+}
+
+/**
+ * Submit handle for form submission.
+ */
+function logo_image_style_submit(array $form, FormStateInterface $form_state) {
+  $values = $form_state->getValues();
+  if ($values['default_logo'] == 1) {
+    \Drupal::configFactory()->getEditable('system.site')
+      ->set('logo_image_style_logo_style', '_none')
+      ->save();
+    \Drupal::messenger()->addWarning(t('In the default logo, the image style is not be applied. Image style value changed to "-None-".'));
+  }
+  else {
+    \Drupal::configFactory()->getEditable('system.site')
+      ->set('logo_image_style_logo_style', $values['logo_style'])
+      ->save();
+  }
+  // Get upload logo file name and set value.
+  if (!empty($values['logo_upload'])) {
+    \Drupal::configFactory()->getEditable('system.site')
+      ->set('logo_image_style_logo_path', $values['logo_upload']->getFilename())
+      ->save();
+  }
+  else {
+    if (!empty($values['logo_path'])) {
+      \Drupal::configFactory()->getEditable('system.site')
+        ->set('logo_image_style_logo_path', $values['logo_path'])
+        ->save();
+    }
+  }
+}
+
+/**
+ * Implements hook_block_view_BASE_BLOCK_ID_alter().
+ */
+function logo_image_style_block_view_system_branding_block_alter(array &$build, BlockPluginInterface $block) {
+  $build['#pre_render'][] = [LogoBlockViewBuilder::class, 'preRender'];
+}

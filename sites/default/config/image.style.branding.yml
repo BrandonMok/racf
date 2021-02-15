@@ -3,13 +3,12 @@ langcode: en
 status: true
 dependencies: {  }
 name: branding
-label: 'Branding (250x73)'
+label: 'Branding (45x45)'
 effects:
-  c8216457-5d6a-46f9-9469-d54d2a0995c9:
-    uuid: c8216457-5d6a-46f9-9469-d54d2a0995c9
-    id: image_scale_and_crop
-    weight: 1
+  f1915126-40bd-4f85-a9e5-758097da8a3f:
+    uuid: f1915126-40bd-4f85-a9e5-758097da8a3f
+    id: image_resize
+    weight: 2
     data:
-      width: 250
-      height: 73
-      anchor: center-center
+      width: 45
+      height: 45

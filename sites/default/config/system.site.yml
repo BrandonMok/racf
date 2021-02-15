@@ -12,3 +12,5 @@ langcode: en
 default_langcode: en
 _core:
   default_config_hash: yTxtFqBHnEWxQswuWvkjE8mKw2t8oKuCL1q8KnfHuGE
+logo_image_style_logo_style: branding
+logo_image_style_logo_path: racf_logo.png

@@ -14,13 +14,13 @@ nav#block-racf-account-menu ul li a {
 }
 
 /** local tasks **/
-div#block-yumster-local-tasks ul li {
+div#block-racf-local-tasks ul li {
   list-style-type: none;
   font-size: 1rem;
   display: inline-block;
   padding: 1em;
 }
-div#block-yumster-local-tasks ul li a {
+div#block-racf-local-tasks ul li a {
   text-decoration: none;
   font-size: 1rem;
 }
@@ -46,6 +46,15 @@ div#block-yumster-local-tasks ul li a {
 
 .black-text {
   color: #000000;
+}
+
+.information-section {
+  background-color: #ece4dc;
+}
+.information-section__title {
+  display: flex;
+  align-items: center;
+  height: 200px;
 }
 
 .side-margin {

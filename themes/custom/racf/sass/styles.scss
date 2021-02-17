@@ -31,10 +31,7 @@ div#block-racf-local-tasks {
     }
 }
 
-.icon-large {
-    font-size: 48px;
-}
-
+.icon-large { font-size: 48px; }
 
 
 // .header-menus > * {
@@ -56,7 +53,6 @@ div#block-racf-local-tasks {
 
 
 /** Variables **/
-/** Padding **/
 $padding-large: 8px;
 $padding-small: 4px;
 
@@ -68,6 +64,7 @@ $secondary-color: #ffffff;
 
 $black: #000000;
 $tan: #ece4dc;
+$white: #ffffff;
 
 
 /** Usable CSS classes that use SASS vars **/
@@ -77,20 +74,49 @@ $tan: #ece4dc;
 
 .black-text { color: $black; }
 
-.information-section { 
-    background-color: $tan; 
-
-    &__title {
-        display: flex;
-        align-items: center;
-        height: 200px;
-    }
-
-}
 
 .side-margin {
     margin-left: $margin-large;
     margin-right: $margin-large;
 }
+
+.padding-large { padding: $padding-large; }
+.padding-small { padding: $padding-small; }
+
+
+
+/** Custom Block: Information Section **/
+.information-section-left {
+    background-color: $tan; 
+
+    &__title {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        height: 200px;
+    }
+}
+
+.information-section-right {
+    background-color: $white;
+
+    &__title {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        height: 200px;
+    }
+}
+
+.information-section-left, 
+.information-section-right{ 
+    &__body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 200px;
+    }
+}
+
 
 

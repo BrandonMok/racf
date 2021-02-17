@@ -30,24 +30,23 @@
     'block',
     'block-' ~ configuration.provider|clean_class,
     'block-' ~ plugin_id|clean_class,
-    'information-section-left'
+    'information-section-right'
   ]
 %}
 <div{{ attributes.addClass(classes) }}>
   <div class="container">
     <div class="row">
-      <div class="col-lg-6 col-md-6 col-sm-12 information-section-left__title">
+      <div class="col-lg-6 col-md-6 col-sm-12 information-section-right__body">
+        {% block content %}
+          {{ content }}
+        {% endblock %}
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12 information-section-right__title">
         {{ title_prefix }}
         {% if label %}
           <h2{{ title_attributes }}>{{ label }}</h2>
         {% endif %}
         {{ title_suffix }}
-      </div>
-      
-      <div class="col-lg-6 col-md-6 col-sm-12 information-section-left__body">
-        {% block content %}
-          {{ content }}
-        {% endblock %}
       </div>
     </div>
   </div>

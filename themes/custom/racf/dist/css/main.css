@@ -30,7 +30,6 @@ div#block-racf-local-tasks ul li a {
 }
 
 /** Variables **/
-/** Padding **/
 /** Usable CSS classes that use SASS vars **/
 .primary {
   background-color: #0058b3;
@@ -48,16 +47,44 @@ div#block-racf-local-tasks ul li a {
   color: #000000;
 }
 
-.information-section {
+.side-margin {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.padding-large {
+  padding: 8px;
+}
+
+.padding-small {
+  padding: 4px;
+}
+
+/** Custom Block: Information Section **/
+.information-section-left {
   background-color: #ece4dc;
 }
-.information-section__title {
+.information-section-left__title {
   display: flex;
+  justify-content: flex-start;
   align-items: center;
   height: 200px;
 }
 
-.side-margin {
-  margin-left: 8px;
-  margin-right: 8px;
+.information-section-right {
+  background-color: #ffffff;
+}
+.information-section-right__title {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 200px;
+}
+
+.information-section-left__body,
+.information-section-right__body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
 }

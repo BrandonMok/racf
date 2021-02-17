@@ -1,0 +1,28 @@
+uuid: b10a0cbf-d150-4cf5-8d85-da035596e25c
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.information_section
+    - core.entity_view_mode.block_content.information_title_left
+    - field.field.block_content.information_section.body
+  module:
+    - layout_builder
+    - text
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: block_content.information_section.information_title_left
+targetEntityType: block_content
+bundle: information_section
+mode: information_title_left
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

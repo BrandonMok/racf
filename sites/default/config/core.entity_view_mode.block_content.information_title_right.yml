@@ -1,0 +1,10 @@
+uuid: 08bf3b32-8bfc-445f-a826-dfe59636075f
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+id: block_content.information_title_right
+label: 'Information Title Right'
+targetEntityType: block_content
+cache: true

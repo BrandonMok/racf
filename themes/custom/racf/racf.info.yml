@@ -12,5 +12,4 @@ libraries:
 regions:
   header: Header
   content: Content
-  sidebar_second: Sidebar_Second
 

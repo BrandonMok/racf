@@ -1,0 +1,8 @@
+uuid: 6e4a2b44-6471-4cb7-abeb-759053484cac
+langcode: en
+status: true
+dependencies: {  }
+id: information_section
+label: 'Information Block'
+revision: 0
+description: 'A custom block type to display information type content to the user. '

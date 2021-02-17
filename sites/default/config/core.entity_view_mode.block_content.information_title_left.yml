@@ -1,0 +1,10 @@
+uuid: 58d488de-91af-44ee-9882-915c8fefa4d5
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+id: block_content.information_title_left
+label: 'Information Title Left'
+targetEntityType: block_content
+cache: true

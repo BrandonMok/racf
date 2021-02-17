@@ -25,6 +25,7 @@ module:
   history: 0
   image: 0
   layout_builder: 0
+  layout_builder_modal: 0
   layout_builder_restrictions: 0
   layout_builder_restrictions_by_region: 0
   layout_discovery: 0
@@ -39,7 +40,6 @@ module:
   page_cache: 0
   path: 0
   path_alias: 0
-  quickedit: 0
   rdf: 0
   search: 0
   shortcut: 0

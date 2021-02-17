@@ -1,0 +1,8 @@
+uuid: 7fc2aabf-9e83-4177-9490-d95140779fd1
+langcode: en
+status: true
+dependencies: {  }
+id: hero_block
+label: 'Hero Block'
+revision: 0
+description: 'Custom Block to display a Hero.'

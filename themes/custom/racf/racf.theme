@@ -1,1 +1,36 @@
 <?php
+
+    function racf_preprocess_block(&$vars) {
+        if (isset($vars['elements']['#configuration']['view_mode'])) {
+            // add view mode so that a class can be added to the block.
+
+            $vars['view_mode'] = $vars['elements']['#configuration']['view_mode'];
+        }
+    }
+
+
+    /**
+    * Implements hook_theme_suggestions_HOOK_alter().
+    */
+    function racf_theme_suggestions_block_alter(array &$suggestions, array $vars) {
+        // Drupal doesn't currently provide template suggestions for custom block types
+
+        if (isset($vars['elements']['content']['#block_content'])) {
+            // $suggestions is an array with first item containing the least specic
+            // suggestion. Our suggestions need to be inserted into the correct position
+            // to maintain increasing specificity. block_content and inline_blocks
+            // have slightly different base suggestions so the offset is different
+
+            $splice_offset = $vars['elements']['#base_plugin_id'] === 'block_content' ? 2 : 3;
+
+            if (isset($vars['elements']['#configuration']['view_mode'])) {
+                array_splice($suggestions, $splice_offset, 0, 'block__custom_block__' . $vars['elements']['#base_plugin_id'] . '__' . $vars['elements']['content']['#block_content']->bundle() . '__' . $vars['elements']['#configuration']['view_mode']);
+
+                array_splice($suggestions, $splice_offset, 0, 'block__custom_block__' . $vars['elements']['content']['#block_content']->bundle() . '__' . $vars['elements']['#configuration']['view_mode']);
+                
+            }
+
+
+            array_splice($suggestions, 2, 0, 'block__custom_block__' . $vars['elements']['content']['#block_content']->bundle() );
+        }
+    }

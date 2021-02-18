@@ -79,6 +79,8 @@ $white: #ffffff;
     margin-left: $margin-large;
     margin-right: $margin-large;
 }
+.margin-lg { margin: $margin-large; }
+.margin-sm { margin: $margin-small; }
 
 .padding-lg { padding: $padding-large; }
 .padding-sm { padding: $padding-small; }
@@ -116,6 +118,22 @@ $white: #ffffff;
         align-items: center;
         height: 200px;
     }
+}
+
+
+/** Hero Section Block **/
+.hero-container {
+    position: relative;
+    text-align: center;
+    color: $white;
+
+    &__text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
 }
 
 

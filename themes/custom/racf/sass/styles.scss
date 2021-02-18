@@ -1,5 +1,9 @@
 /** CSS Styles **/
 
+*  {
+    font-family: 'Open Sans', sans-serif;
+}
+
 /** Navigation and Header bar **/
 nav#block-racf-main-menu,
 nav#block-racf-account-menu {
@@ -53,6 +57,12 @@ nav#block-racf-account-menu {
 
 
 /** Variables **/
+$md-heading1-size: 96px;
+$md-heading2-size: 60px;
+$md-heading3-size: 48px;
+$md-heading4-size: 34px;
+$md-heading5-size: 24px;
+
 $padding-large: 8px;
 $padding-small: 4px;
 
@@ -84,57 +94,6 @@ $white: #ffffff;
 
 .padding-lg { padding: $padding-large; }
 .padding-sm { padding: $padding-small; }
-
-
-
-/** Custom Block: Information Section **/
-.information-section-left {
-    background-color: $tan; 
-
-    &__title {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        height: 200px;
-    }
-}
-
-.information-section-right {
-    background-color: $white;
-
-    &__title {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        height: 200px;
-    }
-}
-
-.information-section-left, 
-.information-section-right{ 
-    &__body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 200px;
-    }
-}
-
-
-/** Hero Section Block **/
-.hero-container {
-    position: relative;
-    text-align: center;
-    color: $white;
-
-    &__text {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-
-}
 
 
 

@@ -1,0 +1,51 @@
+/** Custom Block: Information Section **/
+.information-section-left {
+    background-color: $tan; 
+
+    &__title {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        height: 200px;
+    }
+}
+
+.information-section-right {
+    background-color: $white;
+
+    &__title {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        height: 200px;
+    }
+}
+
+.information-section-left, 
+.information-section-right{ 
+    &__body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 200px;
+    }
+}
+
+
+
+/** Hero Section Block **/
+.hero-container {
+    position: relative;
+    text-align: center;
+    color: $white;
+
+    &__text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        font-size: $md-heading3-size;
+        font-weight: bold;
+    }
+}

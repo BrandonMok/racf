@@ -1,4 +1,8 @@
 /** CSS Styles **/
+* {
+  font-family: "Open Sans", sans-serif;
+}
+
 /** Navigation and Header bar **/
 nav#block-racf-main-menu ul li,
 nav#block-racf-account-menu ul li {
@@ -97,4 +101,6 @@ nav#block-racf-account-menu ul li a {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  font-size: 48px;
+  font-weight: bold;
 }

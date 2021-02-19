@@ -34,13 +34,12 @@
 
 
 /** Hero Section Block **/
-.hero-container {
+.hero-box {
     position: relative;
-    text-align: center;
+    text-align: left;
     color: $white;
-    overflow: hidden;
 
-    &__text {
+    &__inner-box {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -49,24 +48,51 @@
         font-weight: bold;
 
         display: flex;
+        align-items: center;
         justify-content: center;
-        align-items: flex-end;
-        color: $white;
+        flex-direction: column;
 
-        &__btn {
-            flex: 1 25%;
+        &___text {
             color: $white;
-            font-weight: bold;
-            border: 2px solid $white;
-            border-radius: 4px;
+        }
+
+        &__button {
+
+            &__btn {
+                color: $white;
+                font-weight: bold;
+                border: 2px solid $white;
+                border-radius: 4px;
+            }
+
         }
     }
 }
 
 
+
+
+
+
 @include media-breakpoint-up(xs) { 
     .hero-container__text {
         font-size: $md-heading5-size;
+    }
+
+    // temp
+    .hero-box {
+        &__inner-box {
+            &__text {
+                font-size: $md-heading5-size;
+            }
+
+            &__button { 
+
+                &__btn {
+                    margin: $margin-large;
+                }
+            }
+        }
     }
 
     .mdl-layout__drawer-button {
@@ -79,19 +105,63 @@
         font-size: $md-heading4-size;
     }
 
+    // temp
+    .hero-box {
+        text-align: left;
+
+        &__inner-box {
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            flex-direction: row;
+
+            &__text {
+                font-size: $md-heading4-size;
+            }
+
+            &__button {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                flex: 1 1 100%;
+            }
+        }
+    }
+
+
+
+
     .mdl-layout__drawer-button {
         display: none;
     }
 }
 
-// @include media-breakpoint-up(lg) {
-//     // .mdl-layout__drawer-button {
-//     //     display: none;
-//     // }
-// }
+@include media-breakpoint-up(lg) { 
+    .hero-container__text {
+        font-size: $md-heading4-size;
+    }
+
+    .hero-box {
+        text-align: left;
+
+        &__inner-box {
+
+            &__text {
+                font-size: $md-heading4-size;
+            }
+        }
+    }
+}
 
 @include media-breakpoint-up(xl) { 
     .hero-container__text {
-        font-size: $md-heading3-size;
+        font-size: $md-heading4-size;
+    }
+
+    // temp
+    .hero-box__inner-box__text {
+        font-size: $md-heading4-size;
     }
 }

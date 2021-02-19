@@ -41,16 +41,20 @@
   {{ title_suffix }}
 
   {% block content %}
-    <div class="hero-container">
-        {{ content.field_hero }}
+    <div class="hero-box">
+      {{ content.field_hero }}
 
-        <div class="hero-container__text">
-            {{ content.field_hero_text }}
-
-            <button class="mdl-button mdl-button--outlined hero-container__text__btn">
-              <span class="mdl-button__label">GET YOUR PASS</span>
-            </button>
+      <div class="hero-box__inner-box">
+        <div class="hero-box__inner-box__text">
+          {{ content.field_hero_text }}
         </div>
+      
+        <div class="hero-box__inner-box__button">
+          <button class="mdl-button mdl-button--outlined hero-box__inner-box__button__btn">
+              <span class="mdl-button__label">GET YOUR PASS</span>
+          </button>
+        </div>
+      </div>
     </div>
 
     {{ content|without('field_hero', 'field_hero_text') }}

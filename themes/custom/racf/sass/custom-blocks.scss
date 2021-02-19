@@ -38,14 +38,50 @@
     position: relative;
     text-align: center;
     color: $white;
+    overflow: hidden;
 
     &__text {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-
         font-size: $md-heading3-size;
         font-weight: bold;
+
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        color: $white;
+
+        &__btn {
+            flex: 1 25%;
+            color: $white;
+            font-weight: bold;
+            border: 2px solid $white;
+            border-radius: 4px;
+        }
+    }
+}
+
+
+@include media-breakpoint-up(xs) { 
+    .hero-container__text {
+        font-size: $md-heading5-size;
+    }
+}
+
+@include media-breakpoint-up(md) {  
+    .hero-container__text {
+        font-size: $md-heading4-size;
+    }
+}
+
+@include media-breakpoint-up(xl) { 
+    .hero-container__text {
+        font-size: $md-heading3-size;
+
+        // .hero-container__text__btn {
+    
+        // }
     }
 }

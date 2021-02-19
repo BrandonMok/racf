@@ -95,6 +95,7 @@ nav#block-racf-account-menu ul li a {
   position: relative;
   text-align: center;
   color: #ffffff;
+  overflow: hidden;
 }
 .hero-container__text {
   position: absolute;
@@ -103,4 +104,30 @@ nav#block-racf-account-menu ul li a {
   transform: translate(-50%, -50%);
   font-size: 48px;
   font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  color: #ffffff;
+}
+.hero-container__text__btn {
+  flex: 1 25%;
+  color: #ffffff;
+  font-weight: bold;
+  border: 2px solid #ffffff;
+  border-radius: 4px;
+}
+
+.hero-container__text {
+  font-size: 24px;
+}
+
+@media (min-width: 768px) {
+  .hero-container__text {
+    font-size: 34px;
+  }
+}
+@media (min-width: 1200px) {
+  .hero-container__text {
+    font-size: 48px;
+  }
 }

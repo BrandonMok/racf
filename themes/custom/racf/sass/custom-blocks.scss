@@ -68,11 +68,21 @@
     .hero-container__text {
         font-size: $md-heading5-size;
     }
+
+    .mdl-layout__drawer-button {
+        display: block ;
+    }
 }
 
 @include media-breakpoint-up(md) {  
     .hero-container__text {
         font-size: $md-heading4-size;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .mdl-layout__drawer-button {
+        display: none;
     }
 }
 

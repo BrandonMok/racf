@@ -78,20 +78,20 @@
     .hero-container__text {
         font-size: $md-heading4-size;
     }
-}
 
-@include media-breakpoint-up(lg) {
     .mdl-layout__drawer-button {
         display: none;
     }
 }
 
+// @include media-breakpoint-up(lg) {
+//     // .mdl-layout__drawer-button {
+//     //     display: none;
+//     // }
+// }
+
 @include media-breakpoint-up(xl) { 
     .hero-container__text {
         font-size: $md-heading3-size;
-
-        // .hero-container__text__btn {
-    
-        // }
     }
 }

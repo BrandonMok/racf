@@ -129,8 +129,7 @@ nav#block-racf-account-menu ul li a {
   .hero-container__text {
     font-size: 34px;
   }
-}
-@media (min-width: 992px) {
+
   .mdl-layout__drawer-button {
     display: none;
   }

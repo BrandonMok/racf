@@ -75,11 +75,6 @@
 
 
 @include media-breakpoint-up(xs) { 
-    .hero-container__text {
-        font-size: $md-heading5-size;
-    }
-
-    // temp
     .hero-box {
         &__inner-box {
             &__text {

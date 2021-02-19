@@ -75,6 +75,7 @@ nav#block-racf-account-menu ul li a {
 .information-section-left__title,
 .information-section-right__title {
   display: flex;
+  align-items: center;
 }
 .information-section-left__title__label,
 .information-section-right__title__label {
@@ -88,15 +89,14 @@ nav#block-racf-account-menu ul li a {
 }
 .information-section-left__title {
   justify-content: flex-start;
-  align-items: center;
 }
 
 .information-section-right {
   background-color: #ffffff;
 }
 .information-section-right__title {
-  justify-content: flex-end;
-  align-items: center;
+  justify-content: flex-start;
+  order: -1;
 }
 
 /** Hero Section Block **/
@@ -146,6 +146,11 @@ nav#block-racf-account-menu ul li a {
   .information-section-left__title__label,
 .information-section-right__title__label {
     font-weight: bold;
+  }
+
+  .information-section-right__title {
+    justify-content: flex-end;
+    order: 1;
   }
 
   .hero-box {

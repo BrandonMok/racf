@@ -11,6 +11,7 @@
 
     &__title {
         display: flex;
+        align-items: center;
 
         &__label {
             font-weight: bold;
@@ -25,7 +26,6 @@
 
     &__title {
         justify-content: flex-start;
-        align-items: center;
     }
 }
 
@@ -33,8 +33,8 @@
     background-color: $white;
 
     &__title {
-        justify-content: flex-end;
-        align-items: center;
+        justify-content: flex-start;
+        order: -1;
     }
 }
 
@@ -112,6 +112,14 @@
             }
         }
     }
+
+    .information-section-right {
+        &__title {
+            justify-content: flex-end;
+            order: 1;
+        }
+    }
+
 
     .hero-box {
         text-align: left;

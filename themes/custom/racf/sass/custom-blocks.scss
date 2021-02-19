@@ -1,0 +1,140 @@
+/** Custom Block: Information Section **/
+.information-section-left {
+    background-color: $tan; 
+
+    &__title {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        height: 200px;
+    }
+}
+
+.information-section-right {
+    background-color: $white;
+
+    &__title {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        height: 200px;
+    }
+}
+
+.information-section-left, 
+.information-section-right{ 
+    &__body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 200px;
+    }
+}
+
+
+
+/** Hero Section Block **/
+.hero-box {
+    position: relative;
+    text-align: left;
+    color: $white;
+
+    &__inner-box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: $md-heading3-size;
+        font-weight: bold;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        &___text {
+            color: $white;
+        }
+
+        &__button {
+            &__btn {
+                color: $white;
+                font-weight: bold;
+                border: 2px solid $white;
+                border-radius: 4px;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+@include media-breakpoint-up(xs) { 
+    .hero-box {
+        &__inner-box {
+            &__text {
+                font-size: $md-heading6-size;
+            }
+
+            &__button { 
+                &__btn {
+                    margin: $margin-large;
+                }
+            }
+        }
+    }
+
+    .mdl-layout__drawer-button {
+        display: block ;
+    }
+}
+
+@include media-breakpoint-up(md) {  
+    .hero-box {
+        text-align: left;
+
+        &__inner-box {
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            flex-direction: row;
+
+            &__text {
+                font-size: $md-heading4-size;
+            }
+
+            &__button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                width: 10em;
+            }
+        }
+    }
+
+    .mdl-layout__drawer-button {
+        display: none;
+    }
+}
+
+@include media-breakpoint-up(lg) { 
+    .hero-box {
+        text-align: left;
+
+        &__inner-box {
+            &__text {
+                font-size: $md-heading4-size;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(xl) { 
+    .hero-box__inner-box__text {
+        font-size: $md-heading4-size;
+    }
+}

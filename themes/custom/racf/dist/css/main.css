@@ -1,4 +1,8 @@
 /** CSS Styles **/
+* {
+  font-family: "Open Sans", sans-serif;
+}
+
 /** Navigation and Header bar **/
 nav#block-racf-main-menu ul li,
 nav#block-racf-account-menu ul li {
@@ -14,17 +18,6 @@ nav#block-racf-account-menu ul li a {
 }
 
 /** local tasks **/
-div#block-racf-local-tasks ul li {
-  list-style-type: none;
-  font-size: 1rem;
-  display: inline-block;
-  padding: 1em;
-}
-div#block-racf-local-tasks ul li a {
-  text-decoration: none;
-  font-size: 1rem;
-}
-
 .icon-large {
   font-size: 48px;
 }
@@ -52,11 +45,19 @@ div#block-racf-local-tasks ul li a {
   margin-right: 8px;
 }
 
-.padding-large {
+.margin-lg {
+  margin: 8px;
+}
+
+.margin-sm {
+  margin: 4px;
+}
+
+.padding-lg {
   padding: 8px;
 }
 
-.padding-small {
+.padding-sm {
   padding: 4px;
 }
 
@@ -87,4 +88,81 @@ div#block-racf-local-tasks ul li a {
   justify-content: center;
   align-items: center;
   height: 200px;
+}
+
+/** Hero Section Block **/
+.hero-box {
+  position: relative;
+  text-align: left;
+  color: #ffffff;
+}
+.hero-box__inner-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.hero-box__inner-box___text {
+  color: #ffffff;
+}
+.hero-box__inner-box__button__btn {
+  color: #ffffff;
+  font-weight: bold;
+  border: 2px solid #ffffff;
+  border-radius: 4px;
+}
+
+.hero-box__inner-box__text {
+  font-size: 20px;
+}
+.hero-box__inner-box__button__btn {
+  margin: 8px;
+}
+
+.mdl-layout__drawer-button {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .hero-box {
+    text-align: left;
+  }
+  .hero-box__inner-box {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: row;
+  }
+  .hero-box__inner-box__text {
+    font-size: 34px;
+  }
+  .hero-box__inner-box__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10em;
+  }
+
+  .mdl-layout__drawer-button {
+    display: none;
+  }
+}
+@media (min-width: 992px) {
+  .hero-box {
+    text-align: left;
+  }
+  .hero-box__inner-box__text {
+    font-size: 34px;
+  }
+}
+@media (min-width: 1200px) {
+  .hero-box__inner-box__text {
+    font-size: 34px;
+  }
 }

@@ -1,0 +1,38 @@
+uuid: d5721ee8-0694-4418-9c3b-586b445b8556
+langcode: en
+status: false
+dependencies:
+  config:
+    - block_content.type.hero_block
+    - core.entity_view_mode.block_content.hero
+    - field.field.block_content.hero_block.field_hero
+    - field.field.block_content.hero_block.field_hero_text
+  module:
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: block_content.hero_block.hero
+targetEntityType: block_content
+bundle: hero_block
+mode: hero
+content:
+  field_hero:
+    type: entity_reference_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: hero
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_hero_text:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

@@ -44,34 +44,49 @@
 #}
 <div class="layout-container">
 
-  <div class="mdl-layout mdl-js-layout">
-    <header class="mdl-layout__header mdl-layout__header--scroll">
-        <div class="mdl-layout__header-row primary">
-            <span class="mdl-layout-title">
-                {{ page.header.racf_branding }}
-            </span>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header"> 
+        <header class="mdl-layout__header padding-lg primary">
+            <div class="mdl-layout__header-row">
+                <span class="mdl-layout-title">
+                    {{ page.header.racf_branding }}
+                </span>
 
-            {{ page.header.racf_account_menu }}
+                {{ page.header.racf_account_menu }}
 
-            <div class="mdl-layout-spacer"></div>
+                <div class="mdl-layout-spacer"></div>
 
-            {{ page.header.racf_main_menu }}
-            {{ page.header|without("racf_branding", "racf_main_menu", "racf_account_menu") }}
+                {{ page.header.racf_main_menu }}
+                {{ page.header|without("racf_branding", "racf_main_menu", "racf_account_menu") }}
+            </div>
+        </header>
+         <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title">RACF</span>
+
+            {# display each of the page.header.racf_main_menu into a vertical list #}
+
+
+            {# <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+            </nav> #}
         </div>
-    </header>
 
-    <main role="main" class="mdc-top-app-bar--fixed-adjust">
-        <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
 
-        <div class="layout-content">
-            {{ page.content }}
-        </div>{# /.layout-content #}
-    </main>
+        <main role="main" class="mdl-layout__content">
+            <a id="main-content" tabindex="-1"></a>
 
-    {% if page.footer %}
-        <footer role="contentinfo">
-        {{ page.footer }}
-        </footer>
-    {% endif %}
-  </div>
+            <div class="layout-content">
+                {{ page.content }}
+            </div>
+        </main>
+
+
+        {% if page.footer %}
+            <footer role="contentinfo">
+            {{ page.footer }}
+            </footer>
+        {% endif %}
+    </div>
 </div>{# /.layout-container #}

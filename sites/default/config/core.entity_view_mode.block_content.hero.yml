@@ -1,0 +1,10 @@
+uuid: be9ac1a3-5058-4b0a-9970-938c89ef8842
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+id: block_content.hero
+label: Hero
+targetEntityType: block_content
+cache: true

@@ -36,10 +36,10 @@
 <div{{ attributes.addClass(classes) }}>
   <div class="container">
     <div class="row">
-      <div class="col-lg-6 col-md-6 col-sm-12 information-section-left__title">
+      <div class="col-lg-6 col-md-6 col-sm-12 information-section-left__title ">
         {{ title_prefix }}
         {% if label %}
-          <h2{{ title_attributes }}>{{ label }}</h2>
+          <div class="information-section-left__title__label">{{ label }}</div>
         {% endif %}
         {{ title_suffix }}
       </div>

@@ -62,32 +62,41 @@ nav#block-racf-account-menu ul li a {
 }
 
 /** Custom Block: Information Section **/
+.information-section-left,
+.information-section-right {
+  padding: 8px;
+}
+.information-section-left__body,
+.information-section-right__body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.information-section-left__title,
+.information-section-right__title {
+  display: flex;
+}
+.information-section-left__title__label,
+.information-section-right__title__label {
+  font-weight: bold;
+  padding: 8px 0 8px 0;
+  font-size: 24px;
+}
+
 .information-section-left {
   background-color: #ece4dc;
 }
 .information-section-left__title {
-  display: flex;
   justify-content: flex-start;
   align-items: center;
-  height: 200px;
 }
 
 .information-section-right {
   background-color: #ffffff;
 }
 .information-section-right__title {
-  display: flex;
   justify-content: flex-end;
   align-items: center;
-  height: 200px;
-}
-
-.information-section-left__body,
-.information-section-right__body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 200px;
 }
 
 /** Hero Section Block **/
@@ -130,6 +139,15 @@ nav#block-racf-account-menu ul li a {
 }
 
 @media (min-width: 768px) {
+  .information-section-left__title,
+.information-section-right__title {
+    height: 200px;
+  }
+  .information-section-left__title__label,
+.information-section-right__title__label {
+    font-weight: bold;
+  }
+
   .hero-box {
     text-align: left;
   }
@@ -151,18 +169,5 @@ nav#block-racf-account-menu ul li a {
 
   .mdl-layout__drawer-button {
     display: none;
-  }
-}
-@media (min-width: 992px) {
-  .hero-box {
-    text-align: left;
-  }
-  .hero-box__inner-box__text {
-    font-size: 34px;
-  }
-}
-@media (min-width: 1200px) {
-  .hero-box__inner-box__text {
-    font-size: 34px;
   }
 }

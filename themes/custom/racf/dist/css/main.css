@@ -118,12 +118,8 @@ nav#block-racf-account-menu ul li a {
   border-radius: 4px;
 }
 
-.hero-container__text {
-  font-size: 24px;
-}
-
 .hero-box__inner-box__text {
-  font-size: 24px;
+  font-size: 20px;
 }
 .hero-box__inner-box__button__btn {
   margin: 8px;
@@ -134,10 +130,6 @@ nav#block-racf-account-menu ul li a {
 }
 
 @media (min-width: 768px) {
-  .hero-container__text {
-    font-size: 34px;
-  }
-
   .hero-box {
     text-align: left;
   }
@@ -152,10 +144,9 @@ nav#block-racf-account-menu ul li a {
   }
   .hero-box__inner-box__button {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex: 1 1 100%;
+    width: 10em;
   }
 
   .mdl-layout__drawer-button {
@@ -163,10 +154,6 @@ nav#block-racf-account-menu ul li a {
   }
 }
 @media (min-width: 992px) {
-  .hero-container__text {
-    font-size: 34px;
-  }
-
   .hero-box {
     text-align: left;
   }
@@ -175,10 +162,6 @@ nav#block-racf-account-menu ul li a {
   }
 }
 @media (min-width: 1200px) {
-  .hero-container__text {
-    font-size: 34px;
-  }
-
   .hero-box__inner-box__text {
     font-size: 34px;
   }

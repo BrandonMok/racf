@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 name: hero
-label: 'Hero (3000x250)'
+label: 'Hero (3000x300)'
 effects:
   012552b7-9350-41f3-acb2-3b4595a5340e:
     uuid: 012552b7-9350-41f3-acb2-3b4595a5340e
@@ -11,5 +11,5 @@ effects:
     weight: 1
     data:
       width: 3000
-      height: 250
+      height: 300
       anchor: center-center

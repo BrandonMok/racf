@@ -77,10 +77,36 @@
 }
 
 
+/** Access Partner Custom Block **/
+.access-partner {
+    background-color: $tertiary-color;
+    text-align: center;
+    padding: 40px 0;
+
+    &__label {
+        font-size: $md-heading5-size;
+        color: $white;
+    }
+
+    &__container {
+        padding: 16px 0;
+
+        &__row {
+            div {
+                margin: 8px 0;
+
+                & > * {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}
 
 
 
 
+/** Media Queries **/
 @include media-breakpoint-up(xs) { 
     .hero-box {
         &__inner-box {
@@ -140,25 +166,29 @@
         }
     }
 
+    /** MQ - md - Access Partner Custom Block **/
+    .access-partner {
+        &__label { font-size: $md-heading4-size; }
+    
+        &__container {
+            padding: 32px 0;
+
+            &__row  {
+                margin-right: 24px;
+            }
+        }
+    }
+
     .mdl-layout__drawer-button {
         display: none;
     }
 }
 
-// @include media-breakpoint-up(lg) { 
-//     .hero-box {
-//         text-align: left;
-
-//         &__inner-box {
-//             &__text {
-//                 font-size: $md-heading4-size;
-//             }
-//         }
-//     }
-// }
+@include media-breakpoint-up(lg) { 
+    .access-partner {
+        &__label { font-size: $md-heading3-size; }
+    }
+}
 
 // @include media-breakpoint-up(xl) { 
-//     .hero-box__inner-box__text {
-//         font-size: $md-heading4-size;
-//     }
 // }

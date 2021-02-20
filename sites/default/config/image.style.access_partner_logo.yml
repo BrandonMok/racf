@@ -1,0 +1,15 @@
+uuid: ac3a889f-8ed1-4508-9394-4f900edfd5a0
+langcode: en
+status: true
+dependencies: {  }
+name: access_partner_logo
+label: 'Access Partner Logo (250x100)'
+effects:
+  b46ba5c2-993d-4810-8c3c-fb06d79f678e:
+    uuid: b46ba5c2-993d-4810-8c3c-fb06d79f678e
+    id: image_scale
+    weight: 1
+    data:
+      width: 250
+      height: 100
+      upscale: true

@@ -1,0 +1,28 @@
+uuid: 651ffbad-1cfc-4723-878b-f1f1beb36fb8
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.access_partners_block
+    - field.storage.block_content.field_partner_logo
+    - media.type.image
+id: block_content.access_partners_block.field_partner_logo
+field_name: field_partner_logo
+entity_type: block_content
+bundle: access_partners_block
+label: 'Partner Logo'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -79,7 +79,7 @@
 
 /** Access Partner Custom Block **/
 .access-partner {
-    background-color: $black;
+    background-color: $tertiary-color;
     text-align: center;
     padding: 40px 0;
 
@@ -100,8 +100,6 @@
                 }
             }
         }
-
-
     }
 }
 
@@ -170,7 +168,7 @@
 
     /** MQ - md - Access Partner Custom Block **/
     .access-partner {
-        &__label { font-size: $md-heading3-size; }
+        &__label { font-size: $md-heading4-size; }
     
         &__container {
             padding: 32px 0;
@@ -186,8 +184,11 @@
     }
 }
 
-// @include media-breakpoint-up(lg) { 
-// }
+@include media-breakpoint-up(lg) { 
+    .access-partner {
+        &__label { font-size: $md-heading3-size; }
+    }
+}
 
 // @include media-breakpoint-up(xl) { 
 // }

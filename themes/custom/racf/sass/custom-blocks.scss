@@ -77,10 +77,26 @@
 }
 
 
+/** Access Partner Custom Block **/
+.access-partner {
+    background-color: $black;
+    text-align: center;
+    padding: 32px 0;  // temporarily using 32px
+
+    &__label {
+        font-size: $md-heading3-size;
+        color: $white;
+    }
+
+    // &__container {
+    //     // margin: 32px 0;
+    // }
+}
 
 
 
 
+/** Media Queries **/
 @include media-breakpoint-up(xs) { 
     .hero-box {
         &__inner-box {

@@ -1,0 +1,23 @@
+uuid: d230fa12-451e-4019-bde1-0ae99bf9ec34
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.access_partners_block
+    - field.field.block_content.access_partners_block.field_partner_logo
+  module:
+    - media_library
+id: block_content.access_partners_block.default
+targetEntityType: block_content
+bundle: access_partners_block
+mode: default
+content:
+  field_partner_logo:
+    type: media_library_widget
+    weight: 0
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  info: true

@@ -1,0 +1,10 @@
+uuid: dfe38bc6-5c0e-41db-beb3-5291d95cb3df
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.access_partner_logo
+label: 'Access Partner Logo'
+targetEntityType: media
+cache: true

@@ -1,0 +1,8 @@
+uuid: a97e6b86-f6e4-4d0b-bb72-346ba0dacb9d
+langcode: en
+status: true
+dependencies: {  }
+id: access_partners_block
+label: 'Access Partners Block'
+revision: 0
+description: 'A custom block to display partners of RACF.'

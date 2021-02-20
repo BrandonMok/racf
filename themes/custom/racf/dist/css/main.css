@@ -68,7 +68,6 @@ nav#block-racf-account-menu ul li a {
 }
 .racf-footer__content {
   color: #ffffff;
-  padding: 8px 0 8px 0;
 }
 
 /** Custom Block: Information Section **/
@@ -137,6 +136,18 @@ nav#block-racf-account-menu ul li a {
   border-radius: 4px;
 }
 
+/** Access Partner Custom Block **/
+.access-partner {
+  background-color: #000000;
+  text-align: center;
+  padding: 32px 0;
+}
+.access-partner__label {
+  font-size: 48px;
+  color: #ffffff;
+}
+
+/** Media Queries **/
 .hero-box__inner-box__text {
   font-size: 20px;
 }

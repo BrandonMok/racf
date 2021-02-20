@@ -1,12 +1,31 @@
 /** Custom Block: Information Section **/
+.information-section-left, 
+.information-section-right { 
+    padding: $padding-large;
+
+    &__body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__title {
+        display: flex;
+        align-items: center;
+
+        &__label {
+            font-weight: bold;
+            padding: $padding-large 0 $padding-large 0;
+            font-size: $md-heading5-size;
+        }
+    }
+}
+
 .information-section-left {
     background-color: $tan; 
 
     &__title {
-        display: flex;
         justify-content: flex-start;
-        align-items: center;
-        height: 200px;
     }
 }
 
@@ -14,22 +33,12 @@
     background-color: $white;
 
     &__title {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        height: 200px;
+        justify-content: flex-start;
+        order: -1;
     }
 }
 
-.information-section-left, 
-.information-section-right{ 
-    &__body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 200px;
-    }
-}
+
 
 
 
@@ -93,6 +102,21 @@
 }
 
 @include media-breakpoint-up(md) {  
+    .information-section-left,  
+    .information-section-right {
+        &__title {
+            height: 200px;
+        }
+    }
+
+    .information-section-right {
+        &__title {
+            justify-content: flex-end;
+            order: 1;
+        }
+    }
+
+
     .hero-box {
         text-align: left;
 
@@ -121,20 +145,20 @@
     }
 }
 
-@include media-breakpoint-up(lg) { 
-    .hero-box {
-        text-align: left;
+// @include media-breakpoint-up(lg) { 
+//     .hero-box {
+//         text-align: left;
 
-        &__inner-box {
-            &__text {
-                font-size: $md-heading4-size;
-            }
-        }
-    }
-}
+//         &__inner-box {
+//             &__text {
+//                 font-size: $md-heading4-size;
+//             }
+//         }
+//     }
+// }
 
-@include media-breakpoint-up(xl) { 
-    .hero-box__inner-box__text {
-        font-size: $md-heading4-size;
-    }
-}
+// @include media-breakpoint-up(xl) { 
+//     .hero-box__inner-box__text {
+//         font-size: $md-heading4-size;
+//     }
+// }

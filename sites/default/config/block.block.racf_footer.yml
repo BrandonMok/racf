@@ -12,8 +12,8 @@ _core:
   default_config_hash: 8zRjTNbfNAJ94lQpZDu6MkyD87GYJ2zpH9VQPVmRbcM
 id: racf_footer
 theme: racf
-region: content
-weight: -2
+region: footer
+weight: -6
 provider: null
 plugin: 'system_menu_block:footer'
 settings:

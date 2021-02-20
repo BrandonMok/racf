@@ -140,11 +140,20 @@ nav#block-racf-account-menu ul li a {
 .access-partner {
   background-color: #000000;
   text-align: center;
-  padding: 32px 0;
+  padding: 40px 0;
 }
 .access-partner__label {
-  font-size: 48px;
+  font-size: 24px;
   color: #ffffff;
+}
+.access-partner__container {
+  padding: 16px 0;
+}
+.access-partner__container__row div {
+  margin: 8px 0;
+}
+.access-partner__container__row div > * {
+  display: inline-block;
 }
 
 /** Media Queries **/
@@ -187,6 +196,17 @@ nav#block-racf-account-menu ul li a {
     justify-content: center;
     align-items: center;
     width: 10em;
+  }
+
+  /** MQ - md - Access Partner Custom Block **/
+  .access-partner__label {
+    font-size: 48px;
+  }
+  .access-partner__container {
+    padding: 32px 0;
+  }
+  .access-partner__container__row {
+    margin-right: 24px;
   }
 
   .mdl-layout__drawer-button {

@@ -1,6 +1,6 @@
 /** Custom Block: Information Section **/
 .information-section-left, 
-.information-section-right{ 
+.information-section-right { 
     padding: $padding-large;
 
     &__body {
@@ -106,10 +106,6 @@
     .information-section-right {
         &__title {
             height: 200px;
-
-            &__label {
-                font-weight: bold;
-            }
         }
     }
 

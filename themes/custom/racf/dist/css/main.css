@@ -143,10 +143,6 @@ nav#block-racf-account-menu ul li a {
 .information-section-right__title {
     height: 200px;
   }
-  .information-section-left__title__label,
-.information-section-right__title__label {
-    font-weight: bold;
-  }
 
   .information-section-right__title {
     justify-content: flex-end;

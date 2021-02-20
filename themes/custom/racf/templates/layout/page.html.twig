@@ -80,13 +80,12 @@
             <div class="layout-content">
                 {{ page.content }}
             </div>
+
+            {% if page.footer %}
+                <footer role="contentinfo">
+                {{ page.footer }}
+                </footer>
+            {% endif %}
         </main>
-
-
-        {% if page.footer %}
-            <footer role="contentinfo">
-            {{ page.footer }}
-            </footer>
-        {% endif %}
     </div>
 </div>{# /.layout-container #}

@@ -3,6 +3,54 @@
 @import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/mixins";
 
+/** Variables **/
+$md-heading1-size: 96px;
+$md-heading2-size: 60px;
+$md-heading3-size: 48px;
+$md-heading4-size: 34px;
+$md-heading5-size: 24px;
+$md-heading6-size: 20px;
+
+$padding-large: 8px;
+$padding-small: 4px;
+
+$margin-large: 8px;
+$margin-small: 4px;
+
+$primary-color: #0058b3;
+$secondary-color: #ffffff;
+$tertiary-color: #10345c;
+
+$black: #000000;
+$tan: #ece4dc;
+$white: #ffffff;
+
+
+/** Usable CSS classes that use SASS vars **/
+.primary { background-color: $primary-color; }
+.secondary { background-color: $secondary-color;}
+.secondary-text { color: $secondary-color; }
+
+.black-text { color: $black; }
+
+.side-margin {
+    margin-left: $margin-large;
+    margin-right: $margin-large;
+}
+.margin-lg { margin: $margin-large; }
+.margin-sm { margin: $margin-small; }
+
+.padding-lg { padding: $padding-large; }
+.padding-sm { padding: $padding-small; }
+
+
+
+
+
+
+
+
+
 *  {
     font-family: 'Open Sans', sans-serif;
 }
@@ -46,58 +94,15 @@ nav#block-racf-account-menu {
 //     padding: 0.5em;
 // }
 
-// .bottom-nav {
-//     // position: fixed;
-//     // bottom: 0;
-//     // left: 0;
 
-//     position: absolute;
-//     bottom: 0;
-//     width: 100%;
-//     height: 4em; 
-// }
+.racf-footer {
+    background-color: $tertiary-color;
+    text-align: center;
+    padding: 16px;
 
-
-
-/** Variables **/
-$md-heading1-size: 96px;
-$md-heading2-size: 60px;
-$md-heading3-size: 48px;
-$md-heading4-size: 34px;
-$md-heading5-size: 24px;
-$md-heading6-size: 20px;
-
-$padding-large: 8px;
-$padding-small: 4px;
-
-$margin-large: 8px;
-$margin-small: 4px;
-
-$primary-color: #0058b3;
-$secondary-color: #ffffff;
-
-$black: #000000;
-$tan: #ece4dc;
-$white: #ffffff;
-
-
-/** Usable CSS classes that use SASS vars **/
-.primary { background-color: $primary-color; }
-.secondary { background-color: $secondary-color;}
-.secondary-text { color: $secondary-color; }
-
-.black-text { color: $black; }
-
-
-.side-margin {
-    margin-left: $margin-large;
-    margin-right: $margin-large;
+    &__content {
+        color: $white;
+    }
 }
-.margin-lg { margin: $margin-large; }
-.margin-sm { margin: $margin-small; }
-
-.padding-lg { padding: $padding-large; }
-.padding-sm { padding: $padding-small; }
-
 
 

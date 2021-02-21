@@ -41,8 +41,7 @@
 
 
 
-
-/** Hero Section Block **/
+/** Custom Block: Hero Section **/
 .hero-box {
     position: relative;
     text-align: left;
@@ -78,7 +77,9 @@
 }
 
 
-/** Access Partner Custom Block **/
+
+
+/** Custom Block: Access Partner **/
 .access-partner {
     background-color: $tertiary-color;
     text-align: center;
@@ -101,6 +102,26 @@
                 }
             }
         }
+    }
+}
+
+
+
+
+/** Custom block: Get Access **/
+// .get-access {
+//     &__label {
+//         font-size: $md-heading5-size;
+//     }
+// }
+
+
+.layout--twocol-section--50-50 {
+    @extend .row;
+
+    > div {
+        @extend .col-12;
+        @extend .col-md-6;
     }
 }
 

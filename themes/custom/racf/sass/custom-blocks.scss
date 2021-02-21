@@ -41,8 +41,7 @@
 
 
 
-
-/** Hero Section Block **/
+/** Custom Block: Hero Section **/
 .hero-box {
     position: relative;
     text-align: left;
@@ -78,7 +77,9 @@
 }
 
 
-/** Access Partner Custom Block **/
+
+
+/** Custom Block: Access Partner **/
 .access-partner {
     background-color: $tertiary-color;
     text-align: center;
@@ -101,6 +102,48 @@
                 }
             }
         }
+    }
+}
+
+
+
+
+/** Custom block: Get Access **/
+.get-access {
+    padding: 16px 0 16px 16px;
+
+    &__label {
+        font-weight: bold;
+        font-size: $md-heading5-size;
+        margin: 0 15px 16px 15px;
+    }
+
+    &__container  {
+        margin: 16px 0;
+
+        &__row {
+            &__body {
+                // position: relative;
+
+                // &__content {
+                //     position: absolute;
+                //     left: 0;
+                //     bottom: 0;
+                // }
+            }
+        }
+    }
+}
+
+
+
+/** Sections **/
+.layout--twocol-section--50-50 {
+    @extend .row;
+
+    > div {
+        @extend .col-12;
+        @extend .col-md-6;
     }
 }
 
@@ -167,7 +210,7 @@
         }
     }
 
-    /** MQ - md - Access Partner Custom Block **/
+
     .access-partner {
         &__label { font-size: $md-heading4-size; }
     
@@ -180,6 +223,18 @@
         }
     }
 
+    .get-access {
+        &__container {
+            &__row {
+                &__body {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+        }
+    }
+
     .mdl-layout__drawer-button {
         display: none;
     }
@@ -188,6 +243,10 @@
 @include media-breakpoint-up(lg) { 
     .access-partner {
         &__label { font-size: $md-heading3-size; }
+    }
+
+    .get-access {
+        &__label { font-size: $md-heading4-size; }
     }
 }
 

@@ -1,0 +1,23 @@
+uuid: 2f022dde-1769-4739-9635-6be78e667d45
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.get_access_block
+    - field.storage.block_content.body
+  module:
+    - text
+id: block_content.get_access_block.body
+field_name: body
+entity_type: block_content
+bundle: get_access_block
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+field_type: text_with_summary

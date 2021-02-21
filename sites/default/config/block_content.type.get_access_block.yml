@@ -1,0 +1,8 @@
+uuid: ad428191-d805-4911-b6aa-0e9cbb9577df
+langcode: en
+status: true
+dependencies: {  }
+id: get_access_block
+label: 'Get Access Block'
+revision: 0
+description: 'A custom block to display the Homepage''s "Get Access to Rochester''s Art and Culture" section.'

@@ -1,0 +1,32 @@
+uuid: 955ae0c7-c6a8-4ad5-82f3-153434d38b77
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.get_access_block
+    - field.field.block_content.get_access_block.body
+    - field.field.block_content.get_access_block.field_image
+  module:
+    - text
+id: block_content.get_access_block.default
+targetEntityType: block_content
+bundle: get_access_block
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_image:
+    type: entity_reference_entity_view
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+hidden: {  }

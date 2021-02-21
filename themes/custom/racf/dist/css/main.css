@@ -10174,12 +10174,6 @@ nav#block-racf-account-menu ul li a {
 .get-access__container {
   margin: 16px 0;
 }
-.get-access__container__row__body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 /** Sections **/
 /** Media Queries **/
 .hero-box__inner-box__text {
@@ -10231,6 +10225,12 @@ nav#block-racf-account-menu ul li a {
   }
   .access-partner__container__row {
     margin-right: 24px;
+  }
+
+  .get-access__container__row__body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .mdl-layout__drawer-button {

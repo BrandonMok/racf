@@ -125,10 +125,6 @@
             &__body {
                 // position: relative;
 
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
                 // &__content {
                 //     position: absolute;
                 //     left: 0;
@@ -227,26 +223,17 @@
         }
     }
 
-
-    // .get-access {
-    //     &__label {
-    //         font-size: $md-heading4-size;
-    //         // margin-left: 15px; 
-    //         // font-weight: bold;
-    //         // margin-bottom: 16px;
-    //     }
-    
-    //     // &__container  {
-    //     //     &__row {
-    //     //         &__body {
-    //     //             display: flex;
-    //     //             justify-content: flex-start;
-    
-    //     //         }
-    //     //     }
-    //     // }
-    // }
-    
+    .get-access {
+        &__container {
+            &__row {
+                &__body {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+        }
+    }
 
     .mdl-layout__drawer-button {
         display: none;

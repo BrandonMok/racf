@@ -109,13 +109,39 @@
 
 
 /** Custom block: Get Access **/
-// .get-access {
-//     &__label {
-//         font-size: $md-heading5-size;
-//     }
-// }
+.get-access {
+    padding: 16px 0 16px 16px;
+
+    &__label {
+        font-weight: bold;
+        font-size: $md-heading5-size;
+        margin: 0 15px 16px 15px;
+    }
+
+    &__container  {
+        margin: 16px 0;
+
+        &__row {
+            &__body {
+                // position: relative;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                // &__content {
+                //     position: absolute;
+                //     left: 0;
+                //     bottom: 0;
+                // }
+            }
+        }
+    }
+}
 
 
+
+/** Sections **/
 .layout--twocol-section--50-50 {
     @extend .row;
 
@@ -188,7 +214,7 @@
         }
     }
 
-    /** MQ - md - Access Partner Custom Block **/
+
     .access-partner {
         &__label { font-size: $md-heading4-size; }
     
@@ -201,6 +227,27 @@
         }
     }
 
+
+    // .get-access {
+    //     &__label {
+    //         font-size: $md-heading4-size;
+    //         // margin-left: 15px; 
+    //         // font-weight: bold;
+    //         // margin-bottom: 16px;
+    //     }
+    
+    //     // &__container  {
+    //     //     &__row {
+    //     //         &__body {
+    //     //             display: flex;
+    //     //             justify-content: flex-start;
+    
+    //     //         }
+    //     //     }
+    //     // }
+    // }
+    
+
     .mdl-layout__drawer-button {
         display: none;
     }
@@ -209,6 +256,10 @@
 @include media-breakpoint-up(lg) { 
     .access-partner {
         &__label { font-size: $md-heading3-size; }
+    }
+
+    .get-access {
+        &__label { font-size: $md-heading4-size; }
     }
 }
 

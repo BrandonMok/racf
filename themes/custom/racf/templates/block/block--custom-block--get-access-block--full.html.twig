@@ -36,22 +36,24 @@
 <div{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
   {% if label %}
-    <h2{{ title_attributes }}>{{ label }}</h2>
+    <div class="get-access__label">{{ label }}</div>
   {% endif %}
   {{ title_suffix }}
 
   {% block content %}
     <div class="container get-access__container">
-        <div class="row">
-            <div class="col-12 col-md-6">
-                {{ content.body }}
-            </div>
-            <div class="col-12 col-md-6">
-                {{ content.field_image }}
-            </div>
-        </div>
+      <div class="row get-access__container__row">
+          <div class="col-12 col-md-6 get-access__container__row__body">
+            {# <div class="get-access__container__row__body__content"> #}
+              {{ content.body }}
+            {# </div> #}
+          </div>
+          <div class="col-12 col-md-6">
+              {{ content.field_image }}
+          </div>
+      </div>
 
-        {{ content|without('body', 'field_image') }}
+      {{ content|without('body', 'field_image') }}
     </div>
   {% endblock %}
 </div>

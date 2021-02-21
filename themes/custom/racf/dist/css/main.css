@@ -10163,6 +10163,24 @@ nav#block-racf-account-menu ul li a {
 }
 
 /** Custom block: Get Access **/
+.get-access {
+  padding: 16px 0 16px 16px;
+}
+.get-access__label {
+  font-weight: bold;
+  font-size: 24px;
+  margin: 0 15px 16px 15px;
+}
+.get-access__container {
+  margin: 16px 0;
+}
+.get-access__container__row__body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/** Sections **/
 /** Media Queries **/
 .hero-box__inner-box__text {
   font-size: 20px;
@@ -10205,7 +10223,6 @@ nav#block-racf-account-menu ul li a {
     width: 10em;
   }
 
-  /** MQ - md - Access Partner Custom Block **/
   .access-partner__label {
     font-size: 34px;
   }
@@ -10223,5 +10240,9 @@ nav#block-racf-account-menu ul li a {
 @media (min-width: 992px) {
   .access-partner__label {
     font-size: 48px;
+  }
+
+  .get-access__label {
+    font-size: 34px;
   }
 }

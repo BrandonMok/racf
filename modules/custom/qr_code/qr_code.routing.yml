@@ -1,0 +1,7 @@
+qr_code.content:
+  path: '/checkin'
+  defaults:
+    _controller: '\Drupal\qr_code\Controller\QRCodeController::content'
+    _title: 'CheckIn'
+  requirements:
+    _permission: 'access content'

@@ -19,8 +19,21 @@ class QRBlock extends BlockBase {
    * {@inheritdoc}
    */
   public function build() {
+
+    /** 
+     * Do logic to grab current user's snap and the event name
+     */
+    $currentUID = \Drupal::currentUser()->id();
+
+    $entityTypeManager = \Drupal::entityTypeManager();
+    $userStorage = $entityTypeManager->getStorage('user');
+
+    $user = $userStorage->loadByProperties([
+      'uid' => $currentUID
+    ]);
+
     return [
-      '#markup' => $this->t('Hello, World!'),
+      '#markup' => $this->t("Hello World!"),
     ];
   }
 

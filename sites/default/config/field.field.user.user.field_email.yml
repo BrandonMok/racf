@@ -1,0 +1,20 @@
+uuid: 589227c8-8cf3-4265-bbfd-b5362866ea97
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_email
+  module:
+    - user
+id: user.user.field_email
+field_name: field_email
+entity_type: user
+bundle: user
+label: Email
+description: 'Enter an email address you would like to sign up with.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

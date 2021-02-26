@@ -1,6 +1,6 @@
 uuid: 46a45505-6fd2-4553-af60-3314d92618ec
 langcode: en
-status: false
+status: true
 dependencies:
   theme:
     - racf
@@ -9,7 +9,7 @@ _core:
 id: racf_local_tasks
 theme: racf
 region: content
-weight: -1
+weight: -5
 provider: null
 plugin: local_tasks_block
 settings:

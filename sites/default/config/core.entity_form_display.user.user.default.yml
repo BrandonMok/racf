@@ -3,10 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_email
+    - field.field.user.user.field_snap_number
     - field.field.user.user.user_picture
-    - image.style.thumbnail
   module:
-    - image
     - user
 _core:
   default_config_hash: K-1rBM8mTIkFp9RqOC2tMRUukOQ1xbRCfSKK8dEddnA
@@ -16,23 +16,45 @@ bundle: user
 mode: default
 content:
   account:
-    weight: -10
+    weight: 2
     region: content
+    settings: {  }
+    third_party_settings: {  }
   contact:
     weight: 5
     region: content
-  language:
-    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+  field_email:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
     region: content
+  field_snap_number:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  google_analytics:
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  language:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   timezone:
     weight: 6
     region: content
-  user_picture:
-    type: image_image
-    settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
+    settings: {  }
     third_party_settings: {  }
-    weight: -1
-    region: content
-hidden: {  }
+hidden:
+  user_picture: true

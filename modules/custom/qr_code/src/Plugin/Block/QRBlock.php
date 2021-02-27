@@ -20,9 +20,20 @@ class QRBlock extends BlockBase {
    */
   public function build() {
 
-    /** 
-     * Do logic to grab current user's snap and the event name
-     */
+    $currNode = \Drupal::routeMatch()->getParameter('node');
+    $nodeType = $currNode->bundle();  // event
+
+    // if ($nodeType === "event") {
+    //   $title = $currNode->getTitle();
+    // }
+    // else { 
+    //    // have block show something like it's not an event or not available
+    // }
+
+    $title = $currNode->getTitle();
+
+    
+
     $currentUID = \Drupal::currentUser()->id();
 
     $entityTypeManager = \Drupal::entityTypeManager();
@@ -32,8 +43,14 @@ class QRBlock extends BlockBase {
       'uid' => $currentUID
     ]);
 
+    $currUsr = array_pop($user);
+    $snap = $currUsr->get('field_snap_number')->getString();
+
+
+
+
     return [
-      '#markup' => $this->t("Hello World!"),
+      '#markup' => $this->t("Hello World! $snap"),
     ];
   }
 

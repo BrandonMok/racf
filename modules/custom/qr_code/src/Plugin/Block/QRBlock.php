@@ -32,8 +32,8 @@ class QRBlock extends BlockBase {
 
     $title = $currNode->getTitle();
 
-    
 
+    // User stuff
     $currentUID = \Drupal::currentUser()->id();
 
     $entityTypeManager = \Drupal::entityTypeManager();
@@ -44,13 +44,12 @@ class QRBlock extends BlockBase {
     ]);
 
     $currUsr = array_pop($user);
-    $snap = $currUsr->get('field_snap_number')->getString();
-
+    $snap = $currUsr->get('field_snap_number')->getString();  // snap number
 
 
 
     return [
-      '#markup' => $this->t("Hello World! $snap"),
+      '#markup' => $this->t("Hello World!"),
     ];
   }
 

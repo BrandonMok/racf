@@ -9,8 +9,99 @@ dependencies:
     - node.type.event
   module:
     - datetime
+    - layout_builder
+    - layout_discovery
+    - qr_code
     - text
     - user
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: true
+    sections:
+      -
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: 'Event 50 50'
+          column_widths: 50-50
+        components:
+          c755dc92-7a24-4acb-b3c3-e97a7c123fab:
+            uuid: c755dc92-7a24-4acb-b3c3-e97a7c123fab
+            region: second
+            configuration:
+              id: qr_code
+              label: 'QR Code block'
+              provider: qr_code
+              label_display: visible
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          4870d018-ff02-4cda-969a-028eded87285:
+            uuid: 4870d018-ff02-4cda-969a-028eded87285
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:event:links'
+            additional: {  }
+            weight: 0
+          1999bd83-9790-46f4-af37-90e12fc67e9b:
+            uuid: 1999bd83-9790-46f4-af37-90e12fc67e9b
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:event:body'
+              formatter:
+                label: hidden
+                type: text_default
+                settings: {  }
+                third_party_settings: {  }
+            additional: {  }
+            weight: 1
+          9200297c-3d47-40e9-8597-ee0fff607a51:
+            uuid: 9200297c-3d47-40e9-8597-ee0fff607a51
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:event:field_date'
+              formatter:
+                label: hidden
+                settings:
+                  format_type: medium
+                  timezone_override: ''
+                third_party_settings: {  }
+                type: datetime_default
+            additional: {  }
+            weight: 2
+          349edd2d-9ffe-4c20-a609-24b6e6e937df:
+            uuid: 349edd2d-9ffe-4c20-a609-24b6e6e937df
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:event:field_event_image'
+              formatter:
+                type: entity_reference_entity_view
+                label: hidden
+                settings:
+                  view_mode: default
+                  link: false
+                third_party_settings: {  }
+            additional: {  }
+            weight: 3
+        third_party_settings: {  }
 id: node.event.default
 targetEntityType: node
 bundle: event

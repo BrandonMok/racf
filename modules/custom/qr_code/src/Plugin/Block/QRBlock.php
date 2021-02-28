@@ -22,50 +22,39 @@ class QRBlock extends BlockBase {
   public function build() {
 
     $currNode = \Drupal::routeMatch()->getParameter('node');
-    $nodeType = $currNode->bundle();  // event
+    $nodeType = $currNode->bundle();
 
-    // if ($nodeType === "event") {
-    //   $title = $currNode->getTitle();
-
-    //    // NEED TO CHECK IF THERES A VALUE FOR the currentUser()->id() before continue
-       
-    
-    // }
-    // else { 
-    //    // have block show something like it's not an event or not available
-    // }
-
-    $title = $currNode->getTitle();
-
-
-    // User stuff
     $currentUID = \Drupal::currentUser()->id();
 
-    $entityTypeManager = \Drupal::entityTypeManager();
-    $userStorage = $entityTypeManager->getStorage('user');
 
-    $user = $userStorage->loadByProperties([
-      'uid' => $currentUID
-    ]);
+    if ($nodeType === "event" && $currentUID != 0) {
+      $title = $currNode->getTitle();
 
-    $currUsr = array_pop($user);
-    $snap = $currUsr->get('field_snap_number')->getString();  // snap number
+      $urlEncoded = urlencode("https://dev-racf.pantheonsite.io/checkin&event=$title&uid=$currentUID");
+      $markup = "<img src=http://api.qrserver.com/v1/create-qr-code/?size=150x150&data=$urlEncoded />";
+    }
+    else { 
+       // have block show something like it's not an event or not available
+       $markup = $this->t("QR code unavailable. Please login to access this pass!");
+    }
+
+
+    // For use elsewhere!
+    // $entityTypeManager = \Drupal::entityTypeManager();
+    // $userStorage = $entityTypeManager->getStorage('user');
+
+    // $user = $userStorage->loadByProperties([
+    //   'uid' => $currentUID
+    // ]);
+
+    // $currUsr = array_pop($user);
+    // $snap = $currUsr->get('field_snap_number')->getString();  // snap number
 
 
 
     // $httpClient = \Drupal::httpClient();
-
-    //https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=example
-    //"https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://dev-racf.pantheonsite.io/checkin&event=$title&snap=$snap&format=png"
-
-    // $link = urlencode("http://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://dev-racf.pantheonsite.io/checkin&event=$title&snap=$snap&format=png");
-
-    // $api = "https://api.qrserver.com/v1/create-qr-code/?size=" . urlencode(150x150) . "&data=" . urlencode("https://dev-racf.pantheonsite.io/checkin") . "&event=" . urlencode($title) . "&snap=" . urlencode($snap) . "&format=" . urlencode("png");
-    // $api = "https://api.qrserver.com/v1/create-qr-code/?size=150x150" . "&data=" . urlencode("https://dev-racf.pantheonsite.io/checkin&event=$title&snap=$snap&format=png");
-
-
-    // try {
-      // $request = $httpClient->post("https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" . urlencode("example"), array('headers' => array('Accept' => 'image/png','Content-Type' => 'application/json')));
+  
+            // $request = $httpClient->post("https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" . urlencode("example"), array('headers' => array('Accept' => 'image/png','Content-Type' => 'application/json')));
       // $request = $httpClient->request("POST", $api, array('headers' => array('Accept' => 'image/png','Content-Type' => 'image/png')));
 
       // $request = $httpClient->post('https://api.qrserver.com/v1/create-qr-code/', [
@@ -86,19 +75,22 @@ class QRBlock extends BlockBase {
 
 
     //   $data = $request->getBody()->getContents();
-    //   // dump("Try Data: $data");
+  
 
-    // }
-    // catch(RequestException $e) {
-    //   dump("ERROR: " . $e);
-    // }
+    // $urlEncoded = urlencode("https://dev-racf.pantheonsite.io/checkin&event=$title&uid=$currentUID");
 
-    $urlEncoded = urlencode("https://dev-racf.pantheonsite.io/checkin&event=$title&uid=$currentUID");
+    // return [
+    //   '#type' => 'markup',
+    //   '#markup' => "<img src=http://api.qrserver.com/v1/create-qr-code/?size=150x150&data=$urlEncoded />",
+    // ];
+
+
 
     return [
       '#type' => 'markup',
-      '#markup' => "<img src=http://api.qrserver.com/v1/create-qr-code/?size=150x150&data=$urlEncoded />",
+      '#markup' => $markup,
     ];
-  }
 
+    
+  }
 }

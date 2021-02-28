@@ -31,11 +31,11 @@ class QRBlock extends BlockBase {
       $title = $currNode->getTitle();
 
       $urlEncoded = urlencode("https://dev-racf.pantheonsite.io/checkin&event=$title&uid=$currentUID");
-      $markup = "<img src=http://api.qrserver.com/v1/create-qr-code/?size=150x150&data=$urlEncoded />";
+      // $markup = "<img src=http://api.qrserver.com/v1/create-qr-code/?size=150x150&data=$urlEncoded />";
+      $markup = "http://api.qrserver.com/v1/create-qr-code/?size=150x150&data=$urlEncoded";
     }
     else { 
-       // have block show something like it's not an event or not available
-       $markup = $this->t("QR code unavailable. Please login to access this pass!");
+      $markup = $this->t("QR code unavailable. Please login to access this pass!");
     }
 
 
@@ -49,7 +49,6 @@ class QRBlock extends BlockBase {
 
     // $currUsr = array_pop($user);
     // $snap = $currUsr->get('field_snap_number')->getString();  // snap number
-
 
 
     // $httpClient = \Drupal::httpClient();
@@ -72,25 +71,14 @@ class QRBlock extends BlockBase {
     //       'Content-Type' => 'application/json'
     //     ]
     //   ]);
-
-
     //   $data = $request->getBody()->getContents();
-  
-
-    // $urlEncoded = urlencode("https://dev-racf.pantheonsite.io/checkin&event=$title&uid=$currentUID");
-
-    // return [
-    //   '#type' => 'markup',
-    //   '#markup' => "<img src=http://api.qrserver.com/v1/create-qr-code/?size=150x150&data=$urlEncoded />",
-    // ];
-
 
 
     return [
-      '#type' => 'markup',
-      '#markup' => $markup,
+      '#theme' => 'qr_themeable_block',
+      '#content' => $markup,
+      '#title' => "",
     ];
-
     
   }
 }

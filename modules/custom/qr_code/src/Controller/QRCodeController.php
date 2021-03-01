@@ -19,7 +19,7 @@ class QRCodeController extends ControllerBase {
   public function checkin(Request $request) {
     // $params = $request->getParameters;
 
-    $test = $request->getQueryString();
+    $query = \Drupal::request()->getQueryString();
 
 
     // $event = $request->query->get('event');
@@ -37,7 +37,7 @@ class QRCodeController extends ControllerBase {
 
     // $retVal = $this->t("Event: $event\n User Snap: $snap");
 
-    $retVal = $this->t("TEST: $test");
+    $retVal = $query;
 
 
     return [

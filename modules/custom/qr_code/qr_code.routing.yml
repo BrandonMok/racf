@@ -1,5 +1,5 @@
 qr_code.checkin:
-  path: '/checkin'
+  path: '/checkin/{event}/{uid}'
   defaults:
     _controller: '\Drupal\qr_code\Controller\QRCodeController::checkin'
     _title: 'CheckIn'

@@ -8,7 +8,7 @@ dependencies:
     - field.field.node.event.field_event_image
     - node.type.event
   module:
-    - datetime
+    - datetime_range
     - layout_builder
     - layout_discovery
     - qr_code
@@ -34,6 +34,24 @@ third_party_settings:
               provider: qr_code
               label_display: visible
               context_mapping: {  }
+            additional: {  }
+            weight: 0
+          86d4812f-12e7-4523-be8a-31306a818c25:
+            uuid: 86d4812f-12e7-4523-be8a-31306a818c25
+            region: first
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:event:field_date'
+              formatter:
+                label: above
+                settings:
+                  separator: '-'
+                  format_type: medium
+                  timezone_override: ''
+                third_party_settings: {  }
+                type: daterange_default
             additional: {  }
             weight: 0
         third_party_settings: {  }
@@ -67,23 +85,6 @@ third_party_settings:
                 third_party_settings: {  }
             additional: {  }
             weight: 1
-          9200297c-3d47-40e9-8597-ee0fff607a51:
-            uuid: 9200297c-3d47-40e9-8597-ee0fff607a51
-            region: content
-            configuration:
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              id: 'field_block:node:event:field_date'
-              formatter:
-                label: hidden
-                settings:
-                  format_type: medium
-                  timezone_override: ''
-                third_party_settings: {  }
-                type: datetime_default
-            additional: {  }
-            weight: 2
           349edd2d-9ffe-4c20-a609-24b6e6e937df:
             uuid: 349edd2d-9ffe-4c20-a609-24b6e6e937df
             region: content
@@ -115,14 +116,15 @@ content:
     third_party_settings: {  }
     region: content
   field_date:
-    weight: 102
-    label: hidden
+    weight: 104
+    label: above
     settings:
+      separator: '-'
       format_type: medium
       timezone_override: ''
     third_party_settings: {  }
-    type: datetime_default
-    region: content
+    type: daterange_default
+    region: first
   field_event_image:
     type: entity_reference_entity_view
     weight: 103

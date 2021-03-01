@@ -3,9 +3,10 @@
 namespace Drupal\qr_code\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
- * Defines HelloController class.
+ * Defines QRCodeController class.
  */
 class QRCodeController extends ControllerBase {
 
@@ -15,14 +16,25 @@ class QRCodeController extends ControllerBase {
    * @return array
    *   Return markup array.
    */
-  public function content() {
-  /**
-   * Would do the functionality to grab request object, split it, and display to user
-   */
+  public function checkin(Request $request) {
+    $event = urldecode($request->get('event'));
+    $uid = urldecode($request->get('uid'));
+
+    $entityTypeManager = \Drupal::entityTypeManager();
+    $userStorage = $entityTypeManager->getStorage('user');
+
+    $userResult = $userStorage->loadByProperties([
+      'uid' => $uid
+    ]);
+
+    $currUsr = array_pop($userResult);
+    $snap = $currUsr->get('field_snap_number')->getString(); 
+
+    $retVal = $this->t("Event: $event\n User Snap: $snap");
   
     return [
       '#type' => 'markup',
-      '#markup' => $this->t('Hello, World!'),
+      '#markup' => $retVal,
     ];
   }
 

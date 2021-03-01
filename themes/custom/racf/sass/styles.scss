@@ -77,20 +77,30 @@ nav#block-racf-account-menu {
     }
 }
 
-/** local tasks **/
-// div#block-racf-local-tasks {
-//     ul li {
-//         list-style-type: none;
-//         font-size: 1rem;
-//         display: inline-block;
-//         padding: 1em;
+/** Local admin tasks **/
+div#block-racf-local-tasks {
+    margin: 8px 0;
 
-//         a {
-//             text-decoration: none;
-//             font-size: 1rem;
-//         }
-//     }
-// }
+    nav.tabs {
+        text-align: center;
+
+        ul.tabs {
+            background-color: #ced4da;
+            padding: 12px 0;
+
+            li a {
+                font-size: 16px;
+                font-weight: bold;
+                color: black;
+            }
+
+            li.is-active a {
+                background-color: #6c757d;
+                border-radius: 4px;
+            }
+        }
+    }
+}
 
 .icon-large { font-size: 48px; }
 

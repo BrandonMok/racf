@@ -29,7 +29,8 @@ class QRBlock extends BlockBase {
     if ($nodeType === "event" && $currentUID != 0) {
       $title = $currNode->getTitle();
 
-      $urlEncoded = urlencode("https://dev-racf.pantheonsite.io/checkin&event=$title&uid=$currentUID");
+      // $urlEncoded = urlencode("https://dev-racf.pantheonsite.io/checkin&event=$title&uid=$currentUID");
+      $urlEncoded = urlencode("https://dev-racf.pantheonsite.io/checkin/$title/$currentUID");
       $markup = "http://api.qrserver.com/v1/create-qr-code/?size=150x150&data=$urlEncoded";
     }
     else { 

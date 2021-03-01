@@ -16,13 +16,13 @@ class QRCodeController extends ControllerBase {
    * @return array
    *   Return markup array.
    */
-  public function checkin(Request $request) {
+  public function checkin($event, $uid) { // , Request $request
     // $params = $request->getParameters;
     // $query = \Drupal::request()->getQueryString();
 
 
-    $event = \Drupal::request()->query->get('event');
-    $uid = \Drupal::request()->query->get('uid');
+    $event2 = \Drupal::request()->query->get('event');
+    $uid2 = \Drupal::request()->query->get('uid');
 
     // $event = $request->query->get('event');
     // $uid = $request->query->get('uid');
@@ -37,7 +37,7 @@ class QRCodeController extends ControllerBase {
     $currUsr = array_pop($userResult);
     $snap = $currUsr->get('field_snap_number')->getString(); 
 
-    $retVal = $this->t("Event: $event\n User Snap: $snap");
+    $retVal = $this->t("Event: $event\n User Snap: $snap\n $event2");
 
 
     return [

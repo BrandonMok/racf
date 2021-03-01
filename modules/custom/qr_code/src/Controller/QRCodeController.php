@@ -18,26 +18,26 @@ class QRCodeController extends ControllerBase {
    */
   public function checkin(Request $request) {
     // $params = $request->getParameters;
+    // $query = \Drupal::request()->getQueryString();
 
-    $query = \Drupal::request()->getQueryString();
 
+    $event = \Drupal::request()->query->get('event');
+    $uid = \Drupal::request()->query->get('uid');
 
     // $event = $request->query->get('event');
     // $uid = $request->query->get('uid');
 
-    // $entityTypeManager = \Drupal::entityTypeManager();
-    // $userStorage = $entityTypeManager->getStorage('user');
+    $entityTypeManager = \Drupal::entityTypeManager();
+    $userStorage = $entityTypeManager->getStorage('user');
 
-    // $userResult = $userStorage->loadByProperties([
-    //   'uid' => $uid
-    // ]);
+    $userResult = $userStorage->loadByProperties([
+      'uid' => $uid
+    ]);
 
-    // $currUsr = array_pop($userResult);
-    // $snap = $currUsr->get('field_snap_number')->getString(); 
+    $currUsr = array_pop($userResult);
+    $snap = $currUsr->get('field_snap_number')->getString(); 
 
-    // $retVal = $this->t("Event: $event\n User Snap: $snap");
-
-    $retVal = $query;
+    $retVal = $this->t("Event: $event\n User Snap: $snap");
 
 
     return [

@@ -17,8 +17,10 @@ class QRCodeController extends ControllerBase {
    *   Return markup array.
    */
   public function checkin(Request $request) {
-    $event = urldecode($request->get('event'));
-    $uid = urldecode($request->get('uid'));
+
+    
+    $event = urldecode($request->query->get('event'));
+    $uid = urldecode($request->query->get('uid'));
 
     $entityTypeManager = \Drupal::entityTypeManager();
     $userStorage = $entityTypeManager->getStorage('user');

@@ -63,7 +63,8 @@ $white: #ffffff;
 
 /** Navigation and Header bar **/
 nav#block-racf-main-menu,
-nav#block-racf-account-menu {
+nav#block-racf-account-menu,
+nav#block-racf-main-menu--2  {
     ul li {
         list-style-type: none;
         font-size: 1rem;
@@ -144,7 +145,7 @@ div#block-racf-local-tasks {
     bottom: 0;
     width: 100%;
     background-color: $primary-color;
-    padding: 24px;
+    padding: 16px;
     z-index: 10;
 }
 

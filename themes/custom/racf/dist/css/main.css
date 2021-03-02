@@ -10049,14 +10049,16 @@ h3 {
 
 /** Navigation and Header bar **/
 nav#block-racf-main-menu ul li,
-nav#block-racf-account-menu ul li {
+nav#block-racf-account-menu ul li,
+nav#block-racf-main-menu--2 ul li {
   list-style-type: none;
   font-size: 1rem;
   display: inline-block;
   padding: 0.5em;
 }
 nav#block-racf-main-menu ul li a,
-nav#block-racf-account-menu ul li a {
+nav#block-racf-account-menu ul li a,
+nav#block-racf-main-menu--2 ul li a {
   text-decoration: none;
   color: white;
 }
@@ -10107,6 +10109,49 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   background-color: #ece4dc;
 }
 
+/** Mobile Nav **/
+.mobile-bar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #0058b3;
+  padding: 16px;
+  z-index: 10;
+}
+.mobile-bar .mobile-nav__icon {
+  color: #ffffff;
+}
+
+.main-menu-desktop nav {
+  display: none;
+}
+
+.mobile-nav__icon {
+  display: block;
+}
+
+@media (min-width: 576px) {
+  .main-menu-desktop nav {
+    display: none;
+  }
+
+  .mobile-nav__icon {
+    display: block;
+  }
+}
+@media (min-width: 768px) {
+  .mobile-bar {
+    display: none;
+  }
+
+  .main-menu-desktop nav {
+    display: block;
+  }
+
+  .mobile-nav__icon {
+    display: none;
+  }
+}
 /** Custom Block: Information Section **/
 .information-section-left,
 .information-section-right {

@@ -20,9 +20,6 @@ $margin-large: 8px;
 $margin-small: 4px;
 
 
-
-
-
 $primary-color: #0058b3;
 $secondary-color: #ffffff;
 $tertiary-color: #10345c;
@@ -63,7 +60,8 @@ $white: #ffffff;
 
 /** Navigation and Header bar **/
 nav#block-racf-main-menu,
-nav#block-racf-account-menu {
+nav#block-racf-account-menu,
+nav#block-racf-main-menu--2  {
     ul li {
         list-style-type: none;
         font-size: 1rem;
@@ -133,10 +131,39 @@ div#block-racf-local-tasks {
         margin: 32px 0;
         background-color: $tan;
 
-        // input.form-text {
-
-        // }
+        // input.form-text {}
     }
+}
+
+
+/** Mobile Nav **/
+.mobile-bar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: $primary-color;
+    padding: 16px;
+    z-index: 10;
+
+    .mobile-nav__icon { color: $white; }
+}
+
+@include media-breakpoint-up(xs) {
+    .main-menu-desktop nav { display: none; }
+    .mobile-nav__icon { display: block; }
+}
+
+@include media-breakpoint-up(sm) {
+    .main-menu-desktop nav { display: none; }
+    .mobile-nav__icon { display: block; }
+}
+
+@include media-breakpoint-up(md) {  
+    .mobile-bar { display: none; }
+
+    .main-menu-desktop nav { display: block; }
+
+    .mobile-nav__icon { display: none; }
 }
 
 

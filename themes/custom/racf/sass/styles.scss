@@ -122,3 +122,21 @@ div#block-racf-local-tasks {
 }
 
 
+/** User login form **/
+.user-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    div#block-racf-content {
+        padding: 32px;
+        margin: 32px 0;
+        background-color: $tan;
+
+        // input.form-text {
+
+        // }
+    }
+}
+
+

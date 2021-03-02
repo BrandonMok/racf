@@ -5,7 +5,7 @@ features:
   favicon: 1
 logo:
   use_default: 0
-  path: 'public://racf_logo.png'
+  path: 'public://racf_logo_0.png'
 logo_style: branding
 favicon:
   use_default: 1

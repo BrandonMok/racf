@@ -20,9 +20,6 @@ $margin-large: 8px;
 $margin-small: 4px;
 
 
-
-
-
 $primary-color: #0058b3;
 $secondary-color: #ffffff;
 $tertiary-color: #10345c;
@@ -147,20 +144,26 @@ div#block-racf-local-tasks {
     background-color: $primary-color;
     padding: 16px;
     z-index: 10;
+
+    .mobile-nav__icon { color: $white; }
 }
 
 @include media-breakpoint-up(xs) {
     .main-menu-desktop nav { display: none; }
+    .mobile-nav__icon { display: block; }
 }
 
 @include media-breakpoint-up(sm) {
     .main-menu-desktop nav { display: none; }
+    .mobile-nav__icon { display: block; }
 }
 
 @include media-breakpoint-up(md) {  
     .mobile-bar { display: none; }
 
     .main-menu-desktop nav { display: block; }
+
+    .mobile-nav__icon { display: none; }
 }
 
 

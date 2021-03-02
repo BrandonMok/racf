@@ -10107,6 +10107,34 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   background-color: #ece4dc;
 }
 
+/** Mobile Nav **/
+.mobile-bar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #0058b3;
+  padding: 24px;
+  z-index: 10;
+}
+
+.main-menu-desktop nav {
+  display: none;
+}
+
+@media (min-width: 576px) {
+  .main-menu-desktop nav {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+  .mobile-bar {
+    display: none;
+  }
+
+  .main-menu-desktop nav {
+    display: block;
+  }
+}
 /** Custom Block: Information Section **/
 .information-section-left,
 .information-section-right {

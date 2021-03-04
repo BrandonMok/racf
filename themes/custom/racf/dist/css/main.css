@@ -10097,21 +10097,21 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   color: #ffffff;
 }
 
-/** Login and Registration form **/
-.user-login,
-.user-register {
+/** Login, Registration, and reset password form **/
+.user-login-register {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.user-login div#block-racf-content,
-.user-register div#block-racf-content {
+.user-login-register div#block-racf-content {
   padding: 32px;
   margin: 32px 0;
   background-color: #ece4dc;
 }
-.user-login div#block-racf-content input,
-.user-register div#block-racf-content input {
+.user-login-register div#block-racf-content form p {
+  display: none;
+}
+.user-login-register div#block-racf-content input {
   display: block;
 }
 

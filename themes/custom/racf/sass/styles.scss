@@ -120,9 +120,8 @@ div#block-racf-local-tasks {
 }
 
 
-/** Login and Registration form **/
-.user-login ,
-.user-register {
+/** Login, Registration, and reset password form **/
+.user-login-register {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -134,9 +133,9 @@ div#block-racf-local-tasks {
 
         // input.form-text {}
 
-        input {
-            display: block;
-        }
+        form p { display: none; }
+
+        input { display: block; }
     }
 }
 

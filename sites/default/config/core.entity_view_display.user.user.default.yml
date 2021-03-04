@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.user.user.field_email
     - field.field.user.user.field_snap_number
     - field.field.user.user.user_picture
   module:
@@ -15,13 +14,6 @@ targetEntityType: user
 bundle: user
 mode: default
 content:
-  field_email:
-    weight: 1
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: basic_string
-    region: content
   field_snap_number:
     weight: 0
     label: hidden
@@ -30,10 +22,6 @@ content:
     third_party_settings: {  }
     type: string
     region: content
-  member_for:
-    weight: 2
-    region: content
-    settings: {  }
-    third_party_settings: {  }
 hidden:
+  member_for: true
   user_picture: true

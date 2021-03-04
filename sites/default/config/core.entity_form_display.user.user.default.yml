@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.user.user.field_email
     - field.field.user.user.field_snap_number
     - field.field.user.user.user_picture
   module:
@@ -16,23 +15,10 @@ bundle: user
 mode: default
 content:
   account:
-    weight: 2
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  contact:
-    weight: 5
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_email:
     weight: 1
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: email_default
     region: content
+    settings: {  }
+    third_party_settings: {  }
   field_snap_number:
     weight: 0
     settings:
@@ -42,19 +28,20 @@ content:
     type: string_textfield
     region: content
   google_analytics:
-    weight: 4
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  language:
     weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
+  language:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   timezone:
-    weight: 6
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
+  contact: true
   user_picture: true

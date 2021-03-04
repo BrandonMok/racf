@@ -10097,16 +10097,26 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   color: #ffffff;
 }
 
-/** User login form **/
-.user-login {
+/** Login and Registration form **/
+.user-login,
+.user-register {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.user-login div#block-racf-content {
+.user-login div#block-racf-content,
+.user-register div#block-racf-content {
   padding: 32px;
   margin: 32px 0;
   background-color: #ece4dc;
+}
+.user-login div#block-racf-content input,
+.user-register div#block-racf-content input {
+  display: block;
+}
+
+.description {
+  display: none;
 }
 
 /** Mobile Nav **/

@@ -120,8 +120,9 @@ div#block-racf-local-tasks {
 }
 
 
-/** User login form **/
-.user-login {
+/** Login and Registration form **/
+.user-login ,
+.user-register {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -132,8 +133,14 @@ div#block-racf-local-tasks {
         background-color: $tan;
 
         // input.form-text {}
+
+        input {
+            display: block;
+        }
     }
 }
+
+.description { display: none; }
 
 
 /** Mobile Nav **/

@@ -10140,9 +10140,13 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   padding: 16px;
   z-index: 10;
 }
+.mobile-bar ul {
+  padding: 0;
+}
 .mobile-bar .mobile-nav {
   padding: 0;
   display: inline;
+  background-color: red;
 }
 .mobile-bar .mobile-nav__list-item {
   padding: 0;

@@ -156,9 +156,13 @@ div#block-racf-local-tasks {
     padding: 16px;
     z-index: 10;
 
-    .mobile-nav {
+    ul {
         padding: 0;
-        display: inline;
+    }
+
+    .mobile-nav {
+        // padding: 0;
+        // display: inline;
 
         &__list-item {
             padding: 0;

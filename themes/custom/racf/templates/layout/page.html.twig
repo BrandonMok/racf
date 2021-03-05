@@ -55,35 +55,26 @@
 
                 <div class="mdl-layout-spacer"></div>
 
-                {{ page.header.racf_main_menu }}
+                <div class="main-menu-desktop">
+                    {{ page.header.racf_main_menu }}
+                </div>
                 {{ page.header|without("racf_branding", "racf_main_menu", "racf_account_menu") }}
             </div>
         </header>
-         <div class="mdl-layout__drawer">
-            <span class="mdl-layout-title">RACF</span>
-
-            {# display each of the page.header.racf_main_menu into a vertical list #}
-
-
-            {# <nav class="mdl-navigation">
-                <a class="mdl-navigation__link" href="">Link</a>
-                <a class="mdl-navigation__link" href="">Link</a>
-                <a class="mdl-navigation__link" href="">Link</a>
-                <a class="mdl-navigation__link" href="">Link</a>
-            </nav> #}
-        </div>
-
 
         <main role="main" class="mdl-layout__content">
             <a id="main-content" tabindex="-1"></a>
 
             <div class="layout-content">
+                <div class="mobile-bar">
+                    {{ page.header.racf_main_menu }}
+                </div>
                 {{ page.content }}
             </div>
 
             {% if page.footer %}
                 <footer role="contentinfo">
-                {{ page.footer }}
+                    {{ page.footer }}
                 </footer>
             {% endif %}
         </main>

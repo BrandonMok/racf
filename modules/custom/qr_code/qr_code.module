@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Contains qr_code.module.
+ */
+
+/**
+ * Implements hook_theme().
+ *
+ * @see https://api.drupal.org/api/drupal/core!lib!Drupal!Core!Render!theme.api.php/function/hook_theme/8.9.x
+ */
+function qr_code_theme() {
+  return [
+    'qr_themeable_block' => [
+      'variables' => [
+        'content' => NULL,
+      ],
+      'render element' => 'children',
+    ],
+  ];
+}

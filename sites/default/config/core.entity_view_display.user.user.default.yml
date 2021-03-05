@@ -3,10 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.user.user.field_email
+    - field.field.user.user.field_address
     - field.field.user.user.field_snap_number
     - field.field.user.user.user_picture
   module:
+    - address
     - user
 _core:
   default_config_hash: V51QPCKkgNREKtSmB9Iu2wmAMEpktVpnzklWaZV8UYo
@@ -15,12 +16,12 @@ targetEntityType: user
 bundle: user
 mode: default
 content:
-  field_email:
+  field_address:
     weight: 1
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: basic_string
+    type: address_default
     region: content
   field_snap_number:
     weight: 0
@@ -30,10 +31,6 @@ content:
     third_party_settings: {  }
     type: string
     region: content
-  member_for:
-    weight: 2
-    region: content
-    settings: {  }
-    third_party_settings: {  }
 hidden:
+  member_for: true
   user_picture: true

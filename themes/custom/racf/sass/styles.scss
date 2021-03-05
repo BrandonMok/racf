@@ -20,9 +20,6 @@ $margin-large: 8px;
 $margin-small: 4px;
 
 
-
-
-
 $primary-color: #0058b3;
 $secondary-color: #ffffff;
 $tertiary-color: #10345c;
@@ -63,7 +60,8 @@ $white: #ffffff;
 
 /** Navigation and Header bar **/
 nav#block-racf-main-menu,
-nav#block-racf-account-menu {
+nav#block-racf-account-menu,
+nav#block-racf-main-menu--2  {
     ul li {
         list-style-type: none;
         font-size: 1rem;
@@ -77,20 +75,30 @@ nav#block-racf-account-menu {
     }
 }
 
-/** local tasks **/
-// div#block-racf-local-tasks {
-//     ul li {
-//         list-style-type: none;
-//         font-size: 1rem;
-//         display: inline-block;
-//         padding: 1em;
+/** Local admin tasks **/
+div#block-racf-local-tasks {
+    margin: 8px 0;
 
-//         a {
-//             text-decoration: none;
-//             font-size: 1rem;
-//         }
-//     }
-// }
+    nav.tabs {
+        text-align: center;
+
+        ul.tabs {
+            background-color: #ced4da;
+            padding: 12px 0;
+
+            li a {
+                font-size: 16px;
+                font-weight: bold;
+                color: black;
+            }
+
+            li.is-active a {
+                background-color: #6c757d;
+                border-radius: 4px;
+            }
+        }
+    }
+}
 
 .icon-large { font-size: 48px; }
 
@@ -109,6 +117,73 @@ nav#block-racf-account-menu {
     &__content {
         color: $white;
     }
+}
+
+
+/** Login, Registration, and reset password form **/
+.user-login-register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    div#block-racf-content {
+        padding: 32px;
+        margin: 32px 0;
+        background-color: $tan;
+
+        // input.form-text {}
+
+        form p { display: none; }
+
+        input { display: block; }
+    }
+}
+
+.description { display: none; }
+
+.field--type-address {
+    details {
+        border: none;
+
+        summary {
+            display: none;
+        }
+
+        .details-wrapper {
+            padding: 0;
+        }
+    }
+}
+
+
+/** Mobile Nav **/
+.mobile-bar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: $primary-color;
+    padding: 16px;
+    z-index: 10;
+
+    .mobile-nav__icon { color: $white; }
+}
+
+@include media-breakpoint-up(xs) {
+    .main-menu-desktop nav { display: none; }
+    .mobile-nav__icon { display: block; }
+}
+
+@include media-breakpoint-up(sm) {
+    .main-menu-desktop nav { display: none; }
+    .mobile-nav__icon { display: block; }
+}
+
+@include media-breakpoint-up(md) {  
+    .mobile-bar { display: none; }
+
+    .main-menu-desktop nav { display: block; }
+
+    .mobile-nav__icon { display: none; }
 }
 
 

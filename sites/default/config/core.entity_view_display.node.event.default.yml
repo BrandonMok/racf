@@ -6,62 +6,29 @@ dependencies:
     - field.field.node.event.body
     - field.field.node.event.field_date
     - field.field.node.event.field_event_image
+    - field.field.node.event.field_time
+    - field.field.node.event.layout_builder__layout
     - node.type.event
   module:
     - datetime_range
     - layout_builder
+    - layout_builder_restrictions
     - layout_discovery
-    - qr_code
     - text
+    - time_field
     - user
 third_party_settings:
   layout_builder:
-    allow_custom: false
+    allow_custom: true
     enabled: true
     sections:
-      -
-        layout_id: layout_twocol_section
-        layout_settings:
-          label: 'Event 50 50'
-          column_widths: 50-50
-        components:
-          c755dc92-7a24-4acb-b3c3-e97a7c123fab:
-            uuid: c755dc92-7a24-4acb-b3c3-e97a7c123fab
-            region: second
-            configuration:
-              id: qr_code
-              label: 'QR Code block'
-              provider: qr_code
-              label_display: visible
-              context_mapping: {  }
-            additional: {  }
-            weight: 0
-          86d4812f-12e7-4523-be8a-31306a818c25:
-            uuid: 86d4812f-12e7-4523-be8a-31306a818c25
-            region: first
-            configuration:
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              id: 'field_block:node:event:field_date'
-              formatter:
-                label: above
-                settings:
-                  separator: '-'
-                  format_type: medium
-                  timezone_override: ''
-                third_party_settings: {  }
-                type: daterange_default
-            additional: {  }
-            weight: 0
-        third_party_settings: {  }
       -
         layout_id: layout_onecol
         layout_settings:
           label: ''
         components:
-          4870d018-ff02-4cda-969a-028eded87285:
-            uuid: 4870d018-ff02-4cda-969a-028eded87285
+          56fb7c65-9d99-4699-ad91-0bf6a1fc74a3:
+            uuid: 56fb7c65-9d99-4699-ad91-0bf6a1fc74a3
             region: content
             configuration:
               label_display: '0'
@@ -70,8 +37,8 @@ third_party_settings:
               id: 'extra_field_block:node:event:links'
             additional: {  }
             weight: 0
-          1999bd83-9790-46f4-af37-90e12fc67e9b:
-            uuid: 1999bd83-9790-46f4-af37-90e12fc67e9b
+          30bb96ed-4651-41f9-92ef-6066c67aca31:
+            uuid: 30bb96ed-4651-41f9-92ef-6066c67aca31
             region: content
             configuration:
               label_display: '0'
@@ -85,8 +52,8 @@ third_party_settings:
                 third_party_settings: {  }
             additional: {  }
             weight: 1
-          349edd2d-9ffe-4c20-a609-24b6e6e937df:
-            uuid: 349edd2d-9ffe-4c20-a609-24b6e6e937df
+          f64a0f6b-0d39-4516-9baa-af920b3753e8:
+            uuid: f64a0f6b-0d39-4516-9baa-af920b3753e8
             region: content
             configuration:
               label_display: '0'
@@ -101,8 +68,51 @@ third_party_settings:
                   link: false
                 third_party_settings: {  }
             additional: {  }
+            weight: 2
+          306df002-e6e2-4db6-89e6-a8f43d68ef5d:
+            uuid: 306df002-e6e2-4db6-89e6-a8f43d68ef5d
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:event:field_time'
+              formatter:
+                label: above
+                settings:
+                  time_format: 'h:i a'
+                  timerange_format: 'start ~ end'
+                third_party_settings: {  }
+                type: time_range_formatter
+            additional: {  }
             weight: 3
+          81d4afb7-5805-4010-aaa4-5c280e1550c3:
+            uuid: 81d4afb7-5805-4010-aaa4-5c280e1550c3
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:event:field_date'
+              formatter:
+                label: above
+                settings:
+                  separator: '-'
+                  format_type: medium
+                  timezone_override: ''
+                third_party_settings: {  }
+                type: daterange_default
+            additional: {  }
+            weight: 4
         third_party_settings: {  }
+  layout_builder_restrictions:
+    allowed_block_categories: {  }
+    entity_view_mode_restriction:
+      whitelisted_blocks: {  }
+      blacklisted_blocks: {  }
+      allowed_layouts: {  }
+    entity_view_mode_restriction_by_region:
+      allowed_layouts: {  }
 id: node.event.default
 targetEntityType: node
 bundle: event
@@ -116,7 +126,7 @@ content:
     third_party_settings: {  }
     region: content
   field_date:
-    weight: 104
+    weight: 106
     label: above
     settings:
       separator: '-'
@@ -124,7 +134,7 @@ content:
       timezone_override: ''
     third_party_settings: {  }
     type: daterange_default
-    region: first
+    region: content
   field_event_image:
     type: entity_reference_entity_view
     weight: 103
@@ -134,9 +144,19 @@ content:
       link: false
     third_party_settings: {  }
     region: content
+  field_time:
+    weight: 105
+    label: above
+    settings:
+      time_format: 'h:i a'
+      timerange_format: 'start ~ end'
+    third_party_settings: {  }
+    type: time_range_formatter
+    region: content
   links:
     weight: 100
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  layout_builder__layout: true

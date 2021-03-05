@@ -49,11 +49,7 @@ $white: #ffffff;
 
 
 
-
-
-
-
-
+/** Styles **/
 *  {
     font-family: 'Open Sans', sans-serif;
 }
@@ -103,12 +99,7 @@ div#block-racf-local-tasks {
 .icon-large { font-size: 48px; }
 
 
-// .header-menus > * {
-//     display: inline-block;
-//     padding: 0.5em;
-// }
-
-
+/** Footer **/
 .racf-footer {
     background-color: $black;
     text-align: center;
@@ -167,6 +158,14 @@ div#block-racf-local-tasks {
 
     .mobile-nav__icon { color: $white; }
 }
+
+
+/** Events **/
+.view-events {
+    margin: 40px 32px 40px 16px;
+}
+
+
 
 @include media-breakpoint-up(xs) {
     .main-menu-desktop nav { display: none; }

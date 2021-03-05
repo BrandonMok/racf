@@ -1,0 +1,21 @@
+uuid: fcf85887-6b1b-4ecc-a3c1-fff3271ba41a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.layout_builder__layout
+    - node.type.event
+  module:
+    - layout_builder
+id: node.event.layout_builder__layout
+field_name: layout_builder__layout
+entity_type: node
+bundle: event
+label: Layout
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: layout_section

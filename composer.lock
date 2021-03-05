@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5b287f03175bbac10af0a2bc041d447f",
+    "content-hash": "268033aa4960c3338d0f11856acc966c",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2325,6 +2325,55 @@
             }
         },
         {
+            "name": "drupal/fullcalendar_view",
+            "version": "5.0.7",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/fullcalendar_view.git",
+                "reference": "5.0.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/fullcalendar_view-5.0.7.zip",
+                "reference": "5.0.7",
+                "shasum": "cc2517370ec6b654e2cd466b16ee903dfc2c304e"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "5.0.7",
+                    "datestamp": "1611102195",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Mingsong",
+                    "homepage": "https://www.drupal.org/user/2986445"
+                }
+            ],
+            "description": "This is a lightweight View plugin module that provides a calendar view format powered by FullCalendar JavaScript.",
+            "homepage": "http://drupal.org/project/fullcalendar_view",
+            "keywords": [
+                "Drupal",
+                "fullcalendar_view"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/fullcalendar_view",
+                "issues": "http://drupal.org/project/issues/fullcalendar_view"
+            }
+        },
+        {
             "name": "drupal/layout_builder_modal",
             "version": "1.1.0",
             "source": {
@@ -2624,6 +2673,50 @@
             "homepage": "https://drupal.org/project/redirect_after_login",
             "support": {
                 "source": "https://git.drupalcode.org/project/redirect_after_login"
+            }
+        },
+        {
+            "name": "drupal/time_field",
+            "version": "1.13.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/time_field.git",
+                "reference": "8.x-1.13"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/time_field-8.x-1.13.zip",
+                "reference": "8.x-1.13",
+                "shasum": "5e2695b4a45603801c383369d9fc3be7667b435f"
+            },
+            "require": {
+                "drupal/core": "^8"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.13",
+                    "datestamp": "1572814685",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "lostkoder",
+                    "homepage": "https://www.drupal.org/user/3545132"
+                }
+            ],
+            "description": "Provides \"Time Field\" and \"Time Range Field\".",
+            "homepage": "https://www.drupal.org/project/time_field",
+            "support": {
+                "source": "https://git.drupalcode.org/project/time_field"
             }
         },
         {

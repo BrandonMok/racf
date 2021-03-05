@@ -44,20 +44,21 @@
           item.is_expanded ? 'menu-item--expanded',
           item.is_collapsed ? 'menu-item--collapsed',
           item.in_active_trail ? 'menu-item--active-trail',
+          'mobile-nav__list-item',
         ]
       %}
       <li{{ item.attributes.addClass(classes) }}>
         <div class="container">
             <div class="row">
-              <div class="col-12 mobile-nav__icon">
+              <div class="col-12 mobile-nav__list-item__icon">
                 {% if item.title == "Home" %}
                   <img src="/themes/custom/racf/images/home.png" alt="Home icon" />
                 {% endif %}
-                {% if item.title == "Event" %}
-                  <img src="/themes/custom/racf/images/event.png" alt="Calendar icon" />
+                {% if item.title == "Events" %}
+                  <img src="/themes/custom/racf/images/calendar.png" alt="Calendar icon" />
                 {% endif %}
               </div>
-              <div class="col-12">
+              <div class="col-12 mobile-nav__list-item__text">
                 {{ link(item.title, item.url) }}
                 {% if item.below %}
                   {{ menus.menu_links(item.below, attributes, menu_level + 1) }}

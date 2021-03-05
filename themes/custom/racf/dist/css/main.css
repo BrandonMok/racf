@@ -10140,8 +10140,16 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   padding: 16px;
   z-index: 10;
 }
-.mobile-bar .mobile-nav__icon {
+.mobile-bar .mobile-nav {
+  padding: 0;
+  display: inline;
+}
+.mobile-bar .mobile-nav__list-item {
+  padding: 0;
+}
+.mobile-bar .mobile-nav__list-item__icon, .mobile-bar .mobile-nav__list-item__text {
   color: #ffffff;
+  text-align: center;
 }
 
 /** Events **/
@@ -10153,7 +10161,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   display: none;
 }
 
-.mobile-nav__icon {
+.mobile-nav__list-item__icon {
   display: block;
 }
 
@@ -10162,7 +10170,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
     display: none;
   }
 
-  .mobile-nav__icon {
+  .mobile-nav__list-item__icon {
     display: block;
   }
 }
@@ -10175,7 +10183,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
     display: block;
   }
 
-  .mobile-nav__icon {
+  .mobile-nav__list-item__icon {
     display: none;
   }
 }

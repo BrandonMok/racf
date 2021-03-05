@@ -156,7 +156,19 @@ div#block-racf-local-tasks {
     padding: 16px;
     z-index: 10;
 
-    .mobile-nav__icon { color: $white; }
+    .mobile-nav {
+        padding: 0;
+        display: inline;
+
+        &__list-item {
+            padding: 0;
+            
+            &__icon, &__text {
+                color: $white;
+                text-align: center;
+            }
+        }
+    }
 }
 
 
@@ -169,12 +181,12 @@ div#block-racf-local-tasks {
 
 @include media-breakpoint-up(xs) {
     .main-menu-desktop nav { display: none; }
-    .mobile-nav__icon { display: block; }
+    .mobile-nav__list-item__icon { display: block; }
 }
 
 @include media-breakpoint-up(sm) {
     .main-menu-desktop nav { display: none; }
-    .mobile-nav__icon { display: block; }
+    .mobile-nav__list-item__icon { display: block; }
 }
 
 @include media-breakpoint-up(md) {  
@@ -182,7 +194,7 @@ div#block-racf-local-tasks {
 
     .main-menu-desktop nav { display: block; }
 
-    .mobile-nav__icon { display: none; }
+    .mobile-nav__list-item__icon { display: none; }
 }
 
 

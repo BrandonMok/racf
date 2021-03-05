@@ -10119,6 +10119,16 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   display: none;
 }
 
+.field--type-address details {
+  border: none;
+}
+.field--type-address details summary {
+  display: none;
+}
+.field--type-address details .details-wrapper {
+  padding: 0;
+}
+
 /** Mobile Nav **/
 .mobile-bar {
   position: fixed;

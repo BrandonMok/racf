@@ -141,6 +141,20 @@ div#block-racf-local-tasks {
 
 .description { display: none; }
 
+.field--type-address {
+    details {
+        border: none;
+
+        summary {
+            display: none;
+        }
+
+        .details-wrapper {
+            padding: 0;
+        }
+    }
+}
+
 
 /** Mobile Nav **/
 .mobile-bar {

@@ -1,8 +1,8 @@
 ISTE-501 | Senior Dev | RACF
 --------------------------------
 Team G.O.N.Z.O's Senior Development course project. 
-A drupal CMS based project aimed to solve RACF's goal of having an application where RACF admins, participating organizations, and SNAP benefiters
-can access to interact with RACF's events for low income families.
+A drupal CMS based project aimed to solve RACF's goal of having an application where RACF admins, participating organizations, and SNAP beneficiaries
+can access to interact with RACF's events listings for low income families.
 
 Technology Stack
 --------------------------------

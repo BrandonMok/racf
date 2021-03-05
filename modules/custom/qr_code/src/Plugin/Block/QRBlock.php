@@ -34,7 +34,7 @@ class QRBlock extends BlockBase {
       $markup = "http://api.qrserver.com/v1/create-qr-code/?size=150x150&data=$urlEncoded";
     }
     else { 
-      $markup = $this->t("QR code unavailable. Please login to access this pass!");
+      $markup = "/modules/custom/qr_code/images/not-available.jpg";
     }
 
     return [

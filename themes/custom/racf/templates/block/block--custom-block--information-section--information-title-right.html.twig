@@ -34,6 +34,9 @@
   ]
 %}
 <div{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {{ title_suffix }}
+
   <div class="container">
     <div class="row">
       <div class="col-lg-6 col-md-6 col-sm-12 information-section-right__body">
@@ -42,11 +45,7 @@
         {% endblock %}
       </div>
       <div class="col-lg-6 col-md-6 col-sm-12 information-section-right__title">
-        {{ title_prefix }}
-        {% if label %}
-          <div class="information-section-right__title__label">{{ label }}</div>
-        {% endif %}
-        {{ title_suffix }}
+        <div class="information-section-right__title__label">{{ label }}</div>
       </div>
     </div>
   </div>

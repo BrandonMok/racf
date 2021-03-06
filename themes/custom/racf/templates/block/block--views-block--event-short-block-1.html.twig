@@ -34,6 +34,12 @@
   ]
 %}
 <div{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {% if label %}
+    <h2{{ title_attributes }}>{{ label }}</h2>
+  {% endif %}
+  {{ title_suffix }}
+  
   <div class="d-flex justify-content-between event-short__top-bar">
       <p class="event-short__top-bar__title">Upcoming Events</p>
 

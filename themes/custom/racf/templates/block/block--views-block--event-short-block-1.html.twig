@@ -30,30 +30,25 @@
     'block',
     'block-' ~ configuration.provider|clean_class,
     'block-' ~ plugin_id|clean_class,
-    'get-access'
+    'event-short'
   ]
 %}
 <div{{ attributes.addClass(classes) }}>
-  {{ title_prefix }}
-  {% if label %}
-    <div class="get-access__label">{{ label }}</div>
-  {% endif %}
-  {{ title_suffix }}
+  <div class="d-flex justify-content-between event-short__top-bar">
+      <p class="event-short__top-bar__title">Upcoming Events</p>
 
-  {% block content %}
-    <div class="container get-access__container">
-      <div class="row get-access__container__row">
-          <div class="col-12 col-lg-6 get-access__container__row__body">
-            {# <div class="get-access__container__row__body__content"> #}
-              {{ content.body }}
-            {# </div> #}
-          </div>
-          <div class="col-12 col-lg-6">
-              {{ content.field_image }}
-          </div>
+      <div class="event-short__top-bar__button-div">
+        <a href="/events">
+          <button class="mdl-button mdl-button--outlined event-short__top-bar__button-div__btn">
+              <span class="mdl-button__label">View All</span>
+          </button>
+        </a>
       </div>
+  </div>
 
-      {{ content|without('body', 'field_image') }}
-    </div>
-  {% endblock %}
+  <div class="event-short__list">
+    {% block content %}
+      {{ content }}
+    {% endblock %}
+  </div>
 </div>

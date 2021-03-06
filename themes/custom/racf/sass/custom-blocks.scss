@@ -67,10 +67,7 @@
 
         &__button {
             &__btn {
-                color: $white;
-                font-weight: bold;
-                border: 2px solid $white;
-                border-radius: 4px;
+                @extend .white-outlined-btn;
             }
         }
     }
@@ -110,7 +107,7 @@
 
 /** Custom block: Get Access **/
 .get-access {
-    padding: 16px 0 16px 16px;
+    padding: 16px 24px 40px 32px;
 
     &__label {
         font-weight: bold;
@@ -134,6 +131,65 @@
         }
     }
 }
+
+
+/** Custom Block: Events Short **/
+.event-short {
+    // height: 100%;
+    padding-bottom: 8em;
+
+    &__top-bar {
+        background-color: $tertiary-color;
+        padding: 24px;
+
+        &__title {
+            font-size: $md-heading5-size;
+            color: $white;
+            display: inline-block;
+            text-decoration: underline;
+            line-height: 32px;
+        }
+
+        &__button-div {
+            text-align: center;
+
+            &__btn {
+                @extend .white-outlined-btn;
+                display: inline-block;
+            }
+        }
+    }
+    
+
+    &__list {
+        background-color: $tan;
+        // height: 80%;
+
+        .view-event-short .view-content {
+            padding: 16px;
+
+            h3 { display: none; }
+            
+            .field-content { padding-bottom: 24px; }
+
+            .views-row {
+                background-color: #5d92ec;
+                border-radius: 8px;
+                padding: 4px 8px;
+                margin-bottom: 16px;
+
+                .views-field-title { 
+                    font-size: $md-heading5-size; 
+
+                    .field-content a {
+                        color: black;
+                    }
+                }
+            }
+        }
+    }
+}
+
 
 
 
@@ -238,6 +294,11 @@
     .mdl-layout__drawer-button {
         display: none;
     }
+
+
+    .event-short {
+        padding: 16px 32px 40px 24px;
+    }
 }
 
 @include media-breakpoint-up(lg) { 
@@ -250,5 +311,22 @@
     }
 }
 
-// @include media-breakpoint-up(xl) { 
-// }
+@include media-breakpoint-up(xl) { 
+    .event-short {
+        padding: 16px 32px 40px 24px;
+
+        &__top-bar__title {
+            font-size: $md-heading4-size;
+        }
+
+        &__list {
+            .view-event-short .view-content {
+                padding: 24px;
+
+                .views-row {
+                    padding: 16px;
+                }
+            }
+        }
+    }
+}

@@ -99,6 +99,16 @@ div#block-racf-local-tasks {
 .icon-large { font-size: 48px; }
 
 
+/** Buttons **/
+.white-outlined-btn {
+    color: $white;
+    font-weight: bold;
+    border: 2px solid $white;
+    border-radius: 4px;
+}
+
+
+
 /** Footer **/
 .racf-footer {
     background-color: $black;

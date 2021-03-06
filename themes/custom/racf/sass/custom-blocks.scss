@@ -195,6 +195,16 @@
 
 /** Sections **/
 .layout--twocol-section--50-50 {
+    // @extend .d-flex;
+
+    // .layout__region--first {
+    //     order: 1;
+    // }
+
+    // .layout__region--second {
+    //     order: -1;
+    // }
+
     @extend .row;
 
     > div {
@@ -228,6 +238,17 @@
 }
 
 @include media-breakpoint-up(md) {  
+    /** for later when using flex **/
+    // .layout--twocol-section--50-50 {
+    //     .layout__region--first {
+    //         order: 1;
+    //     }
+    
+    //     .layout__region--second {
+    //         order: 2;
+    //     }
+    // }
+
     .information-section-left,  
     .information-section-right {
         &__title {

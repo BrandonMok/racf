@@ -10346,6 +10346,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 }
 
 @media (min-width: 768px) {
+  /** for later when using flex **/
   .information-section-left__title,
 .information-section-right__title {
     height: 200px;

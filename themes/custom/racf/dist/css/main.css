@@ -10332,6 +10332,32 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   color: black;
 }
 
+/** Custom Block: Event Short Minimal **/
+.event-short-minimal {
+  padding: 16px 32px 40px 24px;
+}
+.event-short-minimal__content .view-event-short-minimal- .view-content {
+  padding: 16px;
+}
+.event-short-minimal__content .view-event-short-minimal- .view-content h3 {
+  display: none;
+}
+.event-short-minimal__content .view-event-short-minimal- .view-content .field-content {
+  padding-bottom: 24px;
+}
+.event-short-minimal__content .view-event-short-minimal- .view-content .views-row {
+  background-color: #5d92ec;
+  border-radius: 8px;
+  padding: 4px 8px;
+  margin-bottom: 16px;
+}
+.event-short-minimal__content .view-event-short-minimal- .view-content .views-row .views-field-title {
+  font-size: 24px;
+}
+.event-short-minimal__content .view-event-short-minimal- .view-content .views-row .views-field-title .field-content a {
+  color: black;
+}
+
 /** Sections **/
 /** Media Queries **/
 .hero-box__inner-box__text {

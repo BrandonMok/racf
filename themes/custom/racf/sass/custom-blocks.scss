@@ -191,6 +191,36 @@
 }
 
 
+/** Custom Block: Event Short Minimal **/
+.event-short-minimal {
+    padding: 16px 32px 40px 24px;
+
+    &__content {
+        .view-event-short-minimal- .view-content {
+            padding: 16px;
+
+            h3 { display: none; }
+            
+            .field-content { padding-bottom: 24px; }
+
+            .views-row {
+                background-color: #5d92ec;
+                border-radius: 8px;
+                padding: 4px 8px;
+                margin-bottom: 16px;
+
+                .views-field-title { 
+                    font-size: $md-heading5-size; 
+
+                    .field-content a {
+                        color: black;
+                    }
+                }
+            }
+        }
+    }
+}
+
 
 
 /** Sections **/

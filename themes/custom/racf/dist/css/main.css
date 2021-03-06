@@ -10089,6 +10089,14 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   font-size: 48px;
 }
 
+/** Buttons **/
+.white-outlined-btn, .event-short__top-bar__button-div__btn, .hero-box__inner-box__button__btn {
+  color: #ffffff;
+  font-weight: bold;
+  border: 2px solid #ffffff;
+  border-radius: 4px;
+}
+
 /** Footer **/
 .racf-footer {
   background-color: #000000;
@@ -10142,11 +10150,6 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 }
 .mobile-bar ul {
   padding: 0;
-}
-.mobile-bar .mobile-nav {
-  padding: 0;
-  display: inline;
-  background-color: red;
 }
 .mobile-bar .mobile-nav__list-item {
   padding: 0;
@@ -10251,13 +10254,6 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   color: #ffffff;
   line-height: 1.5;
 }
-.hero-box__inner-box__button__btn {
-  color: #ffffff;
-  font-weight: bold;
-  border: 2px solid #ffffff;
-  border-radius: 4px;
-}
-
 /** Custom Block: Access Partner **/
 .access-partner {
   background-color: #10345c;
@@ -10280,7 +10276,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 
 /** Custom block: Get Access **/
 .get-access {
-  padding: 16px 0 16px 16px;
+  padding: 16px 24px 40px 32px;
 }
 .get-access__label {
   font-weight: bold;
@@ -10290,6 +10286,32 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 .get-access__container {
   margin: 16px 0;
 }
+/** Custom Block: Events Short **/
+.event-short {
+  height: 100%;
+  padding: 16px 32px 40px 24px;
+}
+.event-short__list {
+  background-color: #ece4dc;
+  height: 80%;
+}
+.event-short__top-bar {
+  background-color: #10345c;
+  padding: 24px;
+}
+.event-short__top-bar__title {
+  font-size: 24px;
+  color: #ffffff;
+  display: inline-block;
+  text-decoration: underline;
+}
+.event-short__top-bar__button-div {
+  text-align: center;
+}
+.event-short__top-bar__button-div__btn {
+  display: inline-block;
+}
+
 /** Sections **/
 /** Media Queries **/
 .hero-box__inner-box__text {
@@ -10351,6 +10373,10 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 
   .mdl-layout__drawer-button {
     display: none;
+  }
+
+  .event-short__top-bar__title {
+    font-size: 34px;
   }
 }
 @media (min-width: 992px) {

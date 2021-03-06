@@ -67,10 +67,7 @@
 
         &__button {
             &__btn {
-                color: $white;
-                font-weight: bold;
-                border: 2px solid $white;
-                border-radius: 4px;
+                @extend .white-outlined-btn;
             }
         }
     }
@@ -110,7 +107,7 @@
 
 /** Custom block: Get Access **/
 .get-access {
-    padding: 16px 0 16px 16px;
+    padding: 16px 24px 40px 32px;
 
     &__label {
         font-weight: bold;
@@ -130,6 +127,41 @@
                 //     left: 0;
                 //     bottom: 0;
                 // }
+            }
+        }
+    }
+}
+
+
+/** Custom Block: Events Short **/
+.event-short {
+    height: 100%;
+    padding: 16px 32px 40px 24px;
+
+
+    &__list {
+        background-color: $tan;
+        height: 80%;
+    }
+
+
+    &__top-bar {
+        background-color: $tertiary-color;
+        padding: 24px;
+
+        &__title {
+            font-size: $md-heading5-size;
+            color: $white;
+            display: inline-block;
+            text-decoration: underline;
+        }
+
+        &__button-div {
+            text-align: center;
+
+            &__btn {
+                @extend .white-outlined-btn;
+                display: inline-block;
             }
         }
     }
@@ -237,6 +269,13 @@
 
     .mdl-layout__drawer-button {
         display: none;
+    }
+
+
+    .event-short {
+        &__top-bar__title {
+            font-size: $md-heading4-size;
+        }
     }
 }
 

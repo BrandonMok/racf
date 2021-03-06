@@ -10288,12 +10288,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 }
 /** Custom Block: Events Short **/
 .event-short {
-  height: 100%;
-  padding: 16px 32px 40px 24px;
-}
-.event-short__list {
-  background-color: #ece4dc;
-  height: 80%;
+  padding-bottom: 8em;
 }
 .event-short__top-bar {
   background-color: #10345c;
@@ -10304,12 +10299,37 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   color: #ffffff;
   display: inline-block;
   text-decoration: underline;
+  line-height: 32px;
 }
 .event-short__top-bar__button-div {
   text-align: center;
 }
 .event-short__top-bar__button-div__btn {
   display: inline-block;
+}
+.event-short__list {
+  background-color: #ece4dc;
+}
+.event-short__list .view-event-short .view-content {
+  padding: 16px;
+}
+.event-short__list .view-event-short .view-content h3 {
+  display: none;
+}
+.event-short__list .view-event-short .view-content .field-content {
+  padding-bottom: 24px;
+}
+.event-short__list .view-event-short .view-content .views-row {
+  background-color: #5d92ec;
+  border-radius: 8px;
+  padding: 4px 8px;
+  margin-bottom: 16px;
+}
+.event-short__list .view-event-short .view-content .views-row .views-field-title {
+  font-size: 24px;
+}
+.event-short__list .view-event-short .view-content .views-row .views-field-title .field-content a {
+  color: black;
 }
 
 /** Sections **/
@@ -10375,8 +10395,8 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
     display: none;
   }
 
-  .event-short__top-bar__title {
-    font-size: 34px;
+  .event-short {
+    padding: 16px 32px 40px 24px;
   }
 }
 @media (min-width: 992px) {
@@ -10386,5 +10406,19 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 
   .get-access__label {
     font-size: 34px;
+  }
+}
+@media (min-width: 1200px) {
+  .event-short {
+    padding: 16px 32px 40px 24px;
+  }
+  .event-short__top-bar__title {
+    font-size: 34px;
+  }
+  .event-short__list .view-event-short .view-content {
+    padding: 24px;
+  }
+  .event-short__list .view-event-short .view-content .views-row {
+    padding: 16px;
   }
 }

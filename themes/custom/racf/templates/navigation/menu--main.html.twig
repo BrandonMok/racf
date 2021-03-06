@@ -51,12 +51,15 @@
         <div class="container">
             <div class="row">
               <div class="col-12 mobile-nav__list-item__icon">
-                {% if item.title == "Home" %}
-                  <img src="/themes/custom/racf/images/home.png" alt="Home icon" />
-                {% endif %}
-                {% if item.title == "Events" %}
-                  <img src="/themes/custom/racf/images/calendar.png" alt="Calendar icon" />
-                {% endif %}
+                <a href={{ item.url }}>
+                  {% if item.title == "Home" %}
+                      <img src="/themes/custom/racf/images/home.png" alt="Home icon" />
+                    </a>
+                  {% endif %}
+                  {% if item.title == "Events" %}
+                    <img src="/themes/custom/racf/images/calendar.png" alt="Calendar icon" />
+                  {% endif %}
+                </a>
               </div>
               <div class="col-12 mobile-nav__list-item__text">
                 {{ link(item.title, item.url) }}

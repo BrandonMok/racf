@@ -1,0 +1,30 @@
+/** Content type: Event **/
+/** Event is displayed using a block layout **/
+.event {
+    font-weight: bold;
+
+    .block-field-blocknodeeventtitle {
+        font-size: $md-heading4-size;
+    }
+}
+
+
+
+@include media-breakpoint-up(xs) {  
+
+}
+
+@include media-breakpoint-up(md) {  
+    .event {
+        padding: 24px;
+
+        .block-field-blocknodeeventtitle {
+            font-size: $md-heading3-size;
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {  
+
+}
+

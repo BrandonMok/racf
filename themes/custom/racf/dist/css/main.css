@@ -10159,7 +10159,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   text-align: center;
 }
 
-/** Events **/
+/** Event calendar **/
 .view-events {
   margin: 40px 32px 40px 16px;
 }
@@ -10447,5 +10447,22 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   }
   .event-short__list .view-event-short .view-content .views-row {
     padding: 16px;
+  }
+}
+/** Content type: Event **/
+/** Event is displayed using a block layout **/
+.event {
+  font-weight: bold;
+}
+.event .block-field-blocknodeeventtitle {
+  font-size: 34px;
+}
+
+@media (min-width: 768px) {
+  .event {
+    padding: 24px;
+  }
+  .event .block-field-blocknodeeventtitle {
+    font-size: 48px;
   }
 }

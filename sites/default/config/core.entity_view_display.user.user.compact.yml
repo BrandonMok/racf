@@ -15,16 +15,9 @@ id: user.user.compact
 targetEntityType: user
 bundle: user
 mode: compact
-content:
-  field_snap_number:
-    type: string
-    weight: 0
-    region: content
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
+content: {  }
 hidden:
   field_address: true
+  field_snap_number: true
   member_for: true
   user_picture: true

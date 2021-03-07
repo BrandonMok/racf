@@ -10453,15 +10453,46 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 /** Event is displayed using a block layout **/
 .event {
   font-weight: bold;
+  margin-bottom: 16px;
+  padding: 8px;
 }
 .event .block-field-blocknodeeventtitle {
   font-size: 34px;
+}
+.event .block-field-blocknodeeventfield-date {
+  margin-top: 16px;
+}
+.event .block-field-blocknodeeventfield-date .field--type-daterange {
+  font-size: 20px;
+}
+.event .block-field-blocknodeeventfield-time {
+  margin-bottom: 24px;
+}
+.event .block-field-blocknodeeventfield-time .field--type-time-range {
+  font-size: 20px;
+}
+.event .block-field-blocknodeeventbody {
+  margin-top: 48px;
 }
 
 @media (min-width: 768px) {
   .event {
     padding: 24px;
   }
+  .event .block-field-blocknodeeventtitle {
+    font-size: 34px;
+  }
+  .event .block-field-blocknodeeventfield-date {
+    margin-top: 24px;
+  }
+  .event .block-field-blocknodeeventfield-date .field--type-daterange {
+    font-size: 24px;
+  }
+  .event .block-field-blocknodeeventfield-time .field--type-time-range {
+    font-size: 24px;
+  }
+}
+@media (min-width: 992px) {
   .event .block-field-blocknodeeventtitle {
     font-size: 48px;
   }

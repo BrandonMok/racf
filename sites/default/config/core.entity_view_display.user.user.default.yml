@@ -17,20 +17,20 @@ bundle: user
 mode: default
 content:
   field_address:
+    type: address_default
     weight: 1
+    region: content
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: address_default
-    region: content
   field_snap_number:
+    type: string
     weight: 0
+    region: content
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
-    region: content
 hidden:
   member_for: true
   user_picture: true

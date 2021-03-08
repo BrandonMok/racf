@@ -10159,11 +10159,12 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   text-align: center;
 }
 
-/** Event calendar **/
+/** Event calendar (/events) **/
 .view-events {
   margin: 40px 32px 40px 16px;
 }
 
+/** Sections **/
 .main-menu-desktop nav {
   display: none;
 }
@@ -10209,6 +10210,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 .information-section-right__title {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
 }
 .information-section-left__title__label,
 .information-section-right__title__label {
@@ -10220,15 +10222,11 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 .information-section-left {
   background-color: #ece4dc;
 }
-.information-section-left__title {
-  justify-content: flex-start;
-}
 
 .information-section-right {
   background-color: #ffffff;
 }
 .information-section-right__title {
-  justify-content: flex-start;
   order: -1;
 }
 
@@ -10358,7 +10356,30 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   color: black;
 }
 
-/** Sections **/
+/** Custom Block: Q and A **/
+.qa-primary {
+  background-color: #ece4dc;
+}
+
+.qa-secondary {
+  background-color: #ffffff;
+}
+
+.qa-primary,
+.qa-secondary {
+  padding: 12px 4px 0 4px;
+}
+.qa-primary__flexbox,
+.qa-secondary__flexbox {
+  padding: 8px;
+}
+.qa-primary__flexbox__title,
+.qa-secondary__flexbox__title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
 /** Media Queries **/
 .hero-box__inner-box__text {
   font-size: 20px;
@@ -10425,6 +10446,15 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   .event-short {
     padding: 16px 32px 40px 24px;
   }
+
+  .qa-primary,
+.qa-secondary {
+    padding: 16px;
+  }
+  .qa-primary__flexbox,
+.qa-secondary__flexbox {
+    padding: 16px;
+  }
 }
 @media (min-width: 992px) {
   .access-partner__label {
@@ -10433,6 +10463,15 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 
   .get-access__label {
     font-size: 34px;
+  }
+
+  .qa-primary,
+.qa-secondary {
+    padding: 32px;
+  }
+  .qa-primary__flexbox,
+.qa-secondary__flexbox {
+    padding: 32px;
   }
 }
 @media (min-width: 1200px) {

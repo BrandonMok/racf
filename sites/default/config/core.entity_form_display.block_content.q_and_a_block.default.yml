@@ -1,0 +1,26 @@
+uuid: 56318a40-ed91-493e-9c22-dc44522e5f88
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.q_and_a_block
+    - field.field.block_content.q_and_a_block.body
+  module:
+    - text
+id: block_content.q_and_a_block.default
+targetEntityType: block_content
+bundle: q_and_a_block
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 0
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+    region: content
+hidden:
+  info: true

@@ -1,0 +1,22 @@
+uuid: 15f50160-f4f0-4dde-8aba-3ee7f054039d
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.q_and_a_block
+    - field.field.block_content.q_and_a_block.body
+  module:
+    - text
+id: block_content.q_and_a_block.default
+targetEntityType: block_content
+bundle: q_and_a_block
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

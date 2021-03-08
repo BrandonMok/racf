@@ -192,6 +192,27 @@ div#block-racf-local-tasks {
 }
 
 
+/** Sections **/
+.layout--twocol-section--50-50 {
+    // @extend .d-flex;
+
+    // .layout__region--first {
+    //     order: 1;
+    // }
+
+    // .layout__region--second {
+    //     order: -1;
+    // }
+
+    @extend .row;
+
+    > div {
+        @extend .col-12;
+        @extend .col-md-6;
+    }
+}
+
+
 
 @include media-breakpoint-up(xs) {
     .main-menu-desktop nav { display: none; }
@@ -209,6 +230,17 @@ div#block-racf-local-tasks {
     .main-menu-desktop nav { display: block; }
 
     .mobile-nav__list-item__icon { display: none; }
+
+    /** for later when using flex **/
+    // .layout--twocol-section--50-50 {
+    //     .layout__region--first {
+    //         order: 1;
+    //     }
+    
+    //     .layout__region--second {
+    //         order: 2;
+    //     }
+    // }
 }
 
 

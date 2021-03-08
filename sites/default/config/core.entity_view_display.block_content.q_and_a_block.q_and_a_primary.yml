@@ -1,0 +1,28 @@
+uuid: e35ddaa8-fb82-4c5a-9ffb-388c4a8d8a92
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.q_and_a_block
+    - core.entity_view_mode.block_content.q_and_a_primary
+    - field.field.block_content.q_and_a_block.body
+  module:
+    - layout_builder
+    - text
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: block_content.q_and_a_block.q_and_a_primary
+targetEntityType: block_content
+bundle: q_and_a_block
+mode: q_and_a_primary
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

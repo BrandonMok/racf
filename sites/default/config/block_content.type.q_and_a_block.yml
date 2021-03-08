@@ -1,0 +1,8 @@
+uuid: e831861f-0a95-4d0a-b078-7e407db6b8e9
+langcode: en
+status: true
+dependencies: {  }
+id: q_and_a_block
+label: 'Q and A Block'
+revision: 0
+description: 'A custom block to display questions users have and answers.'

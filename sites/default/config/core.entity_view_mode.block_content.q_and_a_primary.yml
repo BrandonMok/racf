@@ -1,0 +1,10 @@
+uuid: 3852c9a8-984d-4680-9024-5c5e50766b2c
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+id: block_content.q_and_a_primary
+label: 'Q and A Primary'
+targetEntityType: block_content
+cache: true

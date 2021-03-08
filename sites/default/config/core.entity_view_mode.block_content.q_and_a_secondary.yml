@@ -1,0 +1,10 @@
+uuid: b2069331-272a-4a82-acc0-9a3a953aa10f
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+id: block_content.q_and_a_secondary
+label: 'Q and A Secondary'
+targetEntityType: block_content
+cache: true

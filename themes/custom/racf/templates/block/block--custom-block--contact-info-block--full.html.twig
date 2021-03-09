@@ -40,11 +40,13 @@
   <div class="d-flex flex-row align-items-center contact-block__flexbox">
     {% block content %}
       <div class="contact-block__flexbox__icon p-2">{{ content.field_icon }}</div>
-      
-      <div class="contact-block__flexbox__content">
+
+      <div class="contact-block__flexbox__content p-2">
         <div class="contact-block__flexbox__content__title">{{ label }}</div>
         <div class="contact-block__flexbox__content__body">{{ content.body }}</div>
       </div>
+
+      {{ content|without('field_icon', 'body', 'label') }}
     {% endblock %}
   </div>
 </div>

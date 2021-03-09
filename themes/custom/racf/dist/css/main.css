@@ -10397,6 +10397,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 .contact-block__flexbox__content__body p {
   font-size: 14px;
   opacity: 54.38%;
+  margin: 0;
 }
 
 /** Media Queries **/

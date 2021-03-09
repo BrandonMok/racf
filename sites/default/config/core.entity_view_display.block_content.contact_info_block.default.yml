@@ -1,0 +1,32 @@
+uuid: 29f453a6-0f9d-4417-b957-ffcecac97e52
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.contact_info_block
+    - field.field.block_content.contact_info_block.body
+    - field.field.block_content.contact_info_block.field_icon
+  module:
+    - text
+id: block_content.contact_info_block.default
+targetEntityType: block_content
+bundle: contact_info_block
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_icon:
+    type: entity_reference_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+hidden: {  }

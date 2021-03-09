@@ -1,0 +1,28 @@
+uuid: 45979ac0-9047-4293-b785-f6890166c5a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.contact_info_block
+    - field.storage.block_content.field_icon
+    - media.type.image
+id: block_content.contact_info_block.field_icon
+field_name: field_icon
+entity_type: block_content
+bundle: contact_info_block
+label: Icon
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

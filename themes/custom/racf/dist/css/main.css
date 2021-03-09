@@ -10194,6 +10194,8 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   .mobile-nav__list-item__icon {
     display: none;
   }
+
+  /** for later when using flex **/
 }
 /** Custom Block: Information Section **/
 .information-section-left,
@@ -10380,6 +10382,23 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   margin-bottom: 16px;
 }
 
+/** Custom Block: Contact Info Block **/
+.contact-block__flexbox__icon {
+  background-color: #3A4647;
+  border-radius: 24px;
+}
+.contact-block__flexbox__content {
+  margin-left: 8px;
+}
+.contact-block__flexbox__content__title {
+  font-size: 24px;
+  font-weight: bold;
+}
+.contact-block__flexbox__content__body p {
+  font-size: 14px;
+  opacity: 54.38%;
+}
+
 /** Media Queries **/
 .hero-box__inner-box__text {
   font-size: 20px;
@@ -10393,7 +10412,6 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 }
 
 @media (min-width: 768px) {
-  /** for later when using flex **/
   .information-section-left__title,
 .information-section-right__title {
     height: 200px;

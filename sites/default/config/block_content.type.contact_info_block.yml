@@ -1,0 +1,8 @@
+uuid: a3173c12-50dc-46ae-a6e1-a955504da7d4
+langcode: en
+status: true
+dependencies: {  }
+id: contact_info_block
+label: 'Contact Info Block'
+revision: 0
+description: 'A custom block to display pieces of contact information'

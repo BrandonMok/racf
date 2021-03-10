@@ -31,7 +31,7 @@
       {%
         set list_classes = [
           'menu',
-          'mobile-nav'
+          'navigation'
         ]
       %}
       <ul{{ attributes.addClass(list_classes) }}>
@@ -42,13 +42,13 @@
           item.is_expanded ? 'menu-item--expanded',
           item.is_collapsed ? 'menu-item--collapsed',
           item.in_active_trail ? 'menu-item--active-trail',
-          'mobile-nav__list-item',
+          'navigation__list-item',
         ]
       %}
       <li{{ item.attributes.addClass(classes) }}>
 
-        <div class="mobile-nav__list-item__mobile">
-          <div class="p-2 mobile-nav__list-item__icon">
+        <div class="navigation__list-item__mobile">
+          <div class="p-2 navigation__list-item__mobile__icon">
             <a href={{ item.url }}>
               {% if item.title == "Home" %}
                   <img src="/themes/custom/racf/images/home.png" alt="Home icon" />
@@ -62,7 +62,7 @@
               {% endif %}
             </a>
 
-             <div class="p-2 mobile-nav__list-item__text">
+             <div class="p-2 navigation__list-item__text">
                 {{ link(item.title, item.url) }}
                 {% if item.below %}
                   {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
@@ -72,8 +72,8 @@
         </div>
 
 
-        <div class="mobile-nav__list-item__desktop">
-          <div class="mobile-nav__list-item__text">
+        <div class="p-2 navigation__list-item__desktop">
+          <div class="navigation__list-item__text">
             {{ link(item.title, item.url) }}
             {% if item.below %}
               {{ menus.menu_links(item.below, attributes, menu_level + 1) }}

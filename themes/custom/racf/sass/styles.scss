@@ -173,13 +173,14 @@ div#block-racf-local-tasks {
     padding-top: 4px;
     z-index: 10;
 
-    .mobile-nav {
+    .navigation {
         display: flex;
         justify-content: center;
         align-items: center;
         padding: 0;
 
-        &__list-item {
+        &__list-item,
+        &__list-item__mobile {
             &__icon, &__text {
                 color: $white;
                 text-align: center;
@@ -219,25 +220,38 @@ div#block-racf-local-tasks {
 
 @include media-breakpoint-up(xs) {
     .main-menu-desktop nav { display: none; }
-    .mobile-nav__list-item__icon { display: block; }
-    .mobile-nav__list-item__desktop { display: none; }
+
+    .nnavigation__list-item__mobile__icon { display: block; }
+    .navigation__list-item__desktop { display: none; }
 }
 
 @include media-breakpoint-up(sm) {
     .main-menu-desktop nav { display: none; }
-    .mobile-nav__list-item__icon { display: block; }
 
-    .mobile-nav__list-item__desktop { display: none; }
-    .mobile-nav__list-item__mobile { display: block; }
+    // .nnavigation__list-item__mobile__icon { display: block; }
+    .navigation__list-item__desktop { display: none; }
+    .navigation__list-item__mobile { 
+        display: block; 
+
+        &__icon {
+            display: block;
+        }
+    }
 }
 
 @include media-breakpoint-up(md) {  
     .mobile-bar { display: none; }
     .main-menu-desktop nav { display: block; }
-    .mobile-nav__list-item__icon { display: none; }
+    // .nnavigation__list-item__mobile__icon { display: none; }
 
-    .mobile-nav__list-item__desktop { display: block; }
-    .mobile-nav__list-item__mobile { display: none; }
+    .navigation__list-item__desktop { display: block; }
+    .navigation__list-item__mobile { 
+        display: none; 
+
+        &__icon {
+            display: none;
+        }
+    }
 
     /** for later when using flex **/
     // .layout--twocol-section--50-50 {
@@ -256,9 +270,9 @@ div#block-racf-local-tasks {
 }
 
 @include media-breakpoint-up(lg) {
-    .mobile-nav__list-item__mobile { display: none; }
+    .navigation__list-item__mobile { display: none; }
 }
 
 @include media-breakpoint-up(xl) {
-    .mobile-nav__list-item__mobile { display: none; }
+    .navigation__list-item__mobile { display: none; }
 }

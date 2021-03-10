@@ -10158,13 +10158,13 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   padding-top: 4px;
   z-index: 10;
 }
-.mobile-bar .mobile-nav {
+.mobile-bar .navigation {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0;
 }
-.mobile-bar .mobile-nav__list-item__icon, .mobile-bar .mobile-nav__list-item__text {
+.mobile-bar .navigation__list-item__icon, .mobile-bar .navigation__list-item__text, .mobile-bar .navigation__list-item__mobile__icon, .mobile-bar .navigation__list-item__mobile__text {
   color: #ffffff;
   text-align: center;
 }
@@ -10179,11 +10179,11 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   display: none;
 }
 
-.mobile-nav__list-item__icon {
+.nnavigation__list-item__mobile__icon {
   display: block;
 }
 
-.mobile-nav__list-item__desktop {
+.navigation__list-item__desktop {
   display: none;
 }
 
@@ -10192,15 +10192,14 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
     display: none;
   }
 
-  .mobile-nav__list-item__icon {
-    display: block;
-  }
-
-  .mobile-nav__list-item__desktop {
+  .navigation__list-item__desktop {
     display: none;
   }
 
-  .mobile-nav__list-item__mobile {
+  .navigation__list-item__mobile {
+    display: block;
+  }
+  .navigation__list-item__mobile__icon {
     display: block;
   }
 }
@@ -10213,15 +10212,14 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
     display: block;
   }
 
-  .mobile-nav__list-item__icon {
-    display: none;
-  }
-
-  .mobile-nav__list-item__desktop {
+  .navigation__list-item__desktop {
     display: block;
   }
 
-  .mobile-nav__list-item__mobile {
+  .navigation__list-item__mobile {
+    display: none;
+  }
+  .navigation__list-item__mobile__icon {
     display: none;
   }
 
@@ -10231,12 +10229,12 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   }
 }
 @media (min-width: 992px) {
-  .mobile-nav__list-item__mobile {
+  .navigation__list-item__mobile {
     display: none;
   }
 }
 @media (min-width: 1200px) {
-  .mobile-nav__list-item__mobile {
+  .navigation__list-item__mobile {
     display: none;
   }
 }

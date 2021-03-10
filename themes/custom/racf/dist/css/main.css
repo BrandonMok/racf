@@ -10053,9 +10053,9 @@ nav#block-racf-main-menu ul li,
 nav#block-racf-account-menu ul li,
 nav#block-racf-main-menu--2 ul li {
   list-style-type: none;
-  font-size: 1rem;
+  font-size: 16px;
   display: inline-block;
-  padding: 0.5em;
+  padding: 8px;
 }
 nav#block-racf-main-menu ul li a,
 nav#block-racf-account-menu ul li a,
@@ -10067,6 +10067,11 @@ nav#block-racf-main-menu ul li a.is-active,
 nav#block-racf-account-menu ul li a.is-active,
 nav#block-racf-main-menu--2 ul li a.is-active {
   text-decoration: underline;
+}
+
+/** Header from mdl components **/
+.nav-header-row {
+  padding-left: 16px;
 }
 
 /** Local admin tasks **/
@@ -10153,18 +10158,16 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   padding-top: 4px;
   z-index: 10;
 }
-.mobile-bar ul {
-  padding: 0;
-}
-.mobile-bar .mobile-nav {
+.mobile-bar .navigation {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.mobile-bar .mobile-nav__list-item {
   padding: 0;
 }
-.mobile-bar .mobile-nav__list-item__icon, .mobile-bar .mobile-nav__list-item__text {
+.mobile-bar .navigation__list-item, .mobile-bar .navigation__list-item__mobile {
+  padding: 0 8px;
+}
+.mobile-bar .navigation__list-item__icon, .mobile-bar .navigation__list-item__text, .mobile-bar .navigation__list-item__mobile__icon, .mobile-bar .navigation__list-item__mobile__text {
   color: #ffffff;
   text-align: center;
 }
@@ -10179,11 +10182,11 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   display: none;
 }
 
-.mobile-nav__list-item__icon {
+.nnavigation__list-item__mobile__icon {
   display: block;
 }
 
-.mobile-nav__list-item__container {
+.navigation__list-item__desktop {
   display: none;
 }
 
@@ -10192,15 +10195,14 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
     display: none;
   }
 
-  .mobile-nav__list-item__icon {
-    display: block;
-  }
-
-  .mobile-nav__list-item__container {
+  .navigation__list-item__desktop {
     display: none;
   }
 
-  .mobile-nav__list-item__flexbox {
+  .navigation__list-item__mobile {
+    display: block;
+  }
+  .navigation__list-item__mobile__icon {
     display: block;
   }
 }
@@ -10213,26 +10215,29 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
     display: block;
   }
 
-  .mobile-nav__list-item__icon {
+  .navigation__list-item__desktop {
+    display: block;
+  }
+
+  .navigation__list-item__mobile {
+    display: none;
+  }
+  .navigation__list-item__mobile__icon {
     display: none;
   }
 
   /** for later when using flex **/
-  .mobile-nav__list-item__flexbox {
-    display: none;
-  }
-
-  .mobile-nav__list-item__container {
-    display: block;
+  .nav-header-row {
+    padding-left: 40px;
   }
 }
 @media (min-width: 992px) {
-  .mobile-nav__list-item__flexbox {
+  .navigation__list-item__mobile {
     display: none;
   }
 }
-@media (min-width: 992px) {
-  .mobile-nav__list-item__flexbox {
+@media (min-width: 1200px) {
+  .navigation__list-item__mobile {
     display: none;
   }
 }

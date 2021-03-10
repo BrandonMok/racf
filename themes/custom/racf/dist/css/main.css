@@ -10007,7 +10007,7 @@ h3 {
 /** Variables **/
 /** Usable CSS classes that use SASS vars **/
 .primary {
-  background-color: #0058b3;
+  background-color: #0058B3;
 }
 
 .secondary {
@@ -10154,7 +10154,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   position: fixed;
   bottom: 0;
   width: 100%;
-  background-color: #0058b3;
+  background-color: #0058B3;
   padding-top: 4px;
   z-index: 10;
 }
@@ -10308,7 +10308,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 }
 /** Custom Block: Access Partner **/
 .access-partner {
-  background-color: #10345c;
+  background-color: #09335F;
   text-align: center;
   padding: 40px 0;
 }
@@ -10343,7 +10343,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   padding-bottom: 8em;
 }
 .event-short__top-bar {
-  background-color: #10345c;
+  background-color: #09335F;
   padding: 24px;
 }
 .event-short__top-bar__title {
@@ -10372,7 +10372,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   padding-bottom: 24px;
 }
 .event-short__list .view-event-short .view-content .views-row {
-  background-color: #5d92ec;
+  background-color: #5F96F1;
   border-radius: 8px;
   padding: 4px 8px;
   margin-bottom: 16px;
@@ -10395,7 +10395,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   padding-bottom: 16px;
 }
 .event-short-minimal__content .view-event-short-minimal- .view-content .views-row {
-  background-color: #5d92ec;
+  background-color: #5F96F1;
   border-radius: 8px;
   padding: 4px 8px;
   margin-bottom: 16px;

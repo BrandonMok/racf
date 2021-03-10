@@ -19,14 +19,6 @@
  */
 #}
 {% import _self as menus %}
-
-{%
-  set list_classes = [
-    'menu',
-    'mobile-nav'
-  ]
-%}
-
 {#
   We call a macro which calls itself to render the full tree.
   @see https://twig.symfony.com/doc/1.x/tags/macro.html
@@ -36,6 +28,12 @@
 {% macro menu_links(items, attributes, menu_level) %}
   {% import _self as menus %}
   {% if items %}
+      {%
+        set list_classes = [
+          'menu',
+          'mobile-nav'
+        ]
+      %}
       <ul{{ attributes.addClass(list_classes) }}>
     {% for item in items %}
       {%
@@ -48,19 +46,34 @@
         ]
       %}
       <li{{ item.attributes.addClass(classes) }}>
-        <div class="container">
-            <div class="row">
-              <div class="col-12 mobile-nav__list-item__icon">
-                <a href={{ item.url }}>
-                  {% if item.title == "Home" %}
-                      <img src="/themes/custom/racf/images/home.png" alt="Home icon" />
-                    </a>
-                  {% endif %}
-                  {% if item.title == "Events" %}
-                    <img src="/themes/custom/racf/images/calendar.png" alt="Calendar icon" />
-                  {% endif %}
+
+        <div class="d-flex flex-row justify-content-center mobile-nav__list-item__flexbox">
+          <div class="p-2 mobile-nav__list-item__icon">
+            <a href={{ item.url }}>
+              {% if item.title == "Home" %}
+                  <img src="/themes/custom/racf/images/home.png" alt="Home icon" />
                 </a>
+              {% endif %}
+              {% if item.title == "Events" %}
+                <img src="/themes/custom/racf/images/calendar.png" alt="Calendar icon" />
+              {% endif %}
+              {% if item.title == "MyPass" %}
+                <img src="/themes/custom/racf/images/headset.png" alt="Headset icon" />
+              {% endif %}
+            </a>
+
+             <div class="p-2">
+                {{ link(item.title, item.url) }}
+                {% if item.below %}
+                  {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+                {% endif %}
               </div>
+          </div>
+        </div>
+
+
+        <div class="container mobile-nav__list-item__container">
+            <div class="row">
               <div class="col-12 mobile-nav__list-item__text">
                 {{ link(item.title, item.url) }}
                 {% if item.below %}
@@ -69,6 +82,7 @@
               </div>
             </div>
         </div>
+
       </li>
     {% endfor %}
     </ul>

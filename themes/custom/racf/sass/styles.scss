@@ -60,7 +60,7 @@ nav#block-racf-account-menu,
 nav#block-racf-main-menu--2  {
     ul li {
         list-style-type: none;
-        font-size: 1rem;
+        font-size: 16px;
         display: inline-block;
         padding: 8px;
 
@@ -181,6 +181,8 @@ div#block-racf-local-tasks {
 
         &__list-item,
         &__list-item__mobile {
+            padding: 0 8px;
+
             &__icon, &__text {
                 color: $white;
                 text-align: center;
@@ -228,7 +230,6 @@ div#block-racf-local-tasks {
 @include media-breakpoint-up(sm) {
     .main-menu-desktop nav { display: none; }
 
-    // .nnavigation__list-item__mobile__icon { display: block; }
     .navigation__list-item__desktop { display: none; }
     .navigation__list-item__mobile { 
         display: block; 
@@ -242,7 +243,6 @@ div#block-racf-local-tasks {
 @include media-breakpoint-up(md) {  
     .mobile-bar { display: none; }
     .main-menu-desktop nav { display: block; }
-    // .nnavigation__list-item__mobile__icon { display: none; }
 
     .navigation__list-item__desktop { display: block; }
     .navigation__list-item__mobile { 

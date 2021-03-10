@@ -10053,7 +10053,7 @@ nav#block-racf-main-menu ul li,
 nav#block-racf-account-menu ul li,
 nav#block-racf-main-menu--2 ul li {
   list-style-type: none;
-  font-size: 1rem;
+  font-size: 16px;
   display: inline-block;
   padding: 8px;
 }
@@ -10163,6 +10163,9 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   justify-content: center;
   align-items: center;
   padding: 0;
+}
+.mobile-bar .navigation__list-item, .mobile-bar .navigation__list-item__mobile {
+  padding: 0 8px;
 }
 .mobile-bar .navigation__list-item__icon, .mobile-bar .navigation__list-item__text, .mobile-bar .navigation__list-item__mobile__icon, .mobile-bar .navigation__list-item__mobile__text {
   color: #ffffff;

@@ -185,11 +185,10 @@
 
     &__content {
         .view-event-short-minimal- .view-content {
-            padding: 16px;
 
             h3 { display: none; }
             
-            .field-content { padding-bottom: 24px; }
+            .field-content { padding-bottom: 16px; }
 
             .views-row {
                 background-color: #5d92ec;
@@ -205,6 +204,29 @@
                     }
                 }
             }
+        }
+    }
+}
+
+#views-exposed-form-event-short-minimal--block-1 {
+    .form--inline {
+        .js-form-item-title { 
+            width: 100%;
+
+            label {
+                display: none; 
+            }
+
+            input {
+                width: 100%;
+                padding: 8px;
+                overflow: hidden;
+                box-shadow: 0 2px 2px 2px lightgrey;
+            }
+        }
+
+        .form-actions {
+            display: none;
         }
     }
 }

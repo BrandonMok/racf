@@ -188,13 +188,6 @@ div#block-racf-local-tasks {
             }
         }
     }
-
-    // .mobile-nav__list-item {
-    //     &__icon {
-    //         text-align: center;
-    //     }
-    // }
-
 }
 
 
@@ -257,8 +250,14 @@ div#block-racf-local-tasks {
     //     }
     // }
 
-    .mobile-nav__list-item__flexbox { display: none;}
-    .mobile-nav__list-item__container { display: block;}
+    .mobile-nav__list-item__flexbox { display: none; }
+    .mobile-nav__list-item__container { display: block; }
 }
 
+@include media-breakpoint-up(lg) {
+    .mobile-nav__list-item__flexbox { display: none; }
+}
 
+@include media-breakpoint-up(lg) {
+    .mobile-nav__list-item__flexbox { display: none; }
+}

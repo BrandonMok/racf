@@ -10179,6 +10179,10 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   display: none;
 }
 
+.mobile-nav__list-item__icon {
+  display: block;
+}
+
 .mobile-nav__list-item__container {
   display: none;
 }
@@ -10209,6 +10213,10 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
     display: block;
   }
 
+  .mobile-nav__list-item__icon {
+    display: none;
+  }
+
   /** for later when using flex **/
   .mobile-nav__list-item__flexbox {
     display: none;
@@ -10216,6 +10224,16 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 
   .mobile-nav__list-item__container {
     display: block;
+  }
+}
+@media (min-width: 992px) {
+  .mobile-nav__list-item__flexbox {
+    display: none;
+  }
+}
+@media (min-width: 992px) {
+  .mobile-nav__list-item__flexbox {
+    display: none;
   }
 }
 /** Custom Block: Information Section **/

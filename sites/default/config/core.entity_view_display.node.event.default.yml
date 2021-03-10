@@ -78,35 +78,41 @@ third_party_settings:
             uuid: 81d4afb7-5805-4010-aaa4-5c280e1550c3
             region: first
             configuration:
+              id: 'field_block:node:event:field_date'
+              label: Date
+              provider: layout_builder
               label_display: '0'
+              formatter:
+                label: hidden
+                type: daterange_default
+                settings:
+                  timezone_override: ''
+                  format_type: medium
+                  separator: '-'
+                third_party_settings: {  }
               context_mapping:
                 entity: layout_builder.entity
-              id: 'field_block:node:event:field_date'
-              formatter:
-                label: above
-                settings:
-                  separator: '-'
-                  format_type: medium
-                  timezone_override: ''
-                third_party_settings: {  }
-                type: daterange_default
+                view_mode: view_mode
             additional: {  }
             weight: 2
           306df002-e6e2-4db6-89e6-a8f43d68ef5d:
             uuid: 306df002-e6e2-4db6-89e6-a8f43d68ef5d
             region: first
             configuration:
+              id: 'field_block:node:event:field_time'
+              label: Time
+              provider: layout_builder
               label_display: '0'
+              formatter:
+                label: hidden
+                type: time_range_formatter
+                settings:
+                  timerange_format: 'start ~ end'
+                  time_format: 'h:i a'
+                third_party_settings: {  }
               context_mapping:
                 entity: layout_builder.entity
-              id: 'field_block:node:event:field_time'
-              formatter:
-                label: above
-                settings:
-                  time_format: 'h:i a'
-                  timerange_format: 'start ~ end'
-                third_party_settings: {  }
-                type: time_range_formatter
+                view_mode: view_mode
             additional: {  }
             weight: 3
           f64a0f6b-0d39-4516-9baa-af920b3753e8:

@@ -10380,14 +10380,11 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 .event-short-minimal {
   padding: 16px 32px 40px 24px;
 }
-.event-short-minimal__content .view-event-short-minimal- .view-content {
-  padding: 16px;
-}
 .event-short-minimal__content .view-event-short-minimal- .view-content h3 {
   display: none;
 }
 .event-short-minimal__content .view-event-short-minimal- .view-content .field-content {
-  padding-bottom: 24px;
+  padding-bottom: 16px;
 }
 .event-short-minimal__content .view-event-short-minimal- .view-content .views-row {
   background-color: #5d92ec;
@@ -10400,6 +10397,22 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 }
 .event-short-minimal__content .view-event-short-minimal- .view-content .views-row .views-field-title .field-content a {
   color: black;
+}
+
+#views-exposed-form-event-short-minimal--block-1 .form--inline .js-form-item-title {
+  width: 100%;
+}
+#views-exposed-form-event-short-minimal--block-1 .form--inline .js-form-item-title label {
+  display: none;
+}
+#views-exposed-form-event-short-minimal--block-1 .form--inline .js-form-item-title input {
+  width: 100%;
+  padding: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 2px 2px lightgrey;
+}
+#views-exposed-form-event-short-minimal--block-1 .form--inline .form-actions {
+  display: none;
 }
 
 /** Custom Block: Q and A **/

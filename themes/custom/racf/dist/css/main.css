@@ -10063,6 +10063,11 @@ nav#block-racf-main-menu--2 ul li a {
   text-decoration: none;
   color: white;
 }
+nav#block-racf-main-menu ul li a.is-active,
+nav#block-racf-account-menu ul li a.is-active,
+nav#block-racf-main-menu--2 ul li a.is-active {
+  text-decoration: underline;
+}
 
 /** Local admin tasks **/
 div#block-racf-local-tasks {
@@ -10145,11 +10150,16 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   bottom: 0;
   width: 100%;
   background-color: #0058b3;
-  padding: 16px;
+  padding-top: 4px;
   z-index: 10;
 }
 .mobile-bar ul {
   padding: 0;
+}
+.mobile-bar .mobile-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .mobile-bar .mobile-nav__list-item {
   padding: 0;
@@ -10173,12 +10183,24 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   display: block;
 }
 
+.mobile-nav__list-item__container {
+  display: none;
+}
+
 @media (min-width: 576px) {
   .main-menu-desktop nav {
     display: none;
   }
 
   .mobile-nav__list-item__icon {
+    display: block;
+  }
+
+  .mobile-nav__list-item__container {
+    display: none;
+  }
+
+  .mobile-nav__list-item__flexbox {
     display: block;
   }
 }
@@ -10196,6 +10218,23 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   }
 
   /** for later when using flex **/
+  .mobile-nav__list-item__flexbox {
+    display: none;
+  }
+
+  .mobile-nav__list-item__container {
+    display: block;
+  }
+}
+@media (min-width: 992px) {
+  .mobile-nav__list-item__flexbox {
+    display: none;
+  }
+}
+@media (min-width: 992px) {
+  .mobile-nav__list-item__flexbox {
+    display: none;
+  }
 }
 /** Custom Block: Information Section **/
 .information-section-left,

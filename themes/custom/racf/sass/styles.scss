@@ -62,7 +62,7 @@ nav#block-racf-main-menu--2  {
         list-style-type: none;
         font-size: 1rem;
         display: inline-block;
-        padding: 0.5em;
+        padding: 8px;
 
         a {
             text-decoration: none;
@@ -74,6 +74,11 @@ nav#block-racf-main-menu--2  {
         }
     }
 }
+
+
+/** Header from mdl components **/
+.nav-header-row { padding-left: 16px; }
+
 
 /** Local admin tasks **/
 div#block-racf-local-tasks {
@@ -110,8 +115,6 @@ div#block-racf-local-tasks {
     border: 2px solid $white;
     border-radius: 4px;
 }
-
-
 
 /** Footer **/
 .racf-footer {
@@ -170,18 +173,13 @@ div#block-racf-local-tasks {
     padding-top: 4px;
     z-index: 10;
 
-    ul {
-        padding: 0;
-    }
-
     .mobile-nav {
         display: flex;
         justify-content: center;
         align-items: center;
+        padding: 0;
 
         &__list-item {
-            padding: 0;
-            
             &__icon, &__text {
                 color: $white;
                 text-align: center;
@@ -230,7 +228,7 @@ div#block-racf-local-tasks {
     .mobile-nav__list-item__icon { display: block; }
 
     .mobile-nav__list-item__container { display: none; }
-    .mobile-nav__list-item__flexbox { display: block;}
+    .mobile-nav__list-item__flexbox { display: block; }
 
 }
 
@@ -238,6 +236,8 @@ div#block-racf-local-tasks {
     .mobile-bar { display: none; }
     .main-menu-desktop nav { display: block; }
     .mobile-nav__list-item__icon { display: none; }
+    .mobile-nav__list-item__flexbox { display: none; }
+    .mobile-nav__list-item__container { display: block; }
 
     /** for later when using flex **/
     // .layout--twocol-section--50-50 {
@@ -250,8 +250,9 @@ div#block-racf-local-tasks {
     //     }
     // }
 
-    .mobile-nav__list-item__flexbox { display: none; }
-    .mobile-nav__list-item__container { display: block; }
+    .nav-header-row {
+        padding-left: 40px;
+    }
 }
 
 @include media-breakpoint-up(lg) {

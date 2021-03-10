@@ -10055,7 +10055,7 @@ nav#block-racf-main-menu--2 ul li {
   list-style-type: none;
   font-size: 1rem;
   display: inline-block;
-  padding: 0.5em;
+  padding: 8px;
 }
 nav#block-racf-main-menu ul li a,
 nav#block-racf-account-menu ul li a,
@@ -10067,6 +10067,11 @@ nav#block-racf-main-menu ul li a.is-active,
 nav#block-racf-account-menu ul li a.is-active,
 nav#block-racf-main-menu--2 ul li a.is-active {
   text-decoration: underline;
+}
+
+/** Header from mdl components **/
+.nav-header-row {
+  padding-left: 16px;
 }
 
 /** Local admin tasks **/
@@ -10153,15 +10158,10 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   padding-top: 4px;
   z-index: 10;
 }
-.mobile-bar ul {
-  padding: 0;
-}
 .mobile-bar .mobile-nav {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.mobile-bar .mobile-nav__list-item {
   padding: 0;
 }
 .mobile-bar .mobile-nav__list-item__icon, .mobile-bar .mobile-nav__list-item__text {
@@ -10217,7 +10217,6 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
     display: none;
   }
 
-  /** for later when using flex **/
   .mobile-nav__list-item__flexbox {
     display: none;
   }
@@ -10225,13 +10224,18 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   .mobile-nav__list-item__container {
     display: block;
   }
+
+  /** for later when using flex **/
+  .nav-header-row {
+    padding-left: 40px;
+  }
 }
 @media (min-width: 992px) {
   .mobile-nav__list-item__flexbox {
     display: none;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
   .mobile-nav__list-item__flexbox {
     display: none;
   }

@@ -220,24 +220,24 @@ div#block-racf-local-tasks {
 @include media-breakpoint-up(xs) {
     .main-menu-desktop nav { display: none; }
     .mobile-nav__list-item__icon { display: block; }
-    .mobile-nav__list-item__container { display: none; }
+    .mobile-nav__list-item__desktop { display: none; }
 }
 
 @include media-breakpoint-up(sm) {
     .main-menu-desktop nav { display: none; }
     .mobile-nav__list-item__icon { display: block; }
 
-    .mobile-nav__list-item__container { display: none; }
-    .mobile-nav__list-item__flexbox { display: block; }
-
+    .mobile-nav__list-item__desktop { display: none; }
+    .mobile-nav__list-item__mobile { display: block; }
 }
 
 @include media-breakpoint-up(md) {  
     .mobile-bar { display: none; }
     .main-menu-desktop nav { display: block; }
     .mobile-nav__list-item__icon { display: none; }
-    .mobile-nav__list-item__flexbox { display: none; }
-    .mobile-nav__list-item__container { display: block; }
+
+    .mobile-nav__list-item__desktop { display: block; }
+    .mobile-nav__list-item__mobile { display: none; }
 
     /** for later when using flex **/
     // .layout--twocol-section--50-50 {
@@ -256,9 +256,9 @@ div#block-racf-local-tasks {
 }
 
 @include media-breakpoint-up(lg) {
-    .mobile-nav__list-item__flexbox { display: none; }
+    .mobile-nav__list-item__mobile { display: none; }
 }
 
 @include media-breakpoint-up(xl) {
-    .mobile-nav__list-item__flexbox { display: none; }
+    .mobile-nav__list-item__mobile { display: none; }
 }

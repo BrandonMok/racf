@@ -194,9 +194,8 @@ div#block-racf-local-tasks {
 
 /** Event calendar (/events) **/
 .view-events {
-    margin: 40px 32px 40px 16px;
+    margin: 0;
 }
-
 
 /** Sections **/
 .layout--twocol-section--50-50 {
@@ -267,10 +266,18 @@ div#block-racf-local-tasks {
     .nav-header-row {
         padding-left: 40px;
     }
+
+    .view-events { 
+        margin: 40px 32px 40px 16px;
+    }
 }
 
 @include media-breakpoint-up(lg) {
     .navigation__list-item__mobile { display: none; }
+
+    .view-events { 
+        margin: 40px 32px 40px 16px;
+    }
 }
 
 @include media-breakpoint-up(xl) {

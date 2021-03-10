@@ -10465,6 +10465,12 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   margin: 0;
 }
 
+/** Webform Block **/
+.contact-form-block__content__title {
+  text-align: center;
+  font-size: 24px;
+}
+
 /** Media Queries **/
 .hero-box__inner-box__text {
   font-size: 20px;

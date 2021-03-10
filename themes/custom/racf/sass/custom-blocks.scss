@@ -278,6 +278,19 @@
 }
 
 
+/** Webform Block **/
+.contact-form-block {
+    &__content {
+        &__title { 
+            text-align: center;
+            font-size: $md-heading5-size; 
+        }
+
+
+    }
+}
+
+
 /** Media Queries **/
 @include media-breakpoint-up(xs) { 
     .hero-box {

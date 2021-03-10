@@ -10174,7 +10174,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 
 /** Event calendar (/events) **/
 .view-events {
-  margin: 40px 32px 40px 16px;
+  margin: 0;
 }
 
 /** Sections **/
@@ -10230,10 +10230,18 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   .nav-header-row {
     padding-left: 40px;
   }
+
+  .view-events {
+    margin: 40px 32px 40px 16px;
+  }
 }
 @media (min-width: 992px) {
   .navigation__list-item__mobile {
     display: none;
+  }
+
+  .view-events {
+    margin: 40px 32px 40px 16px;
   }
 }
 @media (min-width: 1200px) {

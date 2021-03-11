@@ -15,11 +15,8 @@ racf-material-design-lite:
   css:
     theme:
       https://code.getmdl.io/1.3.0/material.indigo-pink.min.css: {type:external}
-      '//fonts.googleapis.com/icon?family=Material+Icons': {type:external}
-      '//fonts.googleapis.com/css2?family=Open+Sans&display=swap': {type:external}
   js:
     https://code.getmdl.io/1.3.0/material.min.js: {type:external}
   dependencies:
     - core/jquery
   
-    

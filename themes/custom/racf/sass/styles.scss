@@ -1,5 +1,6 @@
 /** CSS Styles **/
 @import "../node_modules/bootstrap/scss/bootstrap";
+@import "../node_modules/material-design-lite/src/material-design-lite.scss";
 
 // @import "../node_modules/bootstrap/scss/functions";
 // @import "../node_modules/bootstrap/scss/variables";
@@ -27,6 +28,7 @@ $tertiary-color: #09335F;
 $black: #000000;
 $tan: #ece4dc;
 $white: #ffffff;
+$btn-background: #3A4647;
 
 
 /** Usable CSS classes that use SASS vars **/
@@ -51,7 +53,8 @@ $white: #ffffff;
 
 /** Styles **/
 *  {
-    font-family: 'Open Sans', sans-serif;
+    // font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 /** Navigation and Header bar **/

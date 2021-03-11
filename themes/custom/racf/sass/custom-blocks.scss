@@ -45,7 +45,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        font-size: $md-heading3-size;
+        font-size: $md-heading4-size;
         font-weight: bold;
 
         display: flex;
@@ -55,12 +55,13 @@
 
         &___text {
             color: $white;
-            line-height: 1.5;
+            line-height: 1.25;
         }
 
         &__button {
             &__btn {
                 @extend .white-outlined-btn;
+                width: 100%;
             }
         }
     }
@@ -102,6 +103,7 @@
         font-weight: bold;
         font-size: $md-heading5-size;
         margin: 0 15px 16px 15px;
+        line-height: 1.5;
     }
 
     &__container  {
@@ -124,7 +126,6 @@
 
 /** Custom Block: Events Short **/
 .event-short {
-    // height: 100%;
     padding-bottom: 8em;
 
     &__top-bar {
@@ -151,19 +152,22 @@
     
     &__list {
         background-color: $tan;
-        // height: 80%;
 
         .view-event-short .view-content {
             padding: 16px;
 
-            h3 { display: none; }
+            h3 { 
+                display: none; 
+            }
             
-            .field-content { padding-bottom: 24px; }
+            .field-content { 
+                padding-bottom: 24px; 
+            }
 
             .views-row {
                 background-color: #5F96F1;
                 border-radius: 8px;
-                padding: 4px 8px;
+                padding: 12px 8px;
                 margin-bottom: 16px;
 
                 .views-field-title { 
@@ -186,14 +190,18 @@
     &__content {
         .view-event-short-minimal- .view-content {
 
-            h3 { display: none; }
+            h3 { 
+                display: none; 
+            }
             
-            .field-content { padding-bottom: 16px; }
+            .field-content { 
+                padding-bottom: 16px; 
+            }
 
             .views-row {
                 background-color: #5F96F1;
                 border-radius: 8px;
-                padding: 4px 8px;
+                padding: 12px 8px;
                 margin-bottom: 16px;
 
                 .views-field-title { 
@@ -255,8 +263,10 @@
 /** Custom Block: Contact Info Block **/
 .contact-block {
     &__flexbox {
+        padding: 8px;
+
         &__icon { 
-            background-color: #3A4647; 
+            background-color: $btn-background;
             border-radius: 24px;
         }
 
@@ -278,11 +288,58 @@
 }
 
 
+/** Webform Block **/
+.contact-form-block {
+    margin: 16px 4px 4px 4px;
+
+    &__content {
+        align-items: center;
+
+        &__title { 
+            text-align: center;
+            font-size: $md-heading5-size; 
+        }
+
+        &__form {
+
+            div {
+                label{
+                    display: block;
+                }
+
+                input {
+                    width: 90%;
+                }    
+                
+                textarea.form-textarea{ 
+                    width: 90%;
+                }
+            }
+
+            #edit-actions {
+                text-align: center;
+
+                input.webform-button--submit {
+                    @extend .mdl-button;
+                    @extend .mdl-button--raised;
+    
+                    width: initial;
+                    background-color: $btn-background !important;
+                    color: $white;
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}
+
+
 /** Media Queries **/
 @include media-breakpoint-up(xs) { 
     .hero-box {
         &__inner-box {
             &__text {
+                line-height: 1.25;
                 font-size: $md-heading6-size;
             }
 
@@ -332,8 +389,7 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-
-                width: 10em;
+                width: 12em;
             }
         }
     }
@@ -376,7 +432,9 @@
     .qa-secondary {
         padding: 16px;
     
-        &__flexbox { padding: 16px; }
+        &__flexbox { 
+            padding: 16px; 
+        }
     }
 }
 
@@ -396,6 +454,14 @@
     
         &__flexbox { padding: 32px; }
     }
+
+    .contact-form-block {
+        &__content {
+            &__title { 
+                align-items: center;
+            }
+        }
+    }
 }
 
 @include media-breakpoint-up(xl) { 
@@ -414,6 +480,15 @@
                     padding: 16px;
                 }
             }
+        }
+    }
+
+    /** Webform Block **/
+    .contact-form-block {
+        margin: 24px 0;
+
+        &__content {
+            align-items: flex-start;
         }
     }
 }

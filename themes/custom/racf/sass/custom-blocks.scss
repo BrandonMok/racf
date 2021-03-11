@@ -45,7 +45,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        font-size: $md-heading3-size;
+        font-size: $md-heading4-size;
         font-weight: bold;
 
         display: flex;
@@ -61,6 +61,7 @@
         &__button {
             &__btn {
                 @extend .white-outlined-btn;
+                width: 100%;
             }
         }
     }
@@ -102,6 +103,7 @@
         font-weight: bold;
         font-size: $md-heading5-size;
         margin: 0 15px 16px 15px;
+        line-height: 1.5;
     }
 
     &__container  {
@@ -163,7 +165,7 @@
             .views-row {
                 background-color: #5F96F1;
                 border-radius: 8px;
-                padding: 4px 8px;
+                padding: 12px 8px;
                 margin-bottom: 16px;
 
                 .views-field-title { 
@@ -193,7 +195,7 @@
             .views-row {
                 background-color: #5F96F1;
                 border-radius: 8px;
-                padding: 4px 8px;
+                padding: 12px 8px;
                 margin-bottom: 16px;
 
                 .views-field-title { 
@@ -366,6 +368,7 @@
 
             &__text {
                 font-size: $md-heading4-size;
+                line-height: 1.5;
             }
 
             &__button {

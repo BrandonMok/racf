@@ -22958,7 +22958,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 48px;
+  font-size: 34px;
   font-weight: bold;
   display: flex;
   align-items: center;
@@ -22969,6 +22969,10 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   color: #ffffff;
   line-height: 1.5;
 }
+.hero-box__inner-box__button__btn {
+  width: 100%;
+}
+
 /** Custom Block: Access Partner **/
 .access-partner {
   background-color: #09335F;
@@ -22997,6 +23001,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   font-weight: bold;
   font-size: 24px;
   margin: 0 15px 16px 15px;
+  line-height: 1.5;
 }
 .get-access__container {
   margin: 16px 0;
@@ -23037,7 +23042,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 .event-short__list .view-event-short .view-content .views-row {
   background-color: #5F96F1;
   border-radius: 8px;
-  padding: 4px 8px;
+  padding: 12px 8px;
   margin-bottom: 16px;
 }
 .event-short__list .view-event-short .view-content .views-row .views-field-title {
@@ -23060,7 +23065,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 .event-short-minimal__content .view-event-short-minimal- .view-content .views-row {
   background-color: #5F96F1;
   border-radius: 8px;
-  padding: 4px 8px;
+  padding: 12px 8px;
   margin-bottom: 16px;
 }
 .event-short-minimal__content .view-event-short-minimal- .view-content .views-row .views-field-title {
@@ -23190,6 +23195,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   }
   .hero-box__inner-box__text {
     font-size: 34px;
+    line-height: 1.5;
   }
   .hero-box__inner-box__button {
     display: flex;

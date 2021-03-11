@@ -55,7 +55,7 @@
 
         &___text {
             color: $white;
-            line-height: 1.5;
+            line-height: 1.25;
         }
 
         &__button {
@@ -126,7 +126,6 @@
 
 /** Custom Block: Events Short **/
 .event-short {
-    // height: 100%;
     padding-bottom: 8em;
 
     &__top-bar {
@@ -153,14 +152,17 @@
     
     &__list {
         background-color: $tan;
-        // height: 80%;
 
         .view-event-short .view-content {
             padding: 16px;
 
-            h3 { display: none; }
+            h3 { 
+                display: none; 
+            }
             
-            .field-content { padding-bottom: 24px; }
+            .field-content { 
+                padding-bottom: 24px; 
+            }
 
             .views-row {
                 background-color: #5F96F1;
@@ -188,9 +190,13 @@
     &__content {
         .view-event-short-minimal- .view-content {
 
-            h3 { display: none; }
+            h3 { 
+                display: none; 
+            }
             
-            .field-content { padding-bottom: 16px; }
+            .field-content { 
+                padding-bottom: 16px; 
+            }
 
             .views-row {
                 background-color: #5F96F1;
@@ -284,35 +290,43 @@
 
 /** Webform Block **/
 .contact-form-block {
+    margin: 16px 4px 4px 4px;
+
     &__content {
+        align-items: center;
+
         &__title { 
             text-align: center;
             font-size: $md-heading5-size; 
         }
 
         &__form {
-            display: flex;
-            justify-content: center;
-            align-items: center;
 
-            div label{
-                display: block;
-            }
-
-            .form-item-message div.form-textarea-wrapper .form-textarea{
-                width: initial;
-            }
-
-            .js-form-wrapper {
-                text-align: center;
+            div {
+                label{
+                    display: block;
+                }
 
                 input {
+                    width: 90%;
+                }    
+                
+                textarea.form-textarea{ 
+                    width: 90%;
+                }
+            }
+
+            #edit-actions {
+                text-align: center;
+
+                input.webform-button--submit {
                     @extend .mdl-button;
                     @extend .mdl-button--raised;
-
+    
+                    width: initial;
                     background-color: $btn-background !important;
                     color: $white;
-                    font-size: 19px;
+                    font-size: 20px;
                 }
             }
         }
@@ -325,6 +339,7 @@
     .hero-box {
         &__inner-box {
             &__text {
+                line-height: 1.25;
                 font-size: $md-heading6-size;
             }
 
@@ -368,15 +383,13 @@
 
             &__text {
                 font-size: $md-heading4-size;
-                line-height: 1.5;
             }
 
             &__button {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-
-                width: 10em;
+                width: 12em;
             }
         }
     }
@@ -419,7 +432,9 @@
     .qa-secondary {
         padding: 16px;
     
-        &__flexbox { padding: 16px; }
+        &__flexbox { 
+            padding: 16px; 
+        }
     }
 }
 
@@ -439,6 +454,14 @@
     
         &__flexbox { padding: 32px; }
     }
+
+    .contact-form-block {
+        &__content {
+            &__title { 
+                align-items: center;
+            }
+        }
+    }
 }
 
 @include media-breakpoint-up(xl) { 
@@ -457,6 +480,15 @@
                     padding: 16px;
                 }
             }
+        }
+    }
+
+    /** Webform Block **/
+    .contact-form-block {
+        margin: 24px 0;
+
+        &__content {
+            align-items: flex-start;
         }
     }
 }

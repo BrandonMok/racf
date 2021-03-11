@@ -255,8 +255,10 @@
 /** Custom Block: Contact Info Block **/
 .contact-block {
     &__flexbox {
+        padding: 8px;
+
         &__icon { 
-            background-color: #3A4647; 
+            background-color: $btn-background;
             border-radius: 24px;
         }
 
@@ -286,7 +288,32 @@
             font-size: $md-heading5-size; 
         }
 
+        &__form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
+            div label{
+                display: block;
+            }
+
+            .form-item-message div.form-textarea-wrapper .form-textarea{
+                width: initial;
+            }
+
+            .js-form-wrapper {
+                text-align: center;
+
+                input {
+                    @extend .mdl-button;
+                    @extend .mdl-button--raised;
+
+                    background-color: $btn-background !important;
+                    color: $white;
+                    font-size: 19px;
+                }
+            }
+        }
     }
 }
 

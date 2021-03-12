@@ -2,10 +2,6 @@
 @import "../node_modules/bootstrap/scss/bootstrap";
 @import "../node_modules/material-design-lite/src/material-design-lite.scss";
 
-// @import "../node_modules/bootstrap/scss/functions";
-// @import "../node_modules/bootstrap/scss/variables";
-// @import "../node_modules/bootstrap/scss/mixins";
-
 /** Variables **/
 $md-heading1-size: 96px;
 $md-heading2-size: 60px;
@@ -47,7 +43,6 @@ $btn-background: #3A4647;
 
 .padding-lg { padding: $padding-large; }
 .padding-sm { padding: $padding-small; }
-
 
 
 
@@ -132,21 +127,46 @@ div#block-racf-local-tasks {
 
 
 /** Login, Registration, and reset password form **/
-.user-login-register {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.user-login-register__content {
+    margin-top: 24px;
 
-    div#block-racf-content {
-        padding: 32px;
-        margin: 32px 0;
-        background-color: $tan;
+    &__title {
+        @extend .container;
+        text-align: center;
+        font-size: $md-heading5-size;
+        font-weight: bold;
+    }
 
-        // input.form-text {}
+    #block-racf-content {
+        @extend .d-flex;
+        @extend .flex-column;
+        @extend .justify-content-center;
+        @extend .align-items-center;
 
-        form p { display: none; }
+        form {
+            padding: 16px;
 
-        input { display: block; }
+            p {
+                display: none;
+            }
+        
+            input { 
+                display: block; 
+            }
+
+            #edit-actions {
+                text-align: center;
+
+                input.form-submit {
+                    @extend .mdl-button;
+                    @extend .mdl-button--raised;
+        
+                    width: initial;
+                    background-color: $btn-background !important;
+                    color: $white;
+                }
+            }
+        }
     }
 }
 
@@ -227,6 +247,15 @@ div#block-racf-local-tasks {
 
     .nnavigation__list-item__mobile__icon { display: block; }
     .navigation__list-item__desktop { display: none; }
+
+    /** XS: User Login / Registration pages **/
+    .user-login-register__content {
+        #block-racf-content {
+            form input {
+                width: 100%;
+            }
+        }
+    }
 }
 
 @include media-breakpoint-up(sm) {
@@ -273,6 +302,22 @@ div#block-racf-local-tasks {
     .view-events { 
         margin: 40px 32px 40px 16px;
     }
+
+    /** MD: User Login / Registration pages **/
+    .user-login-register__content {
+        &__title {
+            text-align: start;
+        }
+
+        #block-racf-content {
+            background-color: $tan;
+            margin: 32px;
+
+            -webkit-box-shadow: 3px 3px 5px 6px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+            -moz-box-shadow:    3px 3px 5px 6px #ccc;  /* Firefox 3.5 - 3.6 */
+            box-shadow:         3px 3px 5px 6px #ccc;
+        }
+    }
 }
 
 @include media-breakpoint-up(lg) {
@@ -285,4 +330,14 @@ div#block-racf-local-tasks {
 
 @include media-breakpoint-up(xl) {
     .navigation__list-item__mobile { display: none; }
+
+    /** XL: User Login / Registration pages **/
+    .user-login-register__content {
+        &__title {
+            padding: 0;
+            margin: 0;
+            margin-left: 32px;
+            text-align: start;
+        }
+    }
 }

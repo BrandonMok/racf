@@ -46,7 +46,7 @@
 
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header"> 
         <header class="mdl-layout__header padding-lg primary">
-            <div class="mdl-layout__header-row">
+            <div class="mdl-layout__header-row nav-header-row">
                 <span class="mdl-layout-title">
                     {{ page.header.racf_branding }}
                 </span>
@@ -55,7 +55,9 @@
 
                 <div class="mdl-layout-spacer"></div>
 
-                {{ page.header.racf_main_menu }}
+                <div class="main-menu-desktop">
+                    {{ page.header.racf_main_menu }}
+                </div>
                 {{ page.header|without("racf_branding", "racf_main_menu", "racf_account_menu") }}
             </div>
         </header>
@@ -64,7 +66,20 @@
             <a id="main-content" tabindex="-1"></a>
 
             <div class="layout-content user-login-register">
-                {{ page.content }}
+                <div class="mobile-bar">
+                    {{ page.header.racf_main_menu }}
+                </div>
+
+                {{ page.content.racf_local_actions }}
+                {{ page.content.racf_local_tasks }}
+
+
+                <div class="user-login-register__content">
+                    <div class="user-login-register__content__title">{{ page["#title"] }}</div>
+                    {{ page.content.racf_content }}
+                </div> 
+
+                {{ page.content|without('racf_local_actions', 'racf_local_tasks', 'racf_content') }}
             </div>
 
             {% if page.footer %}

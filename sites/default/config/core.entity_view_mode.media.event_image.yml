@@ -1,0 +1,10 @@
+uuid: bfa49040-954e-4600-9c5c-d60df9780718
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.event_image
+label: 'Event Image'
+targetEntityType: media
+cache: true

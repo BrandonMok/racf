@@ -23327,10 +23327,11 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   padding: 8px;
 }
 .event .block-field-blocknodeeventtitle {
-  font-size: 34px;
+  font-size: 24px;
+  line-height: 1.25;
 }
 .event .block-field-blocknodeeventfield-date {
-  margin-top: 16px;
+  margin: 16px 0;
 }
 .event .block-field-blocknodeeventfield-date .field--type-daterange {
   font-size: 20px;
@@ -23341,8 +23342,15 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 .event .block-field-blocknodeeventfield-time .field--type-time-range {
   font-size: 20px;
 }
+.event .block-field-blocknodeeventfield-event-image {
+  overflow: hidden;
+}
 .event .block-field-blocknodeeventbody {
-  margin-top: 48px;
+  margin-top: 16px;
+  margin-bottom: 32px;
+}
+.event .block-field-blocknodeeventbody h3 {
+  margin-bottom: 0;
 }
 
 @media (min-width: 768px) {
@@ -23360,10 +23368,5 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   }
   .event .block-field-blocknodeeventfield-time .field--type-time-range {
     font-size: 24px;
-  }
-}
-@media (min-width: 992px) {
-  .event .block-field-blocknodeeventtitle {
-    font-size: 48px;
   }
 }

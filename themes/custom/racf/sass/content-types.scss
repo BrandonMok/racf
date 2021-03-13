@@ -6,11 +6,12 @@
     padding: 8px;
 
     .block-field-blocknodeeventtitle {
-        font-size: $md-heading4-size;
+        font-size: $md-heading5-size;
+        line-height: 1.25;
     }
 
     .block-field-blocknodeeventfield-date {
-        margin-top: 16px;
+        margin: 16px 0;
 
         .field--type-daterange {
             font-size: $md-heading6-size;
@@ -25,16 +26,25 @@
         }
     }
 
+    .block-field-blocknodeeventfield-event-image {
+        overflow: hidden;
+    }
+
     .block-field-blocknodeeventbody {
-        margin-top: 48px;
+        margin-top: 16px;
+        margin-bottom: 32px;
+
+        h3 {
+            margin-bottom: 0;
+        }
     }
 }
 
 
 
-@include media-breakpoint-up(xs) {  
+// @include media-breakpoint-up(xs) {  
 
-}
+// }
 
 @include media-breakpoint-up(md) {  
     .event {
@@ -60,11 +70,7 @@
     }
 }
 
-@include media-breakpoint-up(lg) {  
-    .event {
-        .block-field-blocknodeeventtitle {
-            font-size: $md-heading3-size;
-        }
-    }
-}
+// @include media-breakpoint-up(lg) {  
+
+// }
 

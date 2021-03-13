@@ -153,6 +153,12 @@
     &__list {
         background-color: $tan;
 
+        .view-empty {
+            font-size: $md-heading5-size;
+            padding: 16px;
+            line-height: 1.5;
+        }
+
         .view-event-short .view-content {
             padding: 16px;
 

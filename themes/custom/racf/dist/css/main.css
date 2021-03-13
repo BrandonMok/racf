@@ -23064,6 +23064,11 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 .event-short__list {
   background-color: #ece4dc;
 }
+.event-short__list .view-empty {
+  font-size: 24px;
+  padding: 16px;
+  line-height: 1.5;
+}
 .event-short__list .view-event-short .view-content {
   padding: 16px;
 }

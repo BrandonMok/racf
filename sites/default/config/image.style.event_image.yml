@@ -1,0 +1,15 @@
+uuid: 424e63c0-0c14-4246-a814-807ebcf2ae53
+langcode: en
+status: true
+dependencies: {  }
+name: event_image
+label: 'Event Image (400x400)'
+effects:
+  a4f85131-138f-4491-bb07-28d49b314d2a:
+    uuid: a4f85131-138f-4491-bb07-28d49b314d2a
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 400
+      height: 400
+      anchor: center-center

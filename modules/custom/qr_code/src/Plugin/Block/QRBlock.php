@@ -31,26 +31,25 @@ class QRBlock extends BlockBase {
 
     $currentUID = \Drupal::currentUser()->id();
 
+    if ($nodeType === "event" && $currentUID != 0) {
+      $title = $currNode->getTitle();
 
-    // TEMPORARY - prevent making api call during testing!!!!!
-    // if ($nodeType === "event" && $currentUID != 0) {
-    //   $title = $currNode->getTitle();
+      // $urlEncoded = urlencode("https://dev-racf.pantheonsite.io/checkin&event=$title&uid=$currentUID");
+      $urlEncoded = urlencode("https://dev-racf.pantheonsite.io/checkin/$title/$currentUID");
+      $markup = "http://api.qrserver.com/v1/create-qr-code/?size=150x150&data=$urlEncoded";
 
-    //   // $urlEncoded = urlencode("https://dev-racf.pantheonsite.io/checkin&event=$title&uid=$currentUID");
-    //   $urlEncoded = urlencode("https://dev-racf.pantheonsite.io/checkin/$title/$currentUID");
-    //   $markup = "http://api.qrserver.com/v1/create-qr-code/?size=150x150&data=$urlEncoded";
-
-    //   $gen = "";
-    // }
-    // else { 
+      $gen = "";
+    }
+    else { 
       $markup = "/modules/custom/qr_code/images/x-mark.png";
       $gen = "QR Code unavailable. Please login to generate pass.";
-    // }
+    }
 
     return [
       '#theme' => 'qr_themeable_block',
       '#content' => $markup,
       '#generated' => $gen,
+      '#event' => $title ? $title : "",
       '#title' => "",
       '#attached' => [
         'library' => [

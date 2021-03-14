@@ -16,6 +16,7 @@ function qr_code_theme() {
       'variables' => [
         'content' => NULL,
         'generated' => NULL,
+        'event' => NULL,
       ],
       'render element' => 'children',
     ],

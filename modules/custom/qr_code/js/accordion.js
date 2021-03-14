@@ -7,7 +7,7 @@
             })
             .click(function() {
                 $("#accordion-content").css("display", "block");
-                $("#accordion-title").text("Pass Generated");
+                $("#accordion-title").text("Access Pass Generated");
             });
         }
     }

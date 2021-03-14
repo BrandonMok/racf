@@ -23,11 +23,14 @@
 
 
 
-#access-pass {
+#access-pass,
+#not-loggedin {
     max-width: 65%;
     margin: 0 auto;
 }
-#access-pass__title {
+
+#access-pass__title,
+#not-loggedin__title {
     color: white;
     font-size: 24px;
     text-align: center;
@@ -36,7 +39,8 @@
     font-weight: bold;
 }
 
-#access-pass__content {
+#access-pass__content,
+#not-loggedin__unavailable {
     display: none;
     background-color: #E9E5DF;
     text-align: center;
@@ -45,4 +49,9 @@
 
 #access-pass__content__qr-code {
     margin: 24px 0;
+}
+
+
+#not-loggedin__unavailable {
+    display: block;
 }

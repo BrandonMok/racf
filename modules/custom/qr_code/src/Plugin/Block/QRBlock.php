@@ -40,7 +40,7 @@ class QRBlock extends BlockBase {
       $markup = "http://api.qrserver.com/v1/create-qr-code/?size=150x150&data=$urlEncoded";
     }
     else { 
-      $markup = "/modules/custom/qr_code/images/not-available.jpg";
+      $markup = "/modules/custom/qr_code/images/x-mark.png";
     }
 
     return [

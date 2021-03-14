@@ -15,6 +15,7 @@ function qr_code_theme() {
     'qr_themeable_block' => [
       'variables' => [
         'content' => NULL,
+        'generated' => NULL,
       ],
       'render element' => 'children',
     ],

@@ -38,14 +38,18 @@ class QRBlock extends BlockBase {
       // $urlEncoded = urlencode("https://dev-racf.pantheonsite.io/checkin&event=$title&uid=$currentUID");
       $urlEncoded = urlencode("https://dev-racf.pantheonsite.io/checkin/$title/$currentUID");
       $markup = "http://api.qrserver.com/v1/create-qr-code/?size=150x150&data=$urlEncoded";
+
+      $gen = "";
     }
     else { 
       $markup = "/modules/custom/qr_code/images/x-mark.png";
+      $gen = "QR Code unavailable. Please login to generate pass.!";
     }
 
     return [
       '#theme' => 'qr_themeable_block',
       '#content' => $markup,
+      '#generated' => $gen,
       '#title' => "",
     ];
     

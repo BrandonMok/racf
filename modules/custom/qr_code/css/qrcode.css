@@ -1,5 +1,48 @@
 
+/* #accordion-title {
+    background-color: #0058B3;
+    color: white;
+    font-size: 24px;
+    text-align: center;
+}
+
+#accordion-top-text {
+    font-weight: bold;
+    padding: 16px 0;
+}
+
+
 #accordion-content { 
     display: none; 
     height: 30em;
+
+    text-align: center;
+    background-color: #E9E5DF;
+} */
+
+
+
+
+#access-pass {
+    max-width: 65%;
+    margin: 0 auto;
+}
+#access-pass__title {
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    padding: 12px 0;
+    background-color: #0058B3;
+    font-weight: bold;
+}
+
+#access-pass__content {
+    display: none;
+    background-color: #E9E5DF;
+    text-align: center;
+    padding: 16px 0 32px 0;
+}
+
+#access-pass__content__qr-code {
+    margin: 24px 0;
 }

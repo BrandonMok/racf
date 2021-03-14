@@ -35,18 +35,39 @@
 
 <div{{ attributes.addClass(classes) }}>
 
-  <div id="accordion">
-    <h3 id="accordion-title">Generate Access Pass</h3>
-    <div id="accordion-content">
-     {% block content %}
-          <img src={{ content }} alt="QR Code Access Pass" />
+  {% block content %}
+    {% if generated is empty %}
 
-          {% if generated is not empty %}
+      {# <div id="accordion">
+        <h3 id="accordion-title">Generate Access Pass</h3>
+        <div id="accordion-content">
+            <div id="accordion-top-text">Show this pass at the door instead of your SNAP Card</div>
+            <img src={{ content }} alt="QR Code Access Pass" />
+        </div>
+      </div> #}
+
+      <div id="access-pass">
+        <div id="access-pass__title">Generate Access Pass</div>
+        <div id="access-pass__content">
+            <div id="access-pass__top-text">Show this pass at the door instead of your SNAP Card</div>
+            <img src={{ content }} alt="QR Code Access Pass" id="access-pass__content__qr-code" />
+            <div id="access-pass__bottom-text">or buy tickets online with the coupon code below.</div>
+        </div>
+      </div>
+
+    {% else %}
+
+      <div id="not-loggedin">
+        <div id="not-loggedin__top-bar">
+          <h3>Access Pass Unavailable</h3>
+        </div>
+        <div id="not-loggedin__unavailable">
+            <img src={{ content }} alt="Circle with x mark" />
             <div>{{ generated }}</div>
-          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+  {% endblock %}
 
-      {% endblock %}
-    </div>
-  </div>
 </div> 
 

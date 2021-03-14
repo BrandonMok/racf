@@ -33,8 +33,14 @@ class QRCodeController extends ControllerBase {
     $currUsr = array_pop($userResult);
     $snap = $currUsr->get('field_snap_number')->getString(); 
 
-    $retVal = $this->t("Event: $event\n User Snap: $snap");
-
+    
+    // TEMP - unitl figure out user permissions
+    if (empty($snap) || !isset($snap)) {
+      $retVal = $this->t("INVALID");
+    }
+    else {
+      $retVal = $this->t("Event: $event\n User Snap: $snap");
+    }
 
     return [
       '#type' => 'markup',

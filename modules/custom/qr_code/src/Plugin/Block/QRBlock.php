@@ -43,7 +43,7 @@ class QRBlock extends BlockBase {
     }
     else { 
       $markup = "/modules/custom/qr_code/images/x-mark.png";
-      $gen = "QR Code unavailable. Please login to generate pass.!";
+      $gen = "QR Code unavailable. Please login to generate pass.";
     }
 
     return [

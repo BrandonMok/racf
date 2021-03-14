@@ -7,9 +7,7 @@
             })
             .click(function() {
                 $("#accordion-content").css("display", "block");
-
-                // TODO: For analytics, do work here to somehow modify field of generated passes for the event
-                
+                $("#accordion-title").text("Pass Generated");
             });
         }
     }

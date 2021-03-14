@@ -34,13 +34,19 @@
 %} 
 
 <div{{ attributes.addClass(classes) }}>
-  {% block content %}
-      <img src={{ content }} alt="QR Code Access Pass" />
 
-      {% if generated is not empty %}
-        <div>{{ generated }}</div>
-      {% endif %}
+  <div id="accordion">
+    <h3>Generate Pass</h3>
+    <div id="accordion-content">
+     {% block content %}
+          <img src={{ content }} alt="QR Code Access Pass" />
 
-  {% endblock %}
+          {% if generated is not empty %}
+            <div>{{ generated }}</div>
+          {% endif %}
+
+      {% endblock %}
+    </div>
+  </div>
 </div> 
 

@@ -1,0 +1,25 @@
+uuid: 3a05f3a1-f4ec-4a8b-ab4c-6b92443a6ee0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_scanned_passes
+    - node.type.event
+id: node.event.field_scanned_passes
+field_name: field_scanned_passes
+entity_type: node
+bundle: event
+label: 'Scanned Passes'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

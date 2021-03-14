@@ -1,0 +1,20 @@
+uuid: a93f7fe2-7fb7-48f8-be46-6df46c292927
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_scanned_passes
+field_name: field_scanned_passes
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,6 +1,6 @@
 features:
-  node_user_picture: 1
-  comment_user_picture: 1
+  node_user_picture: 0
+  comment_user_picture: 0
   comment_user_verification: 1
   favicon: 1
 logo:
@@ -8,4 +8,6 @@ logo:
   path: 'public://racf_logo_0.png'
 logo_style: branding
 favicon:
-  use_default: 1
+  use_default: 0
+  path: 'public://racf_logo_0.png'
+  mimetype: image/png

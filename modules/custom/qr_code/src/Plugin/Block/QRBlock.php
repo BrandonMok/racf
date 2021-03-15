@@ -49,7 +49,7 @@ class QRBlock extends BlockBase {
     return [
       '#theme' => 'qr_themeable_block',
       '#content' => $markup,
-      '#generated' => $gen,
+      '#gen_error' => $gen,
       '#event' => $title ? $title : "",
       '#title' => "",
       '#attached' => [

@@ -1,32 +1,12 @@
-
-/* #accordion-title {
-    background-color: #0058B3;
-    color: white;
-    font-size: 24px;
-    text-align: center;
-}
-
-#accordion-top-text {
-    font-weight: bold;
-    padding: 16px 0;
-}
-
-
-#accordion-content { 
-    display: none; 
-    height: 30em;
-
-    text-align: center;
-    background-color: #E9E5DF;
-} */
-
-
-
-
 #access-pass,
 #not-loggedin {
     max-width: 65%;
     margin: 0 auto;
+}
+
+#access-pass:hover,
+#access-pass__title:hover {
+    cursor: pointer;
 }
 
 #access-pass__title,

@@ -37,15 +37,6 @@
 
   {% block content %}
     {% if gen_error is empty %}
-
-      {# <div id="accordion">
-        <h3 id="accordion-title">Generate Access Pass</h3>
-        <div id="accordion-content">
-            <div id="accordion-top-text">Show this pass at the door instead of your SNAP Card</div>
-            <img src={{ content }} alt="QR Code Access Pass" />
-        </div>
-      </div> #}
-
       <div id="access-pass">
         <div id="access-pass__title">Generate Access Pass</div>
         <div id="access-pass__content">
@@ -54,9 +45,7 @@
             <div id="access-pass__bottom-text">or buy tickets online with the coupon code below.</div>
         </div>
       </div>
-
     {% else %}
-
       <div id="not-loggedin">
         <div id="not-loggedin__title">Access Pass Unavailable</div>
         <div id="not-loggedin__unavailable">
@@ -69,6 +58,5 @@
       </div>
     {% endif %}
   {% endblock %}
-
 </div> 
 

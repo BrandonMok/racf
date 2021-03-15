@@ -31,7 +31,6 @@ class QRBlock extends BlockBase {
 
     $currentUID = \Drupal::currentUser()->id();
 
-
     if ($nodeType === "event" && $currentUID != 0) {
       $title = $currNode->getTitle();
 
@@ -44,13 +43,20 @@ class QRBlock extends BlockBase {
     else { 
       $markup = "/modules/custom/qr_code/images/x-mark.png";
       $gen = "QR Code unavailable. Please login to generate pass.";
+      $title = "";
     }
 
     return [
       '#theme' => 'qr_themeable_block',
       '#content' => $markup,
-      '#generated' => $gen,
+      '#gen_error' => $gen,
+      '#event' => $title ? $title : "",
       '#title' => "",
+      '#attached' => [
+        'library' => [
+          'qr_code/accordion',
+        ],
+      ],
     ];
     
   }

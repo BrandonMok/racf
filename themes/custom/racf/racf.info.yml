@@ -5,7 +5,6 @@ base theme: classy
 version: VERSION
 core_version_requirement: 8.x
 logo: 'images/logo.png'
-favicon: 'images/logo.png'
 libraries:
   - racf/racf-material-design-lite
   - racf/racf-styles

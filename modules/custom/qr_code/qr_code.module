@@ -18,6 +18,8 @@ function qr_code_theme() {
         'loggedin' => NULL,
         'gen_error' => NULL,
         'event' => NULL,
+        'coupon_code' => NULL,
+        'url' => NULL,
       ],
       'render element' => 'children',
     ],

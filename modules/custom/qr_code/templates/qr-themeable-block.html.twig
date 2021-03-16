@@ -41,7 +41,9 @@
         <div class="access-pass__title">Generate Access Pass</div>
         <div class="access-pass__content">
             <div class="access-pass__top-text">Show this pass at the door instead of your SNAP Card</div>
+
             <img src={{ content }} alt="QR Code Access Pass" class="access-pass__content__qr-code" />
+
             <div class="access-pass__bottom-text">or buy tickets online with the coupon code below.</div>
 
             {% if coupon_code is not empty %}
@@ -51,10 +53,9 @@
             </div>
             {% endif %}
 
-            <a href={{ url }}>
-              <div class="access-pass__content__url">Buy Tickets</div>
+            <a href={{ url }} target="_blank">
+              <div class="access-pass__content__url">BUY TICKETS</div>
             </a>
-
         </div>
       </div>
     {% else %}

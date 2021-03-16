@@ -1,7 +1,7 @@
 (function ($, Drupal) {
     Drupal.behaviors.myBehavior = {
         attach: function(context, settings) {
-            $("#access-pass").once('myBehavior').click(function() {
+            $("#access-pass", context).once('myBehavior').click(function() {
                 $(".access-pass__content").fadeIn("slow");
             });
 

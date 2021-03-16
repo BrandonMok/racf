@@ -41,12 +41,13 @@
 
 
 
-/** QR Code Unavailable **/
+
 .not-loggedin__unavailable {
     display: block;
 }
 
-.not-loggedin__unavailable__btn {
+.not-loggedin__unavailable__btn,
+.access-pass__content__url  {
     background-color: #0058B3;
     color: #ffffff;
     margin: 16px;

@@ -22850,10 +22850,6 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 }
 
 /** Sections **/
-.slick-prev:before, .slick-next:before {
-  color: red !important;
-}
-
 .main-menu-desktop nav {
   display: none;
 }

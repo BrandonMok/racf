@@ -115,10 +115,10 @@ class QRBlock extends BlockBase {
       '#content' => $markup,
       '#loggedin' => $loggedin,
       '#gen_error' => $gen,
-      '#event' => $title ? $title : "",
-      '#title' => "",
-      '#coupon_code' => $this->configuration['coupon_code'] ?? "",
-      '#url' => $this->configuration['url'] ?? "",
+      '#event' => $title ?? '',
+      '#title' => '',
+      '#coupon_code' => $this->configuration['coupon_code'] ?? '',
+      '#url' => $this->configuration['url'] ?? '',
       '#attached' => [
         'library' => [
           'qr_code/assets',

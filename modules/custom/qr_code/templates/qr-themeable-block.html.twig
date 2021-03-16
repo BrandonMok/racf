@@ -44,15 +44,14 @@
             <img src={{ content }} alt="QR Code Access Pass" id="access-pass__content__qr-code" />
             <div id="access-pass__bottom-text">or buy tickets online with the coupon code below.</div>
 
-            <div id="access-pass__content__coupon-code" class="d-flex flex-row justify-content-center align-items-center">
-              <div>Coupon Code</div>
-              <div>{{ coupon_code }}</div>
+            <div id="access-pass__content__coupon-code" class="d-flex flex-row justify-content-center align-items-center m-4">
+              <div class="p-2" id="access-pass__content__coupon-code__text">Coupon Code:</div>
+              <div id="access-pass__content__coupon-code__code" class="p-2">{{ coupon_code }}</div>
             </div>
 
             <a href={{ url }}>
               <div id="access-pass__content__url">Buy Tickets</div>
             </a>
-
 
         </div>
       </div>

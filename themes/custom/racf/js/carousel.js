@@ -3,6 +3,7 @@
         attach: function(context, settings) {
             $("#event-images-carousel", context).once('slickjs').slick({
                 dots: true,
+                arrows: true,
                 infinite: true,
                 fade: true,
                 cssEase: 'linear',

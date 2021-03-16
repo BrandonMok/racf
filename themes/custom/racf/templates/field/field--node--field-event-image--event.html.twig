@@ -46,18 +46,16 @@
     label_display == 'inline' ? 'clearfix',
   ]
 %}
-{%
-  set title_classes = [
-    'field__label',
-    label_display == 'visually_hidden' ? 'visually-hidden',
-  ]
-%}
 
 <div{{ attributes.addClass(classes) }}>
-  <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
+  {% if items | length > 1 %}
     <div class="field__items" id="event-images-carousel">
-      {% for item in items %}
-        <div{{ item.attributes.addClass('field__item') }}>{{ item.content }}</div>
-      {% endfor %}
-    </div>
+  {% else %}  
+    <div>
+  {% endif %}
+
+    {% for item in items %}
+      <div{{ item.attributes.addClass('field__item') }}>{{ item.content }}</div>
+    {% endfor %}
+  </div>
 </div>

@@ -6,6 +6,6 @@ accordion:
       css/qrcode.css: {}
   js:
     https://code.jquery.com/ui/1.12.1/jquery-ui.js: {type:external}
-    js/accordion.js: {}
+    js/onclick.js: {}
   dependencies:
     - core/jquery

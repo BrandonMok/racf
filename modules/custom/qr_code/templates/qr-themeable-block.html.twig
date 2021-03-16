@@ -43,6 +43,9 @@
             <div id="access-pass__top-text">Show this pass at the door instead of your SNAP Card</div>
             <img src={{ content }} alt="QR Code Access Pass" id="access-pass__content__qr-code" />
             <div id="access-pass__bottom-text">or buy tickets online with the coupon code below.</div>
+
+            <div id="access-pass__content__coupon-code">{{ coupon_code }}</div>
+            <div id="access-pass__content__url">{{ url }}</div>
         </div>
       </div>
     {% else %}

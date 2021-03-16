@@ -31,24 +31,45 @@ class QRBlock extends BlockBase {
 
     $currentUID = \Drupal::currentUser()->id();
 
+    $title = "";
+    $loggedin = "false";
+
+    // Make sure it's an event content type and user is logged in
     if ($nodeType === "event" && $currentUID != 0) {
+    
+      // Get title of the event
       $title = $currNode->getTitle();
-
-      // $urlEncoded = urlencode("https://dev-racf.pantheonsite.io/checkin&event=$title&uid=$currentUID");
-      $urlEncoded = urlencode("https://dev-racf.pantheonsite.io/checkin/$title/$currentUID");
-      $markup = "http://api.qrserver.com/v1/create-qr-code/?size=150x150&data=$urlEncoded";
-
       $gen = "";
+      $loggedin = "true";
+
+
+      // before generating pass, check if today's date isn't past the event's end date
+      $eventDate = $currNode->get('field_date')->getString();
+      $endDate = strtotime(substr($eventDate, 12, 21));
+      $today = date('Y-m-d');
+
+      // Check dates
+      if ($endDate > $today) {
+        $markup = "/modules/custom/qr_code/images/x-mark.png";
+        $gen = "Uh oh! This event has already concluded!";
+      }
+      else {
+        // $urlEncoded = urlencode("https://dev-racf.pantheonsite.io/checkin&event=$title&uid=$currentUID");
+        $urlEncoded = urlencode("https://dev-racf.pantheonsite.io/checkin/$title/$currentUID");
+        $markup = "http://api.qrserver.com/v1/create-qr-code/?size=150x150&data=$urlEncoded";
+      }
     }
     else { 
+      // not loggedin
       $markup = "/modules/custom/qr_code/images/x-mark.png";
       $gen = "QR Code unavailable. Please login to generate pass.";
-      $title = "";
     }
 
+    
     return [
       '#theme' => 'qr_themeable_block',
       '#content' => $markup,
+      '#loggedin' => $loggedin,
       '#gen_error' => $gen,
       '#event' => $title ? $title : "",
       '#title' => "",

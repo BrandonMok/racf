@@ -45,18 +45,21 @@ class QRBlock extends BlockBase {
 
       // before generating pass, check if today's date isn't past the event's end date
       $eventDate = $currNode->get('field_date')->getString();
-      $endDate = strtotime(substr($eventDate, 12, 21));
-      $today = date('Y-m-d');
+      $endDate = new \DateTime(substr($eventDate, 12, 21));
+      $today = new \DateTime('now');
+
+      $today = $today->format("Y-m-d");
+      $endDate = $endDate->format("Y-m-d");
 
       // Check dates
-      if ($endDate > $today) {
-        $markup = "/modules/custom/qr_code/images/x-mark.png";
-        $gen = "Uh oh! This event has already concluded!";
-      }
-      else {
+      if ($today <= $endDate) {
         // $urlEncoded = urlencode("https://dev-racf.pantheonsite.io/checkin&event=$title&uid=$currentUID");
         $urlEncoded = urlencode("https://dev-racf.pantheonsite.io/checkin/$title/$currentUID");
         $markup = "http://api.qrserver.com/v1/create-qr-code/?size=150x150&data=$urlEncoded";
+      }
+      else {
+        $markup = "/modules/custom/qr_code/images/x-mark.png";
+        $gen = "Uh oh! This event has already concluded!";
       }
     }
     else { 

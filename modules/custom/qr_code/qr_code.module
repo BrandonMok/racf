@@ -15,6 +15,7 @@ function qr_code_theme() {
     'qr_themeable_block' => [
       'variables' => [
         'content' => NULL,
+        'loggedin' => NULL,
         'gen_error' => NULL,
         'event' => NULL,
       ],

@@ -1,11 +1,9 @@
-accordion: 
+assets: 
   version: VERSION
   css:
     theme:
-      https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css: {type:external}
       css/qrcode.css: {}
   js:
-    https://code.jquery.com/ui/1.12.1/jquery-ui.js: {type:external}
     js/onclick.js: {}
   dependencies:
     - core/jquery

@@ -121,7 +121,7 @@ class QRBlock extends BlockBase {
       '#url' => $this->configuration['url'] ?? "",
       '#attached' => [
         'library' => [
-          'qr_code/accordion',
+          'qr_code/assets',
         ],
       ],
     ];

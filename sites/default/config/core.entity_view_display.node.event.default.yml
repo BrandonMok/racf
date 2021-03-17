@@ -15,7 +15,6 @@ dependencies:
     - datetime_range
     - layout_builder
     - layout_builder_restrictions
-    - layout_discovery
     - qr_code
     - text
     - time_field
@@ -89,7 +88,7 @@ third_party_settings:
                 type: daterange_default
                 settings:
                   timezone_override: ''
-                  format_type: medium
+                  format_type: html_date
                   separator: '-'
                 third_party_settings: {  }
               context_mapping:
@@ -109,7 +108,7 @@ third_party_settings:
                 label: hidden
                 type: time_range_formatter
                 settings:
-                  timerange_format: 'start ~ end'
+                  timerange_format: 'start - end'
                   time_format: 'h:i a'
                 third_party_settings: {  }
               context_mapping:
@@ -134,22 +133,6 @@ third_party_settings:
                 third_party_settings: {  }
             additional: {  }
             weight: 4
-        third_party_settings: {  }
-      -
-        layout_id: layout_onecol
-        layout_settings:
-          label: ''
-        components:
-          56fb7c65-9d99-4699-ad91-0bf6a1fc74a3:
-            uuid: 56fb7c65-9d99-4699-ad91-0bf6a1fc74a3
-            region: content
-            configuration:
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              id: 'extra_field_block:node:event:links'
-            additional: {  }
-            weight: 0
         third_party_settings: {  }
   layout_builder_restrictions:
     allowed_block_categories: {  }

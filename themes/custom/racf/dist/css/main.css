@@ -23153,6 +23153,11 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   font-weight: bold;
   margin-bottom: 16px;
 }
+.qa-primary__flexbox__content div.field--type-text-with-summary p a,
+.qa-secondary__flexbox__content div.field--type-text-with-summary p a {
+  color: #09335F;
+  text-decoration: underline;
+}
 
 /** Custom Block: Contact Info Block **/
 .contact-block__flexbox {

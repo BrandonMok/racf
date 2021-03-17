@@ -33,12 +33,17 @@
     'qa-secondary'
   ]
 %}
+
+{%
+  set labelID = label|replace({' ': ''})|replace({'\'':''})|replace({ '?' :''})
+%}
+
 <div{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
   {{ title_suffix }}
 
   <div class="d-flex flex-column align-items-start qa-secondary__flexbox">
-    <div class="qa-secondary__flexbox__title">{{ label }}</div>
+    <div class="qa-secondary__flexbox__title" id="{{ labelID }}">{{ label }}</div>
     <div class="qa-secondary__flexbox__content">
       {% block content %}
         {{ content }}

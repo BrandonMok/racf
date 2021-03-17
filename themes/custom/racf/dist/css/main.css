@@ -22846,7 +22846,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 
 /** Event calendar (/events) **/
 .view-events {
-  margin: 0;
+  margin: 0 16px;
 }
 
 /** Sections **/

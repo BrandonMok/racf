@@ -262,6 +262,13 @@
             font-weight: bold;
             margin-bottom: 16px;
         }
+
+        &__content {
+            div.field--type-text-with-summary p a {
+                color: $tertiary-color;
+                text-decoration: underline;
+            }
+        }
     }
 }
 

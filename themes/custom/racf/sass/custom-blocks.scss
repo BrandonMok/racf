@@ -261,12 +261,14 @@
             font-size: $md-heading5-size;
             font-weight: bold;
             margin-bottom: 16px;
+            line-height: 1.5;
         }
 
         &__content {
             div.field--type-text-with-summary p a {
                 color: $tertiary-color;
                 text-decoration: underline;
+                font-size: 16px;
             }
         }
     }
@@ -274,6 +276,7 @@
 
 
 /** Custom Block: Contact Info Block **/
+/** ICON - Title + info **/
 .contact-block {
     &__flexbox {
         padding: 8px;
@@ -303,7 +306,7 @@
 
 /** Webform Block **/
 .contact-form-block {
-    margin: 16px 4px 4px 4px;
+    margin: 24px 4px;
 
     &__content {
         align-items: center;

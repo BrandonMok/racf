@@ -22844,6 +22844,21 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   text-align: center;
 }
 
+/** Pager **/
+.pager {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pager ul.pager__items {
+  padding: 0;
+}
+.pager ul.pager__items li a {
+  color: #09335F;
+  font-size: 16px;
+  font-weight: bold;
+}
+
 /** Event calendar (/events) **/
 .view-events {
   margin: 0 16px;

@@ -8,6 +8,7 @@ weight: 3
 is_admin: null
 permissions:
   - 'access content overview'
+  - 'access contextual links'
   - 'access toolbar'
   - 'administer layout builder modal'
   - 'administer menu'

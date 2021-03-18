@@ -1,0 +1,27 @@
+uuid: 4db8bc86-2db0-45e6-b257-ebbbbe92d489
+langcode: en
+status: true
+dependencies: {  }
+id: organizer
+label: Organizer
+weight: 3
+is_admin: null
+permissions:
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access toolbar'
+  - 'administer layout builder modal'
+  - 'administer menu'
+  - 'configure editable event node layout overrides'
+  - 'create event content'
+  - 'delete media'
+  - 'delete own event content'
+  - 'delete own image media'
+  - 'edit own event content'
+  - 'edit own image media'
+  - 'update media'
+  - 'use admin toolbar search'
+  - 'view all revisions'
+  - 'view own unpublished content'
+  - 'view own unpublished media'
+  - 'view the administration theme'

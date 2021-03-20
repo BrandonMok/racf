@@ -37,6 +37,11 @@ class QRCodeController extends ControllerBase {
       '#theme' => 'qr_scan_pass',
       '#event' => $event,
       '#snap' => $snap,
+      '#attached' => [
+        'library' => [
+          'qr_code/assets',
+        ],
+      ],
     ];
   }
 

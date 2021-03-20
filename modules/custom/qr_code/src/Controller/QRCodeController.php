@@ -36,8 +36,10 @@ class QRCodeController extends ControllerBase {
     $retVal = $this->t("Event: $event\n User Snap: $snap");
 
     return [
-      '#type' => 'markup',
-      '#markup' => $retVal,
+      '#event' => $event,
+      '#snap' => $snap,
+      // '#type' => 'markup',
+      // '#markup' => $retVal,
     ];
   }
 

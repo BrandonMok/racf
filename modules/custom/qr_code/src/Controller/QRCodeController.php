@@ -36,6 +36,7 @@ class QRCodeController extends ControllerBase {
     $retVal = $this->t("Event: $event\n User Snap: $snap");
 
     return [
+      '#theme' => 'qr_scan_pass',
       '#event' => $event,
       '#snap' => $snap,
       // '#type' => 'markup',

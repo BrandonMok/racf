@@ -4,4 +4,4 @@ qr_code.checkin:
     _controller: '\Drupal\qr_code\Controller\QRCodeController::checkin'
     _title: 'CheckIn'
   requirements:
-    _permission: 'access content'
+    _permission: 'can checkin event'

@@ -6,6 +6,8 @@
             });
 
             // @TODO for analytics - do another .click and need to make an AJAX call to update bc in JS.
+
+            
         }
     }
 })(jQuery, Drupal);

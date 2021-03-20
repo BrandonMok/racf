@@ -30,7 +30,12 @@ class AnalyticsController extends ControllerBase {
             '#title' => 'Analytics',
             '#graphs' => $graphs,
             '#labels' => $labels,
-            '#values' => $values
+            '#values' => $values,
+            '#attached' => [
+                'library' => [
+                    'analytics/accordion'
+                ],
+            ],
         );
 
     }

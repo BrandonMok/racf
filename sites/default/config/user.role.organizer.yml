@@ -12,6 +12,7 @@ permissions:
   - 'access toolbar'
   - 'administer layout builder modal'
   - 'administer menu'
+  - 'can checkin event'
   - 'cancel account'
   - 'configure editable event node layout overrides'
   - 'create event content'

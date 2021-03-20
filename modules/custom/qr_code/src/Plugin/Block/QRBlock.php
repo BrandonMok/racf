@@ -35,12 +35,14 @@ class QRBlock extends BlockBase {
       '#type' => 'textfield',
       '#title' => $this->t('Coupon code'),
       '#description' => $this->t('Enter a coupon code for the event.'),
+      '#default_value' => $this->configuration['coupon_code'],
     ];
 
     $form['url'] = [
       '#type' => 'textfield',
       '#title' => $this->t('URL'),
       '#description' => $this->t('Enter a URL to allow users to purchase tickets from your organization.'),
+      '#default_value' => $this->configuration['url'],
       '#required' => TRUE,
     ];
 

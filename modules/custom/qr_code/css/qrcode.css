@@ -60,3 +60,22 @@
     font-weight: bold;
     border-radius: 8px;
 }
+
+
+
+/** Controller page **/
+.scan-pass {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+/** md **/
+@media (min-width: 768px) { 
+    .scan-pass {
+        flex-direction: row;
+    }
+}
+

@@ -3,7 +3,7 @@
 namespace Drupal\qr_code\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
-use Symfony\Component\HttpFoundation\Request;
+// use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Defines QRCodeController class.
@@ -33,14 +33,10 @@ class QRCodeController extends ControllerBase {
     $currUsr = array_pop($userResult);
     $snap = $currUsr->get('field_snap_number')->getString(); 
 
-    $retVal = $this->t("Event: $event\n User Snap: $snap");
-
     return [
       '#theme' => 'qr_scan_pass',
       '#event' => $event,
       '#snap' => $snap,
-      // '#type' => 'markup',
-      // '#markup' => $retVal,
     ];
   }
 

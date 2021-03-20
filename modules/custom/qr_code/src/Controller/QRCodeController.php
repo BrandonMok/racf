@@ -34,6 +34,7 @@ class QRCodeController extends ControllerBase {
     $snap = $currUsr->get('field_snap_number')->getString(); 
 
     return [
+      '#theme' => 'qr_scan_pass',
       '#event' => $event,
       '#snap' => $snap,
     ];

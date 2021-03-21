@@ -28,6 +28,7 @@ function qr_code_theme() {
       'variables' => [
         'content' => NULL,
         'event' => NULL,
+        'event_date' => NULL,
         'snap' => NULL,
       ],
       'render element' => 'children',

@@ -60,3 +60,45 @@
     font-weight: bold;
     border-radius: 8px;
 }
+
+
+
+/** Controller page **/
+.scan-pass {
+    margin: 4em auto;
+}
+
+.scan-pass__title {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 32px auto;
+}
+
+.scan-pass__event,
+.scan-pass__snap,
+.scan-pass__event-date  {
+    margin: 16px 0;
+}
+
+.scan-pass__event__title,
+.scan-pass__snap__title,
+.scan-pass__event-date__title  {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.scan-pass__event__value,
+.scan-pass__snap__value,
+.scan-pass__event-date__value {
+    background-color: #e9ecef;
+    padding: 8px;
+    padding-left: 8px;
+}
+
+.scan-pass__faq {
+    margin: 24px 0;
+}
+.scan-pass__faq a {
+    color: #0058B3;
+}
+

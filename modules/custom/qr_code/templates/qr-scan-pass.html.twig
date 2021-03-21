@@ -1,0 +1,32 @@
+
+<div class="container scan-pass">
+    <div class="row">
+        <div class="scan-pass__title">CheckIn</div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-lg-6">
+            {# <img src={{ image_url }} alt="qr code" /> #}
+        </div>
+        <div class="col-12 col-lg-6">
+            <div class="scan-pass__event">
+                <div class="scan-pass__event__title">Event:</div>
+                <div class="scan-pass__event__value">{{ event }}</div>
+            </div>
+
+            <div class="scan-pass__event-date">
+                <div class="scan-pass__event-date__title">Event Date:</div>
+                <div class="scan-pass__event-date__value">{{ event_date }}</div>
+            </div>
+
+            <div class="scan-pass__snap">
+                <div class="scan-pass__snap__title">SNAP:</div>
+                <div class="scan-pass__snap__value">{{ snap }}</div>
+            </div>
+            <div class="scan-pass__faq">
+                Got questions? Please
+                <a href="/mypass">Consult the FAQ</a>
+                if necessary.
+            </div>
+        </div>
+    </div>
+</div>

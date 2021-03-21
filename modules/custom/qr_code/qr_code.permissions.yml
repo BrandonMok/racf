@@ -1,0 +1,3 @@
+can checkin event:
+  title: 'Administer checkin of events'
+  description: 'Gives permission for user to checkin user QR code Access Passes.'

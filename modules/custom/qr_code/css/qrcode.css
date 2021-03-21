@@ -65,46 +65,40 @@
 
 /** Controller page **/
 .scan-pass {
-    margin: auto;
-    margin-bottom: 5em;
-    width: 50%;
+    margin: 4em auto;
 }
 
 .scan-pass__title {
     font-size: 32px;
     font-weight: bold;
-    margin: 32px 0;
+    margin: 32px auto;
 }
 
-.scan-pass__pass-info__event,
-.scan-pass__pass-info__snap  {
+.scan-pass__event,
+.scan-pass__snap,
+.scan-pass__event-date  {
     margin: 16px 0;
 }
 
-.scan-pass__pass-info__event__title,
-.scan-pass__pass-info__snap__title  {
-    font-size: 24px;
+.scan-pass__event__title,
+.scan-pass__snap__title,
+.scan-pass__event-date__title  {
+    font-size: 16px;
     font-weight: bold;
 }
 
-.scan-pass__pass-info__event > *,
-.scan-pass__pass-info__snap > * {
-    display: inline-block;
-}
-
-.scan-pass__pass-info__event__value,
-.scan-pass__pass-info__snap__value {
+.scan-pass__event__value,
+.scan-pass__snap__value,
+.scan-pass__event-date__value {
     background-color: #e9ecef;
     padding: 8px;
     padding-left: 8px;
 }
 
-
-
-/** md **/
-/* @media (min-width: 768px) { 
-    .scan-pass {
-        flex-direction: row;
-    }
-} */
+.scan-pass__faq {
+    margin: 24px 0;
+}
+.scan-pass__faq a {
+    color: #0058B3;
+}
 

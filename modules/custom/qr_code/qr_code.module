@@ -23,7 +23,6 @@ function qr_code_theme() {
       ],
       'render element' => 'children',
     ],
-
     'qr_scan_pass' => [
       'variables' => [
         'content' => NULL,
@@ -33,6 +32,11 @@ function qr_code_theme() {
       ],
       'render element' => 'children',
     ],
-
+    'checkin_page' => [
+      'variables' => [
+        'content' => NULL,
+      ],
+      'render element' => 'children',
+    ],
   ];
 }

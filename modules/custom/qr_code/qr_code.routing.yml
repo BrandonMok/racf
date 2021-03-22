@@ -5,3 +5,11 @@ qr_code.checkin:
     _title: 'CheckIn'
   requirements:
     _permission: 'can checkin event'
+
+qr_code.checkin_menu:
+  path: '/checkin'
+  defaults:
+    _controller: '\Drupal\qr_code\Controller\QRCodeController::checkinMenuLink'
+    title: 'CheckIn'
+  requirements:
+    _permission: 'can checkin event'

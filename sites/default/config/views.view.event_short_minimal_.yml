@@ -309,6 +309,19 @@ display:
           expose:
             label: ''
           granularity: second
+        field_date_value_1:
+          id: field_date_value_1
+          table: node__field_date
+          field: field_date_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: DESC
+          exposed: false
+          expose:
+            label: ''
+          granularity: hour
+          plugin_id: datetime
       title: 'Event Short (Minimal)'
       header: {  }
       footer: {  }

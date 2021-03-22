@@ -71,7 +71,6 @@ class QRCodeController extends ControllerBase {
   }
 
 
-
 /**
  * Display the markup.
  * Used for admin and organizer CheckIn menu link when there's no params
@@ -89,8 +88,4 @@ class QRCodeController extends ControllerBase {
       ],
     ];
   }
-
-
-
-
 }

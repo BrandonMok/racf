@@ -51,8 +51,10 @@
           <div class="navigation__list-item__mobile__icon">
             <a href={{ item.url }}>
               {% if item.title == "Home" %}
-                  <img src="/themes/custom/racf/images/home.png" alt="Home icon" />
-                </a>
+                <img src="/themes/custom/racf/images/home.png" alt="Home icon" />
+              {% endif %}
+              {% if item.title == "CheckIn" %}
+                <img src="/themes/custom/racf/images/qr-code.png" alt="QR Code icon" />
               {% endif %}
               {% if item.title == "Events" %}
                 <img src="/themes/custom/racf/images/calendar.png" alt="Calendar icon" />

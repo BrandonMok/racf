@@ -29,8 +29,10 @@
         "drupal/layout_builder_restrictions": "^2.8",
         "drupal/logo_image_style": "^2.5",
         "drupal/material_admin": "^2.0",
+        "drupal/menu_item_role_access": "^2.0",
         "drupal/redirect_after_login": "^2.7",
         "drupal/twig_tweak": "^2.9",
+        "drupal/views_bulk_operations": "^3.12",
         "drupal/webform": "^6.0",
         "drush/drush": "^10.3"
     },

@@ -70,4 +70,27 @@ class QRCodeController extends ControllerBase {
     ];
   }
 
+
+
+/**
+ * Display the markup.
+ * Used for admin and organizer CheckIn menu link when there's no params
+ * 
+ * @return array
+ *   Return markup array
+ */
+  public function checkinMenuLink() {
+    return [
+      '#theme' => 'checkin_page',
+      '#attached' => [
+        'library' => [
+          'qr_code/assets',
+        ],
+      ],
+    ];
+  }
+
+
+
+
 }

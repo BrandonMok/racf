@@ -1,0 +1,10 @@
+uuid: e1ba8793-a4b4-4d85-b34b-6a57487156f4
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.event_view_row
+label: 'Event View Row'
+targetEntityType: node
+cache: true

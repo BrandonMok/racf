@@ -1,0 +1,83 @@
+uuid: 0894aba7-36a7-42fd-91f3-7b6fdfc9f568
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.event_view_row
+    - field.field.node.event.body
+    - field.field.node.event.field_date
+    - field.field.node.event.field_event_image
+    - field.field.node.event.field_generated_passes
+    - field.field.node.event.field_scanned_passes
+    - field.field.node.event.field_time
+    - field.field.node.event.layout_builder__layout
+    - node.type.event
+  module:
+    - datetime_range
+    - layout_builder
+    - layout_builder_restrictions
+    - text
+    - time_field
+    - user
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+  layout_builder_restrictions:
+    allowed_block_categories: {  }
+    entity_view_mode_restriction:
+      whitelisted_blocks:
+        'Content fields': {  }
+      blacklisted_blocks: {  }
+      allowed_layouts: {  }
+    entity_view_mode_restriction_by_region:
+      allowed_layouts: {  }
+id: node.event.event_view_row
+targetEntityType: node
+bundle: event
+mode: event_view_row
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_date:
+    weight: 3
+    label: hidden
+    settings:
+      timezone_override: America/New_York
+      format_type: html_date
+      separator: '-'
+    third_party_settings: {  }
+    type: daterange_default
+    region: content
+  field_event_image:
+    type: entity_reference_entity_view
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_time:
+    weight: 2
+    label: hidden
+    settings:
+      time_format: 'h:i a'
+      timerange_format: 'start ~ end'
+    third_party_settings: {  }
+    type: time_range_formatter
+    region: content
+  links:
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_generated_passes: true
+  field_scanned_passes: true
+  layout_builder__layout: true

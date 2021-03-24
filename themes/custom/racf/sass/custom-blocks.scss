@@ -108,18 +108,6 @@
 
     &__container  {
         margin: 16px 0;
-
-        &__row {
-            &__body {
-                // position: relative;
-
-                // &__content {
-                //     position: absolute;
-                //     left: 0;
-                //     bottom: 0;
-                // }
-            }
-        }
     }
 }
 
@@ -173,15 +161,17 @@
             .views-row {
                 background-color: #5F96F1;
                 border-radius: 8px;
-                padding: 12px 8px;
                 margin-bottom: 16px;
 
-                .views-field-title { 
+                .field--name-title { 
                     font-size: $md-heading5-size; 
+                    color: black;
+                    margin-bottom: 8px;
+                }
 
-                    .field-content a {
-                        color: black;
-                    }
+                .field--type-daterange {
+                    color: black;
+                    font-weight: initial;
                 }
             }
         }
@@ -490,10 +480,6 @@
         &__list {
             .view-event-short .view-content {
                 padding: 24px;
-
-                .views-row {
-                    padding: 16px;
-                }
             }
         }
     }

@@ -23055,6 +23055,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 .get-access__container {
   margin: 16px 0;
 }
+
 /** Custom Block: Events Short **/
 .event-short {
   padding-bottom: 8em;
@@ -23096,14 +23097,16 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 .event-short__list .view-event-short .view-content .views-row {
   background-color: #5F96F1;
   border-radius: 8px;
-  padding: 12px 8px;
   margin-bottom: 16px;
 }
-.event-short__list .view-event-short .view-content .views-row .views-field-title {
+.event-short__list .view-event-short .view-content .views-row .field--name-title {
   font-size: 24px;
-}
-.event-short__list .view-event-short .view-content .views-row .views-field-title .field-content a {
   color: black;
+  margin-bottom: 8px;
+}
+.event-short__list .view-event-short .view-content .views-row .field--type-daterange {
+  color: black;
+  font-weight: initial;
 }
 
 /** Custom Block: Event Short Minimal **/
@@ -23334,9 +23337,6 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   }
   .event-short__list .view-event-short .view-content {
     padding: 24px;
-  }
-  .event-short__list .view-event-short .view-content .views-row {
-    padding: 16px;
   }
 
   /** Webform Block **/

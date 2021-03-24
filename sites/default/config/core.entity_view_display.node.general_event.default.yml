@@ -1,0 +1,154 @@
+uuid: 32aedc7c-5691-4f5b-b887-36f729d730a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.general_event.body
+    - field.field.node.general_event.field_event_image
+    - field.field.node.general_event.field_generated_passes
+    - field.field.node.general_event.field_scanned_passes
+    - field.field.node.general_event.layout_builder__layout
+    - node.type.general_event
+  module:
+    - layout_builder
+    - layout_builder_restrictions
+    - qr_code
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    allow_custom: true
+    enabled: true
+    sections:
+      -
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: 'Configure General Event Layout'
+          column_widths: 50-50
+        components:
+          a0005e27-d789-48f5-a08a-8b88a8a0df6c:
+            uuid: a0005e27-d789-48f5-a08a-8b88a8a0df6c
+            region: second
+            configuration:
+              id: qr_code
+              label: 'QR Code block'
+              provider: qr_code
+              label_display: visible
+              coupon_code: '4443242'
+              url: 'https://google.com'
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+          af712ab5-6922-4cb9-bc64-ad98fd55423d:
+            uuid: af712ab5-6922-4cb9-bc64-ad98fd55423d
+            region: first
+            configuration:
+              id: 'field_block:node:general_event:field_event_image'
+              label: 'Event Image'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: entity_reference_entity_view
+                settings:
+                  view_mode: event_image
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 1
+          5254f9e3-7a92-4bfa-a28f-bb302675d195:
+            uuid: 5254f9e3-7a92-4bfa-a28f-bb302675d195
+            region: first
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:general_event:body'
+              formatter:
+                label: hidden
+                type: text_default
+                settings: {  }
+                third_party_settings: {  }
+            additional: {  }
+            weight: 2
+          0e065cb6-d9ae-434c-bff2-150422d1d00d:
+            uuid: 0e065cb6-d9ae-434c-bff2-150422d1d00d
+            region: first
+            configuration:
+              id: 'field_block:node:general_event:title'
+              label: Title
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: string
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 0
+        third_party_settings: {  }
+  layout_builder_restrictions:
+    allowed_block_categories: {  }
+    entity_view_mode_restriction:
+      whitelisted_blocks:
+        'Content fields':
+          - 'field_block:node:general_event:body'
+          - 'field_block:node:general_event:field_event_image'
+          - 'field_block:node:general_event:field_generated_passes'
+          - 'field_block:node:general_event:field_scanned_passes'
+          - 'field_block:node:general_event:title'
+      blacklisted_blocks: {  }
+      allowed_layouts: {  }
+    entity_view_mode_restriction_by_region:
+      allowed_layouts: {  }
+id: node.general_event.default
+targetEntityType: node
+bundle: general_event
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_event_image:
+    weight: 102
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_generated_passes:
+    weight: 103
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_scanned_passes:
+    weight: 104
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  layout_builder__layout: true

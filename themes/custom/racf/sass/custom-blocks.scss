@@ -197,15 +197,17 @@
             .views-row {
                 background-color: #5F96F1;
                 border-radius: 8px;
-                padding: 12px 8px;
                 margin-bottom: 16px;
 
-                .views-field-title { 
+                .field--name-title { 
                     font-size: $md-heading5-size; 
+                    color: black;
+                    margin-bottom: 8px;
+                }
 
-                    .field-content a {
-                        color: black;
-                    }
+                .field--type-daterange {
+                    color: black;
+                    font-weight: initial;
                 }
             }
         }

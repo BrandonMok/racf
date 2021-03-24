@@ -162,14 +162,16 @@
                 background-color: #5F96F1;
                 border-radius: 8px;
                 margin-bottom: 16px;
-                // padding: 8px;
 
                 .field--name-title { 
                     font-size: $md-heading5-size; 
                     color: black;
+                    margin-bottom: 8px;
                 }
+
                 .field--type-daterange {
                     color: black;
+                    font-weight: initial;
                 }
             }
         }

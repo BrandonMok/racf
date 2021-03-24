@@ -23122,14 +23122,16 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 .event-short-minimal__content .view-event-short-minimal- .view-content .views-row {
   background-color: #5F96F1;
   border-radius: 8px;
-  padding: 12px 8px;
   margin-bottom: 16px;
 }
-.event-short-minimal__content .view-event-short-minimal- .view-content .views-row .views-field-title {
+.event-short-minimal__content .view-event-short-minimal- .view-content .views-row .field--name-title {
   font-size: 24px;
-}
-.event-short-minimal__content .view-event-short-minimal- .view-content .views-row .views-field-title .field-content a {
   color: black;
+  margin-bottom: 8px;
+}
+.event-short-minimal__content .view-event-short-minimal- .view-content .views-row .field--type-daterange {
+  color: black;
+  font-weight: initial;
 }
 
 #views-exposed-form-event-short-minimal--block-1 .form--inline .js-form-item-title {

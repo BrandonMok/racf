@@ -1,11 +1,13 @@
-/** Content type: Event **/
-/** Event is displayed using a block layout **/
-.event {
+/** Content type: Event & General Event **/
+/** Event  & General Event are displayed using a block layout **/
+.event,
+.general-event {
     font-weight: bold;
     margin-bottom: 16px;
-    padding: 8px;
+    padding: 24px;
 
-    .block-field-blocknodeeventtitle {
+    .block-field-blocknodeeventtitle,
+    .block-field-blocknodegeneral-eventtitle {
         font-size: $md-heading5-size;
         line-height: 1.25;
     }
@@ -26,11 +28,13 @@
         }
     }
 
-    .block-field-blocknodeeventfield-event-image {
+    .block-field-blocknodeeventfield-event-image,
+    .block-field-blocknodegeneral-eventfield-event-image {
         overflow: hidden;
     }
 
-    .block-field-blocknodeeventbody {
+    .block-field-blocknodeeventbody,
+    .block-field-blocknodegeneral-eventbody {
         margin-top: 16px;
         margin-bottom: 32px;
 
@@ -41,17 +45,17 @@
 }
 
 
-
-// @include media-breakpoint-up(xs) {  
-
-// }
-
+/** Media Queries **/
 @include media-breakpoint-up(md) {  
-    .event {
+    .event,
+    .general-event  {
         padding: 24px;
+        padding-left: 32px;
 
-        .block-field-blocknodeeventtitle {
+        .block-field-blocknodeeventtitle,
+        .block-field-blocknodegeneral-eventtitle {
             font-size: $md-heading4-size;
+            margin-bottom: 16px;
         }
 
         .block-field-blocknodeeventfield-date {
@@ -69,8 +73,3 @@
         }
     }
 }
-
-// @include media-breakpoint-up(lg) {  
-
-// }
-

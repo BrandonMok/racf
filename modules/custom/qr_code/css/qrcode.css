@@ -1,6 +1,5 @@
 .access-pass,
 .not-loggedin {
-    max-width: 65%;
     margin: 0 auto;
 }
 
@@ -14,7 +13,8 @@
     color: white;
     font-size: 24px;
     text-align: center;
-    padding: 12px 0;
+    line-height: 1.5;
+    padding: 12px;
     background-color: #0058B3;
     font-weight: bold;
 }
@@ -111,3 +111,24 @@
     color: #0058B3;
 }
 
+
+
+/** media queries **/
+@media (min-width: 768px) { 
+    .access-pass,
+    .not-loggedin {
+        display: inline-block;
+    }
+
+    .access-pass__content,
+    .not-loggedin__unavailable {
+        padding: 16px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .access-pass,
+    .not-loggedin {
+        width: 70%;
+    }
+}

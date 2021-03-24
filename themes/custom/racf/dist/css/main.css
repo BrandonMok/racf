@@ -23347,54 +23347,81 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
     align-items: flex-start;
   }
 }
-/** Content type: Event **/
-/** Event is displayed using a block layout **/
-.event {
+/** Content type: Event & General Event **/
+/** Event  & General Event are displayed using a block layout **/
+.event,
+.general-event {
   font-weight: bold;
   margin-bottom: 16px;
-  padding: 8px;
+  padding: 24px;
 }
-.event .block-field-blocknodeeventtitle {
+.event .block-field-blocknodeeventtitle,
+.event .block-field-blocknodegeneral-eventtitle,
+.general-event .block-field-blocknodeeventtitle,
+.general-event .block-field-blocknodegeneral-eventtitle {
   font-size: 24px;
   line-height: 1.25;
 }
-.event .block-field-blocknodeeventfield-date {
+.event .block-field-blocknodeeventfield-date,
+.general-event .block-field-blocknodeeventfield-date {
   margin: 16px 0;
 }
-.event .block-field-blocknodeeventfield-date .field--type-daterange {
+.event .block-field-blocknodeeventfield-date .field--type-daterange,
+.general-event .block-field-blocknodeeventfield-date .field--type-daterange {
   font-size: 20px;
 }
-.event .block-field-blocknodeeventfield-time {
+.event .block-field-blocknodeeventfield-time,
+.general-event .block-field-blocknodeeventfield-time {
   margin-bottom: 24px;
 }
-.event .block-field-blocknodeeventfield-time .field--type-time-range {
+.event .block-field-blocknodeeventfield-time .field--type-time-range,
+.general-event .block-field-blocknodeeventfield-time .field--type-time-range {
   font-size: 20px;
 }
-.event .block-field-blocknodeeventfield-event-image {
+.event .block-field-blocknodeeventfield-event-image,
+.event .block-field-blocknodegeneral-eventfield-event-image,
+.general-event .block-field-blocknodeeventfield-event-image,
+.general-event .block-field-blocknodegeneral-eventfield-event-image {
   overflow: hidden;
 }
-.event .block-field-blocknodeeventbody {
+.event .block-field-blocknodeeventbody,
+.event .block-field-blocknodegeneral-eventbody,
+.general-event .block-field-blocknodeeventbody,
+.general-event .block-field-blocknodegeneral-eventbody {
   margin-top: 16px;
   margin-bottom: 32px;
 }
-.event .block-field-blocknodeeventbody h3 {
+.event .block-field-blocknodeeventbody h3,
+.event .block-field-blocknodegeneral-eventbody h3,
+.general-event .block-field-blocknodeeventbody h3,
+.general-event .block-field-blocknodegeneral-eventbody h3 {
   margin-bottom: 0;
 }
 
+/** Media Queries **/
 @media (min-width: 768px) {
-  .event {
+  .event,
+.general-event {
     padding: 24px;
+    padding-left: 32px;
   }
-  .event .block-field-blocknodeeventtitle {
+  .event .block-field-blocknodeeventtitle,
+.event .block-field-blocknodegeneral-eventtitle,
+.general-event .block-field-blocknodeeventtitle,
+.general-event .block-field-blocknodegeneral-eventtitle {
     font-size: 34px;
+    margin-bottom: 16px;
   }
-  .event .block-field-blocknodeeventfield-date {
+  .event .block-field-blocknodeeventfield-date,
+.general-event .block-field-blocknodeeventfield-date {
     margin-top: 24px;
   }
-  .event .block-field-blocknodeeventfield-date .field--type-daterange {
+  .event .block-field-blocknodeeventfield-date .field--type-daterange,
+.general-event .block-field-blocknodeeventfield-date .field--type-daterange {
     font-size: 24px;
   }
-  .event .block-field-blocknodeeventfield-time .field--type-time-range {
+  .event .block-field-blocknodeeventfield-time .field--type-time-range,
+.general-event .block-field-blocknodeeventfield-time .field--type-time-range {
     font-size: 24px;
   }
 }

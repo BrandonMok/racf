@@ -1,0 +1,23 @@
+uuid: 53187cc0-c3ff-4351-b397-396cb3cea72b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_generated_passes
+    - node.type.general_event
+id: node.general_event.field_generated_passes
+field_name: field_generated_passes
+entity_type: node
+bundle: general_event
+label: 'Generated Passes'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

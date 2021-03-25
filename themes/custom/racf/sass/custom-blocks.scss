@@ -238,6 +238,36 @@
 }
 
 
+/** Custom Block: General Events View Block **/
+.general-events-listing {
+    background-color: $tan;
+    // padding: 16px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 32px;
+    // margin: 32px 16px;
+
+    &__title {
+        padding-top: 16px;
+        font-size: $md-heading5-size;
+        line-height: 1.5;
+    }
+
+    .view-general-events {
+        .view-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            .views-row {
+                // padding: 0 16px;
+            }
+        }
+    }
+}
+
+
 /** Custom Block: Q and A **/
 .qa-primary { background-color: $tan; }
 .qa-secondary { background-color: $white; }
@@ -434,6 +464,31 @@
     .event-short {
         padding: 16px 32px 40px 24px;
     }
+
+    .general-events-listing {
+        margin-top: 16px;
+        text-align: left;
+        padding: 16px 0 0 16px;
+        margin: 32px 16px;
+    
+        &__title {
+            font-size: $md-heading4-size;
+        }
+    
+        .view-general-events {
+            .view-content {
+                display: flex;
+                flex-direction: row;
+                justify-content: start;
+                align-items: center;
+    
+                // .views-row {
+                //     // padding: 0 16px;
+                // }
+            }
+        }
+    }
+    
 
     .qa-primary, 
     .qa-secondary {

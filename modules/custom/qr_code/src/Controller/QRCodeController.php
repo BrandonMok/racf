@@ -34,28 +34,42 @@ class QRCodeController extends ControllerBase {
       'type' => 'event', 
       'title' => $event
     ]);
-    $theEvent = array_pop($events);
 
-    $eventDate = $theEvent->get('field_date')->getString(); // full date range of this event
+  
+    // if not empty, then it's an event
+    // if it is empty, then it's a general event
+    if (!empty($events)) { 
+      $theEvent = array_pop($events);
+  
+      $eventDate = $theEvent->get('field_date')->getString(); // full date range of this event
+  
+      // Format start date from Y-d-m to d/m/Y
+      $start = new \DateTime(substr($eventDate, 0, 9));
+      $start = $start->format('m/d/Y');
+  
+      // Format end date from Y-d-m to m/d/Y
+      $to = new \DateTime(substr($eventDate, 12, strlen($eventDate)));
+      $to = $to->format('m/d/Y');
+  
+      // Get today's date
+      $today = new \DateTime('now');
+      $today = $today->format('m/d/Y');
 
-    // Format start date from Y-d-m to d/m/Y
-    $start = new \DateTime(substr($eventDate, 0, 9));
-    $start = $start->format('m/d/Y');
+      $formattedDate = "$start - $to";
+    }
+    else {
+      // not an event - is a General Event
+      $formattedDate = "";
+    }
 
-    // Format end date from Y-d-m to m/d/Y
-    $to = new \DateTime(substr($eventDate, 12, strlen($eventDate)));
-    $to = $to->format('m/d/Y');
-
-    // Get today's date
-    $today = new \DateTime('now');
-    $today = $today->format('m/d/Y');
 
     // if ($today >= $start && $today <= $to){
     //   $formattedDate = "$start - $to  (TODAY)";
     // }
     // else {
-      $formattedDate = "$start - $to";
+      // $formattedDate = "$start - $to";
     // }
+
 
     return [
       '#theme' => 'qr_scan_pass',

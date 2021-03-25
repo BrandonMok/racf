@@ -5,7 +5,7 @@
     </div>
     <div class="row">
         <div class="col-12 col-lg-6">
-            {# <img src={{ image_url }} alt="qr code" /> #}
+            <img src="/modules/custom/qr_code/images/checkin-qr-icon.png" alt="QR Code icon" />
         </div>
         <div class="col-12 col-lg-6">
             <div class="scan-pass__event">
@@ -13,10 +13,12 @@
                 <div class="scan-pass__event__value">{{ event }}</div>
             </div>
 
+            {% if event_date %}
             <div class="scan-pass__event-date">
                 <div class="scan-pass__event-date__title">Event Date:</div>
                 <div class="scan-pass__event-date__value">{{ event_date }}</div>
             </div>
+            {% endif %}
 
             <div class="scan-pass__snap">
                 <div class="scan-pass__snap__title">SNAP:</div>

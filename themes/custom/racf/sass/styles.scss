@@ -244,12 +244,13 @@ div#block-racf-local-tasks {
 
     > div {
         @extend .col-12;
-        @extend .col-md-6;
+        @extend .col-lg-6;
     }
 }
 
 
 
+/** Media Queries **/
 @include media-breakpoint-up(xs) {
     .main-menu-desktop nav { display: none; }
 

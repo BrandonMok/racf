@@ -1,0 +1,10 @@
+uuid: f8ccfd67-e304-41c4-a8ed-482cca6b4168
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.general_event_view_row
+label: 'General Event View Row'
+targetEntityType: node
+cache: true

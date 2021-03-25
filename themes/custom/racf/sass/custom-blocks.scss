@@ -181,7 +181,7 @@
 
 /** Custom Block: Event Short Minimal **/
 .event-short-minimal {
-    padding: 16px 32px 40px 24px;
+    padding: 16px 8px;
 
     &__content {
         .view-event-short-minimal- .view-content {
@@ -233,6 +233,30 @@
 
         .form-actions {
             display: none;
+        }
+    }
+}
+
+
+/** Custom Block: General Events View Block **/
+.general-events-listing {
+    background-color: $tan;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 32px;
+
+    &__title {
+        padding-top: 16px;
+        font-size: $md-heading5-size;
+        line-height: 1.5;
+    }
+
+    .view-general-events {
+        .view-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
     }
 }
@@ -363,6 +387,13 @@
     }
 }
 
+@include media-breakpoint-up(sm){
+    .general-events-listing {
+        margin-top: 16px;
+        margin: 16px;
+    }
+}
+
 @include media-breakpoint-up(md) {  
     .information-section-left,  
     .information-section-right {
@@ -431,9 +462,35 @@
     }
 
 
+    /** Event View Blocks **/
     .event-short {
         padding: 16px 32px 40px 24px;
     }
+
+    .event-short-minimal {
+        padding: 16px 24px;
+    }
+
+    .general-events-listing {
+        text-align: left;
+        padding-top: 16px;
+        padding-left: 8px;
+    
+        &__title {
+            font-size: $md-heading4-size;
+            padding-left: 16px;
+        }
+    
+        .view-general-events {
+            .view-content {
+                display: flex;
+                flex-direction: row;
+                justify-content: start;
+                align-items: center;
+            }
+        }
+    }
+    
 
     .qa-primary, 
     .qa-secondary {

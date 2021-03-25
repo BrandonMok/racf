@@ -23163,6 +23163,9 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   font-size: 24px;
   line-height: 1.5;
 }
+.general-events-listing .view-empty {
+  padding-bottom: 16px;
+}
 .general-events-listing .view-general-events .view-content {
   display: flex;
   flex-direction: column;
@@ -23338,6 +23341,9 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   .general-events-listing__title {
     font-size: 34px;
     padding-left: 16px;
+  }
+  .general-events-listing .view-empty {
+    font-size: 24px;
   }
   .general-events-listing .view-general-events .view-content {
     display: flex;

@@ -14,6 +14,13 @@ class AnalyticsController extends ControllerBase {
         //$value = field_extract_value('node', $node, 'field_just_a_value');
         //$entity->get('field_name')->getValue();
 
+        //
+      //$events = $entityTypeManager->getStorage('node')->loadByProperties([
+      //  'type' => 'event', 
+      //  'uid' => $currentUID
+      //]);
+      //
+      
         $events = $entityTypeManager->getStorage('node')->loadByProperties([
             'type' => 'event', 
             'author' => $currentUID

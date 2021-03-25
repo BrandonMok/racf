@@ -22865,6 +22865,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 }
 
 /** Sections **/
+/** Media Queries **/
 .main-menu-desktop nav {
   display: none;
 }
@@ -23111,7 +23112,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 
 /** Custom Block: Event Short Minimal **/
 .event-short-minimal {
-  padding: 16px 32px 40px 24px;
+  padding: 16px 8px;
 }
 .event-short-minimal__content .view-event-short-minimal- .view-content h3 {
   display: none;
@@ -23168,6 +23169,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   justify-content: center;
   align-items: center;
 }
+
 /** Custom Block: Q and A **/
 .qa-primary {
   background-color: #ece4dc;
@@ -23263,6 +23265,12 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   display: block;
 }
 
+@media (min-width: 576px) {
+  .general-events-listing {
+    margin-top: 16px;
+    margin: 16px;
+  }
+}
 @media (min-width: 768px) {
   .information-section-left__title,
 .information-section-right__title {
@@ -23313,18 +23321,23 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
     display: none;
   }
 
+  /** Event View Blocks **/
   .event-short {
     padding: 16px 32px 40px 24px;
   }
 
+  .event-short-minimal {
+    padding: 16px 24px;
+  }
+
   .general-events-listing {
-    margin-top: 16px;
     text-align: left;
-    padding: 16px 0 0 16px;
-    margin: 32px 16px;
+    padding-top: 16px;
+    padding-left: 8px;
   }
   .general-events-listing__title {
     font-size: 34px;
+    padding-left: 16px;
   }
   .general-events-listing .view-general-events .view-content {
     display: flex;

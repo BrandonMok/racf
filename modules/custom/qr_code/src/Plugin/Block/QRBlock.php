@@ -85,7 +85,6 @@ class QRBlock extends BlockBase {
       $gen = "";
       $loggedin = "true";
 
-
       // before generating pass, check if today's date isn't past the event's end date
       $eventDate = $currNode->get('field_date')->getString();
       $endDate = new \DateTime(substr($eventDate, 12, 21));
@@ -104,6 +103,15 @@ class QRBlock extends BlockBase {
         $markup = "/modules/custom/qr_code/images/x-mark.png";
         $gen = "Uh oh! This event has already concluded!";
       }
+    }
+    elseif ($nodeType === "general_event" && $currentUID != 0) {
+        // Get title of the event
+        $title = $currNode->getTitle();
+        $gen = "";
+        $loggedin = "true";
+
+        $urlEncoded = urlencode("https://dev-racf.pantheonsite.io/checkin/$title/$currentUID");
+        $markup = "http://api.qrserver.com/v1/create-qr-code/?size=150x150&data=$urlEncoded";
     }
     else { 
       // not loggedin

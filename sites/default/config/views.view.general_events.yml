@@ -169,7 +169,20 @@ display:
       title: 'General Events'
       header: {  }
       footer: {  }
-      empty: {  }
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content:
+            value: 'There are no general events.'
+            format: basic_html
+          plugin_id: text
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
@@ -188,6 +201,7 @@ display:
         - 'config:core.entity_view_display.node.event.event_view_row'
         - 'config:core.entity_view_display.node.event.teaser'
         - 'config:core.entity_view_display.node.general_event.default'
+        - 'config:core.entity_view_display.node.general_event.general_event_view_row'
         - 'config:core.entity_view_display.node.general_event.teaser'
         - 'config:core.entity_view_display.node.page.default'
         - 'config:core.entity_view_display.node.page.teaser'
@@ -215,6 +229,7 @@ display:
         - 'config:core.entity_view_display.node.event.event_view_row'
         - 'config:core.entity_view_display.node.event.teaser'
         - 'config:core.entity_view_display.node.general_event.default'
+        - 'config:core.entity_view_display.node.general_event.general_event_view_row'
         - 'config:core.entity_view_display.node.general_event.teaser'
         - 'config:core.entity_view_display.node.page.default'
         - 'config:core.entity_view_display.node.page.teaser'

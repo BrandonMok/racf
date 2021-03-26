@@ -39,9 +39,11 @@
     padding: 8px;
 }
 
-#download-text {
+#download-text, 
+#print-text {
     color: #09335F;
     font-weight: bold;
+    padding: 0 16px;
 }
 
 
@@ -130,5 +132,26 @@
     .access-pass,
     .not-loggedin {
         width: 70%;
+    }
+}
+
+
+/** PRINT **/
+@media print {
+    header.mdl-layout__header,
+    nav,
+    .racf-footer,
+    div.layout__region--first,
+    .access-pass__top-text,
+    .access-pass__bottom-text,
+    #download-text,
+    #print-text,
+    #access-pass-url-btn  {
+        display: none;
+    }
+
+
+    .access-pass__content__coupon-code > * {
+        display: none;
     }
 }

@@ -44,8 +44,9 @@
 
             <img src={{ content }} alt="QR Code Access Pass" class="access-pass__content__qr-code" id="qr-code"/>
 
-            <div class="d-flex flex-row justify-content-center align-items-center mb-4">
-              <a href={{ content }} target="_blank" download="access-pass.png" id="download-text">Download<a>
+            <div class="d-flex flex-row justify-content-center align-items-center mb-4 access-pass-btns">
+              <a href={{ content }} target="_blank" download="access-pass.png" id="download-text">Download</a>
+              <div id="print-text">Print</div>
             </div>
 
             <div class="access-pass__bottom-text">or buy tickets online with the coupon code below.</div>
@@ -57,7 +58,7 @@
             </div>
             {% endif %}
 
-            <a href={{ url }} target="_blank">
+            <a href={{ url }} target="_blank" id="access-pass-url-btn">
               <div class="access-pass__content__url">BUY TICKETS</div>
             </a>
         </div>

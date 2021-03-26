@@ -1,5 +1,0 @@
-name: Analytics
-description: Generates Analytic Graphs/Charts for Demographic Data
-type: module
-package: Custom
-core: 8.x

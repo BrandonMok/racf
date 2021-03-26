@@ -1,7 +1,0 @@
-analytics.graphs:
-  path: '/analytics/graphs'
-  defaults:
-    _controller: '\Drupal\analytics\Controller\AnalyticsController::graphs'
-    _title: 'Analytic Charts & Graphs'
-  requirements:
-    _permission: 'access content'

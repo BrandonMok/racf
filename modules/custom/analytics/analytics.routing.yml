@@ -4,4 +4,4 @@ analytics.graphs:
     _controller: '\Drupal\analytics\Controller\AnalyticsController::graphs'
     _title: 'Analytic Charts & Graphs'
   requirements:
-    _permission: 'access content'
+    _permission: 'can view analytics'

@@ -10,17 +10,32 @@ class AnalyticsController extends ControllerBase {
     public function graphs() {
 
         $currentUID = \Drupal::currentUser()->id();    // current user's ID
-
+        $currentUserRole = \Drupal::currentUser()->getRoles();  // array of roles
         $entityTypeManager = \Drupal::entityTypeManager();
-        $events = $entityTypeManager->getStorage('node')->loadByProperties([
-            'type' => 'event', 
-            'uid' => $currentUID
-        ]);
 
-        $generalEvents = $entityTypeManager->getStorage('node')->loadByProperties([
-            'type' => 'general_event', 
-            'uid' => $currentUID
-        ]);
+        // Analytic data to show depends on user
+        if (in_array('administrator', $currentUserRole)) {
+            $events = $entityTypeManager->getStorage('node')->loadByProperties([
+                'type' => 'event', 
+            ]);
+
+            $generalEvents = $entityTypeManager->getStorage('node')->loadByProperties([
+                'type' => 'general_event', 
+            ]);
+        }
+        else {
+            // Not an admin, so get all events for the current user
+            $events = $entityTypeManager->getStorage('node')->loadByProperties([
+                'type' => 'event', 
+                'uid' => $currentUID
+            ]);
+
+            $generalEvents = $entityTypeManager->getStorage('node')->loadByProperties([
+                'type' => 'general_event', 
+                'uid' => $currentUID
+            ]);
+        }
+
 
         /**
          * Both $events and $generalEvents are arrays of nodes
@@ -56,6 +71,7 @@ class AnalyticsController extends ControllerBase {
 
 
         
+
 
 
 

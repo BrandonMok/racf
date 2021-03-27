@@ -112,7 +112,10 @@ class QRBlock extends BlockBase {
 
       // Check dates
       if ($today <= $endDate) {
-        $urlEncoded = urlencode("https://dev-racf.pantheonsite.io/checkin/$title/$currentUID");
+        // $urlEncoded = urlencode("https://dev-racf.pantheonsite.io/checkin/$title/$currentUID");
+
+        // TEMPORARRYYYY
+        $urlEncoded = urlencode("http://racf.lndo.site/checkin/$title/$currentUID");
         $markup = "http://api.qrserver.com/v1/create-qr-code/?size=150x150&data=$urlEncoded";
 
 

@@ -76,9 +76,17 @@
 
 
 
-/** Controller page **/
+/** 
+ * Controller page 
+ * Page that shows after scanning a pass
+**/
 .scan-pass {
-    margin: 4em auto;
+    margin: 0 auto;
+}
+
+.scan-pass__qr_col {
+    text-align: center;
+    margin-bottom: 16px;
 }
 
 .scan-pass__title {
@@ -136,6 +144,15 @@
     .access-pass__content,
     .not-loggedin__unavailable {
         padding: 16px;
+    }
+
+    .scan-pass {
+        margin: 4em auto;
+    }
+
+    .scan-pass__qr_col {
+        text-align: center;
+        margin-bottom: 0;
     }
 }
 

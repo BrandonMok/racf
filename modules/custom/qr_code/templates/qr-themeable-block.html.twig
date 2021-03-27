@@ -41,17 +41,17 @@
         <div class="access-pass__title">Generate Access Pass</div>
         <div class="access-pass__title-print">Arts Access Pass</div>
         <div class="access-pass__content">
-            <div class="access-pass__top-text">Show this pass at the door instead of your SNAP Card</div>
-            <div class="access-pass__title-print-event">{{ event }} </div>
+            <div class="access-pass__content__top-text">Show this pass at the door instead of your SNAP Card</div>
+            <div class="access-pass__content__title-print-event">{{ event }} </div>
 
             <img src={{ content }} alt="QR Code Access Pass" class="access-pass__content__qr-code" id="qr-code"/>
 
             {% if event_date %}
-            <div class="access-page__event-date">{{ event_date }}</div>
+            <div class="access-page__content__event-date">{{ event_date }}</div>
             {% endif %}
 
             {% if event_time %}
-            <div class="access-page__event-time">{{ event_time }}</div>
+            <div class="access-page__content__event-time">{{ event_time }}</div>
             {% endif %}
 
             <div class="d-flex flex-row justify-content-center align-items-center mb-4 access-pass-btns">
@@ -60,7 +60,7 @@
             </div>
             
             {% if coupon_code is not empty %}
-            <div class="access-pass__bottom-text">or buy tickets online with the coupon code below.</div>
+            <div class="access-pass__content__bottom-text">or buy tickets online with the coupon code below.</div>
             <div class="access-pass__content__coupon-code d-flex flex-row justify-content-center align-items-center m-4">
               <div class="p-2" class="access-pass__content__coupon-code__text">Coupon Code:</div>
               <div class="access-pass__content__coupon-code__code" class="p-2">{{ coupon_code }}</div>

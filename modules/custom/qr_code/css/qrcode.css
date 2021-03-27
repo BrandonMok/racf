@@ -21,9 +21,9 @@
 }
 
 .access-pass__title-print,
-.access-pass__title-print-event,
-.access-page__event-date,
-.access-page__event-time,
+.access-pass__content__title-print-event,
+.access-page__content__event-date,
+.access-page__content__event-time,
 .access-page__content__how-to-use,
 .access-page__content__terms-conditions,
 .access-page__content__print-logo {
@@ -153,8 +153,8 @@
     div.layout__region--first,
     header.mdl-layout__header,
     .racf-footer,
-    .access-pass__top-text,
-    .access-pass__bottom-text,
+    .access-pass__content__top-text,
+    .access-pass__content__bottom-text,
     .access-pass__title,
     .tabs,
     .messages,
@@ -171,8 +171,8 @@
 
     /** To show **/
     .access-pass__title-print,
-    .access-page__event-date,
-    .access-page__event-time,
+    .access-page__content__event-date,
+    .access-page__content__event-time,
     .access-page__content__how-to-use,
     .access-page__content__terms-conditions,
     .access-page__content__print-logo {
@@ -192,14 +192,14 @@
     }
     
     /** Event title **/
-    .access-pass__title-print-event {
+    .access-pass__content__title-print-event {
         display: block;
         text-align: center;
     }
 
     /** Date & Time **/
-    .access-page__event-date,
-    .access-page__event-time {
+    .access-page__content__event-date,
+    .access-page__content__event-time {
         font-size: 20px;
         margin: 12px 0;
     }
@@ -210,7 +210,7 @@
         margin: 32px 0;
     }
 
-    .access-pass__title-print-event,
+    .access-pass__content__title-print-event,
     .access-page__content__how-to-use__title, 
     .access-page__content__terms-conditions__title {
         font-size: 20px;

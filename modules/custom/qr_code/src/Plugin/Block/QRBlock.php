@@ -112,10 +112,6 @@ class QRBlock extends BlockBase {
         $startTimeDate = date('h:m A', $startTime);
         $endTimeDate = date('h:m A', $endTime);
 
-
-        // dump($startTimeDate);
-        // dump($endTimeDate);
-
         $eventTime = "$startTimeDate - $endTimeDate";
       }
       else {
@@ -141,11 +137,11 @@ class QRBlock extends BlockBase {
     
     return [
       '#theme' => 'qr_themeable_block',
+      '#title' => '',
       '#content' => $markup,
       '#loggedin' => $loggedin,
       '#gen_error' => $gen,
       '#event' => $title ?? '',
-      '#title' => '',
       '#coupon_code' => $this->configuration['coupon_code'] ?? '',
       '#url' => $this->configuration['url'] ?? '',
       '#event_date' => $displayDate ?? '',

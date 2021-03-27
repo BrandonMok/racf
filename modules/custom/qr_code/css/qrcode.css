@@ -9,7 +9,8 @@
 }
 
 .access-pass__title,
-.not-loggedin__title {
+.not-loggedin__title,
+.access-pass__title-print {
     color: white;
     font-size: 24px;
     text-align: center;
@@ -17,6 +18,16 @@
     padding: 12px;
     background-color: #0058B3;
     font-weight: bold;
+}
+
+.access-pass__title-print,
+.access-pass__title-print-event,
+.access-page__event-date,
+.access-page__event-time,
+.access-page__content__how-to-use,
+.access-page__content__terms-conditions,
+.access-page__content__print-logo {
+    display: none;
 }
 
 .access-pass__content,
@@ -39,9 +50,11 @@
     padding: 8px;
 }
 
-#download-text {
+#download-text, 
+#print-text {
     color: #09335F;
     font-weight: bold;
+    padding: 0 16px;
 }
 
 
@@ -130,5 +143,92 @@
     .access-pass,
     .not-loggedin {
         width: 70%;
+    }
+}
+
+
+/** PRINT **/
+@media print {
+    /** To Hide **/
+    div.layout__region--first,
+    header.mdl-layout__header,
+    .racf-footer,
+    .access-pass__top-text,
+    .access-pass__bottom-text,
+    .access-pass__title,
+    .tabs,
+    .messages,
+    .messages--status,
+    #access-pass-url-btn  {
+        display: none;
+    }
+
+    div.access-pass-btns,
+    div.access-pass__content__coupon-code {
+        display: none !important;
+    }
+
+
+    /** To show **/
+    .access-pass__title-print,
+    .access-page__event-date,
+    .access-page__event-time,
+    .access-page__content__how-to-use,
+    .access-page__content__terms-conditions,
+    .access-page__content__print-logo {
+        display: block;
+        text-align: left;
+    }
+
+    .access-pass {
+        border: 2px solid black;
+        width: 35em;
+    }
+
+    /** Access Pass Text **/
+    .access-pass__title-print {
+        border-bottom: 2px solid black;
+        text-align: center;
+    }
+    
+    /** Event title **/
+    .access-pass__title-print-event {
+        display: block;
+        text-align: center;
+    }
+
+    /** Date & Time **/
+    .access-page__event-date,
+    .access-page__event-time {
+        font-size: 20px;
+        margin: 12px 0;
+    }
+
+    /** How to use + Terms & Conditions **/
+    .access-page__content__how-to-use,
+    .access-page__content__terms-conditions {
+        margin: 32px 0;
+    }
+
+    .access-pass__title-print-event,
+    .access-page__content__how-to-use__title, 
+    .access-page__content__terms-conditions__title {
+        font-size: 20px;
+        padding-bottom: 8px;
+    }
+
+    .access-page__content__how-to-use__text,
+    .access-page__content__terms-conditions__text {
+        font-weight: initial;
+    }
+
+    /** Logo **/
+    .access-page__content__print-logo {
+        text-align: center;
+    }
+
+    #print-logo {
+        margin: 8px 0;
+        width: 40px;
     }
 }

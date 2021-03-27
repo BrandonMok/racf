@@ -23,6 +23,8 @@ class QRBlock extends BlockBase {
     return [
       'coupon_code' => '',
       'url' => '',
+      'how_to_use' => '',
+      'terms_conditions' => '',
     ] + parent::defaultConfiguration();
   }
 
@@ -46,6 +48,18 @@ class QRBlock extends BlockBase {
       '#required' => TRUE,
     ];
 
+    $form['how_to_use'] = [
+      '#type' => 'textarea',
+      '#title' => $this->t('How to use this Pass.'),
+      '#default_value' => $this->configuration['how_to_use'],
+    ];
+
+    $form['terms_conditions'] = [
+      '#type' => 'textarea',
+      '#title' => $this->t('Terms & Conditions'),
+      '#default_value' => $this->configuration['terms_conditions'],
+    ];
+
     return $form;
   }
 
@@ -56,6 +70,8 @@ class QRBlock extends BlockBase {
   public function blockSubmit($form, FormStateInterface $form_state) {
     $this->configuration['coupon_code'] = $form_state->getValue('coupon_code');
     $this->configuration['url'] = $form_state->getValue('url');
+    $this->configuration['how_to_use'] = $form_state->getValue('how_to_use');
+    $this->configuration['terms_conditions'] = $form_state->getValue('terms_conditions');
   }
 
 

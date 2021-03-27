@@ -174,5 +174,10 @@
     .access-page__event-date,
     .access-page__event-time {
         display: block;
+        text-align: left;
+    }
+
+    .access-pass__title-print {
+        border-bottom: 2px solid black;
     }
 }

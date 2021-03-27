@@ -23344,6 +23344,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   }
   .general-events-listing .view-empty {
     font-size: 24px;
+    padding-bottom: 40px;
   }
   .general-events-listing .view-general-events .view-content {
     display: flex;

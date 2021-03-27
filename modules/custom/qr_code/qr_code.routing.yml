@@ -13,3 +13,11 @@ qr_code.checkin_menu:
     title: 'CheckIn'
   requirements:
     _permission: 'can checkin event'
+
+qr_code.pass_generated:
+  path: "/passgenerated/{eventTitle}"
+  defaults:
+    _controller: '\Drupal\qr_code\Controller\QRCodeController::passGenerated'
+    title: 'Pass Generated'
+  requirements:
+    _permission: 'access content'

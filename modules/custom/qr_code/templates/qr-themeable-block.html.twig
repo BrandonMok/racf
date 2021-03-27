@@ -37,29 +37,58 @@
 
   {% block content %}
     {% if gen_error is empty %}
-      <div class="access-pass" id="access-pass">
-        <div class="access-pass__title">Generate Access Pass</div>
+      <div class="access-pass">
+        <div class="access-pass__title" id="access-pass">Generate Access Pass</div>
+        <div class="access-pass__title-print">Arts Access Pass</div>
         <div class="access-pass__content">
-            <div class="access-pass__top-text">Show this pass at the door instead of your SNAP Card</div>
+            <div class="access-pass__content__top-text">Show this pass at the door instead of your SNAP Card</div>
+            <div class="access-pass__content__title-print-event" id="event-title">{{ event }} </div>
 
             <img src={{ content }} alt="QR Code Access Pass" class="access-pass__content__qr-code" id="qr-code"/>
 
-            <div class="d-flex flex-row justify-content-center align-items-center mb-4">
-              <a href={{ content }} target="_blank" download="access-pass.png" id="download-text">Download<a>
+            {% if event_date %}
+            <div class="access-page__content__event-date">{{ event_date }}</div>
+            {% endif %}
+
+            {% if event_time %}
+            <div class="access-page__content__event-time">{{ event_time }}</div>
+            {% endif %}
+
+            <div class="d-flex flex-row justify-content-center align-items-center mb-4 access-pass-btns">
+              <a href={{ content }} target="_blank" download="access-pass.png" id="download-text">Download</a>
+              <div id="print-text">Print</div>
             </div>
-
-            <div class="access-pass__bottom-text">or buy tickets online with the coupon code below.</div>
-
+            
             {% if coupon_code is not empty %}
+            <div class="access-pass__content__bottom-text">or buy tickets online with the coupon code below.</div>
             <div class="access-pass__content__coupon-code d-flex flex-row justify-content-center align-items-center m-4">
               <div class="p-2" class="access-pass__content__coupon-code__text">Coupon Code:</div>
               <div class="access-pass__content__coupon-code__code" class="p-2">{{ coupon_code }}</div>
             </div>
             {% endif %}
 
-            <a href={{ url }} target="_blank">
+            <a href={{ url }} target="_blank" id="access-pass-url-btn">
               <div class="access-pass__content__url">BUY TICKETS</div>
             </a>
+
+            {% if how_to_use %}
+            <div class="access-page__content__how-to-use">
+              <div class="access-page__content__how-to-use__title">How to use this Pass?</div>
+              <div class="access-page__content__how-to-use__text">{{ how_to_use }}</div>
+            </div>
+            {% endif %}
+
+            {% if terms_conditions %}
+            <div class="access-page__content__terms-conditions">
+              <div class="access-page__content__terms-conditions__title">Terms & Conditions</div>
+              <div class="access-page__content__terms-conditions__text">{{ terms_conditions }}</div>
+            </div>
+            {% endif %}
+
+            <div class="access-page__content__print-logo">
+              <img src="/modules/custom/qr_code/images/logobw.png" id="print-logo" alt="racf logo" />
+            </div>
+
         </div>
       </div>
     {% else %}

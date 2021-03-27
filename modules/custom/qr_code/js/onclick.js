@@ -3,11 +3,19 @@
         attach: function(context, settings) {
             $("#access-pass", context).once('myBehavior').click(function() {
                 $(".access-pass__content").fadeIn("slow");
+
+                $eventTitle = $('#event-title').text();
+                $.ajax({
+                    type: "POST",
+                    url: settings.path.baseUrl + 'passgenerated' + '/' + $eventTitle,
+                });
+
+                $("#access-pass").off('click'); 
             });
 
-            // @TODO for analytics - do another .click and need to make an AJAX call to update bc in JS.
-
-            
+            $("#print-text", context).once('myBehavior').click(function() {
+                window.print();
+            });
         }
     }
 })(jQuery, Drupal);

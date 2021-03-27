@@ -53,11 +53,11 @@ display:
         options:
           items_per_page: 5
           offset: 0
-          id: 0
+          id: 1
           total_pages: null
           tags:
-            previous: '‹ Previous'
-            next: 'Next ›'
+            previous: ‹‹
+            next: ››
             first: '« First'
             last: 'Last »'
           expose:
@@ -281,6 +281,7 @@ display:
         - 'config:core.entity_view_display.node.event.event_view_row'
         - 'config:core.entity_view_display.node.event.teaser'
         - 'config:core.entity_view_display.node.general_event.default'
+        - 'config:core.entity_view_display.node.general_event.general_event_view_row'
         - 'config:core.entity_view_display.node.general_event.teaser'
         - 'config:core.entity_view_display.node.page.default'
         - 'config:core.entity_view_display.node.page.teaser'
@@ -325,6 +326,7 @@ display:
         - 'config:core.entity_view_display.node.event.event_view_row'
         - 'config:core.entity_view_display.node.event.teaser'
         - 'config:core.entity_view_display.node.general_event.default'
+        - 'config:core.entity_view_display.node.general_event.general_event_view_row'
         - 'config:core.entity_view_display.node.general_event.teaser'
         - 'config:core.entity_view_display.node.page.default'
         - 'config:core.entity_view_display.node.page.teaser'

@@ -37,12 +37,12 @@
 
   {% block content %}
     {% if gen_error is empty %}
-      <div class="access-pass" id="access-pass">
-        <div class="access-pass__title">Generate Access Pass</div>
+      <div class="access-pass">
+        <div class="access-pass__title" id="access-pass">Generate Access Pass</div>
         <div class="access-pass__title-print">Arts Access Pass</div>
         <div class="access-pass__content">
             <div class="access-pass__content__top-text">Show this pass at the door instead of your SNAP Card</div>
-            <div class="access-pass__content__title-print-event">{{ event }} </div>
+            <div class="access-pass__content__title-print-event" id="event-title">{{ event }} </div>
 
             <img src={{ content }} alt="QR Code Access Pass" class="access-pass__content__qr-code" id="qr-code"/>
 

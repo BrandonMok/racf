@@ -102,4 +102,28 @@ class QRCodeController extends ControllerBase {
       ],
     ];
   }
+
+
+  /**
+   * Used for updating the number of passes generated
+   */
+  public function passGenerated($eventTitle) {
+    $etm = \Drupal::entityTypeManager();
+
+    $allEvents = $etm->getStorage('node')->loadByProperties([
+      'title' => $eventTitle
+    ]);
+
+    $thisEvent = array_pop($allEvents);
+
+    $genPasses = $thisEvent->get('field_generated_passes')->getString();
+    $incremented = intval($genPasses) + 1;
+
+    $thisEvent = $thisEvent->set('field_generated_passes', strval($incremented));
+    $thisEvent = $thisEvent->save();
+
+    return [
+      NULL
+    ];
+  }
 }

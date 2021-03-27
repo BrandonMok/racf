@@ -87,6 +87,7 @@ class QRBlock extends BlockBase {
 
       // before generating pass, check if today's date isn't past the event's end date
       $eventDate = $currNode->get('field_date')->getString();
+      $startDate = new \DateTime(substr($eventDate, 0, 12));
       $endDate = new \DateTime(substr($eventDate, 12, 21));
       $today = new \DateTime('now');
 
@@ -98,6 +99,24 @@ class QRBlock extends BlockBase {
         // $urlEncoded = urlencode("https://dev-racf.pantheonsite.io/checkin&event=$title&uid=$currentUID");
         $urlEncoded = urlencode("https://dev-racf.pantheonsite.io/checkin/$title/$currentUID");
         $markup = "http://api.qrserver.com/v1/create-qr-code/?size=150x150&data=$urlEncoded";
+
+
+        // Everything is good up to this point! So ok now to reformat date for display on Printed Version of Access Pass.
+        $displayDate = date_format($startDate,"l, F d Y");
+
+        // Everything is good up to this point! So ok to now display a date for the Printed Version of Access Pass.
+        $fullTime = $currNode->get('field_time')->getString();
+        $startTime = substr($fullTime, 0, 5);
+        $endTime = substr($fullTime, 7, strlen($fullTime));
+
+        $startTimeDate = date('h:m A', $startTime);
+        $endTimeDate = date('h:m A', $endTime);
+
+
+        // dump($startTimeDate);
+        // dump($endTimeDate);
+
+        $eventTime = "$startTimeDate - $endTimeDate";
       }
       else {
         $markup = "/modules/custom/qr_code/images/x-mark.png";
@@ -129,6 +148,8 @@ class QRBlock extends BlockBase {
       '#title' => '',
       '#coupon_code' => $this->configuration['coupon_code'] ?? '',
       '#url' => $this->configuration['url'] ?? '',
+      '#event_date' => $displayDate ?? '',
+      '#event_time' => $eventTime ?? '',
       '#attached' => [
         'library' => [
           'qr_code/assets',

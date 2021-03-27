@@ -9,7 +9,8 @@
 }
 
 .access-pass__title,
-.not-loggedin__title {
+.not-loggedin__title,
+.access-pass__title-print {
     color: white;
     font-size: 24px;
     text-align: center;
@@ -17,6 +18,12 @@
     padding: 12px;
     background-color: #0058B3;
     font-weight: bold;
+}
+
+.access-pass__title-print,
+.access-page__event-date,
+.access-page__event-time {
+    display: none;
 }
 
 .access-pass__content,
@@ -138,20 +145,34 @@
 
 /** PRINT **/
 @media print {
-    header.mdl-layout__header,
-    nav,
-    .racf-footer,
+    /** To Hide **/
     div.layout__region--first,
+    header.mdl-layout__header,
+    .racf-footer,
     .access-pass__top-text,
     .access-pass__bottom-text,
-    #download-text,
-    #print-text,
+    .access-pass__title,
+    .tabs,
+    .messages,
+    .messages--status,
     #access-pass-url-btn  {
         display: none;
     }
 
+    div.access-pass-btns {
+        display: none !important;
+    }
 
-    .access-pass__content__coupon-code > * {
-        display: none;
+
+    div.access-pass__content__coupon-code {
+        display: none !important;
+    }
+
+
+    /** To show **/
+    .access-pass__title-print,
+    .access-page__event-date,
+    .access-page__event-time {
+        display: block;
     }
 }

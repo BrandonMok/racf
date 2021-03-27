@@ -20,6 +20,8 @@ function qr_code_theme() {
         'event' => NULL,
         'coupon_code' => NULL,
         'url' => NULL,
+        'event_date' => NULL,
+        'event_time' => NULL,
       ],
       'render element' => 'children',
     ],

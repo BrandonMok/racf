@@ -39,10 +39,19 @@
     {% if gen_error is empty %}
       <div class="access-pass" id="access-pass">
         <div class="access-pass__title">Generate Access Pass</div>
+        <div class="access-pass__title-print">{{ event }}</div>
         <div class="access-pass__content">
             <div class="access-pass__top-text">Show this pass at the door instead of your SNAP Card</div>
 
             <img src={{ content }} alt="QR Code Access Pass" class="access-pass__content__qr-code" id="qr-code"/>
+
+            {% if event_date %}
+            <div class="access-page__event-date">{{ event_date }}</div>
+            {% endif %}
+
+            {% if event_time %}
+            <div class="access-page__event-time">{{ event_time }}</div>
+            {% endif %}
 
             <div class="d-flex flex-row justify-content-center align-items-center mb-4 access-pass-btns">
               <a href={{ content }} target="_blank" download="access-pass.png" id="download-text">Download</a>

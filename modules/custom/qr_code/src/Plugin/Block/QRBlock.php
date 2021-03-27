@@ -160,6 +160,8 @@ class QRBlock extends BlockBase {
       '#event' => $title ?? '',
       '#coupon_code' => $this->configuration['coupon_code'] ?? '',
       '#url' => $this->configuration['url'] ?? '',
+      '#how_to_use' => $this->configuration['how_to_use'] ?? '',
+      '#terms_conditions' => $this->configuration['terms_conditions'] ?? '',
       '#event_date' => $displayDate ?? '',
       '#event_time' => $eventTime ?? '',
       '#attached' => [

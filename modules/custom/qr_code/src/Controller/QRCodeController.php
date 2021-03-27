@@ -56,25 +56,27 @@ class QRCodeController extends ControllerBase {
       $today = $today->format('m/d/Y');
 
       $formattedDate = "$start - $to";
+
+      // Event Time 
+      $fullTime = $theEvent->get('field_time')->getString();
+      $startTime = substr($fullTime, 0, 5);
+      $endTime = substr($fullTime, 7, strlen($fullTime));
+
+      $startTimeDate = date('h:m A', $startTime);
+      $endTimeDate = date('h:m A', $endTime);
+
+      $eventTime = "$startTimeDate - $endTimeDate";
     }
     else {
       // not an event - is a General Event
       $formattedDate = "";
     }
 
-
-    // if ($today >= $start && $today <= $to){
-    //   $formattedDate = "$start - $to  (TODAY)";
-    // }
-    // else {
-      // $formattedDate = "$start - $to";
-    // }
-
-
     return [
       '#theme' => 'qr_scan_pass',
       '#event' => $event,
       '#event_date' => $formattedDate,
+      '#event_time' => $eventTime ?? '',
       '#snap' => $snap,
       '#attached' => [
         'library' => [
@@ -100,6 +102,34 @@ class QRCodeController extends ControllerBase {
           'qr_code/assets',
         ],
       ],
+    ];
+  }
+
+
+  /**
+   * Used for updating the number of passes generated
+   */
+  public function passGenerated($eventTitle) {
+    $etm = \Drupal::entityTypeManager();
+
+    $allEvents = $etm->getStorage('node')->loadByProperties([
+      'title' => $eventTitle
+    ]);
+
+    // If event is found, then update its generated passes field
+    if (!empty($allEvents)) {
+      $thisEvent = array_pop($allEvents);
+  
+      $genPasses = $thisEvent->get('field_generated_passes')->getString();
+      $incremented = intval($genPasses) + 1;
+  
+      $thisEvent = $thisEvent->set('field_generated_passes', strval($incremented));
+      $thisEvent = $thisEvent->save();
+    }
+
+
+    return [
+      NULL
     ];
   }
 }

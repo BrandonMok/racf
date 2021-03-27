@@ -76,9 +76,17 @@
 
 
 
-/** Controller page **/
+/** 
+ * Controller page 
+ * Page that shows after scanning a pass
+**/
 .scan-pass {
-    margin: 4em auto;
+    margin: 0 auto;
+}
+
+.scan-pass__qr_col {
+    text-align: center;
+    margin-bottom: 16px;
 }
 
 .scan-pass__title {
@@ -95,13 +103,15 @@
 
 .scan-pass__event,
 .scan-pass__snap,
-.scan-pass__event-date  {
+.scan-pass__event-date,
+.scan-pass__event-time  {
     margin: 16px 0;
 }
 
 .scan-pass__event__title,
 .scan-pass__snap__title,
 .scan-pass__event-date__title,
+.scan-pass__event-time__title,
 .scan-pass__info__title {
     font-size: 16px;
     font-weight: bold;
@@ -110,7 +120,8 @@
 
 .scan-pass__event__value,
 .scan-pass__snap__value,
-.scan-pass__event-date__value {
+.scan-pass__event-date__value,
+.scan-pass__event-time__value {
     background-color: #e9ecef;
     padding: 8px;
     padding-left: 8px;
@@ -136,6 +147,15 @@
     .access-pass__content,
     .not-loggedin__unavailable {
         padding: 16px;
+    }
+
+    .scan-pass {
+        margin: 4em auto;
+    }
+
+    .scan-pass__qr_col {
+        text-align: center;
+        margin-bottom: 0;
     }
 }
 

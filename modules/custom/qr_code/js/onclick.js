@@ -5,9 +5,14 @@
             $("#access-pass", context).once('myBehavior').click(function() {
                 $(".access-pass__content").fadeIn("slow");
 
-                // @TODO for analytics - do another .click and need to make an AJAX call to update bc in JS.
 
 
+                // Update passes generated field
+                $eventTitle = $('#event-title').text();
+                $.ajax({
+                    type: "POST",
+                    url: settings.path.baseUrl + 'passgenerated' + '/' + $eventTitle,
+                });
             });
 
             // PRINT btn onClick

@@ -52,6 +52,7 @@ module:
   shortcut: 0
   system: 0
   taxonomy: 0
+  telephone: 0
   text: 0
   time_field: 0
   toolbar: 0
@@ -59,6 +60,7 @@ module:
   twig_tweak: 0
   update: 0
   user: 0
+  user_bundle: 0
   views_bulk_operations: 0
   views_ui: 0
   webform: 0

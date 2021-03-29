@@ -1,0 +1,19 @@
+uuid: 14d47be4-c622-4f7b-b1da-11ae8a1f3b69
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_organization_website
+    - user_bundle.user_type.organizer
+id: user.organizer.field_organization_website
+field_name: field_organization_website
+entity_type: user
+bundle: organizer
+label: 'Organization Website'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

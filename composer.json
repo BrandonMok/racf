@@ -32,6 +32,7 @@
         "drupal/menu_item_role_access": "^2.0",
         "drupal/redirect_after_login": "^2.7",
         "drupal/twig_tweak": "^2.9",
+        "drupal/user_bundle": "^1.0",
         "drupal/views_bulk_operations": "^3.12",
         "drupal/webform": "^6.0",
         "drush/drush": "^10.3"

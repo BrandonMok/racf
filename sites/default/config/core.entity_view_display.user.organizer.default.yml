@@ -1,0 +1,64 @@
+uuid: e9f48afa-3fd3-4cd5-9597-694d5f65dc8a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.user.organizer.field_address
+    - field.field.user.organizer.field_contact_name
+    - field.field.user.organizer.field_organization_name
+    - field.field.user.organizer.field_organization_website
+    - field.field.user.organizer.field_phone
+    - user_bundle.user_type.organizer
+  module:
+    - address
+    - telephone
+id: user.organizer.default
+targetEntityType: user
+bundle: organizer
+mode: default
+content:
+  field_address:
+    weight: 5
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: address_default
+    region: content
+  field_contact_name:
+    weight: 3
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_organization_name:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_organization_website:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_phone:
+    weight: 4
+    label: hidden
+    settings:
+      title: ''
+    third_party_settings: {  }
+    type: telephone_link
+    region: content
+  member_for:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

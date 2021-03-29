@@ -48,10 +48,11 @@ class AnalyticsController extends ControllerBase {
         // Note: VSCODE may show red squiggly line under "->get". Just ignore it bc it's a php thing apparently, it works so don't worry about it
         foreach($events as $e) {
             $genPasses = $e->get('field_generated_passes')->getValue();
-            $genPasses = $genPasses[0]; // the actual valued number
+            $genPasses = $genPasses[0];
 
             $scannedPasses = $e->get('field_scanned_passes')->getValue();
             $scannedPasses = $scannedPasses[0];
+
 
             /**
              * TODO:
@@ -70,9 +71,6 @@ class AnalyticsController extends ControllerBase {
 
 
 
-        
-
-
 
 
         /**
@@ -80,13 +78,6 @@ class AnalyticsController extends ControllerBase {
          */
         //$value = field_extract_value('node', $node, 'field_just_a_value');
         //$entity->get('field_name')->getValue();
-
-        //
-      //$events = $entityTypeManager->getStorage('node')->loadByProperties([
-      //  'type' => 'event', 
-      //  'uid' => $currentUID
-      //]);
-      //
       
         // $result = $query
         //     ->entityCondition('entity_type', 'node')
@@ -116,6 +107,15 @@ class AnalyticsController extends ControllerBase {
             '#attached' => [
                 'library' => [
                     'analytics/accordion'
+                ],
+                'drupalSettings' => [
+                    'analytics' => [
+                        'graph_data' => [
+                            'test_array' => [
+                                5, 10, 20
+                            ],
+                        ],
+                    ],
                 ],
             ],
         );

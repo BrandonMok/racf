@@ -110,10 +110,12 @@
 
             var labls = ["Set 1", "Set 2", " Set 3"];
             var dataset = [4, 13, 7];
-            
+
+            // var test = drupalSettings.analytics.graph_data;
+            // console.log(test);
+
             barGraph(dataset, labls);
             pieGraph(dataset, labls);
-          
         }
     }
 })(jQuery, Drupal);

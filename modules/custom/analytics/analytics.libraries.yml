@@ -10,3 +10,4 @@ accordion:
     js/analytics.js: {}
   dependencies:
     - core/jquery
+    - core/drupalSettings

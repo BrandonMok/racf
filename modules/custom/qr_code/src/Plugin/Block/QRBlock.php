@@ -112,7 +112,6 @@ class QRBlock extends BlockBase {
 
       // Check dates
       if ($today <= $endDate) {
-        // $urlEncoded = urlencode("https://dev-racf.pantheonsite.io/checkin/$title/$currentUID");
         $urlEncoded = urlencode(\Drupal::request()->getHost() . "/checkin/$title/$currentUID");
         $markup = "http://api.qrserver.com/v1/create-qr-code/?size=150x150&data=$urlEncoded";
 
@@ -126,8 +125,10 @@ class QRBlock extends BlockBase {
 
         $startTimeDate = date('h:m A', $startTime);
         $endTimeDate = date('h:m A', $endTime);
-
         $eventTime = "$startTimeDate - $endTimeDate";
+
+        // CHECK: if user has already redeemed the pass -> display depends on this
+        $redeemed = $this->checkList($currNode, $currentUID);
       }
       else {
         $markup = "/modules/custom/qr_code/images/x-mark.png";
@@ -142,6 +143,9 @@ class QRBlock extends BlockBase {
 
         $urlEncoded = urlencode("https://dev-racf.pantheonsite.io/checkin/$title/$currentUID");
         $markup = "http://api.qrserver.com/v1/create-qr-code/?size=150x150&data=$urlEncoded";
+
+        // CHECK: if user has already redeemed the pass -> display depends on this
+        $redeemed = $this->checkList($currNode, $currentUID);
     }
     else { 
       // not loggedin
@@ -149,7 +153,6 @@ class QRBlock extends BlockBase {
       $gen = "QR Code unavailable. Please login to generate pass.";
     }
 
-    
     return [
       '#theme' => 'qr_themeable_block',
       '#title' => '',
@@ -163,12 +166,26 @@ class QRBlock extends BlockBase {
       '#terms_conditions' => $this->configuration['terms_conditions'] ?? '',
       '#event_date' => $displayDate ?? '',
       '#event_time' => $eventTime ?? '',
+      '#already_redeemed' => $redeemed ?? '',
       '#attached' => [
         'library' => [
           'qr_code/assets',
         ],
       ],
     ];
-    
+  }
+
+  /**
+   * CheckList
+   * @param Node, UID
+   * Check's this events' attendee list to see if the user has already generated a pass
+   */
+  public function checkList($currentNode, $uid) {
+    $attendeeList = $currentNode->get('field_attendees')->getString();
+    $retVal = false;
+    if ( strpos($attendeeList, $uid) !== false ) {
+      $retVal = true; // set to true, so JS knows whether to automatically show or hide the pass' contents
+    }
+    return $retVal;
   }
 }

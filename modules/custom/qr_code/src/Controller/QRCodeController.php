@@ -122,9 +122,21 @@ class QRCodeController extends ControllerBase {
   
       $genPasses = $thisEvent->get('field_generated_passes')->getString();
       $incremented = intval($genPasses) + 1;
-  
       $thisEvent = $thisEvent->set('field_generated_passes', strval($incremented));
-      $thisEvent = $thisEvent->save();
+
+      // also add the user to the event's attendee list
+      $attendeeList = $thisEvent->get('field_attendees')->getValue();
+      $currentUID = \Drupal::currentUser()->id();
+
+      print_r($attendeeList);
+      // print_r($attendeeList[0]);
+
+      // print_r(array_key_exists( , $attendeeList));
+
+
+
+
+      $thisEvent = $thisEvent->save();  // save changes
     }
 
 

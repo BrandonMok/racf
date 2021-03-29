@@ -24,6 +24,7 @@ function qr_code_theme() {
         'terms_conditions' => NULL,
         'event_date' => NULL,
         'event_time' => NULL,
+        'already_redeemed' => NULL,
       ],
       'render element' => 'children',
     ],

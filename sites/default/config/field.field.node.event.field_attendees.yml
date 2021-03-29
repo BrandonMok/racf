@@ -1,0 +1,19 @@
+uuid: 74a3a25a-1ad5-4a63-a636-00e0e95bbc8c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_attendees
+    - node.type.event
+id: node.event.field_attendees
+field_name: field_attendees
+entity_type: node
+bundle: event
+label: Attendees
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

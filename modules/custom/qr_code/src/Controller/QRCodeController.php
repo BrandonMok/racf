@@ -125,7 +125,9 @@ class QRCodeController extends ControllerBase {
 
 
   /**
-   * Used for updating the number of passes generated
+   * passGenerated
+   * @return NULL
+   * Used for updating the number of passes generated and adding user to attendee list
    */
   public function passGenerated($eventTitle) {
     $etm = \Drupal::entityTypeManager();
@@ -142,21 +144,18 @@ class QRCodeController extends ControllerBase {
       $incremented = intval($genPasses) + 1;
       $thisEvent = $thisEvent->set('field_generated_passes', strval($incremented));
 
-      // also add the user to the event's attendee list
-      $attendeeList = $thisEvent->get('field_attendees')->getValue();
+      // Also add the user to the event's attendee list
+      $attendeeList = $thisEvent->get('field_attendees')->getString();
       $currentUID = \Drupal::currentUser()->id();
 
-      print_r($attendeeList);
-      // print_r($attendeeList[0]);
-
-      // print_r(array_key_exists( , $attendeeList));
-
-
-
+      if ( str_contains($attendeeList, $currentUID) === false ) {
+        // Not on the list, so add them to the list
+        $attendeeList = $attendeeList . "$currentUID\r\n";
+        $thisEvent = $thisEvent->set('field_attendees', $attendeeList);
+      }
 
       $thisEvent = $thisEvent->save();  // save changes
     }
-
 
     return [
       NULL

@@ -20,7 +20,6 @@
             }
             else {
                 $(".access-pass__content").css('display', 'block');
-                console.log("HERE");
             }
 
             $("#print-text", context).once('myBehavior').click(function() {

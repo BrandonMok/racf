@@ -79,7 +79,6 @@ class QRBlock extends BlockBase {
    * {@inheritdoc}
    */
   public function build() {
-
     $currNode = \Drupal::routeMatch()->getParameter('node');
 
     if (is_null($currNode)) {
@@ -183,7 +182,7 @@ class QRBlock extends BlockBase {
   public function checkList($currentNode, $uid) {
     $attendeeList = $currentNode->get('field_attendees')->getString();
     $retVal = false;
-    if ( strpos($attendeeList, $uid) !== false ) {
+    if ( str_contains($attendeeList, $uid) !== false ) {
       $retVal = true; // set to true, so JS knows whether to automatically show or hide the pass' contents
     }
     return $retVal;

@@ -61,54 +61,18 @@ class AnalyticsController extends ControllerBase {
         }
         
         
-        
         /**
          * FINISH THIS BELOW
          */
         // foreach($generalEvents as $genEvent) {
-            //     // do the samething for the above for regular events. (General Events has the same 'field_generated_passes' and 'field_scanned_passes' fields)
-            
-            // }
+        //     // do the samething for the above for regular events. (General Events has the same 'field_generated_passes' and 'field_scanned_passes' fields)
+        // }
             
             
         /**
          * TODO:
          * Do something with the number of generated and scanned passes
          */
-
-
-
-
-
-
-         
-
-        /**
-         * Leaving this here just in case, but don't think we'd need it
-         */
-        //$value = field_extract_value('node', $node, 'field_just_a_value');
-        //$entity->get('field_name')->getValue();
-      
-        // $result = $query
-        //     ->entityCondition('entity_type', 'node')
-        //     ->propertyCondition('uid', $currentUID)
-        //     ->execute();
-
-        // // Get the definitions
-        // $definitions = \Drupal::service('entity_field.manager')->getFieldDefinitions('node', 'my_custom_content');
-
-        // Load a node for which you want to get the field values
-        // $my_node = \Drupal\node\Entity\Node::load($my_nid);
-
-        // // Iterate through the definitions
-        // foreach (array_keys($definitions) as $field_name) {
-        //     // Get the values for your node
-        //     // Use getValue() if you want to get an array instead of text.
-        //     $values[$field_name] = $my_node->get($field_name)->value;
-        // }
-
-
-        // $values = \Drupal\Core\Entity\ContentEntityBase::get('field_generated_passes');
 
 
         return array(

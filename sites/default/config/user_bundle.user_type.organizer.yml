@@ -1,0 +1,7 @@
+uuid: b04b0620-dddc-4667-80cb-65e2d7d6f892
+langcode: en
+status: true
+dependencies: {  }
+id: organizer
+label: Organizer
+description: 'Account type designated for participating organizations.'

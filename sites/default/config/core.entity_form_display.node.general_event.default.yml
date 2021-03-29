@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.general_event.body
+    - field.field.node.general_event.field_attendees
     - field.field.node.general_event.field_event_image
     - field.field.node.general_event.field_generated_passes
     - field.field.node.general_event.field_organization_logo
@@ -69,6 +70,7 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
+  field_attendees: true
   field_generated_passes: true
   field_scanned_passes: true
   layout_builder__layout: true

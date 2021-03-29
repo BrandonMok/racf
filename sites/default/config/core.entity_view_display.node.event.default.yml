@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.event.body
+    - field.field.node.event.field_attendees
     - field.field.node.event.field_date
     - field.field.node.event.field_event_image
     - field.field.node.event.field_generated_passes
@@ -133,6 +134,21 @@ third_party_settings:
                 third_party_settings: {  }
             additional: {  }
             weight: 4
+          22cad43f-9c59-4456-8bca-68f895ad28ba:
+            uuid: 22cad43f-9c59-4456-8bca-68f895ad28ba
+            region: first
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:event:field_attendees'
+              formatter:
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+                type: basic_string
+            additional: {  }
+            weight: 6
         third_party_settings: {  }
   layout_builder_restrictions:
     allowed_block_categories: {  }
@@ -160,6 +176,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
+  field_attendees:
+    weight: 109
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: first
   field_date:
     weight: 106
     label: above

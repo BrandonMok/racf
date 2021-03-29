@@ -148,7 +148,7 @@ class QRCodeController extends ControllerBase {
       $attendeeList = $thisEvent->get('field_attendees')->getString();
       $currentUID = \Drupal::currentUser()->id();
 
-      if ( str_contains($attendeeList, $currentUID) === false ) {
+      if ( str_contains($attendeeList, $currentUID . "\r\n") === false ) {
         // Not on the list, so add them to the list
         $attendeeList = $attendeeList . "$currentUID\r\n";
         $thisEvent = $thisEvent->set('field_attendees', $attendeeList);

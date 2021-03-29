@@ -182,7 +182,7 @@ class QRBlock extends BlockBase {
   public function checkList($currentNode, $uid) {
     $attendeeList = $currentNode->get('field_attendees')->getString();
     $retVal = false;
-    if ( str_contains($attendeeList, $uid) !== false ) {
+    if ( str_contains($attendeeList, $uid . "\r\n") !== false ) {
       $retVal = true; // set to true, so JS knows whether to automatically show or hide the pass' contents
     }
     return $retVal;

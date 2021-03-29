@@ -114,6 +114,9 @@ class AnalyticsController extends ControllerBase {
                             'test_array' => [
                                 5, 10, 20
                             ],
+                            'test_array2' => [
+                                1,2,3,4,5
+                            ],
                         ],
                     ],
                 ],

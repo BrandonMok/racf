@@ -111,7 +111,7 @@
             var labls = ["Set 1", "Set 2", " Set 3"];
             var dataset = [4, 13, 7];
 
-            // var test = drupalSettings.analytics.graph_data;
+            // var test = drupalSettings.analytics.graph_data.test_array2;
             // console.log(test);
 
             barGraph(dataset, labls);

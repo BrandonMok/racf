@@ -89,16 +89,13 @@ class QRBlock extends BlockBase {
     }
 
     $currentUID = \Drupal::currentUser()->id();
-
     $title = "";
-    $loggedin = "false";
 
     // Make sure it's an event content type and user is logged in
     if ($nodeType === "event" && $currentUID != 0) {
       // Get title of the event
       $title = $currNode->getTitle();
       $gen = "";
-      $loggedin = "true";
 
       // before generating pass, check if today's date isn't past the event's end date
       $eventDate = $currNode->get('field_date')->getString();
@@ -138,7 +135,6 @@ class QRBlock extends BlockBase {
         // Get title of the event
         $title = $currNode->getTitle();
         $gen = "";
-        $loggedin = "true";
 
         $urlEncoded = urlencode("https://dev-racf.pantheonsite.io/checkin/$title/$currentUID");
         $markup = "http://api.qrserver.com/v1/create-qr-code/?size=150x150&data=$urlEncoded";
@@ -156,7 +152,6 @@ class QRBlock extends BlockBase {
       '#theme' => 'qr_themeable_block',
       '#title' => '',
       '#content' => $markup,
-      '#loggedin' => $loggedin,
       '#gen_error' => $gen,
       '#event' => $title ?? '',
       '#coupon_code' => $this->configuration['coupon_code'] ?? '',

@@ -52,19 +52,13 @@ class QRCodeController extends ControllerBase {
         // Get today's date
         $today = new \DateTime('now');
         $today = $today->format('m/d/Y');
-
         $formattedDate = "$start - $to";
 
         // Event Time 
         $fullTime = $theEvent->get('field_time')->getString();
-        $startTime = substr($fullTime, 0, 5);
-        $endTime = substr($fullTime, 7, strlen($fullTime));
-
-        $startTimeDate = date('h:m A', $startTime);
-        $endTimeDate = date('h:m A', $endTime);
-
+        $startTimeDate = date('h:m A', substr($fullTime, 0, 5));
+        $endTimeDate = date('h:m A', substr($fullTime, 7, strlen($fullTime)));
         $eventTime = "$startTimeDate - $endTimeDate";
-
 
         // UPDATE passes scanned field
         $scannedPasses = $theEvent->get('field_scanned_passes')->getString();
@@ -72,20 +66,6 @@ class QRCodeController extends ControllerBase {
 
         $theEvent = $theEvent->set('field_scanned_passes', strval($incremented));
         $theEvent = $theEvent->save();
-
-        // Good array
-        $returnArr = [
-          '#theme' => 'qr_scan_pass',
-          '#event' => $event,
-          '#event_date' => $formattedDate,
-          '#event_time' => $eventTime ?? '',
-          '#snap' => $snap,
-          '#attached' => [
-            'library' => [
-              'qr_code/assets',
-            ],
-          ],
-        ];
       }
       else {
         // not an event - is a General Event
@@ -97,26 +77,13 @@ class QRCodeController extends ControllerBase {
         ]);
         $theEvent = array_pop($generalEvents);
 
+        // CHECK: if event exists
         if (isset($theEvent) && !empty($theEvent)) {
           $scannedPasses = $theEvent->get('field_scanned_passes')->getString();
           $incremented = intval($scannedPasses) + 1;
   
           $theEvent = $theEvent->set('field_scanned_passes', strval($incremented));
           $theEvent = $theEvent->save();
-
-          // Good array
-          $returnArr = [
-            '#theme' => 'qr_scan_pass',
-            '#event' => $event,
-            '#event_date' => $formattedDate,
-            '#event_time' => $eventTime ?? '',
-            '#snap' => $snap,
-            '#attached' => [
-              'library' => [
-                'qr_code/assets',
-              ],
-            ],
-          ];
         }
         else {
           // ERROR - Event not found from the ID in the pass.
@@ -129,7 +96,26 @@ class QRCodeController extends ControllerBase {
       $returnArr = $this->errorScan();
     }
 
-    return $returnArr;
+
+    // RETURN arr to templates
+    if (!isset($returnArr)) {
+      // Good array
+      return [
+        '#theme' => 'qr_scan_pass',
+        '#event' => $event,
+        '#event_date' => $formattedDate,
+        '#event_time' => $eventTime ?? '',
+        '#snap' => $snap,
+        '#attached' => [
+          'library' => [
+            'qr_code/assets',
+          ],
+        ],
+      ];
+    }
+    else {
+      return $returnArr;
+    }
   }
 
 

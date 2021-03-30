@@ -101,15 +101,14 @@
       <div class="not-loggedin">
         <div class="not-loggedin__title">Access Pass Unavailable</div>
         <div class="not-loggedin__unavailable">
-            <img src={{ content }} alt="Circle with x mark" />
+            {% if not logged_in %}
             <div>{{ gen_error }}</div>
-
-            {% if not loggedin %}
             <a href="/user/login">
               <div class="not-loggedin__unavailable__btn">Login</div>
             </a>
-
             {% else %}
+            <img src={{ content }} alt="Circle with x mark" />
+            <div>{{ gen_error }}</div>
             <a href="/events">
               <div class="not-loggedin__unavailable__btn">View Events</div>
             </a>

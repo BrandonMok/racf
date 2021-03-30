@@ -38,6 +38,12 @@ function qr_code_theme() {
       ],
       'render element' => 'children',
     ],
+    'qr_scan_pass_error' => [
+      'variables' => [
+        'content' => NULL,
+      ],
+      'render element' => 'children',
+    ],
     'checkin_page' => [
       'variables' => [
         'content' => NULL,

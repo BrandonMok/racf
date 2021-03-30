@@ -80,16 +80,19 @@
  * Controller page 
  * Page that shows after scanning a pass
 **/
-.scan-pass {
+.scan-pass,
+.scan-pass-error {
     margin: 0 auto;
 }
 
-.scan-pass__qr_col {
+.scan-pass__qr_col,
+.scan-pass-error__qr_col {
     text-align: center;
     margin-bottom: 16px;
 }
 
-.scan-pass__title {
+.scan-pass__title,
+.scan-pass-error__title {
     font-size: 32px;
     font-weight: bold;
     margin: 32px auto;
@@ -104,7 +107,8 @@
 .scan-pass__event,
 .scan-pass__snap,
 .scan-pass__event-date,
-.scan-pass__event-time  {
+.scan-pass__event-time,
+.scan-pass-error__error-info  {
     margin: 16px 0;
 }
 
@@ -112,7 +116,8 @@
 .scan-pass__snap__title,
 .scan-pass__event-date__title,
 .scan-pass__event-time__title,
-.scan-pass__info__title {
+.scan-pass__info__title,
+.scan-pass-error__error-info__title {
     font-size: 16px;
     font-weight: bold;
     margin: 16px 0;
@@ -128,10 +133,12 @@
 }
 
 .scan-pass__faq,
-.scan-pass__info {
+.scan-pass__info,
+.scan-pass-error__faq {
     margin: 24px 0;
 }
-.scan-pass__faq a {
+.scan-pass__faq a,
+.scan-pass-error__faq a {
     color: #0058B3;
 }
 

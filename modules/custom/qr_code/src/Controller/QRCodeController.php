@@ -56,8 +56,10 @@ class QRCodeController extends ControllerBase {
 
         // Event Time 
         $fullTime = $theEvent->get('field_time')->getString();
-        $startTimeDate = date('h:m A', substr($fullTime, 0, 5));
-        $endTimeDate = date('h:m A', substr($fullTime, 7, strlen($fullTime)));
+        $start = substr($fullTime, 0, 5);
+        $end = substr($fullTime, 7, strlen($fullTime));
+        $startTimeDate = gmdate('h:m A', $start);
+        $endTimeDate = gmdate('h:m A', $end);
         $eventTime = "$startTimeDate - $endTimeDate";
 
         // UPDATE passes scanned field

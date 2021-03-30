@@ -30,5 +30,7 @@ racf-carousel:
     https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js: {type:external}
     js/carousel.js: {}
   dependencies:
+    - core/drupal
+    - core/drupalSettings
     - core/jquery
-  
+    - core/jquery.once

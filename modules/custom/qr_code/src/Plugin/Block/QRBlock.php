@@ -89,16 +89,13 @@ class QRBlock extends BlockBase {
     }
 
     $currentUID = \Drupal::currentUser()->id();
-
     $title = "";
-    $loggedin = "false";
 
     // Make sure it's an event content type and user is logged in
     if ($nodeType === "event" && $currentUID != 0) {
       // Get title of the event
       $title = $currNode->getTitle();
       $gen = "";
-      $loggedin = "true";
 
       // before generating pass, check if today's date isn't past the event's end date
       $eventDate = $currNode->get('field_date')->getString();
@@ -111,7 +108,7 @@ class QRBlock extends BlockBase {
 
       // Check dates
       if ($today <= $endDate) {
-        $urlEncoded = urlencode(\Drupal::request()->getHost() . "/checkin/$title/$currentUID");
+        $urlEncoded = urlencode("https://dev-racf.pantheonsite.io/checkin/$title/$currentUID");
         $markup = "http://api.qrserver.com/v1/create-qr-code/?size=150x150&data=$urlEncoded";
 
         // Everything is good up to this point! So ok now to reformat date for display on Printed Version of Access Pass.
@@ -119,11 +116,11 @@ class QRBlock extends BlockBase {
 
         // Everything is good up to this point! So ok to now display a date for the Printed Version of Access Pass.
         $fullTime = $currNode->get('field_time')->getString();
-        $startTime = substr($fullTime, 0, 5);
-        $endTime = substr($fullTime, 7, strlen($fullTime));
+        $start = substr($fullTime, 0, 5);
+        $end = substr($fullTime, 7, strlen($fullTime));
 
-        $startTimeDate = date('h:m A', $startTime);
-        $endTimeDate = date('h:m A', $endTime);
+        $startTimeDate = gmdate('h:m A', $start);
+        $endTimeDate = gmdate('h:m A', $end);
         $eventTime = "$startTimeDate - $endTimeDate";
 
         // CHECK: if user has already redeemed the pass -> display depends on this
@@ -138,7 +135,6 @@ class QRBlock extends BlockBase {
         // Get title of the event
         $title = $currNode->getTitle();
         $gen = "";
-        $loggedin = "true";
 
         $urlEncoded = urlencode("https://dev-racf.pantheonsite.io/checkin/$title/$currentUID");
         $markup = "http://api.qrserver.com/v1/create-qr-code/?size=150x150&data=$urlEncoded";
@@ -156,7 +152,6 @@ class QRBlock extends BlockBase {
       '#theme' => 'qr_themeable_block',
       '#title' => '',
       '#content' => $markup,
-      '#loggedin' => $loggedin,
       '#gen_error' => $gen,
       '#event' => $title ?? '',
       '#coupon_code' => $this->configuration['coupon_code'] ?? '',

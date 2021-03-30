@@ -25,83 +25,97 @@ class QRCodeController extends ControllerBase {
     ]);
 
     $currUsr = array_pop($userResult);
-    $snap = $currUsr->get('field_snap_number')->getString();
+    if (isset($currUsr) && !empty($currUsr)) {
+      $snap = $currUsr->get('field_snap_number')->getString();
 
-    // Get the event and its date to show on template
-    $events = $entityTypeManager->getStorage('node')->loadByProperties([
-      'type' => 'event', 
-      'title' => $event
-    ]);
-
-  
-    // if not empty, then it's an event
-    // if it is empty, then it's a general event
-    if (!empty($events)) { 
-      $theEvent = array_pop($events);
-  
-      $eventDate = $theEvent->get('field_date')->getString(); // full date range of this event
-  
-      // Format start date from Y-d-m to d/m/Y
-      $start = new \DateTime(substr($eventDate, 0, 9));
-      $start = $start->format('m/d/Y');
-  
-      // Format end date from Y-d-m to m/d/Y
-      $to = new \DateTime(substr($eventDate, 12, strlen($eventDate)));
-      $to = $to->format('m/d/Y');
-  
-      // Get today's date
-      $today = new \DateTime('now');
-      $today = $today->format('m/d/Y');
-
-      $formattedDate = "$start - $to";
-
-      // Event Time 
-      $fullTime = $theEvent->get('field_time')->getString();
-      $startTime = substr($fullTime, 0, 5);
-      $endTime = substr($fullTime, 7, strlen($fullTime));
-
-      $startTimeDate = date('h:m A', $startTime);
-      $endTimeDate = date('h:m A', $endTime);
-
-      $eventTime = "$startTimeDate - $endTimeDate";
-
-
-      // UPDATE passes scanned field
-      $scannedPasses = $theEvent->get('field_scanned_passes')->getString();
-      $incremented = intval($scannedPasses) + 1;
-
-      $theEvent = $theEvent->set('field_scanned_passes', strval($incremented));
-      $theEvent = $theEvent->save();
-    }
-    else {
-      // not an event - is a General Event
-      $formattedDate = "";
-
-      $generalEvents = $entityTypeManager->getStorage('node')->loadByProperties([
-        'type' => 'general_event', 
+      // Get the event and its date to show on template
+      $events = $entityTypeManager->getStorage('node')->loadByProperties([
+        'type' => 'event', 
         'title' => $event
       ]);
-      $theEvent = array_pop($generalEvents);
 
-      $scannedPasses = $theEvent->get('field_scanned_passes')->getString();
-      $incremented = intval($scannedPasses) + 1;
+    
+      // if not empty, then it's an event
+      // if it is empty, then it's a general event
+      if (!empty($events)) { 
+        $theEvent = array_pop($events);
+    
+        $eventDate = $theEvent->get('field_date')->getString(); // full date range of this event
+    
+        // Format start date from Y-d-m to d/m/Y
+        $start = new \DateTime(substr($eventDate, 0, 9));
+        $start = $start->format('m/d/Y');
+    
+        // Format end date from Y-d-m to m/d/Y
+        $to = new \DateTime(substr($eventDate, 12, strlen($eventDate)));
+        $to = $to->format('m/d/Y');
+    
+        // Get today's date
+        $today = new \DateTime('now');
+        $today = $today->format('m/d/Y');
 
-      $theEvent = $theEvent->set('field_scanned_passes', strval($incremented));
-      $theEvent = $theEvent->save();
+        $formattedDate = "$start - $to";
+
+        // Event Time 
+        $fullTime = $theEvent->get('field_time')->getString();
+        $startTime = substr($fullTime, 0, 5);
+        $endTime = substr($fullTime, 7, strlen($fullTime));
+
+        $startTimeDate = date('h:m A', $startTime);
+        $endTimeDate = date('h:m A', $endTime);
+
+        $eventTime = "$startTimeDate - $endTimeDate";
+
+
+        // UPDATE passes scanned field
+        $scannedPasses = $theEvent->get('field_scanned_passes')->getString();
+        $incremented = intval($scannedPasses) + 1;
+
+        $theEvent = $theEvent->set('field_scanned_passes', strval($incremented));
+        $theEvent = $theEvent->save();
+      }
+      else {
+        // not an event - is a General Event
+        $formattedDate = "";
+
+        $generalEvents = $entityTypeManager->getStorage('node')->loadByProperties([
+          'type' => 'general_event', 
+          'title' => $event
+        ]);
+        $theEvent = array_pop($generalEvents);
+
+        $scannedPasses = $theEvent->get('field_scanned_passes')->getString();
+        $incremented = intval($scannedPasses) + 1;
+
+        $theEvent = $theEvent->set('field_scanned_passes', strval($incremented));
+        $theEvent = $theEvent->save();
+      }
+
+      $returnArr = [
+        '#theme' => 'qr_scan_pass',
+        '#event' => $event,
+        '#event_date' => $formattedDate,
+        '#event_time' => $eventTime ?? '',
+        '#snap' => $snap,
+        '#attached' => [
+          'library' => [
+            'qr_code/assets',
+          ],
+        ],
+      ];
+    }
+    else {
+      $returnArr = [
+        '#theme' => 'qr_scan_pass_error',
+        '#attached' => [
+          'library' => [
+            'qr_code/assets',
+          ],
+        ],
+      ];
     }
 
-    return [
-      '#theme' => 'qr_scan_pass',
-      '#event' => $event,
-      '#event_date' => $formattedDate,
-      '#event_time' => $eventTime ?? '',
-      '#snap' => $snap,
-      '#attached' => [
-        'library' => [
-          'qr_code/assets',
-        ],
-      ],
-    ];
+    return $returnArr;
   }
 
 

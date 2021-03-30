@@ -124,7 +124,6 @@ class QRCodeController extends ControllerBase {
    * @return Array
    */
   public function errorScan() {
-    // ERROR - User not found!
     return [
       '#theme' => 'qr_scan_pass_error',
       '#attached' => [

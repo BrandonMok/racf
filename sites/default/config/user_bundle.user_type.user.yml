@@ -6,4 +6,4 @@ _core:
   default_config_hash: cTdde52huNYxNtLUL96uAw47ATRVAXBuZW7cnitEwAk
 id: user
 label: User
-description: 'A user of the site.'
+description: 'A user of the site. Designated for SNAP users of the site.'

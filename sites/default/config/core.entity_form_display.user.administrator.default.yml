@@ -1,0 +1,24 @@
+uuid: 68678eff-ca99-4615-9977-5f71cc1057e5
+langcode: en
+status: true
+dependencies:
+  config:
+    - user_bundle.user_type.administrator
+id: user.administrator.default
+targetEntityType: user
+bundle: administrator
+mode: default
+content:
+  account:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  language:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  contact: true
+  timezone: true

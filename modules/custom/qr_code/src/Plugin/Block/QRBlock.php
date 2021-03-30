@@ -111,9 +111,7 @@ class QRBlock extends BlockBase {
 
       // Check dates
       if ($today <= $endDate) {
-        // $urlEncoded = urlencode(\Drupal::request()->getHost() . "/checkin/$title/$currentUID");
         $urlEncoded = urlencode("https://dev-racf.pantheonsite.io/checkin/$title/$currentUID");
-
         $markup = "http://api.qrserver.com/v1/create-qr-code/?size=150x150&data=$urlEncoded";
 
         // Everything is good up to this point! So ok now to reformat date for display on Printed Version of Access Pass.

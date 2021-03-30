@@ -116,11 +116,11 @@ class QRBlock extends BlockBase {
 
         // Everything is good up to this point! So ok to now display a date for the Printed Version of Access Pass.
         $fullTime = $currNode->get('field_time')->getString();
-        $startTime = substr($fullTime, 0, 5);
-        $endTime = substr($fullTime, 7, strlen($fullTime));
+        $start = substr($fullTime, 0, 5);
+        $end = substr($fullTime, 7, strlen($fullTime));
 
-        $startTimeDate = date('h:m A', $startTime);
-        $endTimeDate = date('h:m A', $endTime);
+        $startTimeDate = gmdate('h:m A', $start);
+        $endTimeDate = gmdate('h:m A', $end);
         $eventTime = "$startTimeDate - $endTimeDate";
 
         // CHECK: if user has already redeemed the pass -> display depends on this

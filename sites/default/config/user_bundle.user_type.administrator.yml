@@ -1,0 +1,7 @@
+uuid: 33958e79-411b-4ce2-a68b-7c4e1de906a9
+langcode: en
+status: true
+dependencies: {  }
+id: administrator
+label: Administrator
+description: 'An administrator of the site. Please ensure this account type is provided only to those that are trusted with responsibility of managing the entire site and it''s configurations.'

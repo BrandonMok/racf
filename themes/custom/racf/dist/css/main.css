@@ -22690,14 +22690,6 @@ fieldset[disabled] .mdl-textfield .mdl-textfield__label, .mdl-textfield.is-disab
   margin-right: 8px;
 }
 
-.margin-lg {
-  margin: 8px;
-}
-
-.margin-sm {
-  margin: 4px;
-}
-
 .padding-lg {
   padding: 8px;
 }
@@ -22778,6 +22770,9 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 }
 .racf-footer__content {
   color: #ffffff;
+}
+.racf-footer__content > div {
+  padding: 4px 0;
 }
 
 /** Login, Registration, and reset password form **/

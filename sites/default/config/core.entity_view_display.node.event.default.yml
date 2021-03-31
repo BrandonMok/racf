@@ -134,21 +134,6 @@ third_party_settings:
                 third_party_settings: {  }
             additional: {  }
             weight: 4
-          22cad43f-9c59-4456-8bca-68f895ad28ba:
-            uuid: 22cad43f-9c59-4456-8bca-68f895ad28ba
-            region: first
-            configuration:
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              id: 'field_block:node:event:field_attendees'
-              formatter:
-                label: above
-                settings: {  }
-                third_party_settings: {  }
-                type: basic_string
-            additional: {  }
-            weight: 6
         third_party_settings: {  }
   layout_builder_restrictions:
     allowed_block_categories: {  }

@@ -1,7 +1,7 @@
 /** Custom Block: Information Section **/
 .information-section-left, 
 .information-section-right { 
-    padding: $padding-large;
+    padding: 8px;
 
     &__body {
         display: flex;
@@ -17,7 +17,7 @@
 
         &__label {
             font-weight: bold;
-            padding: $padding-large 0 $padding-large 0;
+            padding: 8px 0 8px 0;
             font-size: $md-heading5-size;
         }
     }
@@ -380,7 +380,7 @@
 
             &__button { 
                 &__btn {
-                    margin: $margin-large;
+                    margin: 8px;
                 }
             }
         }

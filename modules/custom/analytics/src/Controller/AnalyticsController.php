@@ -9,7 +9,7 @@ class AnalyticsController extends ControllerBase {
 
     public function graphs() {
 
-        $currentUID = \Drupal::currentUser()->id();    // current user's ID
+        $currentUID = \Drupal::currentUser()->id();             // current user's ID
         $currentUserRole = \Drupal::currentUser()->getRoles();  // array of roles
         $entityTypeManager = \Drupal::entityTypeManager();
 
@@ -37,41 +37,67 @@ class AnalyticsController extends ControllerBase {
         }
 
 
-        /**
-         * Both $events and $generalEvents are arrays of nodes
-         * Would do a foreach through all to get the specific info
-         */
-        // Uncomment the two below lines if you want / need to see the structure of the nodes
-        // dump($events);
-        // dump($generalEvents);
-
+        // Analytic fields
         $totalGen = 0;
         $totalScanned = 0;
+        $attendees = [];    // array of each uid - don't want to count the same ZIP more than once if user appears again for multiple events
+        $allZipcodes = [];  // zipcodes of attendees
 
-        // Note: VSCODE may show red squiggly line under "->get". Just ignore it bc it's a php thing apparently, it works so don't worry about it
-        foreach($events as $e) {
-            $genPasses = $e->get('field_generated_passes')->getValue();
-            $genPasses = $genPasses[0]["value"];
-            $totalGen = $totalGen + $genPasses;
+        if (!empty($events)) {
+            $etm = \Drupal::entityTypeManager();
 
+            foreach($events as $e) {
+                $genPasses = $e->get('field_generated_passes')->getValue();
+                $genPasses = $genPasses[0]["value"];
+                $totalGen = $totalGen + $genPasses;
+    
+                $scannedPasses = $e->get('field_scanned_passes')->getValue();
+                $scannedPasses = $scannedPasses[0]["value"];
+                $totalScanned = $totalScanned + $scannedPasses;
 
-            $scannedPasses = $e->get('field_scanned_passes')->getValue();
-            $scannedPasses = $scannedPasses[0]["value"];
-            $totalScanned = $totalScanned + $scannedPasses;
+                $attendeeListField = $e->get('field_attendees')->getValue();
+                $attendeeList = $attendeeListField[0]['value']; // list field of user IDs of users that generated pass to attend
+                $attendeeArr = explode("\r\n", $attendeeList);
+
+                foreach($attendeeArr as $id) {
+                    if ($id !== "") {
+                        $userResult = $etm->getStorage('user')->loadByProperties([
+                            'uid' => intval($id)
+                        ]);
+                        $user = array_pop($userResult);
+
+                        // check to make sure not to add an attendee more than once in the attendees array
+                        if (!in_array($id, $attendees)) {
+                            array_push($attendees, $id);    // add this uid of user to attendees array
+
+                            $address = $user->get('field_address')->getValue();
+                            $zipcode = $address[0]["postal_code"];
+
+                            array_push($allZipcodes, $zipcode); // add this zipcode to allZipCodes array for further analytics
+                        }
+                    }
+                }
+            }
         }
         
         
         /**
          * FINISH THIS BELOW
          */
-        // foreach($generalEvents as $genEvent) {
-        //     // do the samething for the above for regular events. (General Events has the same 'field_generated_passes' and 'field_scanned_passes' fields)
+        // if (!empty($generalEvents)) {
+        //     foreach($generalEvents as $genEvent) {
+        //         // do the samething for the above for regular events. (General Events has the same 'field_generated_passes' and 'field_scanned_passes' fields)
+        //     }
         // }
-            
-            
+
+
+
+
         /**
          * TODO:
          * Do something with the number of generated and scanned passes
+         * ALSO - figure out / tally the number each zipcode appears in the allZipcodes array for the chart
+         *  - could be however you think of to do it or could be a simple foreach with tallys 
          */
 
 

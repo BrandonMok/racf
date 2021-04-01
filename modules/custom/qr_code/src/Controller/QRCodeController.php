@@ -15,7 +15,7 @@ class QRCodeController extends ControllerBase {
    * @return array
    *   Return markup array.
    */
-  public function checkin($event, $uid) {
+  public function checkin($eventid, $uid) {
 
     // Get User's snap to show on template
     $entityTypeManager = \Drupal::entityTypeManager();
@@ -34,14 +34,15 @@ class QRCodeController extends ControllerBase {
       // Get the event and its date to show on template
       $events = $entityTypeManager->getStorage('node')->loadByProperties([
         'type' => 'event', 
-        'title' => $event
+        'nid' => $eventid
       ]);
     
       // if not empty, then it's an event
       // if it is empty, then it's a general event
       if (!empty($events)) { 
         $theEvent = array_pop($events);
-    
+        $eventTitle = $theEvent->getTitle();
+        
         $eventDate = $theEvent->get('field_date')->getString(); // full date range of this event
     
         // Format start date from Y-d-m to d/m/Y
@@ -78,12 +79,14 @@ class QRCodeController extends ControllerBase {
 
         $generalEvents = $entityTypeManager->getStorage('node')->loadByProperties([
           'type' => 'general_event', 
-          'title' => $event
+          'nid' => $eventid
         ]);
         $theEvent = array_pop($generalEvents);
 
         // CHECK: if event exists
         if (isset($theEvent) && !empty($theEvent)) {
+          $eventTitle = $theEvent->getTitle();
+
           $scannedPasses = $theEvent->get('field_scanned_passes')->getString();
           $incremented = intval($scannedPasses) + 1;
   
@@ -101,13 +104,12 @@ class QRCodeController extends ControllerBase {
       $returnArr = $this->errorScan();
     }
 
-
     // RETURN arr to templates
     if (!isset($returnArr)) {
       // Good array
       return [
         '#theme' => 'qr_scan_pass',
-        '#event' => $event,
+        '#event' => $eventTitle ?? '',
         '#event_date' => $formattedDate,
         '#event_time' => $eventTime ?? '',
         '#snap' => $snap ?? '',

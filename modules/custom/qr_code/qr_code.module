@@ -34,6 +34,7 @@ function qr_code_theme() {
         'event_date' => NULL,
         'event_time' => NULL,
         'snap' => NULL,
+        'email' => NULL,
       ],
       'render element' => 'children',
     ],

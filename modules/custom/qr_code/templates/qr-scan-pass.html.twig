@@ -27,14 +27,20 @@
             </div>
             {% endif %}
 
-            <div class="scan-pass__snap">
+            {# <div class="scan-pass__snap">
                 <div class="scan-pass__snap__title">SNAP:</div>
                 {% if snap|length != 0 %}
                 <div class="scan-pass__snap__value">{{ snap }}</div>
                 {% else %}
                 <div class="scan-pass__snap__value">N/A - Administrator or Organizer</div>
                 {% endif %}
+            </div> #}
+
+            <div class="scan-pass__email">
+                <div class="scan-pass__snap__title">Email:</div>
+                <div class="scan-pass__snap__value">{{ email }}</div>
             </div>
+
             
             <div class="scan-pass__faq">
                 Got questions? Please

@@ -9,10 +9,18 @@
                     $(".access-pass__content").fadeIn("slow");
     
                     let eventTitle = $('#event-title').text();
+                    let nodeType;
+
+                    if ($("event-date")) {
+                        nodeType = "event";
+                    }
+                    else {
+                        nodeType = "generalEvent";
+                    }
 
                     $.ajax({
                         type: "POST",
-                        url: settings.path.baseUrl + 'passgenerated' + '/' + eventTitle,
+                        url: settings.path.baseUrl + 'passgenerated' + '/' +  nodeType  + '/' + eventTitle,
                     });
     
                     $("#access-pass").off('click'); 

@@ -22817,6 +22817,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 }
 
 /** Mobile Nav **/
+/** ONLY shows when on a mobile device **/
 .mobile-bar {
   position: fixed;
   bottom: 0;
@@ -22914,7 +22915,6 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
     display: none;
   }
 
-  /** for later when using flex **/
   .nav-header-row {
     padding-left: 40px;
   }
@@ -23152,9 +23152,10 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   text-align: center;
   border-radius: 8px;
   margin-bottom: 32px;
+  box-shadow: 0 2px 2px 2px lightgrey;
 }
 .general-events-listing__title {
-  padding-top: 16px;
+  padding-top: 8px;
   font-size: 24px;
   line-height: 1.5;
 }
@@ -23330,7 +23331,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 
   .general-events-listing {
     text-align: left;
-    padding-top: 16px;
+    padding-top: 8px;
     padding-left: 8px;
   }
   .general-events-listing__title {

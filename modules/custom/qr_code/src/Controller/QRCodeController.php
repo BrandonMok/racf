@@ -166,12 +166,21 @@ class QRCodeController extends ControllerBase {
    * @return NULL
    * Used for updating the number of passes generated and adding user to attendee list
    */
-  public function passGenerated($eventTitle) {
+  public function passGenerated($type, $eventTitle) {
     $etm = \Drupal::entityTypeManager();
 
-    $allEvents = $etm->getStorage('node')->loadByProperties([
-      'title' => $eventTitle
-    ]);
+    if ($type == "event") {
+      $allEvents = $etm->getStorage('node')->loadByProperties([
+        'type' => "event",
+        'title' => $eventTitle,
+      ]);
+    }
+    elseif ($type == "generalEvent") {
+      $allEvents = $etm->getStorage('node')->loadByProperties([
+        'type' => "general_event",
+        'title' => $eventTitle,
+      ]);
+    }
 
     // If event is found, then update its generated passes field
     if (!empty($allEvents)) {

@@ -54,11 +54,13 @@ class QRCodeController extends ControllerBase {
         // Format end date from Y-d-m to m/d/Y
         $to = new \DateTime(substr($eventDate, 12, strlen($eventDate)));
         $to = $to->format('m/d/Y');
-    
-        // Get today's date
-        $today = new \DateTime('now');
-        $today = $today->format('m/d/Y');
-        $formattedDate = "$start - $to";
+
+        if ($start == $to) {
+          $formattedDate = "$start";
+        }
+        else {
+          $formattedDate = "$start - $to";
+        }
 
         // Event Time 
         $fullTime = $theEvent->get('field_time')->getString();

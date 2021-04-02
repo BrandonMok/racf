@@ -22732,6 +22732,7 @@ nav#block-racf-main-menu--2 ul li a.is-active {
 /** Local admin tasks **/
 div#block-racf-local-tasks {
   margin: 8px 0;
+  box-shadow: 0 2px 2px 2px #c4c4c4;
 }
 div#block-racf-local-tasks nav.tabs {
   text-align: center;

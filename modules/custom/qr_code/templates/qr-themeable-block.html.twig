@@ -53,7 +53,7 @@
             <img src={{ content }} alt="QR Code Access Pass" class="access-pass__content__qr-code" id="qr-code"/>
 
             {% if event_date %}
-            <div class="access-page__content__event-date">{{ event_date }}</div>
+            <div class="access-page__content__event-date" id="event-date">{{ event_date }}</div>
             {% endif %}
 
             {% if event_time %}
@@ -73,9 +73,11 @@
             </div>
             {% endif %}
 
+            {% if url %}
             <a href={{ url }} target="_blank" id="access-pass-url-btn">
               <div class="access-pass__content__url">BUY TICKETS</div>
             </a>
+            {% endif %}
 
             {% if how_to_use %}
             <div class="access-page__content__how-to-use">

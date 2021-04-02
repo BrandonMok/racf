@@ -15,7 +15,7 @@ class QRCodeController extends ControllerBase {
    * @return array
    *   Return markup array.
    */
-  public function checkin($event, $uid) {
+  public function checkin($eventid, $uid) {
 
     // Get User's snap to show on template
     $entityTypeManager = \Drupal::entityTypeManager();
@@ -26,33 +26,41 @@ class QRCodeController extends ControllerBase {
 
     $currUsr = array_pop($userResult);
     if (isset($currUsr) && !empty($currUsr)) {
-      $snap = $currUsr->get('field_snap_number')->getString();
+
+      if ($currUsr->hasRole('Authenticated User')) {
+        $snap = $currUsr->get('field_snap_number')->getString();
+      }
+      $userEmail = $currUsr->getEmail();
+
 
       // Get the event and its date to show on template
       $events = $entityTypeManager->getStorage('node')->loadByProperties([
         'type' => 'event', 
-        'title' => $event
+        'nid' => $eventid
       ]);
     
       // if not empty, then it's an event
       // if it is empty, then it's a general event
       if (!empty($events)) { 
         $theEvent = array_pop($events);
-    
+        $eventTitle = $theEvent->getTitle();
+        
         $eventDate = $theEvent->get('field_date')->getString(); // full date range of this event
     
         // Format start date from Y-d-m to d/m/Y
-        $start = new \DateTime(substr($eventDate, 0, 9));
+        $start = new \DateTime(substr($eventDate, 0, 10));
         $start = $start->format('m/d/Y');
     
         // Format end date from Y-d-m to m/d/Y
         $to = new \DateTime(substr($eventDate, 12, strlen($eventDate)));
         $to = $to->format('m/d/Y');
-    
-        // Get today's date
-        $today = new \DateTime('now');
-        $today = $today->format('m/d/Y');
-        $formattedDate = "$start - $to";
+
+        if ($start == $to) {
+          $formattedDate = "$start";
+        }
+        else {
+          $formattedDate = "$start - $to";
+        }
 
         // Event Time 
         $fullTime = $theEvent->get('field_time')->getString();
@@ -75,12 +83,14 @@ class QRCodeController extends ControllerBase {
 
         $generalEvents = $entityTypeManager->getStorage('node')->loadByProperties([
           'type' => 'general_event', 
-          'title' => $event
+          'nid' => $eventid
         ]);
         $theEvent = array_pop($generalEvents);
 
         // CHECK: if event exists
         if (isset($theEvent) && !empty($theEvent)) {
+          $eventTitle = $theEvent->getTitle();
+
           $scannedPasses = $theEvent->get('field_scanned_passes')->getString();
           $incremented = intval($scannedPasses) + 1;
   
@@ -98,16 +108,16 @@ class QRCodeController extends ControllerBase {
       $returnArr = $this->errorScan();
     }
 
-
     // RETURN arr to templates
     if (!isset($returnArr)) {
       // Good array
       return [
         '#theme' => 'qr_scan_pass',
-        '#event' => $event,
+        '#event' => $eventTitle ?? '',
         '#event_date' => $formattedDate,
         '#event_time' => $eventTime ?? '',
-        '#snap' => $snap,
+        '#snap' => $snap ?? '',
+        '#email' => $userEmail,
         '#attached' => [
           'library' => [
             'qr_code/assets',
@@ -161,12 +171,21 @@ class QRCodeController extends ControllerBase {
    * @return NULL
    * Used for updating the number of passes generated and adding user to attendee list
    */
-  public function passGenerated($eventTitle) {
+  public function passGenerated($type, $eventTitle) {
     $etm = \Drupal::entityTypeManager();
 
-    $allEvents = $etm->getStorage('node')->loadByProperties([
-      'title' => $eventTitle
-    ]);
+    if ($type == "event") {
+      $allEvents = $etm->getStorage('node')->loadByProperties([
+        'type' => "event",
+        'title' => $eventTitle,
+      ]);
+    }
+    elseif ($type == "generalEvent") {
+      $allEvents = $etm->getStorage('node')->loadByProperties([
+        'type' => "general_event",
+        'title' => $eventTitle,
+      ]);
+    }
 
     // If event is found, then update its generated passes field
     if (!empty($allEvents)) {

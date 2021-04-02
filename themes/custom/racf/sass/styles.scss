@@ -13,10 +13,6 @@ $md-heading6-size: 20px;
 $padding-large: 8px;
 $padding-small: 4px;
 
-$margin-large: 8px;
-$margin-small: 4px;
-
-
 $primary-color: #0058B3;
 $secondary-color: #ffffff;
 $tertiary-color: #09335F;
@@ -35,11 +31,9 @@ $btn-background: #3A4647;
 .black-text { color: $black; }
 
 .side-margin {
-    margin-left: $margin-large;
-    margin-right: $margin-large;
+    margin-left: 8px;
+    margin-right: 8px;
 }
-.margin-lg { margin: $margin-large; }
-.margin-sm { margin: $margin-small; }
 
 .padding-lg { padding: $padding-large; }
 .padding-sm { padding: $padding-small; }
@@ -48,7 +42,6 @@ $btn-background: #3A4647;
 
 /** Styles **/
 *  {
-    // font-family: 'Open Sans', sans-serif;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -122,6 +115,10 @@ div#block-racf-local-tasks {
 
     &__content {
         color: $white;
+
+        & > div {
+            padding: 4px 0;
+        }
     }
 }
 
@@ -188,6 +185,7 @@ div#block-racf-local-tasks {
 
 
 /** Mobile Nav **/
+/** ONLY shows when on a mobile device **/
 .mobile-bar {
     position: fixed;
     bottom: 0;
@@ -293,17 +291,6 @@ div#block-racf-local-tasks {
         }
     }
 
-    /** for later when using flex **/
-    // .layout--twocol-section--50-50 {
-    //     .layout__region--first {
-    //         order: 1;
-    //     }
-    
-    //     .layout__region--second {
-    //         order: 2;
-    //     }
-    // }
-
     .nav-header-row {
         padding-left: 40px;
     }
@@ -341,12 +328,10 @@ div#block-racf-local-tasks {
     .navigation__list-item__mobile { display: none; }
 
     /** XL: User Login / Registration pages **/
-    .user-login-register__content {
-        &__title {
-            padding: 0;
-            margin: 0;
-            margin-left: 32px;
-            text-align: start;
-        }
+    .user-login-register__content__title {
+        padding: 0;
+        margin: 0;
+        margin-left: 32px;
+        text-align: start;
     }
 }

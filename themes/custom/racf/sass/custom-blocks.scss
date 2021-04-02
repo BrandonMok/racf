@@ -1,7 +1,7 @@
 /** Custom Block: Information Section **/
 .information-section-left, 
 .information-section-right { 
-    padding: $padding-large;
+    padding: 8px;
 
     &__body {
         display: flex;
@@ -17,7 +17,7 @@
 
         &__label {
             font-weight: bold;
-            padding: $padding-large 0 $padding-large 0;
+            padding: 8px 0 8px 0;
             font-size: $md-heading5-size;
         }
     }
@@ -244,9 +244,10 @@
     text-align: center;
     border-radius: 8px;
     margin-bottom: 32px;
+    box-shadow: 0 2px 2px 2px lightgrey;
 
     &__title {
-        padding-top: 16px;
+        padding-top: 8px;
         font-size: $md-heading5-size;
         line-height: 1.5;
     }
@@ -380,7 +381,7 @@
 
             &__button { 
                 &__btn {
-                    margin: $margin-large;
+                    margin: 8px;
                 }
             }
         }
@@ -477,7 +478,7 @@
 
     .general-events-listing {
         text-align: left;
-        padding-top: 16px;
+        padding-top: 8px;
         padding-left: 8px;
     
         &__title {

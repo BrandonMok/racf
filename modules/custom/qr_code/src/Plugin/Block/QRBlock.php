@@ -167,6 +167,7 @@ class QRBlock extends BlockBase {
       '#attached' => [
         'library' => [
           'qr_code/assets',
+          'qr_code/htmltocanvas',
         ],
       ],
     ];

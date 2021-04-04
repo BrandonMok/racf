@@ -208,7 +208,8 @@
     .tabs,
     .messages,
     .messages--status,
-    #access-pass-url-btn  {
+    #access-pass-url-btn,
+    .access-pass__content__event-info  {
         display: none;
     }
 

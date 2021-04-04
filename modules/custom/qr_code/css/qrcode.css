@@ -22,6 +22,8 @@
     box-shadow: 0 0 2px 2px lightgrey;
 }
 
+
+/** For printed version **/
 .access-pass__title-print,
 .access-pass__content__title-print-event,
 .access-page__content__event-date,
@@ -32,6 +34,8 @@
     display: none;
 }
 
+
+
 .access-pass__content,
 .not-loggedin__unavailable {
     display: none;
@@ -40,10 +44,23 @@
     padding: 16px 0 32px 0;
 }
 
+/** Event info to display on the pass **/
+.access-pass__content__event-info {
+    margin: 8px 0;
+}
+.access-pass__content__event-info__title {
+    font-size: 20pt;
+    padding: 8px 0;
+}
+.access-pass__content__event-info__date,
+.access-pass__content__event-info__time {
+    padding: 4px 0;
+    font-size: 14pt;
+}
+
 .access-pass__content__qr-code {
     margin: 24px 0;
 }
-
 .access-pass__content__coupon-code__text {
     font-weight: initial;
 }

@@ -22821,14 +22821,6 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   padding: 0;
 }
 
-.field--name-field-documents {
-  background-color: blue;
-  /** After uploading file **/
-  /** Before upload **/
-}
-.field--name-field-documents div {
-  background-color: pink;
-}
 .field--name-field-documents div details .details-wrapper div.tabledrag-toggle-weight-wrapper,
 .field--name-field-documents div details .details-wrapper div.tableresponsive-toggle-columns {
   display: none;
@@ -22841,22 +22833,6 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 }
 .field--name-field-documents div details .details-wrapper div.form-type-managed-file div.js-form-managed-file input.form-submit {
   margin-left: 0;
-  margin-top: 8px;
-}
-.field--name-field-documents details#edit-field-documents {
-  border: none;
-}
-.field--name-field-documents details#edit-field-documents summary {
-  padding: 0;
-}
-.field--name-field-documents details#edit-field-documents .details-wrapper div.tabledrag-toggle-weight-wrapper {
-  display: none;
-}
-.field--name-field-documents details#edit-field-documents .details-wrapper div.js-form-type-managed-file > label {
-  display: none;
-}
-.field--name-field-documents details#edit-field-documents .details-wrapper div.js-form-type-managed-file div#edit-field-documents-0 input#edit-field-documents-0-upload-button {
-  margin: 0;
   margin-top: 8px;
 }
 

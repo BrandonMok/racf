@@ -22831,6 +22831,30 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   padding: 0;
 }
 
+.field--name-field-documents div {
+  /** one item allowed **/
+  /** Before upload **/
+  /** After upload **/
+  /** IF: Multiple items allowed **/
+}
+.field--name-field-documents div div.form-item div.form-managed-file input.form-file {
+  margin-bottom: 8px;
+}
+.field--name-field-documents div div.form-item div.form-managed-file input.form-submit {
+  margin-left: 0;
+}
+.field--name-field-documents div div div.form-item div.form-managed-file input.form-file {
+  margin-bottom: 8px;
+}
+.field--name-field-documents div div div.form-item div.form-managed-file input.form-submit {
+  margin-left: 0;
+}
+.field--name-field-documents div div div.form-item div.form-managed-file span.file {
+  margin-bottom: 8px;
+}
+.field--name-field-documents div div div.form-item div.form-managed-file span.file a {
+  color: #09335F;
+}
 .field--name-field-documents div details .details-wrapper div.tabledrag-toggle-weight-wrapper,
 .field--name-field-documents div details .details-wrapper div.tableresponsive-toggle-columns {
   display: none;

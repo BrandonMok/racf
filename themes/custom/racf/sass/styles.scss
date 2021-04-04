@@ -203,6 +203,35 @@ div#block-racf-local-tasks {
 
 .field--name-field-documents {
     div {
+        /** one item allowed **/
+        /** Before upload **/
+        div.form-item {
+            div.form-managed-file {
+                input.form-file {
+                    margin-bottom: 8px;
+                }
+                input.form-submit {
+                    margin-left: 0;
+                }
+            }
+        }
+        /** After upload **/
+        div div.form-item div.form-managed-file {
+            input.form-file {
+                margin-bottom: 8px;
+            }
+            input.form-submit {
+                margin-left: 0;
+            }
+            span.file {
+                margin-bottom: 8px;
+                a {
+                    color: $tertiary-color;
+                }
+            }
+        }
+
+        /** IF: Multiple items allowed **/
         details .details-wrapper {
             div.tabledrag-toggle-weight-wrapper,
             div.tableresponsive-toggle-columns {

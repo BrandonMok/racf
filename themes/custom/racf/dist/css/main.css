@@ -22804,7 +22804,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   color: #ffffff;
 }
 .user-login-register__content #block-racf-content form #edit-pass div.form-type-password {
-  padding-bottom: 8px;
+  padding-bottom: 4px;
 }
 
 .description {
@@ -22827,6 +22827,12 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 }
 .field--name-field-documents div details .details-wrapper table thead {
   display: none;
+}
+.field--name-field-documents div details .details-wrapper table tbody tr td div.form-managed-file span.file {
+  padding-right: 16px;
+}
+.field--name-field-documents div details .details-wrapper table tbody tr td div.form-managed-file span.file a {
+  color: #09335F;
 }
 .field--name-field-documents div details .details-wrapper div.form-type-managed-file label {
   display: none;
@@ -22945,11 +22951,18 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 
   /** MD: User Login / Registration pages **/
   .user-login-register__content__title {
-    text-align: start;
+    text-align: center;
   }
-  .user-login-register__content #block-racf-content {
+  .user-login-register__content__form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 32px 0;
+  }
+  .user-login-register__content__form #block-racf-content {
     background-color: #ece4dc;
-    margin: 32px;
+    padding: 32px;
+    margin-bottom: 24px;
     /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
     /* Firefox 3.5 - 3.6 */
     box-shadow: 3px 3px 5px 6px #ccc;

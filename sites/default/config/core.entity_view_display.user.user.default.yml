@@ -4,11 +4,12 @@ status: true
 dependencies:
   config:
     - field.field.user.user.field_address
-    - field.field.user.user.field_snap_number
+    - field.field.user.user.field_documents
     - field.field.user.user.user_picture
+    - user_bundle.user_type.user
   module:
     - address
-    - user
+    - file
 _core:
   default_config_hash: V51QPCKkgNREKtSmB9Iu2wmAMEpktVpnzklWaZV8UYo
 id: user.user.default
@@ -23,14 +24,14 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-  field_snap_number:
-    type: string
-    weight: 0
-    region: content
+  field_documents:
+    weight: 2
     label: hidden
     settings:
-      link_to_entity: false
+      use_description_as_link_text: true
     third_party_settings: {  }
+    type: file_default
+    region: content
 hidden:
   member_for: true
   user_picture: true

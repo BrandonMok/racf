@@ -22787,6 +22787,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 }
 .user-login-register__content #block-racf-content form {
   padding: 16px;
+  /** Password fields **/
 }
 .user-login-register__content #block-racf-content form p {
   display: none;
@@ -22802,6 +22803,9 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   background-color: #3A4647 !important;
   color: #ffffff;
 }
+.user-login-register__content #block-racf-content form #edit-pass div.form-type-password {
+  padding-bottom: 8px;
+}
 
 .description {
   display: none;
@@ -22815,6 +22819,20 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 }
 .field--type-address details .details-wrapper {
   padding: 0;
+}
+
+.field--name-field-documents details#edit-field-documents {
+  border: none;
+}
+.field--name-field-documents details#edit-field-documents summary {
+  padding: 0;
+}
+.field--name-field-documents details#edit-field-documents .details-wrapper div.js-form-type-managed-file label#edit-field-documents-0--label {
+  display: none;
+}
+.field--name-field-documents details#edit-field-documents .details-wrapper div.js-form-type-managed-file div#edit-field-documents-0 input#edit-field-documents-0-upload-button {
+  margin: 0;
+  margin-top: 8px;
 }
 
 /** Mobile Nav **/

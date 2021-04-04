@@ -48,18 +48,24 @@ class QRCodeController extends ControllerBase {
         $eventDate = $theEvent->get('field_date')->getString(); // full date range of this event
     
         // Format start date from Y-d-m to d/m/Y
-        $start = new \DateTime(substr($eventDate, 0, 10));
-        $start = $start->format('m/d/Y');
+        $startDate = new \DateTime(substr($eventDate, 0, 10));
+        $startDate = $startDate->format('m/d/Y');
     
         // Format end date from Y-d-m to m/d/Y
-        $to = new \DateTime(substr($eventDate, 12, strlen($eventDate)));
-        $to = $to->format('m/d/Y');
+        $endDate = new \DateTime(substr($eventDate, 12, strlen($eventDate)));
+        $endDate = $endDate->format('m/d/Y');
 
-        if ($start == $to) {
-          $formattedDate = "$start";
+        $today = new \DateTime("now");
+        $today = $today->format("m/d/Y");
+
+        if ($endDate < $today) {
+          $formattedDate = "EXPIRED";
+        }
+        elseif($startDate == $endDate) {
+          $formattedDate = "$startDate";
         }
         else {
-          $formattedDate = "$start - $to";
+          $formattedDate = "$startDate - $endDate";
         }
 
         // Event Time 

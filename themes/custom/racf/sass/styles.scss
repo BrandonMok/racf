@@ -129,46 +129,56 @@ div#block-racf-local-tasks {
     margin-top: 24px;
 
     &__title {
-        @extend .container;
         text-align: center;
-        font-size: $md-heading5-size;
         font-weight: bold;
+        font-size: $md-heading5-size;
     }
 
-    #block-racf-content {
-        @extend .d-flex;
-        @extend .flex-column;
-        @extend .justify-content-center;
-        @extend .align-items-center;
+    &__form { 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 32px 0;
 
-        form {
-            padding: 16px;
+        #block-racf-content {
+            form {
+                padding: 16px;
 
-            p {
-                display: none;
-            }
-        
-            input { 
-                display: block; 
-            }
-
-            #edit-actions {
-                text-align: center;
-
-                input.form-submit {
-                    @extend .mdl-button;
-                    @extend .mdl-button--raised;
-        
-                    width: initial;
-                    background-color: $btn-background !important;
-                    color: $white;
+                p {
+                    display: none;
                 }
-            }
+            
+                input { 
+                    display: block; 
+                }
 
-            /** Password fields **/
-            #edit-pass {
-                div.form-type-password {
-                    padding-bottom: 4px;
+                #edit-account {
+                    #edit-pass {
+                        div.password-parent,
+                        div.confirm-parent {
+                            max-width: 100%;
+                        }
+                    }
+                }
+
+                #edit-actions {
+                    text-align: center;
+
+                    input.form-submit {
+                        @extend .mdl-button;
+                        @extend .mdl-button--raised;
+            
+                        width: initial;
+                        background-color: $btn-background !important;
+                        color: $white;
+                    }
+                }
+
+                /** Password fields **/
+                #edit-pass {
+                    div.form-type-password {
+                        padding-bottom: 4px;
+                    }
                 }
             }
         }
@@ -348,23 +358,14 @@ div#block-racf-local-tasks {
 
     /** MD: User Login / Registration pages **/
     .user-login-register__content {
-        &__title {
-            text-align: center;
-        }
-
         &__form {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 32px 0;
-
             #block-racf-content {
                 background-color: $tan;
                 padding: 32px;
                 margin-bottom: 24px;
     
-                -webkit-box-shadow: 3px 3px 5px 6px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
-                -moz-box-shadow:    3px 3px 5px 6px #ccc;  /* Firefox 3.5 - 3.6 */
+                -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+                -moz-box-shadow:    3px 3px 5px 6px #ccc;
                 box-shadow:         3px 3px 5px 6px #ccc;
             }
         }
@@ -372,21 +373,7 @@ div#block-racf-local-tasks {
 }
 
 @include media-breakpoint-up(lg) {
-    .navigation__list-item__mobile { display: none; }
-
     .view-events { 
         margin: 40px 32px 40px 16px;
-    }
-}
-
-@include media-breakpoint-up(xl) {
-    .navigation__list-item__mobile { display: none; }
-
-    /** XL: User Login / Registration pages **/
-    .user-login-register__content__title {
-        padding: 0;
-        margin: 0;
-        margin-left: 32px;
-        text-align: start;
     }
 }

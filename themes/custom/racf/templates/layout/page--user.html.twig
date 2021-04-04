@@ -76,7 +76,7 @@
 
                 <div class="user-login-register__content">
                     <div class="user-login-register__content__title">{{ page["#title"] }}</div>
-                    {{ page.content.racf_content }}
+                    <div class="user-login-register__content__form">{{ page.content.racf_content }}</div>
                 </div> 
 
                 {{ page.content|without('racf_local_actions', 'racf_local_tasks', 'racf_content') }}

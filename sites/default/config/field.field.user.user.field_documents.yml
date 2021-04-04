@@ -1,0 +1,27 @@
+uuid: 54d06a06-9699-47d7-903a-0d51b20f39a6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_documents
+    - user_bundle.user_type.user
+  module:
+    - file
+id: user.user.field_documents
+field_name: field_documents
+entity_type: user
+bundle: user
+label: Documents
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'txt pdf doc docx jpg png'
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

@@ -5,10 +5,9 @@ dependencies:
   config:
     - core.entity_view_mode.user.compact
     - field.field.user.user.field_address
-    - field.field.user.user.field_snap_number
+    - field.field.user.user.field_documents
     - field.field.user.user.user_picture
-  module:
-    - user
+    - user_bundle.user_type.user
 _core:
   default_config_hash: '-cLsS3M3JycipXQt9rEb81_HxKneReoGuRh8ijcOPXs'
 id: user.user.compact
@@ -18,6 +17,6 @@ mode: compact
 content: {  }
 hidden:
   field_address: true
-  field_snap_number: true
+  field_documents: true
   member_for: true
   user_picture: true

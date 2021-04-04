@@ -124,7 +124,6 @@
 }
 
 .scan-pass__event,
-.scan-pass__snap,
 .scan-pass__event-date,
 .scan-pass__event-time,
 .scan-pass-error__error-info,
@@ -133,22 +132,20 @@
 }
 
 .scan-pass__event__title,
-.scan-pass__snap__title,
 .scan-pass__event-date__title,
 .scan-pass__event-time__title,
 .scan-pass__info__title,
 .scan-pass-error__error-info__title,
-.scan-pass__snap__title {
+.scan-pass__email__title {
     font-size: 16px;
     font-weight: bold;
     margin: 16px 0;
 }
 
 .scan-pass__event__value,
-.scan-pass__snap__value,
 .scan-pass__event-date__value,
-.scan-pass__event-time__value,
-.scan-pass__snap__value {
+.scan-pass__event-time__value ,
+.scan-pass__email__value {
     background-color: #e9ecef;
     padding: 8px;
     padding-left: 8px;

@@ -27,11 +27,7 @@ class QRCodeController extends ControllerBase {
     $currUsr = array_pop($userResult);
     if (isset($currUsr) && !empty($currUsr)) {
 
-      if ($currUsr->hasRole('Authenticated User')) {
-        $snap = $currUsr->get('field_snap_number')->getString();
-      }
       $userEmail = $currUsr->getEmail();
-
 
       // Get the event and its date to show on template
       $events = $entityTypeManager->getStorage('node')->loadByProperties([
@@ -122,7 +118,6 @@ class QRCodeController extends ControllerBase {
         '#event' => $eventTitle ?? '',
         '#event_date' => $formattedDate,
         '#event_time' => $eventTime ?? '',
-        '#snap' => $snap ?? '',
         '#email' => $userEmail,
         '#attached' => [
           'library' => [

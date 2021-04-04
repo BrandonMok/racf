@@ -192,6 +192,40 @@ div#block-racf-local-tasks {
 }
 
 .field--name-field-documents {
+    background-color: blue;
+
+    /** After uploading file **/
+    div {
+        background-color: pink;
+        details .details-wrapper {
+            div.tabledrag-toggle-weight-wrapper,
+            div.tableresponsive-toggle-columns {
+                display: none;
+            }
+
+            table {
+                thead {
+                    display: none;
+                }
+            }
+
+            div.form-type-managed-file {
+                label {
+                    display: none;
+                }
+
+                div.js-form-managed-file {
+                    input.form-submit {
+                        margin-left: 0;
+                        margin-top: 8px;
+                    }
+                }
+            }
+        }
+    }
+
+
+    /** Before upload **/
     details#edit-field-documents {
         border: none;
 
@@ -200,10 +234,14 @@ div#block-racf-local-tasks {
         }
 
         .details-wrapper {
+            div.tabledrag-toggle-weight-wrapper { 
+                display: none; 
+            }
+
+
+
             div.js-form-type-managed-file {
-                label#edit-field-documents-0--label {
-                    display: none;
-                }
+                > label { display: none; }
 
                 div#edit-field-documents-0 {
                     input#edit-field-documents-0-upload-button {
@@ -215,6 +253,11 @@ div#block-racf-local-tasks {
         }
     }
 }
+
+// div.tabledrag-toggle-weight-wrapper {
+//     display: none;
+//     background-color: red;
+// }
 
 
 /** Mobile Nav **/

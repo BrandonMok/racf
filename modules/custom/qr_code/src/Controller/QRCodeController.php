@@ -3,7 +3,6 @@
 namespace Drupal\qr_code\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
-use Drupal\Core\Render\Element\Page;
 
 /**
  * Defines QRCodeController class.

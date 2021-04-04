@@ -35,21 +35,17 @@
             });
 
 
+            $("#download-text", context).click(function() {
+                var element = $(".access-pass");
 
-            var element = $(".access-pass");
-            var getCanvas;
-
-            html2canvas(element, { letterRendering: 1, allowTaint : false, useCORS: true , onrendered : function (canvas) { 
-                getCanvas = canvas;
-            } });
-
-            $("#download-text", context).once('myBehavior').click(function() {
-                var imageData = getCanvas.toDataURL("image/png");
+                html2canvas(element, { letterRendering: 1, allowTaint : false, useCORS: true , onrendered : function (canvas) { 
+                    var imageData = canvas.toDataURL("image/png");
           
-                var newData = imageData.replace(
-                /^data:image\/png/, "data:application/octet-stream");
-            
-                $("#download-text").attr("download", $('#event-title').text() + ".png").attr("href", newData);
+                    var newData = imageData.replace(
+                    /^data:image\/png/, "data:application/octet-stream");
+                
+                    $("#download-text").attr("download", $('#event-title').text() + ".png").attr("href", newData);
+                } });
             });
         }
     }

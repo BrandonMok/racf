@@ -80,13 +80,13 @@ class QRBlock extends BlockBase {
    */
   public function build() {
     $currNode = \Drupal::routeMatch()->getParameter('node');
-    $nid = $currNode->id();
 
     if (is_null($currNode)) {
       $nodeType = "";
     }
     else {
       $nodeType = $currNode->bundle();
+      $nid = $currNode->id();
     }
 
     $currentUID = \Drupal::currentUser()->id();

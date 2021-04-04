@@ -52,7 +52,7 @@
                         var newData = imageData.replace(
                         /^data:image\/png/, "data:application/octet-stream");
                     
-                        downloadbtn.attr("download", $('#event-title').text() + ".png");
+                        downloadbtn.attr("download", $('#event-title').text().trim() + ".png");
                         downloadbtn.attr("href", newData);
                     } 
                 });

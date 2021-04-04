@@ -47,11 +47,26 @@
       {% endif %}
         <div class="access-pass__title-print">Arts Access Pass</div>
         <div class="access-pass__content">
+
+            <div class="access-pass__content__event-info">
+              <div class="access-pass__content__event-info__title">{{ event }}</div>
+
+              {% if event_date %}
+              <div class="access-pass__content__event-info__date">{{ event_date }}</div>
+              {% endif %}
+
+              {% if event_time %}
+              <div class="access-pass__content__event-info__time">{{ event_time }}</div>
+              {% endif %}
+            </div>
+
             <div class="access-pass__content__top-text">Show this pass at the door instead of your SNAP Card</div>
             <div class="access-pass__content__title-print-event" id="event-title">{{ event }} </div>
 
             <img src={{ content }} alt="QR Code Access Pass" class="access-pass__content__qr-code" id="qr-code"/>
 
+
+            {# Event date and time are both only shown for the printed version of the pass #}
             {% if event_date %}
             <div class="access-page__content__event-date" id="event-date">{{ event_date }}</div>
             {% endif %}

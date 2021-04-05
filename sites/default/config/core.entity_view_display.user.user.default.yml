@@ -8,7 +8,6 @@ dependencies:
     - field.field.user.user.user_picture
     - user_bundle.user_type.user
   module:
-    - address
     - file
 _core:
   default_config_hash: V51QPCKkgNREKtSmB9Iu2wmAMEpktVpnzklWaZV8UYo
@@ -17,15 +16,8 @@ targetEntityType: user
 bundle: user
 mode: default
 content:
-  field_address:
-    type: address_default
-    weight: 1
-    region: content
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
   field_documents:
-    weight: 2
+    weight: 0
     label: hidden
     settings:
       use_description_as_link_text: true
@@ -33,5 +25,6 @@ content:
     type: file_default
     region: content
 hidden:
+  field_address: true
   member_for: true
   user_picture: true

@@ -46,15 +46,14 @@
         ]
       %}
       <li{{ item.attributes.addClass(classes) }}>
-
         <div class="navigation__list-item__mobile">
           <div class="navigation__list-item__mobile__icon">
             <a href={{ item.url }}>
               {% if item.title == "Home" %}
                 <img src="/themes/custom/racf/images/home.png" alt="Home icon" />
               {% endif %}
-              {% if item.title == "CheckIn" %}
-                <img src="/themes/custom/racf/images/qr-code.png" alt="QR Code icon" />
+              {% if item.title == "Analytics" %}
+                <img src="/themes/custom/racf/images/analytics.png" alt="Graph icon with trend going up" />
               {% endif %}
               {% if item.title == "Events" %}
                 <img src="/themes/custom/racf/images/calendar.png" alt="Calendar icon" />
@@ -63,8 +62,7 @@
                 <img src="/themes/custom/racf/images/headset.png" alt="Headset icon" />
               {% endif %}
             </a>
-
-             <div class="navigation__list-item__text">
+            <div class="navigation__list-item__text">
                 {{ link(item.title, item.url) }}
                 {% if item.below %}
                   {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
@@ -72,7 +70,6 @@
               </div>
           </div>
         </div>
-
 
         <div class="p-2 navigation__list-item__desktop">
           <div class="navigation__list-item__text">
@@ -82,7 +79,6 @@
             {% endif %}
           </div>
         </div>
-        
       </li>
     {% endfor %}
     </ul>

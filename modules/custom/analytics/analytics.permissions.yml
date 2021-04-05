@@ -1,0 +1,3 @@
+can view analytics:
+  title: 'Administer analytic privilege'
+  description: 'Gives permission for user to view analytics on their events.'

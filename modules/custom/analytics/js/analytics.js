@@ -341,16 +341,12 @@
         attach: function(context) {
 
             var events_all = drupalSettings.analytics.graph_data.events_all;
-            console.log("Events All Data: " + events_all);
 
             var events_general = drupalSettings.analytics.graph_data.events_general;
-            console.log("Events General Data: " + events_general);
 
             var attendees = drupalSettings.analytics.graph_data.attendees;
-            console.log("Attendees Data: " + attendees);
 
             var zip_codes = drupalSettings.analytics.graph_data.zip_codes;
-            console.log("Zip Codes Data: " + zip_codes);
 
             barAllEventsGraph(events_all)
             pieAllEventsGraph(events_all)

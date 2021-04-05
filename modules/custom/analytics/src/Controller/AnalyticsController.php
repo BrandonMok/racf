@@ -48,32 +48,42 @@ class AnalyticsController extends ControllerBase {
 
             foreach($events as $e) {
                 $genPasses = $e->get('field_generated_passes')->getValue();
-                $genPasses = $genPasses[0]["value"];
-                $totalGen = $totalGen + $genPasses;
+                if (!empty($genPasses)){
+                    $genPasses = $genPasses[0]["value"];
+                    $totalGen = $totalGen + $genPasses;
+                }
     
                 $scannedPasses = $e->get('field_scanned_passes')->getValue();
-                $scannedPasses = $scannedPasses[0]["value"];
-                $totalScanned = $totalScanned + $scannedPasses;
+                if (!empty($scannedPasses)) {
+                    $scannedPasses = $scannedPasses[0]["value"];
+                    $totalScanned = $totalScanned + $scannedPasses;
+                }
 
                 $attendeeListField = $e->get('field_attendees')->getValue();
-                $attendeeList = $attendeeListField[0]['value']; // list field of user IDs of users that generated pass to attend
-                $attendeeArr = explode("\r\n", $attendeeList);
+                if (!empty($attendeeListField)) {
+                    $attendeeList = $attendeeListField[0]['value']; // list field of user IDs of users that generated pass to attend
+                    $attendeeArr = explode("\r\n", $attendeeList);
 
-                foreach($attendeeArr as $id) {
-                    if ($id !== "") {
-                        $userResult = $etm->getStorage('user')->loadByProperties([
-                            'uid' => intval($id)
-                        ]);
-                        $user = array_pop($userResult);
-
-                        // check to make sure not to add an attendee more than once in the attendees array
-                        if (!in_array($id, $attendees)) {
-                            array_push($attendees, $id);    // add this uid of user to attendees array
-
-                            $address = $user->get('field_address')->getValue();
-                            $zipcode = $address[0]["postal_code"];
-
-                            array_push($allZipcodes, $zipcode); // add this zipcode to allZipCodes array for further analytics
+                    foreach($attendeeArr as $id) {
+                        if ($id !== "") {
+                            $userResult = $etm->getStorage('user')->loadByProperties([
+                                'uid' => intval($id)
+                            ]);
+                            $user = array_pop($userResult);
+    
+                            // check to make sure not to add an attendee more than once in the attendees array
+                            if (!is_null($user) && !in_array($id, $attendees)) {
+                                array_push($attendees, $id);    // add this uid of user to attendees array
+    
+    
+                                // Preventive precaution if testing and admin / organizer clicks to generate pass
+                                // admins don't have address
+                                if (property_exists($user, 'field_address')) {
+                                    $address = $user->get('field_address')->getValue();
+                                    $zipcode = $address[0]["postal_code"];
+                                    array_push($allZipcodes, $zipcode); // add this zipcode to allZipCodes array for further analytics
+                                }
+                            }
                         }
                     }
                 }
@@ -85,14 +95,20 @@ class AnalyticsController extends ControllerBase {
          */
         $totalGenB = 0;
         $totalScannedB = 0;
-        foreach($generalEvents as $genEvent) {
-             $genPasses = $genEvent->get('field_generated_passes')->getValue();
-             $genPasses = $genPasses[0]["value"];
-             $totalGenB = $totalGenB + $genPasses;
- 
-             $scannedPasses = $genEvent->get('field_scanned_passes')->getValue();
-             $scannedPasses = $scannedPasses[0]["value"];
-             $totalScannedB = $totalScannedB + $scannedPasses;
+        if (!empty($generalEvents)) {
+            foreach($generalEvents as $genEvent) {
+                $genPasses = $genEvent->get('field_generated_passes')->getValue();
+                if (!empty($genPasses)) {
+                    $genPasses = $genPasses[0]["value"];
+                    $totalGenB = $totalGenB + $genPasses;
+                }
+
+                $scannedPasses = $genEvent->get('field_scanned_passes')->getValue();
+                if (!empty($scannedPasses)) {
+                    $scannedPasses = $scannedPasses[0]["value"];
+                    $totalScannedB = $totalScannedB + $scannedPasses;
+                }
+            }
         }
 
         //Return Array
@@ -110,7 +126,7 @@ class AnalyticsController extends ControllerBase {
                                 $totalGen, $totalScanned
                             ],
                             'events_general' => [
-                                $totalGenB, $totalScannedB
+                                $totalGenB ?? 0, $totalScannedB ?? 0
                             ],
                             'attendees' => $attendees ,
                             'zip_codes' => $allZipcodes

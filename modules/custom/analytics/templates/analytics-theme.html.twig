@@ -3,103 +3,70 @@
 
 <div class="graph-container">
 	<div class="graph-cell">
-		<h4>Bar Graph</h4>	
-		<p>Test Bar Graph</p>
-		<canvas id="bar"></canvas>
+		<h4>Generated Passes vs. Scanned Passes - All Events (Bar Chart)</h4>	
+		<p>Bar Chart Comparison of Generated to Scanned Passes for ALL Events</p>
+		<canvas id="bar-all-events"></canvas>
 	</div>
 
 	<div class="graph-cell">
-  		<h4>Pie Graph</h4>
-		<p>Test Pie Graph</p>
-		<canvas id="pie"></canvas>
+  		<h4>Generated Passes vs. Scanned Passes - All Events (Pie Chart)</h4>	
+		<p>Pie Chart Comparison of Generated to Scanned Passes for ALL Events</p>
+		<canvas id="pie-all-events"></canvas>
 	</div>
-	{# <script>
-		//var labelset = []
-		var dataset = []
-		var labelset = ["Set 1", "Set 2", " Set 3"]
+	<br>
+	
+	<div class="graph-cell">
+		<h4>Generated Passes vs. Scanned Passes - General Events (Bar Chart)</h4>	
+		<p>Bar Chart Comparison of Generated to Scanned Passes for General Events</p>
+		<canvas id="bar-general-events"></canvas>
+	</div>
 
-		{% for item in values %}
-			dataset.push({{ item.val }}) 
-		{% endfor %}
+	<div class="graph-cell">
+  		<h4>Generated Passes vs. Scanned Passes - General Events (Pie Chart)</h4>	
+		<p>Pie Chart Comparison of Generated to Scanned Passes for General Events</p>
+		<canvas id="pie-general-events"></canvas>
+	</div>
+	<br>
+
+	<div class="graph-cell">
+		<h4>Generated Passes vs. Attendees - All Events (Bar Chart)</h4>	
+		<p>Bar Chart Comaprison of Generated Passes to Number of Attendees</p>
+		<canvas id="bar-generated-attendees"></canvas>
+	</div>
+
+	<div class="graph-cell">
+  		<h4>Generated Passes vs. Attendees - All Events (Pie Chart)</h4>	
+		<p>Pie Chart Comaprison of Generated Passes to Number of Attendees</p>
+		<canvas id="pie-generated-attendees"></canvas>
+	</div>
+	<br>
+	
+	<div class="graph-cell">
+		<h4>Scanned Passes vs. Attendees - All Events (Bar Chart)</h4>	
+		<p>Bar Chart Comaprison of Scanned Passes to Number of Attendees</p>
+		<canvas id="bar-scanned-attendees"></canvas>
+	</div>
+
+	<div class="graph-cell">
+  		<h4>Scanned Passes vs. Attendees - All Events (Pie Chart)</h4>	
+		<p>Pie Chart Comaprison of Scanned Passes to Number of Attendees</p>
+		<canvas id="pie-scanned-attendees"></canvas>
+	</div>
+	<br>
+
+	<div class="graph-cell">
+		<h4>Zip Code vs. Attendees - All Events (Bar Chart)</h4>	
+		<p>Bar Chart Comparison of Number of Attendees to their Zip Codes</p>
+		<canvas id="bar-zipcode-attendees"></canvas>
+	</div>
+
+	<div class="graph-cell">
+  		<h4>Zip Code vs. Attendees - All Events (Pie Chart)</h4>	
+		<p>Pie Chart Comparison of Number of Attendees to their Zip Codes</p>
+		<canvas id="pie-zipcode-attendees"></canvas>
+	</div>
+	<br>
 
 
-		barGraph(dataset, labelset)
-		pieGraph(dataset, labelset)
-	</script> #}
-
-{# 	
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
-	<script>
-		function randomColor() {
-			var randomColor = Math.floor(Math.random()*16777215).toString(16);
-			return randomColor
-		}
-
-		// Function to Create a Bar Graph
-		//function barGraph(dataset, labelset) {
-		function barGraph() {	
-			//colors = []
-			//for(var i = 0; i < dataset.length; i++) {
-			//	var newColor = randomColor()
-			//	colors.push(newColor);
-			//}
-			let ctx = document.getElementById('bar');
-			let barChart = new Chart(ctx, {
-				type: 'bar',
-				data: {
-					labels: ["Set 1", "Set 2", " Set 3"],
-					datasets: [{
-						label: 'Value',
-						backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f"],
-						data: [48, 33, 61]
-					}]
-				},
-				options: {
-					legend: { display: false },
-					title: {
-					display: true,
-					text: 'Proof of Concept Bar Chart'
-					}
-				}
-			});
-		}
-
-		// Function to Create a Pie Graph
-		//function pieGraph(dataset, labelset) {
-		function pieGraph() {
-			//colors = []
-			//for(var i = 0; i < dataset.length; i++) {
-			//	var newColor = randomColor()
-			//	colors.push(newColor);
-			//}
-			let ctx = document.getElementById('pie');
-			let pieChart = new Chart(ctx, {
-				type: 'pie',
-				data: {
-					labels: ["Set 1", "Set 2", " Set 3"],
-					datasets: [{
-						label: 'Value',
-						backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f"],
-						data: [4, 13, 7]
-					}]
-				},
-				options: {
-					legend: { display: false },
-					title: {
-					display: true,
-					text: 'Proof of Concept Pie Chart'
-					}
-				}
-			});
-		}
-
-		//var labls = ["Set 1", "Set 2", " Set 3"]
-		//var dat = [4, 13, 7]
-
-		//barGraph(dat, labls);
-		//pieGraph(dat, labls);
-		barGraph()
-		pieGraph()
-
-	</script> #}
 </div>
+

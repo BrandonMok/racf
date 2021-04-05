@@ -80,30 +80,25 @@ class AnalyticsController extends ControllerBase {
             }
         }
         
-        
         /**
-         * FINISH THIS BELOW
+         * Gathers Total Scanned/Generated Events Data
          */
-        // if (!empty($generalEvents)) {
-        //     foreach($generalEvents as $genEvent) {
-        //         // do the samething for the above for regular events. (General Events has the same 'field_generated_passes' and 'field_scanned_passes' fields)
-        //     }
-        // }
+        $totalGenB = 0;
+        $totalScannedB = 0;
+        foreach($generalEvents as $genEvent) {
+             $genPasses = $genEvent->get('field_generated_passes')->getValue();
+             $genPasses = $genPasses[0]["value"];
+             $totalGenB = $totalGenB + $genPasses;
+ 
+             $scannedPasses = $genEvent->get('field_scanned_passes')->getValue();
+             $scannedPasses = $scannedPasses[0]["value"];
+             $totalScannedB = $totalScannedB + $scannedPasses;
+        }
 
-
-
-
-        /**
-         * TODO:
-         * Do something with the number of generated and scanned passes
-         * ALSO - figure out / tally the number each zipcode appears in the allZipcodes array for the chart
-         *  - could be however you think of to do it or could be a simple foreach with tallys 
-         */
-
-
+        //Return Array
         return array(
             '#theme' => 'analytics_theme',
-            '#title' => 'Analytics',
+            '#title' => 'RACF Analytics',
             '#attached' => [
                 'library' => [
                     'analytics/accordion'
@@ -111,13 +106,15 @@ class AnalyticsController extends ControllerBase {
                 'drupalSettings' => [
                     'analytics' => [
                         'graph_data' => [
-                            'test_array' => [
-                                5, 10, 20
+                            'events_all' => [
+                                $totalGen, $totalScanned
                             ],
-                            'test_array2' => [
-                                1,2,3,4,5
+                            'events_general' => [
+                                $totalGenB, $totalScannedB
                             ],
-                        ],
+                            'attendees' => $attendees ,
+                            'zip_codes' => $allZipcodes
+                        ]
                     ],
                 ],
             ],

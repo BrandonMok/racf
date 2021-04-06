@@ -348,21 +348,20 @@
 
             var zip_codes = drupalSettings.analytics.graph_data.zip_codes;
 
-            barAllEventsGraph(events_all)
-            pieAllEventsGraph(events_all)
+            // barAllEventsGraph(events_all)
+            pieAllEventsGraph(events_all);
 
-            barGeneralEventsGraph(events_general)
-            pieGeneralEventsGraph(events_general)
+            // barGeneralEventsGraph(events_general);
+            pieGeneralEventsGraph(events_general);
             
-            barAttendeesGeneratedGraph(events_all, attendees)
-            pieAttendeesGeneratedGraph(events_all, attendees)
+            // barAttendeesGeneratedGraph(events_all, attendees);
+            // pieAttendeesGeneratedGraph(events_all, attendees);
             
-            barAttendeesScannedGraph(events_all, attendees)
-            pieAttendeesScannedGraph(events_all, attendees)
+            // barAttendeesScannedGraph(events_all, attendees);
+            // pieAttendeesScannedGraph(events_all, attendees);
 
-            barZipCodeAttendeeGraph(zip_codes, attendees)
-            pieZipCodeAttendeeGraph(zip_codes, attendees)
-
+            barZipCodeAttendeeGraph(zip_codes, attendees);
+            pieZipCodeAttendeeGraph(zip_codes, attendees);
         }
     }
 })(jQuery, Drupal);

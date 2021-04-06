@@ -114,7 +114,7 @@ class AnalyticsController extends ControllerBase {
         //Return Array
         return array(
             '#theme' => 'analytics_theme',
-            '#title' => 'RACF Analytics',
+            '#title' => 'Analytics',
             '#attached' => [
                 'library' => [
                     'analytics/accordion'

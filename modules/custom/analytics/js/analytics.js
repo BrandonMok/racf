@@ -9,6 +9,10 @@
         var randomColor = Math.floor(Math.random()*16777215).toString(16);
         return randomColor;
     }
+
+    function graphColors() {
+        return ["#0058B3", "#09335F", "#fcbf49", "#88d498"];
+    }
     
     //bar-all-events
     function barAllEventsGraph(dataset) {
@@ -41,11 +45,14 @@
 
     //pie-all-events
     function pieAllEventsGraph(dataset) {
-        colors = []
-        for(var i = 0; i < dataset.length; i++) {
-            var newColor = randomColor()
-            colors.push("#" + newColor); //needed # to make color understandable (idk how it worked beforehand w/o # sign)
-        }
+        // colors = []
+        // for(var i = 0; i < dataset.length; i++) {
+        //     var newColor = randomColor()
+        //     colors.push("#" + newColor); //needed # to make color understandable (idk how it worked beforehand w/o # sign)
+        // }
+
+        let colors = graphColors();
+
         let ctx = $('#pie-all-events');
 
         var pieChart = new Chart(ctx, {
@@ -98,11 +105,14 @@
 
     //pie-general-events
     function pieGeneralEventsGraph(dataset) {
-        colors = []
-        for(var i = 0; i < dataset.length; i++) {
-            var newColor = randomColor()
-            colors.push("#" + newColor); //needed # to make color understandable (idk how it worked beforehand w/o # sign)
-        }
+        // colors = []
+        // for(var i = 0; i < dataset.length; i++) {
+        //     var newColor = randomColor()
+        //     colors.push("#" + newColor); //needed # to make color understandable (idk how it worked beforehand w/o # sign)
+        // }
+
+        let colors = graphColors();
+
         let ctx = $('#pie-general-events');
 
         var pieChart = new Chart(ctx, {
@@ -281,7 +291,7 @@
 
         for(var i = 0; i < filteredData.zip_codes.length; i++) {
             var newColor = randomColor();
-            colors.push("#" + newColor);    //needed # to make color understandable (idk how it worked beforehand w/o # sign)
+            colors.push("#" + newColor); 
         }
 
         let ctx = $('#bar-zipcode-attendees');

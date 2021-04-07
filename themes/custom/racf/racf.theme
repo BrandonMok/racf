@@ -34,35 +34,3 @@
             array_splice($suggestions, 2, 0, 'block__custom_block__' . $vars['elements']['content']['#block_content']->bundle() );
         }
     }
-
-
-    // use Drupal\menu_link_content\MenuLinkContent;
-
-    // function racf_menu() {
-    //     // $items = array();
-    //     // $items['user/edit-my-profile'] = array(
-    //     //   'title'            => 'Edit Profile',
-    //     //   'description'      => '',
-    //     //   'page callback'    => 'racf_edit_my_profile',
-    //     //   'access arguments' => array('access content'),
-    //     //   'type'             => 'account'
-    //     //   );
-      
-    //     // return $items;
-
-
-
-    //     $currentUID = \Drupal::currentUser()->id();
-    //     $menu_link = MenuLinkContent::create([
-    //         'title' => 'Account',
-    //         'link' => ['route_name' => "internal:/user/$currentUID/edit"],
-    //         'menu_name' => 'account',
-    //         'weight' => 10,
-    //     ]);
-    //     $menu_link->save();
-    //   }
-      
-    //   function racf_edit_my_profile() {
-    //     global $user;
-    //     drupal_goto('user/'.$user->uid.'/edit');
-    //   }

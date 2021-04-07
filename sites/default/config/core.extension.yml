@@ -40,6 +40,7 @@ module:
   media_library: 0
   menu_item_role_access: 0
   menu_link_content: 0
+  menu_token: 0
   menu_ui: 0
   node: 0
   options: 0
@@ -56,6 +57,7 @@ module:
   telephone: 0
   text: 0
   time_field: 0
+  token: 0
   toolbar: 0
   tour: 0
   twig_tweak: 0

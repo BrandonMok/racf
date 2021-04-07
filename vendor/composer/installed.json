@@ -2731,6 +2731,79 @@
         }
     },
     {
+        "name": "drupal/menu_token",
+        "version": "1.0.0-alpha3",
+        "version_normalized": "1.0.0.0-alpha3",
+        "source": {
+            "type": "git",
+            "url": "https://git.drupalcode.org/project/menu_token.git",
+            "reference": "8.x-1.0-alpha3"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://ftp.drupal.org/files/projects/menu_token-8.x-1.0-alpha3.zip",
+            "reference": "8.x-1.0-alpha3",
+            "shasum": "900549b00d9ea83474fd4bc7d77104257dba6c78"
+        },
+        "require": {
+            "drupal/core": "~8.0",
+            "drupal/token": "^1.0"
+        },
+        "type": "drupal-module",
+        "extra": {
+            "drupal": {
+                "version": "8.x-1.0-alpha3",
+                "datestamp": "1573517280",
+                "security-coverage": {
+                    "status": "not-covered",
+                    "message": "Alpha releases are not covered by Drupal security advisories."
+                }
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packages.drupal.org/8/downloads",
+        "license": [
+            "GPL-2.0+"
+        ],
+        "authors": [
+            {
+                "name": "See contributors",
+                "homepage": "https://www.drupal.org/node/353073/committers",
+                "role": "Developer"
+            },
+            {
+                "name": "dealancer",
+                "homepage": "https://www.drupal.org/user/243418"
+            },
+            {
+                "name": "develCuy",
+                "homepage": "https://www.drupal.org/user/125473"
+            },
+            {
+                "name": "fubhy",
+                "homepage": "https://www.drupal.org/user/761344"
+            },
+            {
+                "name": "nhaarish",
+                "homepage": "https://www.drupal.org/user/3388728"
+            },
+            {
+                "name": "peter.draucbaher",
+                "homepage": "https://www.drupal.org/user/2409142"
+            },
+            {
+                "name": "ygerasimov",
+                "homepage": "https://www.drupal.org/user/257311"
+            }
+        ],
+        "description": "Menu Token module provides tokens, that can be used in title or in path of menu items (links).",
+        "homepage": "http://drupal.org/project/menu_token",
+        "support": {
+            "source": "https://git.drupalcode.org/project/menu_token",
+            "issues": "http://drupal.org/project/issues/menu_token"
+        }
+    },
+    {
         "name": "drupal/redirect_after_login",
         "version": "2.7.0",
         "version_normalized": "2.7.0.0",
@@ -2833,6 +2906,77 @@
         "homepage": "https://www.drupal.org/project/time_field",
         "support": {
             "source": "https://git.drupalcode.org/project/time_field"
+        }
+    },
+    {
+        "name": "drupal/token",
+        "version": "1.9.0",
+        "version_normalized": "1.9.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://git.drupalcode.org/project/token.git",
+            "reference": "8.x-1.9"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://ftp.drupal.org/files/projects/token-8.x-1.9.zip",
+            "reference": "8.x-1.9",
+            "shasum": "a5d234382a1a0e4ba61d4c7a2fa10671ca656be4"
+        },
+        "require": {
+            "drupal/core": "^8.8 || ^9"
+        },
+        "type": "drupal-module",
+        "extra": {
+            "drupal": {
+                "version": "8.x-1.9",
+                "datestamp": "1608284866",
+                "security-coverage": {
+                    "status": "covered",
+                    "message": "Covered by Drupal's security advisory policy"
+                }
+            },
+            "drush": {
+                "services": {
+                    "drush.services.yml": "^9 || ^10"
+                }
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packages.drupal.org/8/downloads",
+        "license": [
+            "GPL-2.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Berdir",
+                "homepage": "https://www.drupal.org/user/214652"
+            },
+            {
+                "name": "Dave Reid",
+                "homepage": "https://www.drupal.org/user/53892"
+            },
+            {
+                "name": "eaton",
+                "homepage": "https://www.drupal.org/user/16496"
+            },
+            {
+                "name": "fago",
+                "homepage": "https://www.drupal.org/user/16747"
+            },
+            {
+                "name": "greggles",
+                "homepage": "https://www.drupal.org/user/36762"
+            },
+            {
+                "name": "mikeryan",
+                "homepage": "https://www.drupal.org/user/4420"
+            }
+        ],
+        "description": "Provides a user interface for the Token API, some missing core tokens.",
+        "homepage": "https://www.drupal.org/project/token",
+        "support": {
+            "source": "https://git.drupalcode.org/project/token"
         }
     },
     {

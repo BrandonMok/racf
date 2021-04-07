@@ -1,10 +1,26 @@
 .graph-container {
-    display: table;
-    width: 100%;
-}
-  
-.graph-cell {
-    display: table-cell;
-    padding: 3em;
+    margin: 32px 0;
 }
 
+.row {
+    margin-top: 24px;
+}
+
+.page-title {
+    margin: 0 auto;
+    font-size: 24pt;
+    font-weight: bold;
+}
+
+.graph-title {
+    font-size: 16pt;
+    font-weight: bold;
+    line-height: 1.25;
+}
+
+
+@media (min-width: 768px) { 
+    .graph-title {
+        font-size: 20pt;
+    }
+}

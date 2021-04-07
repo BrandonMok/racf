@@ -16,6 +16,7 @@ permissions:
   - 'administer media form display'
   - 'administer menu'
   - 'can checkin event'
+  - 'can view analytics'
   - 'cancel account'
   - 'configure editable event node layout overrides'
   - 'configure editable general_event node layout overrides'

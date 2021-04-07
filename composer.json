@@ -30,6 +30,7 @@
         "drupal/logo_image_style": "^2.5",
         "drupal/material_admin": "^2.0",
         "drupal/menu_item_role_access": "^2.0",
+        "drupal/menu_token": "^1.0@alpha",
         "drupal/redirect_after_login": "^2.7",
         "drupal/twig_tweak": "^2.9",
         "drupal/user_bundle": "^1.0",

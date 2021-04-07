@@ -45,12 +45,6 @@
 
     //pie-all-events
     function pieAllEventsGraph(dataset) {
-        // colors = []
-        // for(var i = 0; i < dataset.length; i++) {
-        //     var newColor = randomColor()
-        //     colors.push("#" + newColor); //needed # to make color understandable (idk how it worked beforehand w/o # sign)
-        // }
-
         let colors = graphColors();
 
         let ctx = $('#pie-all-events');
@@ -105,12 +99,6 @@
 
     //pie-general-events
     function pieGeneralEventsGraph(dataset) {
-        // colors = []
-        // for(var i = 0; i < dataset.length; i++) {
-        //     var newColor = randomColor()
-        //     colors.push("#" + newColor); //needed # to make color understandable (idk how it worked beforehand w/o # sign)
-        // }
-
         let colors = graphColors();
 
         let ctx = $('#pie-general-events');
@@ -251,43 +239,43 @@
 
     //Filters Zip Code and Attendee Data to return number of Attendees from each Zip Code
     function filterZipCodeAttendeeData(zipCodes, attendeeData) {
-        var attend_num = attendeeData.length
+        var attend_num = attendeeData.length;
         
         var zips = [], attends = [], prev;
 
-        zipCodes.sort()
+        zipCodes.sort();
         for(var i = 0; i < zipCodes.length; i++) {
             if(zipCodes[i] !== prev) {
-                zips.push(String(zipCodes[i]))
-                attends.push(1)
+                zips.push(String(zipCodes[i]));
+                attends.push(1);
             } 
             else {
                 attends[attends.length - 1]++;
             }
-            prev = zipCodes[i]
+            prev = zipCodes[i];
         }
 
-        var zip_listed_attends = 0
+        var zip_listed_attends = 0;
         for(var x = 0; x < attends.length; x++) {
-            zip_listed_attends = zip_listed_attends + attends[i]
+            zip_listed_attends = zip_listed_attends + attends[i];
         }
-        var zip_unlisted_attends = attend_num - zip_listed_attends
+        var zip_unlisted_attends = attend_num - zip_listed_attends;
 
-        zips.push("Unlisted Zip Codes")
-        attends.push(zip_unlisted_attends)
+        zips.push("Unlisted Zip Codes");
+        attends.push(zip_unlisted_attends);
         
         let filteredZipAttendeeData = {
             'zip_codes' : zips,
             'attendees' : attends
         }
 
-        return filteredZipAttendeeData
+        return filteredZipAttendeeData;
     }
 
     //bar-zipcode-attendees
     function barZipCodeAttendeeGraph(zip_codes, attendees) {
         let colors = [];
-        let filteredData = filterZipCodeAttendeeData(zip_codes, attendees)
+        let filteredData = filterZipCodeAttendeeData(zip_codes, attendees);
 
         for(var i = 0; i < filteredData.zip_codes.length; i++) {
             var newColor = randomColor();
@@ -318,8 +306,8 @@
 
     //pie-zipcode-attendees
     function pieZipCodeAttendeeGraph(zip_codes, attendees) {
-        colors = []
-        let filteredData = filterZipCodeAttendeeData(zip_codes, attendees)
+        colors = [];
+        let filteredData = filterZipCodeAttendeeData(zip_codes, attendees);
         
         for(var i = 0; i < filteredData.zip_codes.length; i++) {
             var newColor = randomColor()

@@ -50,7 +50,11 @@
         </div>
       
         <div class="hero-box__inner-box__button">
+          {% if not logged_in %}
           <a href="/user/login">
+          {% else %}
+          <a href="/events">
+          {% endif %}
             <button class="mdl-button mdl-button--outlined hero-box__inner-box__button__btn">
                 <span class="mdl-button__label">GET YOUR PASS</span>
             </button>

@@ -20,7 +20,7 @@
 
         for(var i = 0; i < dataset.length; i++) {
             var newColor = randomColor();
-            colors.push("#" + newColor);    //needed # to make color understandable (idk how it worked beforehand w/o # sign)
+            colors.push("#" + newColor);
         }
         let ctx = $('#bar-all-events');
 
@@ -74,7 +74,7 @@
 
         for(var i = 0; i < dataset.length; i++) {
             var newColor = randomColor();
-            colors.push("#" + newColor);    //needed # to make color understandable (idk how it worked beforehand w/o # sign)
+            colors.push("#" + newColor);
         }
         let ctx = $('#bar-general-events');
 
@@ -129,7 +129,7 @@
 
         for(var i = 0; i < event_data.length; i++) {
             var newColor = randomColor();
-            colors.push("#" + newColor);    //needed # to make color understandable (idk how it worked beforehand w/o # sign)
+            colors.push("#" + newColor);
         }
         let ctx = $('#bar-generated-attendees');
 
@@ -157,7 +157,7 @@
         colors = []
         for(var i = 0; i < event_data.length; i++) {
             var newColor = randomColor()
-            colors.push("#" + newColor); //needed # to make color understandable (idk how it worked beforehand w/o # sign)
+            colors.push("#" + newColor);
         }
         let ctx = $('#pie-generated-attendees');
 
@@ -186,7 +186,7 @@
 
         for(var i = 0; i < event_data.length; i++) {
             var newColor = randomColor();
-            colors.push("#" + newColor);    //needed # to make color understandable (idk how it worked beforehand w/o # sign)
+            colors.push("#" + newColor);
         }
         let ctx = $('#bar-scanned-attendees');
 
@@ -214,7 +214,7 @@
         colors = []
         for(var i = 0; i < event_data.length; i++) {
             var newColor = randomColor()
-            colors.push("#" + newColor); //needed # to make color understandable (idk how it worked beforehand w/o # sign)
+            colors.push("#" + newColor);
         }
         let ctx = $('#pie-scanned-attendees');
 
@@ -311,7 +311,7 @@
         
         for(var i = 0; i < filteredData.zip_codes.length; i++) {
             var newColor = randomColor()
-            colors.push("#" + newColor); //needed # to make color understandable (idk how it worked beforehand w/o # sign)
+            colors.push("#" + newColor);
         }
         
         let ctx = $('#pie-zipcode-attendees');

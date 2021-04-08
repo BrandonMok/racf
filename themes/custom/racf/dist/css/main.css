@@ -22681,13 +22681,8 @@ fieldset[disabled] .mdl-textfield .mdl-textfield__label, .mdl-textfield.is-disab
   color: #ffffff;
 }
 
-.black-text {
-  color: #000000;
-}
-
 .side-margin {
-  margin-left: 8px;
-  margin-right: 8px;
+  margin: 0 8px;
 }
 
 /** Styles **/

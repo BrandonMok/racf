@@ -10,9 +10,6 @@ $md-heading4-size: 34px;
 $md-heading5-size: 24px;
 $md-heading6-size: 20px;
 
-$padding-large: 8px;
-$padding-small: 4px;
-
 $primary-color: #0058B3;
 $secondary-color: #ffffff;
 $tertiary-color: #09335F;
@@ -28,11 +25,8 @@ $btn-background: #3A4647;
 .secondary { background-color: $secondary-color;}
 .secondary-text { color: $secondary-color; }
 
-.black-text { color: $black; }
-
 .side-margin {
-    margin-left: 8px;
-    margin-right: 8px;
+    margin: 0 8px;
 }
 
 

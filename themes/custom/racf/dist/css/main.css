@@ -23069,6 +23069,9 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 }
 
 /** Custom Block: Events Short **/
+.event-short {
+  padding-bottom: 4em;
+}
 .event-short__top-bar {
   background-color: #09335F;
   padding: 24px;

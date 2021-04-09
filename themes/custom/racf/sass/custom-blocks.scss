@@ -4,9 +4,7 @@
     padding: 8px;
 
     &__body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        margin: auto auto;
     }
 
     &__title {
@@ -14,10 +12,9 @@
         align-items: center;
         justify-content: flex-start;
 
-
         &__label {
             font-weight: bold;
-            padding: 8px 0 8px 0;
+            padding: 8px 0;
             font-size: $md-heading5-size;
         }
     }
@@ -97,25 +94,20 @@
 
 /** Custom block: Get Access **/
 .get-access {
-    padding: 16px 24px 40px 32px;
-
-    &__label {
-        font-weight: bold;
-        font-size: $md-heading5-size;
-        margin: 0 15px 16px 15px;
-        line-height: 1.5;
-    }
-
     &__container  {
         margin: 16px 0;
+
+        &__label {
+            font-weight: bold;
+            font-size: $md-heading5-size;
+            line-height: 1.5;
+        }
     }
 }
 
 
 /** Custom Block: Events Short **/
 .event-short {
-    padding-bottom: 8em;
-
     &__top-bar {
         background-color: $tertiary-color;
         padding: 24px;
@@ -181,7 +173,7 @@
 
 /** Custom Block: Event Short Minimal **/
 .event-short-minimal {
-    padding: 16px 8px;
+    padding: 16px;
 
     &__content {
         .view-event-short-minimal- .view-content {
@@ -395,7 +387,6 @@
 
 @include media-breakpoint-up(sm){
     .general-events-listing {
-        margin-top: 16px;
         margin: 16px;
     }
 }
@@ -469,14 +460,6 @@
 
 
     /** Event View Blocks **/
-    .event-short {
-        padding: 16px 32px 40px 24px;
-    }
-
-    .event-short-minimal {
-        padding: 16px 24px;
-    }
-
     .general-events-listing {
         text-align: left;
         padding-top: 8px;
@@ -514,13 +497,11 @@
 }
 
 @include media-breakpoint-up(lg) { 
-    .access-partner {
-        &__label { font-size: $md-heading3-size; }
+    .access-partner__label {
+        font-size: $md-heading3-size;
     }
 
-    .get-access {
-        &__label { font-size: $md-heading4-size; }
-    }
+    .get-access__container__label { font-size: $md-heading4-size; }
 
  
     .qa-primary, 
@@ -541,8 +522,6 @@
 
 @include media-breakpoint-up(xl) { 
     .event-short {
-        padding: 16px 32px 40px 24px;
-
         &__top-bar__title {
             font-size: $md-heading4-size;
         }

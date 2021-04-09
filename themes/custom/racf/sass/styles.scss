@@ -23,11 +23,6 @@ $btn-background: #3A4647;
 /** Usable CSS classes that use SASS vars **/
 .primary { background-color: $primary-color; }
 .secondary { background-color: $secondary-color;}
-.secondary-text { color: $secondary-color; }
-
-.side-margin {
-    margin: 0 8px;
-}
 
 
 /** Styles **/
@@ -318,7 +313,7 @@ div#block-racf-local-tasks {
 
     > div {
         @extend .col-12;
-        @extend .col-lg-6;
+        @extend .col-md-6;
     }
 }
 
@@ -355,6 +350,10 @@ div#block-racf-local-tasks {
 }
 
 @include media-breakpoint-up(md) {  
+    .layout--twocol-section--50-50 {
+        padding: 16px;
+    }
+
     .mobile-bar { display: none; }
     .main-menu-desktop nav { display: block; }
 

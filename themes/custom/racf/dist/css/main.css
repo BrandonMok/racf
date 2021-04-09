@@ -586,8 +586,8 @@ pre code {
 
 .col-xl,
 .col-xl-auto, .col-xl-12, .col-xl-11, .col-xl-10, .col-xl-9, .col-xl-8, .col-xl-7, .col-xl-6, .col-xl-5, .col-xl-4, .col-xl-3, .col-xl-2, .col-xl-1, .col-lg,
-.col-lg-auto, .col-lg-12, .col-lg-11, .col-lg-10, .col-lg-9, .col-lg-8, .col-lg-7, .col-lg-6, .layout--twocol-section--50-50 > div, .col-lg-5, .col-lg-4, .col-lg-3, .col-lg-2, .col-lg-1, .col-md,
-.col-md-auto, .col-md-12, .col-md-11, .col-md-10, .col-md-9, .col-md-8, .col-md-7, .col-md-6, .col-md-5, .col-md-4, .col-md-3, .col-md-2, .col-md-1, .col-sm,
+.col-lg-auto, .col-lg-12, .col-lg-11, .col-lg-10, .col-lg-9, .col-lg-8, .col-lg-7, .col-lg-6, .col-lg-5, .col-lg-4, .col-lg-3, .col-lg-2, .col-lg-1, .col-md,
+.col-md-auto, .col-md-12, .col-md-11, .col-md-10, .col-md-9, .col-md-8, .col-md-7, .col-md-6, .layout--twocol-section--50-50 > div, .col-md-5, .col-md-4, .col-md-3, .col-md-2, .col-md-1, .col-sm,
 .col-sm-auto, .col-sm-12, .col-sm-11, .col-sm-10, .col-sm-9, .col-sm-8, .col-sm-7, .col-sm-6, .col-sm-5, .col-sm-4, .col-sm-3, .col-sm-2, .col-sm-1, .col,
 .col-auto, .col-12, .col-11, .col-10, .col-9, .col-8, .col-7, .col-6, .col-5, .col-4, .col-3, .col-2, .col-1 {
   position: relative;
@@ -1081,7 +1081,7 @@ pre code {
     max-width: 41.6666666667%;
   }
 
-  .col-md-6 {
+  .col-md-6, .layout--twocol-section--50-50 > div {
     flex: 0 0 50%;
     max-width: 50%;
   }
@@ -1292,7 +1292,7 @@ pre code {
     max-width: 41.6666666667%;
   }
 
-  .col-lg-6, .layout--twocol-section--50-50 > div {
+  .col-lg-6 {
     flex: 0 0 50%;
     max-width: 50%;
   }
@@ -22677,14 +22677,6 @@ fieldset[disabled] .mdl-textfield .mdl-textfield__label, .mdl-textfield.is-disab
   background-color: #ffffff;
 }
 
-.secondary-text {
-  color: #ffffff;
-}
-
-.side-margin {
-  margin: 0 8px;
-}
-
 /** Styles **/
 * {
   font-family: "Roboto", sans-serif;
@@ -22943,6 +22935,10 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   }
 }
 @media (min-width: 768px) {
+  .layout--twocol-section--50-50 {
+    padding: 16px;
+  }
+
   .mobile-bar {
     display: none;
   }
@@ -22990,9 +22986,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 }
 .information-section-left__body,
 .information-section-right__body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin: auto auto;
 }
 .information-section-left__title,
 .information-section-right__title {
@@ -23003,7 +22997,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 .information-section-left__title__label,
 .information-section-right__title__label {
   font-weight: bold;
-  padding: 8px 0 8px 0;
+  padding: 8px 0;
   font-size: 24px;
 }
 
@@ -23065,23 +23059,16 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 }
 
 /** Custom block: Get Access **/
-.get-access {
-  padding: 16px 24px 40px 32px;
-}
-.get-access__label {
-  font-weight: bold;
-  font-size: 24px;
-  margin: 0 15px 16px 15px;
-  line-height: 1.5;
-}
 .get-access__container {
   margin: 16px 0;
 }
+.get-access__container__label {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 1.5;
+}
 
 /** Custom Block: Events Short **/
-.event-short {
-  padding-bottom: 8em;
-}
 .event-short__top-bar {
   background-color: #09335F;
   padding: 24px;
@@ -23133,7 +23120,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 
 /** Custom Block: Event Short Minimal **/
 .event-short-minimal {
-  padding: 16px 8px;
+  padding: 16px;
 }
 .event-short-minimal__content .view-event-short-minimal- .view-content h3 {
   display: none;
@@ -23293,7 +23280,6 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 
 @media (min-width: 576px) {
   .general-events-listing {
-    margin-top: 16px;
     margin: 16px;
   }
 }
@@ -23348,14 +23334,6 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   }
 
   /** Event View Blocks **/
-  .event-short {
-    padding: 16px 32px 40px 24px;
-  }
-
-  .event-short-minimal {
-    padding: 16px 24px;
-  }
-
   .general-events-listing {
     text-align: left;
     padding-top: 8px;
@@ -23390,7 +23368,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
     font-size: 48px;
   }
 
-  .get-access__label {
+  .get-access__container__label {
     font-size: 34px;
   }
 
@@ -23408,9 +23386,6 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   }
 }
 @media (min-width: 1200px) {
-  .event-short {
-    padding: 16px 32px 40px 24px;
-  }
   .event-short__top-bar__title {
     font-size: 34px;
   }

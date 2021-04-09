@@ -75,9 +75,8 @@ div#block-racf-local-tasks {
             padding: 12px 0;
 
             li a {
-                font-size: 16px;
                 font-weight: bold;
-                color: black;
+                color: $black;
             }
 
             li.is-active a {
@@ -88,14 +87,12 @@ div#block-racf-local-tasks {
     }
 }
 
-.icon-large { font-size: 48px; }
-
 
 /** Buttons **/
 .white-outlined-btn {
     color: $white;
-    font-weight: bold;
     border: 2px solid $white;
+    font-weight: bold;
     border-radius: 4px;
 }
 
@@ -122,7 +119,7 @@ div#block-racf-local-tasks {
     &__title {
         text-align: center;
         font-weight: bold;
-        font-size: $md-heading5-size;
+        font-size: $subheader
     }
 
     &__form { 
@@ -382,6 +379,14 @@ div#block-racf-local-tasks {
             -webkit-box-shadow: 3px 3px 5px 6px #ccc;
             -moz-box-shadow:    3px 3px 5px 6px #ccc;
             box-shadow:         3px 3px 5px 6px #ccc;
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) { 
+    .user-login-register__content {
+        &__title {
+            font-size: $title;
         }
     }
 }

@@ -22721,24 +22721,19 @@ div#block-racf-local-tasks nav.tabs ul.tabs {
   padding: 12px 0;
 }
 div#block-racf-local-tasks nav.tabs ul.tabs li a {
-  font-size: 16px;
   font-weight: bold;
-  color: black;
+  color: #000000;
 }
 div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   background-color: #6c757d;
   border-radius: 4px;
 }
 
-.icon-large {
-  font-size: 48px;
-}
-
 /** Buttons **/
 .white-outlined-btn, .event-short__top-bar__button-div__btn, .hero-box__inner-box__button__btn {
   color: #ffffff;
-  font-weight: bold;
   border: 2px solid #ffffff;
+  font-weight: bold;
   border-radius: 4px;
 }
 
@@ -22762,7 +22757,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 .user-login-register__content__title {
   text-align: center;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 16pt;
 }
 .user-login-register__content__form {
   display: flex;
@@ -22964,6 +22959,11 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
     padding: 32px;
     margin-bottom: 24px;
     box-shadow: 3px 3px 5px 6px #ccc;
+  }
+}
+@media (min-width: 992px) {
+  .user-login-register__content__title {
+    font-size: 20pt;
   }
 }
 /** Custom Block: Information Section **/

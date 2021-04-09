@@ -22969,7 +22969,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 /** Custom Block: Information Section **/
 .information-section-left,
 .information-section-right {
-  padding: 8px;
+  padding: 24px 0;
 }
 .information-section-left__body,
 .information-section-right__body {
@@ -22985,7 +22985,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 .information-section-right__title__label {
   font-weight: bold;
   padding: 8px 0;
-  font-size: 24px;
+  font-size: 16pt;
 }
 
 .information-section-left {
@@ -23009,10 +23009,10 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+.hero-box__inner-box__text {
   font-size: 16pt;
   font-weight: bold;
-}
-.hero-box__inner-box___text {
   color: #ffffff;
   line-height: 1.25;
 }
@@ -23030,7 +23030,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   padding: 40px 0;
 }
 .access-partner__label {
-  font-size: 24px;
+  font-size: 16pt;
   color: #ffffff;
 }
 .access-partner__container {
@@ -23262,6 +23262,10 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   }
 }
 @media (min-width: 768px) {
+  .information-section-left,
+.information-section-right {
+    padding: 0;
+  }
   .information-section-left__title,
 .information-section-right__title {
     height: 200px;
@@ -23275,15 +23279,12 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   .hero-box {
     text-align: left;
   }
-  .hero-box__inner-box__text {
-    font-size: 20pt;
-  }
   .hero-box__inner-box__button {
     text-align: left;
   }
 
   .access-partner__label {
-    font-size: 34px;
+    font-size: 20pt;
   }
   .access-partner__container {
     padding: 32px 0;
@@ -23337,11 +23338,20 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   }
 }
 @media (min-width: 992px) {
+  .hero-box__inner-box__text {
+    font-size: 20pt;
+  }
+
   .access-partner__label {
-    font-size: 24pt;
+    font-size: 20pt;
   }
 
   .get-access__container__label {
+    font-size: 20pt;
+  }
+
+  .information-section-left__title__label,
+.information-section-right__title__label {
     font-size: 20pt;
   }
 

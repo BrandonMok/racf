@@ -1,7 +1,7 @@
 /** Custom Block: Information Section **/
 .information-section-left, 
 .information-section-right { 
-    padding: 8px;
+    padding: 24px 0;
 
     &__body {
         margin: auto auto;
@@ -15,12 +15,14 @@
         &__label {
             font-weight: bold;
             padding: 8px 0;
-            font-size: $md-heading5-size;
+            font-size: $subheader;
         }
     }
 }
 
-.information-section-left { background-color: $tan; }
+.information-section-left { 
+    background-color: $tan; 
+}
 
 .information-section-right {
     background-color: $white;
@@ -41,10 +43,10 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        font-size: $subheader;
-        font-weight: bold;
 
-        &___text {
+        &__text {
+            font-size: $subheader;
+            font-weight: bold;
             color: $white;
             line-height: 1.25;
         }
@@ -68,7 +70,7 @@
     padding: 40px 0;
 
     &__label {
-        font-size: $md-heading5-size;
+        font-size: $subheader;
         color: $white;
     }
 
@@ -379,8 +381,14 @@
 @include media-breakpoint-up(md) {  
     .information-section-left,  
     .information-section-right {
+        padding: 0;
+
         &__title {
             height: 200px;
+
+            // &__label {
+            //     font-size: $title;
+            // }
         }
     }
 
@@ -396,9 +404,6 @@
         text-align: left;
 
         &__inner-box {
-            &__text {
-                font-size: $title;
-            }
             &__button {
                 text-align: left;
             }
@@ -407,7 +412,9 @@
 
 
     .access-partner {
-        &__label { font-size: $md-heading4-size; }
+        &__label { 
+            font-size: $title;
+        }
     
         &__container {
             padding: 32px 0;
@@ -477,23 +484,27 @@
 }
 
 @include media-breakpoint-up(lg) { 
+    .hero-box__inner-box__text {
+        font-size: $title;
+    }
+
     .access-partner__label {
-        font-size: $headline
+        font-size: $title;
     }
 
     .get-access__container__label { 
         font-size: $title; 
     }
 
-    // .hero-box {
-    //     &__inner-box {
-    //         flex-direction: row;
+    .information-section-left,  
+    .information-section-right {
+        &__title {
+            &__label {
+                font-size: $title;
+            }
+        }
+    }
 
-    //         &__text {
-    //             font-size: $headline;
-    //         }
-    //     }
-    // }
  
     .qa-primary, 
     .qa-secondary {

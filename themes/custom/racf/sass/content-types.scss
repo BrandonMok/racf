@@ -49,9 +49,6 @@
 @include media-breakpoint-up(md) {  
     .event,
     .general-event  {
-        // padding: 24px;
-        // padding-left: 32px;
-
         .block-field-blocknodeeventtitle,
         .block-field-blocknodegeneral-eventtitle {
             font-size: $md-heading4-size;

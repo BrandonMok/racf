@@ -115,7 +115,7 @@
         padding: 24px;
 
         &__title {
-            font-size: $md-heading5-size;
+            font-size: $body;
             color: $white;
             display: inline-block;
             text-decoration: underline;
@@ -136,7 +136,7 @@
         background-color: $tan;
 
         .view-empty {
-            font-size: $md-heading5-size;
+            font-size: $body;
             padding: 16px;
             line-height: 1.5;
         }
@@ -158,13 +158,13 @@
                 margin-bottom: 16px;
 
                 .field--name-title { 
-                    font-size: $md-heading5-size; 
-                    color: black;
+                    font-size: $body; 
+                    color: $black;
                     margin-bottom: 8px;
                 }
 
                 .field--type-daterange {
-                    color: black;
+                    color: $black;
                     font-weight: initial;
                 }
             }
@@ -183,15 +183,12 @@
             }
 
             .views-row {
-                background-color: #5F96F1;
+                background-color: $event-list-item-background;
                 border-radius: 8px;
                 margin-bottom: 16px;
 
-                // display: flex;
-                // align-items: center;
-
                 .field--name-title { 
-                    font-size: $md-heading5-size; 
+                    font-size: $body; 
                     color: black;
                 }
 
@@ -238,7 +235,7 @@
 
     &__title {
         padding-top: 8px;
-        font-size: $md-heading5-size;
+        font-size: $title;
         line-height: 1.5;
         color: $white;
     }
@@ -468,12 +465,12 @@
         padding-left: 8px;
     
         &__title {
-            font-size: $md-heading4-size;
+            font-size: $headline;
             padding-left: 16px;
         }
 
         .view-empty {
-            font-size: $md-heading5-size;
+            font-size: $title;
             padding-bottom: 40px;
         }
     
@@ -520,14 +517,16 @@
             }
         }
     }
+
+    .event-short  {
+        &__top-bar__title {
+            font-size: $title;
+        }
+    }
 }
 
 @include media-breakpoint-up(xl) { 
     .event-short {
-        &__top-bar__title {
-            font-size: $md-heading4-size;
-        }
-
         &__list {
             .view-event-short .view-content {
                 padding: 24px;

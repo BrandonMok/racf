@@ -23064,7 +23064,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   padding: 24px;
 }
 .event-short__top-bar__title {
-  font-size: 24px;
+  font-size: 14pt;
   color: #ffffff;
   display: inline-block;
   text-decoration: underline;
@@ -23080,7 +23080,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   background-color: #ece4dc;
 }
 .event-short__list .view-empty {
-  font-size: 24px;
+  font-size: 14pt;
   padding: 16px;
   line-height: 1.5;
 }
@@ -23099,12 +23099,12 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   margin-bottom: 16px;
 }
 .event-short__list .view-event-short .view-content .views-row .field--name-title {
-  font-size: 24px;
-  color: black;
+  font-size: 14pt;
+  color: #000000;
   margin-bottom: 8px;
 }
 .event-short__list .view-event-short .view-content .views-row .field--type-daterange {
-  color: black;
+  color: #000000;
   font-weight: initial;
 }
 
@@ -23118,7 +23118,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   margin-bottom: 16px;
 }
 .event-short-minimal__content .view-event-short-minimal- .view-content .views-row .field--name-title {
-  font-size: 24px;
+  font-size: 14pt;
   color: black;
 }
 .event-short-minimal__content .view-event-short-minimal- .view-content .views-row .field--type-daterange {
@@ -23152,7 +23152,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 }
 .general-events-listing__title {
   padding-top: 8px;
-  font-size: 24px;
+  font-size: 20pt;
   line-height: 1.5;
   color: #ffffff;
 }
@@ -23327,11 +23327,11 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
     padding-left: 8px;
   }
   .general-events-listing__title {
-    font-size: 34px;
+    font-size: 24pt;
     padding-left: 16px;
   }
   .general-events-listing .view-empty {
-    font-size: 24px;
+    font-size: 20pt;
     padding-bottom: 40px;
   }
   .general-events-listing .view-general-events .view-content {
@@ -23371,11 +23371,12 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   .contact-form-block__content__title {
     align-items: center;
   }
+
+  .event-short__top-bar__title {
+    font-size: 20pt;
+  }
 }
 @media (min-width: 1200px) {
-  .event-short__top-bar__title {
-    font-size: 34px;
-  }
   .event-short__list .view-event-short .view-content {
     padding: 24px;
   }

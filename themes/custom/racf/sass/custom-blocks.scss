@@ -175,17 +175,11 @@
 
 /** Custom Block: Event Short Minimal **/
 .event-short-minimal {
-    padding: 16px;
-
     &__content {
         .view-event-short-minimal- .view-content {
 
             h3 { 
                 display: none; 
-            }
-            
-            .field-content { 
-                padding-bottom: 16px; 
             }
 
             .views-row {
@@ -193,10 +187,12 @@
                 border-radius: 8px;
                 margin-bottom: 16px;
 
+                // display: flex;
+                // align-items: center;
+
                 .field--name-title { 
                     font-size: $md-heading5-size; 
                     color: black;
-                    margin-bottom: 8px;
                 }
 
                 .field--type-daterange {
@@ -462,6 +458,10 @@
 
 
     /** Event View Blocks **/
+    .view-events {
+        margin-left: 16px;
+    }
+
     .general-events-listing {
         text-align: left;
         padding-top: 8px;

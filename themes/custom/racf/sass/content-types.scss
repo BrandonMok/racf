@@ -1,5 +1,5 @@
 /** Content type: Event & General Event **/
-/** Event  & General Event are displayed using a block layout **/
+/** Event & General Event are displayed using a block layout **/
 .event,
 .general-event {
     font-weight: bold;
@@ -49,8 +49,8 @@
 @include media-breakpoint-up(md) {  
     .event,
     .general-event  {
-        padding: 24px;
-        padding-left: 32px;
+        // padding: 24px;
+        // padding-left: 32px;
 
         .block-field-blocknodeeventtitle,
         .block-field-blocknodegeneral-eventtitle {

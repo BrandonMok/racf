@@ -302,11 +302,6 @@ div#block-racf-local-tasks {
 }
 
 
-/** Event calendar (/events) **/
-.view-events {
-    margin: 0 16px;
-}
-
 /** Sections **/
 .layout--twocol-section--50-50 {
     @extend .row;
@@ -316,7 +311,6 @@ div#block-racf-local-tasks {
         @extend .col-md-6;
     }
 }
-
 
 
 /** Media Queries **/
@@ -350,7 +344,8 @@ div#block-racf-local-tasks {
 }
 
 @include media-breakpoint-up(md) {  
-    .layout--twocol-section--50-50 {
+    .layout--twocol-section--50-50,
+    .layout--twocol-section--33-67 {
         padding: 16px;
     }
 
@@ -370,28 +365,17 @@ div#block-racf-local-tasks {
         padding-left: 40px;
     }
 
-    .view-events { 
-        margin: 40px 32px 40px 16px;
-    }
 
     /** MD: User Login / Registration pages **/
-    .user-login-register__content {
-        &__form {
-            #block-racf-content {
-                background-color: $tan;
-                padding: 32px;
-                margin-bottom: 24px;
-    
-                -webkit-box-shadow: 3px 3px 5px 6px #ccc;
-                -moz-box-shadow:    3px 3px 5px 6px #ccc;
-                box-shadow:         3px 3px 5px 6px #ccc;
-            }
-        }
-    }
-}
+    .user-login-register__content__form {
+        #block-racf-content {
+            background-color: $tan;
+            padding: 32px;
+            margin-bottom: 24px;
 
-@include media-breakpoint-up(lg) {
-    .view-events { 
-        margin: 40px 32px 40px 16px;
+            -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+            -moz-box-shadow:    3px 3px 5px 6px #ccc;
+            box-shadow:         3px 3px 5px 6px #ccc;
+        }
     }
 }

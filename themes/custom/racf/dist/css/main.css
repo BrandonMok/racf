@@ -22894,11 +22894,6 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   font-weight: bold;
 }
 
-/** Event calendar (/events) **/
-.view-events {
-  margin: 0 16px;
-}
-
 /** Sections **/
 /** Media Queries **/
 .main-menu-desktop nav {
@@ -22935,7 +22930,8 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   }
 }
 @media (min-width: 768px) {
-  .layout--twocol-section--50-50 {
+  .layout--twocol-section--50-50,
+.layout--twocol-section--33-67 {
     padding: 16px;
   }
 
@@ -22962,21 +22958,12 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
     padding-left: 40px;
   }
 
-  .view-events {
-    margin: 40px 32px 40px 16px;
-  }
-
   /** MD: User Login / Registration pages **/
   .user-login-register__content__form #block-racf-content {
     background-color: #ece4dc;
     padding: 32px;
     margin-bottom: 24px;
     box-shadow: 3px 3px 5px 6px #ccc;
-  }
-}
-@media (min-width: 992px) {
-  .view-events {
-    margin: 40px 32px 40px 16px;
   }
 }
 /** Custom Block: Information Section **/
@@ -23122,14 +23109,8 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 }
 
 /** Custom Block: Event Short Minimal **/
-.event-short-minimal {
-  padding: 16px;
-}
 .event-short-minimal__content .view-event-short-minimal- .view-content h3 {
   display: none;
-}
-.event-short-minimal__content .view-event-short-minimal- .view-content .field-content {
-  padding-bottom: 16px;
 }
 .event-short-minimal__content .view-event-short-minimal- .view-content .views-row {
   background-color: #5F96F1;
@@ -23139,7 +23120,6 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 .event-short-minimal__content .view-event-short-minimal- .view-content .views-row .field--name-title {
   font-size: 24px;
   color: black;
-  margin-bottom: 8px;
 }
 .event-short-minimal__content .view-event-short-minimal- .view-content .views-row .field--type-daterange {
   color: black;
@@ -23337,6 +23317,10 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   }
 
   /** Event View Blocks **/
+  .view-events {
+    margin-left: 16px;
+  }
+
   .general-events-listing {
     text-align: left;
     padding-top: 8px;
@@ -23405,7 +23389,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   }
 }
 /** Content type: Event & General Event **/
-/** Event  & General Event are displayed using a block layout **/
+/** Event & General Event are displayed using a block layout **/
 .event,
 .general-event {
   font-weight: bold;
@@ -23457,11 +23441,6 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 
 /** Media Queries **/
 @media (min-width: 768px) {
-  .event,
-.general-event {
-    padding: 24px;
-    padding-left: 32px;
-  }
   .event .block-field-blocknodeeventtitle,
 .event .block-field-blocknodegeneral-eventtitle,
 .general-event .block-field-blocknodeeventtitle,

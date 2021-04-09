@@ -23048,8 +23048,8 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   margin: 16px 0;
 }
 .get-access__container__label {
+  font-size: 16pt;
   font-weight: bold;
-  font-size: 20pt;
   line-height: 1.5;
 }
 
@@ -23338,15 +23338,9 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   }
 }
 @media (min-width: 992px) {
-  .hero-box__inner-box__text {
-    font-size: 20pt;
-  }
-
-  .access-partner__label {
-    font-size: 20pt;
-  }
-
-  .get-access__container__label {
+  .hero-box__inner-box__text,
+.get-access__container__label,
+.access-partner__label {
     font-size: 20pt;
   }
 

@@ -96,8 +96,8 @@
         margin: 16px 0;
 
         &__label {
+            font-size: $subheader;
             font-weight: bold;
-            font-size: $title;
             line-height: 1.5;
         }
     }
@@ -385,10 +385,6 @@
 
         &__title {
             height: 200px;
-
-            // &__label {
-            //     font-size: $title;
-            // }
         }
     }
 
@@ -484,16 +480,10 @@
 }
 
 @include media-breakpoint-up(lg) { 
-    .hero-box__inner-box__text {
+    .hero-box__inner-box__text,
+    .get-access__container__label,
+    .access-partner__label  {
         font-size: $title;
-    }
-
-    .access-partner__label {
-        font-size: $title;
-    }
-
-    .get-access__container__label { 
-        font-size: $title; 
     }
 
     .information-section-left,  
@@ -505,7 +495,6 @@
         }
     }
 
- 
     .qa-primary, 
     .qa-secondary {
         padding: 32px;

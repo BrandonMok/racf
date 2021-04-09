@@ -34,7 +34,6 @@
 /** Custom Block: Hero Section **/
 .hero-box {
     position: relative;
-    text-align: left;
     color: $white;
 
     &__inner-box {
@@ -42,13 +41,8 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        font-size: $md-heading4-size;
+        font-size: $subheader;
         font-weight: bold;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
 
         &___text {
             color: $white;
@@ -56,9 +50,11 @@
         }
 
         &__button {
+            text-align: center;
+
             &__btn {
                 @extend .white-outlined-btn;
-                width: 100%;
+                margin-top: 8px;
             }
         }
     }
@@ -99,7 +95,7 @@
 
         &__label {
             font-weight: bold;
-            font-size: $md-heading5-size;
+            font-size: $title;
             line-height: 1.5;
         }
     }
@@ -299,7 +295,7 @@
             margin-left: 8px;
 
             &__title { 
-                font-size: $md-heading5-size; 
+                font-size: $subheader; 
                 font-weight: bold;
             }
 
@@ -322,7 +318,7 @@
 
         &__title { 
             text-align: center;
-            font-size: $md-heading5-size; 
+            font-size: $subheader; 
         }
 
         &__form {
@@ -364,13 +360,7 @@
         &__inner-box {
             &__text {
                 line-height: 1.25;
-                font-size: $md-heading6-size;
-            }
-
-            &__button { 
-                &__btn {
-                    margin: 8px;
-                }
+                font-size: $subheader;
             }
         }
     }
@@ -406,20 +396,11 @@
         text-align: left;
 
         &__inner-box {
-            display: flex;
-            justify-content: flex-end;
-            align-items: flex-end;
-            flex-direction: row;
-
             &__text {
-                font-size: $md-heading4-size;
+                font-size: $title;
             }
-
             &__button {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 12em;
+                text-align: left;
             }
         }
     }
@@ -497,17 +478,30 @@
 
 @include media-breakpoint-up(lg) { 
     .access-partner__label {
-        font-size: $md-heading3-size;
+        font-size: $headline
     }
 
-    .get-access__container__label { font-size: $md-heading4-size; }
+    .get-access__container__label { 
+        font-size: $title; 
+    }
 
+    // .hero-box {
+    //     &__inner-box {
+    //         flex-direction: row;
+
+    //         &__text {
+    //             font-size: $headline;
+    //         }
+    //     }
+    // }
  
     .qa-primary, 
     .qa-secondary {
         padding: 32px;
     
-        &__flexbox { padding: 32px; }
+        &__flexbox { 
+            padding: 32px; 
+        }
     }
 
     .contact-form-block {

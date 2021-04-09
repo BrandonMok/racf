@@ -23002,7 +23002,6 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 /** Custom Block: Hero Section **/
 .hero-box {
   position: relative;
-  text-align: left;
   color: #ffffff;
 }
 .hero-box__inner-box {
@@ -23010,19 +23009,18 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 34px;
+  font-size: 16pt;
   font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
 }
 .hero-box__inner-box___text {
   color: #ffffff;
   line-height: 1.25;
 }
+.hero-box__inner-box__button {
+  text-align: center;
+}
 .hero-box__inner-box__button__btn {
-  width: 100%;
+  margin-top: 8px;
 }
 
 /** Custom Block: Access Partner **/
@@ -23051,7 +23049,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 }
 .get-access__container__label {
   font-weight: bold;
-  font-size: 24px;
+  font-size: 20pt;
   line-height: 1.5;
 }
 
@@ -23210,7 +23208,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   margin-left: 8px;
 }
 .contact-block__flexbox__content__title {
-  font-size: 24px;
+  font-size: 16pt;
   font-weight: bold;
 }
 .contact-block__flexbox__content__body p {
@@ -23228,7 +23226,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 }
 .contact-form-block__content__title {
   text-align: center;
-  font-size: 24px;
+  font-size: 16pt;
 }
 .contact-form-block__content__form div label {
   display: block;
@@ -23251,10 +23249,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 /** Media Queries **/
 .hero-box__inner-box__text {
   line-height: 1.25;
-  font-size: 20px;
-}
-.hero-box__inner-box__button__btn {
-  margin: 8px;
+  font-size: 16pt;
 }
 
 .mdl-layout__drawer-button {
@@ -23280,20 +23275,11 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   .hero-box {
     text-align: left;
   }
-  .hero-box__inner-box {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    flex-direction: row;
-  }
   .hero-box__inner-box__text {
-    font-size: 34px;
+    font-size: 20pt;
   }
   .hero-box__inner-box__button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 12em;
+    text-align: left;
   }
 
   .access-partner__label {
@@ -23352,11 +23338,11 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 }
 @media (min-width: 992px) {
   .access-partner__label {
-    font-size: 48px;
+    font-size: 24pt;
   }
 
   .get-access__container__label {
-    font-size: 34px;
+    font-size: 20pt;
   }
 
   .qa-primary,

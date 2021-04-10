@@ -22729,6 +22729,11 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   border-radius: 4px;
 }
 
+/** Messages **/
+div.messages {
+  text-align: center;
+}
+
 /** Buttons **/
 .white-outlined-btn, .event-short__top-bar__button-div__btn, .hero-box__inner-box__button__btn {
   color: #ffffff;

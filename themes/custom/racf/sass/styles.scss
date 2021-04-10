@@ -3,21 +3,22 @@
 @import "../node_modules/material-design-lite/src/material-design-lite.scss";
 
 /** Variables **/
-$md-heading1-size: 96px;
-$md-heading2-size: 60px;
-$md-heading3-size: 48px;
-$md-heading4-size: 34px;
-$md-heading5-size: 24px;
-$md-heading6-size: 20px;
+$headline: 24pt;
+$title: 20pt;
+$subheader: 16pt;
+$body: 14pt;
 
 $primary-color: #0058B3;
 $secondary-color: #ffffff;
 $tertiary-color: #09335F;
+$event-list-item-background: #5F96F1;
 
 $black: #000000;
 $tan: #ece4dc;
 $white: #ffffff;
 $btn-background: #3A4647;
+$localTasksBackground: #ced4da;
+$localTasksBackgroundActive: #6c757d;
 
 
 /** Usable CSS classes that use SASS vars **/
@@ -36,7 +37,7 @@ nav#block-racf-account-menu,
 nav#block-racf-main-menu--2  {
     ul li {
         list-style-type: none;
-        font-size: 16px;
+        font-size: 12pt;
         display: inline-block;
         padding: 4px;
 
@@ -53,7 +54,9 @@ nav#block-racf-main-menu--2  {
 
 
 /** Header from mdl components **/
-.nav-header-row { padding-left: 16px; }
+.nav-header-row { 
+    padding-left: 16px; 
+}
 
 
 /** Local admin tasks **/
@@ -65,31 +68,28 @@ div#block-racf-local-tasks {
         text-align: center;
 
         ul.tabs {
-            background-color: #ced4da;
+            background-color: $localTasksBackground;
             padding: 12px 0;
 
             li a {
-                font-size: 16px;
                 font-weight: bold;
-                color: black;
+                color: $black;
             }
 
             li.is-active a {
-                background-color: #6c757d;
+                background-color: $localTasksBackgroundActive;
                 border-radius: 4px;
             }
         }
     }
 }
 
-.icon-large { font-size: 48px; }
-
 
 /** Buttons **/
 .white-outlined-btn {
     color: $white;
-    font-weight: bold;
     border: 2px solid $white;
+    font-weight: bold;
     border-radius: 4px;
 }
 
@@ -101,6 +101,7 @@ div#block-racf-local-tasks {
 
     &__content {
         color: $white;
+        font-size: 12pt;
 
         & > div {
             padding: 4px 0;
@@ -116,7 +117,7 @@ div#block-racf-local-tasks {
     &__title {
         text-align: center;
         font-weight: bold;
-        font-size: $md-heading5-size;
+        font-size: $subheader;
     }
 
     &__form { 
@@ -302,11 +303,6 @@ div#block-racf-local-tasks {
 }
 
 
-/** Event calendar (/events) **/
-.view-events {
-    margin: 0 16px;
-}
-
 /** Sections **/
 .layout--twocol-section--50-50 {
     @extend .row;
@@ -318,12 +314,11 @@ div#block-racf-local-tasks {
 }
 
 
-
 /** Media Queries **/
 @include media-breakpoint-up(xs) {
     .main-menu-desktop nav { display: none; }
 
-    .nnavigation__list-item__mobile__icon { display: block; }
+    .navigation__list-item__mobile__icon { display: block; }
     .navigation__list-item__desktop { display: none; }
 
     /** XS: User Login / Registration pages **/
@@ -350,7 +345,8 @@ div#block-racf-local-tasks {
 }
 
 @include media-breakpoint-up(md) {  
-    .layout--twocol-section--50-50 {
+    .layout--twocol-section--50-50,
+    .layout--twocol-section--33-67 {
         padding: 16px;
     }
 
@@ -370,28 +366,25 @@ div#block-racf-local-tasks {
         padding-left: 40px;
     }
 
-    .view-events { 
-        margin: 40px 32px 40px 16px;
-    }
 
     /** MD: User Login / Registration pages **/
-    .user-login-register__content {
-        &__form {
-            #block-racf-content {
-                background-color: $tan;
-                padding: 32px;
-                margin-bottom: 24px;
-    
-                -webkit-box-shadow: 3px 3px 5px 6px #ccc;
-                -moz-box-shadow:    3px 3px 5px 6px #ccc;
-                box-shadow:         3px 3px 5px 6px #ccc;
-            }
+    .user-login-register__content__form {
+        #block-racf-content {
+            background-color: $tan;
+            padding: 32px;
+            margin-bottom: 24px;
+
+            -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+            -moz-box-shadow:    3px 3px 5px 6px #ccc;
+            box-shadow:         3px 3px 5px 6px #ccc;
         }
     }
 }
 
-@include media-breakpoint-up(lg) {
-    .view-events { 
-        margin: 40px 32px 40px 16px;
+@include media-breakpoint-up(lg) { 
+    .user-login-register__content {
+        &__title {
+            font-size: $title;
+        }
     }
 }

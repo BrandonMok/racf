@@ -1,7 +1,7 @@
 /** Custom Block: Information Section **/
 .information-section-left, 
 .information-section-right { 
-    padding: 8px;
+    padding: 24px 0;
 
     &__body {
         margin: auto auto;
@@ -15,12 +15,14 @@
         &__label {
             font-weight: bold;
             padding: 8px 0;
-            font-size: $md-heading5-size;
+            font-size: $subheader;
         }
     }
 }
 
-.information-section-left { background-color: $tan; }
+.information-section-left { 
+    background-color: $tan; 
+}
 
 .information-section-right {
     background-color: $white;
@@ -34,7 +36,6 @@
 /** Custom Block: Hero Section **/
 .hero-box {
     position: relative;
-    text-align: left;
     color: $white;
 
     &__inner-box {
@@ -42,23 +43,20 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        font-size: $md-heading4-size;
-        font-weight: bold;
 
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-
-        &___text {
+        &__text {
+            font-size: $subheader;
+            font-weight: bold;
             color: $white;
             line-height: 1.25;
         }
 
         &__button {
+            text-align: center;
+
             &__btn {
                 @extend .white-outlined-btn;
-                width: 100%;
+                margin-top: 8px;
             }
         }
     }
@@ -72,7 +70,7 @@
     padding: 40px 0;
 
     &__label {
-        font-size: $md-heading5-size;
+        font-size: $subheader;
         color: $white;
     }
 
@@ -98,8 +96,8 @@
         margin: 16px 0;
 
         &__label {
+            font-size: $subheader;
             font-weight: bold;
-            font-size: $md-heading5-size;
             line-height: 1.5;
         }
     }
@@ -115,7 +113,7 @@
         padding: 24px;
 
         &__title {
-            font-size: $md-heading5-size;
+            font-size: $body;
             color: $white;
             display: inline-block;
             text-decoration: underline;
@@ -136,7 +134,7 @@
         background-color: $tan;
 
         .view-empty {
-            font-size: $md-heading5-size;
+            font-size: $body;
             padding: 16px;
             line-height: 1.5;
         }
@@ -158,13 +156,13 @@
                 margin-bottom: 16px;
 
                 .field--name-title { 
-                    font-size: $md-heading5-size; 
-                    color: black;
+                    font-size: $body; 
+                    color: $black;
                     margin-bottom: 8px;
                 }
 
                 .field--type-daterange {
-                    color: black;
+                    color: $black;
                     font-weight: initial;
                 }
             }
@@ -175,28 +173,21 @@
 
 /** Custom Block: Event Short Minimal **/
 .event-short-minimal {
-    padding: 16px;
-
     &__content {
         .view-event-short-minimal- .view-content {
 
             h3 { 
                 display: none; 
             }
-            
-            .field-content { 
-                padding-bottom: 16px; 
-            }
 
             .views-row {
-                background-color: #5F96F1;
+                background-color: $event-list-item-background;
                 border-radius: 8px;
                 margin-bottom: 16px;
 
                 .field--name-title { 
-                    font-size: $md-heading5-size; 
+                    font-size: $body; 
                     color: black;
-                    margin-bottom: 8px;
                 }
 
                 .field--type-daterange {
@@ -241,8 +232,8 @@
     box-shadow: 0 2px 2px 2px lightgrey;
 
     &__title {
-        padding-top: 8px;
-        font-size: $md-heading5-size;
+        padding-top: 12px;
+        font-size: $subheader;
         line-height: 1.5;
         color: $white;
     }
@@ -274,7 +265,7 @@
         padding: 8px;
 
         &__title {
-            font-size: $md-heading5-size;
+            font-size: $subheader;
             font-weight: bold;
             margin-bottom: 16px;
             line-height: 1.5;
@@ -282,9 +273,9 @@
 
         &__content {
             div.field--type-text-with-summary p a {
-                color: $tertiary-color;
+                font-size: 12pt;
                 text-decoration: underline;
-                font-size: 16px;
+                color: $tertiary-color;
             }
         }
     }
@@ -306,12 +297,13 @@
             margin-left: 8px;
 
             &__title { 
-                font-size: $md-heading5-size; 
+                font-size: $subheader; 
                 font-weight: bold;
+                margin-bottom: 8px;
             }
 
             &__body p {
-                font-size: 14px;
+                font-size: 12pt;
                 opacity: 54.38%;
                 margin: 0;
             }
@@ -329,7 +321,7 @@
 
         &__title { 
             text-align: center;
-            font-size: $md-heading5-size; 
+            font-size: $subheader; 
         }
 
         &__form {
@@ -371,13 +363,7 @@
         &__inner-box {
             &__text {
                 line-height: 1.25;
-                font-size: $md-heading6-size;
-            }
-
-            &__button { 
-                &__btn {
-                    margin: 8px;
-                }
+                font-size: $subheader;
             }
         }
     }
@@ -396,6 +382,8 @@
 @include media-breakpoint-up(md) {  
     .information-section-left,  
     .information-section-right {
+        padding: 0;
+
         &__title {
             height: 200px;
         }
@@ -413,27 +401,17 @@
         text-align: left;
 
         &__inner-box {
-            display: flex;
-            justify-content: flex-end;
-            align-items: flex-end;
-            flex-direction: row;
-
-            &__text {
-                font-size: $md-heading4-size;
-            }
-
             &__button {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 12em;
+                text-align: left;
             }
         }
     }
 
 
     .access-partner {
-        &__label { font-size: $md-heading4-size; }
+        &__label { 
+            font-size: $title;
+        }
     
         &__container {
             padding: 32px 0;
@@ -462,18 +440,26 @@
 
 
     /** Event View Blocks **/
+    .view-events {
+        margin-left: 16px;
+    }
+
+    .event-short__top-bar__title {
+        font-size: $subheader;
+    }
+
     .general-events-listing {
         text-align: left;
         padding-top: 8px;
         padding-left: 8px;
     
         &__title {
-            font-size: $md-heading4-size;
+            font-size: $subheader;
             padding-left: 16px;
         }
 
         .view-empty {
-            font-size: $md-heading5-size;
+            font-size: $body;
             padding-bottom: 40px;
         }
     
@@ -499,18 +485,33 @@
 }
 
 @include media-breakpoint-up(lg) { 
-    .access-partner__label {
-        font-size: $md-heading3-size;
+    .hero-box__inner-box__text,
+    .get-access__container__label,
+    .access-partner__label,
+    .general-events-listing__title   {
+        font-size: $title;
     }
 
-    .get-access__container__label { font-size: $md-heading4-size; }
+    .information-section-left,  
+    .information-section-right {
+        &__title {
+            &__label {
+                font-size: $title;
+            }
+        }
+    }
 
- 
     .qa-primary, 
     .qa-secondary {
         padding: 32px;
     
-        &__flexbox { padding: 32px; }
+        &__flexbox { 
+            padding: 32px;
+            
+            &__title {
+                font-size: $title;
+            }
+        }
     }
 
     .contact-form-block {
@@ -520,14 +521,16 @@
             }
         }
     }
+
+    .event-short  {
+        &__top-bar__title {
+            font-size: $title;
+        }
+    }
 }
 
 @include media-breakpoint-up(xl) { 
     .event-short {
-        &__top-bar__title {
-            font-size: $md-heading4-size;
-        }
-
         &__list {
             .view-event-short .view-content {
                 padding: 24px;

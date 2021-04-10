@@ -22687,7 +22687,7 @@ nav#block-racf-main-menu ul li,
 nav#block-racf-account-menu ul li,
 nav#block-racf-main-menu--2 ul li {
   list-style-type: none;
-  font-size: 16px;
+  font-size: 12pt;
   display: inline-block;
   padding: 4px;
 }
@@ -22721,24 +22721,19 @@ div#block-racf-local-tasks nav.tabs ul.tabs {
   padding: 12px 0;
 }
 div#block-racf-local-tasks nav.tabs ul.tabs li a {
-  font-size: 16px;
   font-weight: bold;
-  color: black;
+  color: #000000;
 }
 div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   background-color: #6c757d;
   border-radius: 4px;
 }
 
-.icon-large {
-  font-size: 48px;
-}
-
 /** Buttons **/
 .white-outlined-btn, .event-short__top-bar__button-div__btn, .hero-box__inner-box__button__btn {
   color: #ffffff;
-  font-weight: bold;
   border: 2px solid #ffffff;
+  font-weight: bold;
   border-radius: 4px;
 }
 
@@ -22750,6 +22745,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 }
 .racf-footer__content {
   color: #ffffff;
+  font-size: 12pt;
 }
 .racf-footer__content > div {
   padding: 4px 0;
@@ -22762,7 +22758,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 .user-login-register__content__title {
   text-align: center;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 16pt;
 }
 .user-login-register__content__form {
   display: flex;
@@ -22894,18 +22890,13 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   font-weight: bold;
 }
 
-/** Event calendar (/events) **/
-.view-events {
-  margin: 0 16px;
-}
-
 /** Sections **/
 /** Media Queries **/
 .main-menu-desktop nav {
   display: none;
 }
 
-.nnavigation__list-item__mobile__icon {
+.navigation__list-item__mobile__icon {
   display: block;
 }
 
@@ -22935,7 +22926,8 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   }
 }
 @media (min-width: 768px) {
-  .layout--twocol-section--50-50 {
+  .layout--twocol-section--50-50,
+.layout--twocol-section--33-67 {
     padding: 16px;
   }
 
@@ -22962,10 +22954,6 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
     padding-left: 40px;
   }
 
-  .view-events {
-    margin: 40px 32px 40px 16px;
-  }
-
   /** MD: User Login / Registration pages **/
   .user-login-register__content__form #block-racf-content {
     background-color: #ece4dc;
@@ -22975,14 +22963,14 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   }
 }
 @media (min-width: 992px) {
-  .view-events {
-    margin: 40px 32px 40px 16px;
+  .user-login-register__content__title {
+    font-size: 20pt;
   }
 }
 /** Custom Block: Information Section **/
 .information-section-left,
 .information-section-right {
-  padding: 8px;
+  padding: 24px 0;
 }
 .information-section-left__body,
 .information-section-right__body {
@@ -22998,7 +22986,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 .information-section-right__title__label {
   font-weight: bold;
   padding: 8px 0;
-  font-size: 24px;
+  font-size: 16pt;
 }
 
 .information-section-left {
@@ -23015,7 +23003,6 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 /** Custom Block: Hero Section **/
 .hero-box {
   position: relative;
-  text-align: left;
   color: #ffffff;
 }
 .hero-box__inner-box {
@@ -23023,19 +23010,18 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 34px;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
 }
-.hero-box__inner-box___text {
+.hero-box__inner-box__text {
+  font-size: 16pt;
+  font-weight: bold;
   color: #ffffff;
   line-height: 1.25;
 }
+.hero-box__inner-box__button {
+  text-align: center;
+}
 .hero-box__inner-box__button__btn {
-  width: 100%;
+  margin-top: 8px;
 }
 
 /** Custom Block: Access Partner **/
@@ -23045,7 +23031,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   padding: 40px 0;
 }
 .access-partner__label {
-  font-size: 24px;
+  font-size: 16pt;
   color: #ffffff;
 }
 .access-partner__container {
@@ -23063,8 +23049,8 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   margin: 16px 0;
 }
 .get-access__container__label {
+  font-size: 16pt;
   font-weight: bold;
-  font-size: 24px;
   line-height: 1.5;
 }
 
@@ -23077,7 +23063,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   padding: 24px;
 }
 .event-short__top-bar__title {
-  font-size: 24px;
+  font-size: 14pt;
   color: #ffffff;
   display: inline-block;
   text-decoration: underline;
@@ -23093,7 +23079,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   background-color: #ece4dc;
 }
 .event-short__list .view-empty {
-  font-size: 24px;
+  font-size: 14pt;
   padding: 16px;
   line-height: 1.5;
 }
@@ -23112,24 +23098,18 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   margin-bottom: 16px;
 }
 .event-short__list .view-event-short .view-content .views-row .field--name-title {
-  font-size: 24px;
-  color: black;
+  font-size: 14pt;
+  color: #000000;
   margin-bottom: 8px;
 }
 .event-short__list .view-event-short .view-content .views-row .field--type-daterange {
-  color: black;
+  color: #000000;
   font-weight: initial;
 }
 
 /** Custom Block: Event Short Minimal **/
-.event-short-minimal {
-  padding: 16px;
-}
 .event-short-minimal__content .view-event-short-minimal- .view-content h3 {
   display: none;
-}
-.event-short-minimal__content .view-event-short-minimal- .view-content .field-content {
-  padding-bottom: 16px;
 }
 .event-short-minimal__content .view-event-short-minimal- .view-content .views-row {
   background-color: #5F96F1;
@@ -23137,9 +23117,8 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   margin-bottom: 16px;
 }
 .event-short-minimal__content .view-event-short-minimal- .view-content .views-row .field--name-title {
-  font-size: 24px;
+  font-size: 14pt;
   color: black;
-  margin-bottom: 8px;
 }
 .event-short-minimal__content .view-event-short-minimal- .view-content .views-row .field--type-daterange {
   color: black;
@@ -23171,8 +23150,8 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   box-shadow: 0 2px 2px 2px lightgrey;
 }
 .general-events-listing__title {
-  padding-top: 8px;
-  font-size: 24px;
+  padding-top: 12px;
+  font-size: 16pt;
   line-height: 1.5;
   color: #ffffff;
 }
@@ -23205,16 +23184,16 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 }
 .qa-primary__flexbox__title,
 .qa-secondary__flexbox__title {
-  font-size: 24px;
+  font-size: 16pt;
   font-weight: bold;
   margin-bottom: 16px;
   line-height: 1.5;
 }
 .qa-primary__flexbox__content div.field--type-text-with-summary p a,
 .qa-secondary__flexbox__content div.field--type-text-with-summary p a {
-  color: #09335F;
+  font-size: 12pt;
   text-decoration: underline;
-  font-size: 16px;
+  color: #09335F;
 }
 
 /** Custom Block: Contact Info Block **/
@@ -23230,11 +23209,12 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   margin-left: 8px;
 }
 .contact-block__flexbox__content__title {
-  font-size: 24px;
+  font-size: 16pt;
   font-weight: bold;
+  margin-bottom: 8px;
 }
 .contact-block__flexbox__content__body p {
-  font-size: 14px;
+  font-size: 12pt;
   opacity: 54.38%;
   margin: 0;
 }
@@ -23248,7 +23228,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 }
 .contact-form-block__content__title {
   text-align: center;
-  font-size: 24px;
+  font-size: 16pt;
 }
 .contact-form-block__content__form div label {
   display: block;
@@ -23271,10 +23251,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 /** Media Queries **/
 .hero-box__inner-box__text {
   line-height: 1.25;
-  font-size: 20px;
-}
-.hero-box__inner-box__button__btn {
-  margin: 8px;
+  font-size: 16pt;
 }
 
 .mdl-layout__drawer-button {
@@ -23287,6 +23264,10 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   }
 }
 @media (min-width: 768px) {
+  .information-section-left,
+.information-section-right {
+    padding: 0;
+  }
   .information-section-left__title,
 .information-section-right__title {
     height: 200px;
@@ -23300,24 +23281,12 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   .hero-box {
     text-align: left;
   }
-  .hero-box__inner-box {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    flex-direction: row;
-  }
-  .hero-box__inner-box__text {
-    font-size: 34px;
-  }
   .hero-box__inner-box__button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 12em;
+    text-align: left;
   }
 
   .access-partner__label {
-    font-size: 34px;
+    font-size: 20pt;
   }
   .access-partner__container {
     padding: 32px 0;
@@ -23337,17 +23306,25 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   }
 
   /** Event View Blocks **/
+  .view-events {
+    margin-left: 16px;
+  }
+
+  .event-short__top-bar__title {
+    font-size: 16pt;
+  }
+
   .general-events-listing {
     text-align: left;
     padding-top: 8px;
     padding-left: 8px;
   }
   .general-events-listing__title {
-    font-size: 34px;
+    font-size: 16pt;
     padding-left: 16px;
   }
   .general-events-listing .view-empty {
-    font-size: 24px;
+    font-size: 14pt;
     padding-bottom: 40px;
   }
   .general-events-listing .view-general-events .view-content {
@@ -23367,12 +23344,16 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   }
 }
 @media (min-width: 992px) {
-  .access-partner__label {
-    font-size: 48px;
+  .hero-box__inner-box__text,
+.get-access__container__label,
+.access-partner__label,
+.general-events-listing__title {
+    font-size: 20pt;
   }
 
-  .get-access__container__label {
-    font-size: 34px;
+  .information-section-left__title__label,
+.information-section-right__title__label {
+    font-size: 20pt;
   }
 
   .qa-primary,
@@ -23383,15 +23364,20 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 .qa-secondary__flexbox {
     padding: 32px;
   }
+  .qa-primary__flexbox__title,
+.qa-secondary__flexbox__title {
+    font-size: 20pt;
+  }
 
   .contact-form-block__content__title {
     align-items: center;
   }
+
+  .event-short__top-bar__title {
+    font-size: 20pt;
+  }
 }
 @media (min-width: 1200px) {
-  .event-short__top-bar__title {
-    font-size: 34px;
-  }
   .event-short__list .view-event-short .view-content {
     padding: 24px;
   }
@@ -23405,7 +23391,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   }
 }
 /** Content type: Event & General Event **/
-/** Event  & General Event are displayed using a block layout **/
+/** Event & General Event are displayed using a block layout **/
 .event,
 .general-event {
   font-weight: bold;
@@ -23416,7 +23402,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 .event .block-field-blocknodegeneral-eventtitle,
 .general-event .block-field-blocknodeeventtitle,
 .general-event .block-field-blocknodegeneral-eventtitle {
-  font-size: 24px;
+  font-size: 20pt;
   line-height: 1.25;
 }
 .event .block-field-blocknodeeventfield-date,
@@ -23425,7 +23411,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 }
 .event .block-field-blocknodeeventfield-date .field--type-daterange,
 .general-event .block-field-blocknodeeventfield-date .field--type-daterange {
-  font-size: 20px;
+  font-size: 14pt;
 }
 .event .block-field-blocknodeeventfield-time,
 .general-event .block-field-blocknodeeventfield-time {
@@ -23433,7 +23419,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 }
 .event .block-field-blocknodeeventfield-time .field--type-time-range,
 .general-event .block-field-blocknodeeventfield-time .field--type-time-range {
-  font-size: 20px;
+  font-size: 14pt;
 }
 .event .block-field-blocknodeeventfield-event-image,
 .event .block-field-blocknodegeneral-eventfield-event-image,
@@ -23445,28 +23431,16 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 .event .block-field-blocknodegeneral-eventbody,
 .general-event .block-field-blocknodeeventbody,
 .general-event .block-field-blocknodegeneral-eventbody {
-  margin-top: 16px;
-  margin-bottom: 32px;
-}
-.event .block-field-blocknodeeventbody h3,
-.event .block-field-blocknodegeneral-eventbody h3,
-.general-event .block-field-blocknodeeventbody h3,
-.general-event .block-field-blocknodegeneral-eventbody h3 {
-  margin-bottom: 0;
+  margin: 16px 0;
 }
 
 /** Media Queries **/
 @media (min-width: 768px) {
-  .event,
-.general-event {
-    padding: 24px;
-    padding-left: 32px;
-  }
   .event .block-field-blocknodeeventtitle,
 .event .block-field-blocknodegeneral-eventtitle,
 .general-event .block-field-blocknodeeventtitle,
 .general-event .block-field-blocknodegeneral-eventtitle {
-    font-size: 34px;
+    font-size: 24pt;
     margin-bottom: 16px;
   }
   .event .block-field-blocknodeeventfield-date,
@@ -23475,10 +23449,10 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   }
   .event .block-field-blocknodeeventfield-date .field--type-daterange,
 .general-event .block-field-blocknodeeventfield-date .field--type-daterange {
-    font-size: 24px;
+    font-size: 16pt;
   }
   .event .block-field-blocknodeeventfield-time .field--type-time-range,
 .general-event .block-field-blocknodeeventfield-time .field--type-time-range {
-    font-size: 24px;
+    font-size: 16pt;
   }
 }

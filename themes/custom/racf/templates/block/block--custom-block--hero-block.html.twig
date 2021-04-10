@@ -35,30 +35,32 @@
 %}
 <div{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
-  {% if label %}
-    <h2{{ title_attributes }}>{{ label }}</h2>
-  {% endif %}
   {{ title_suffix }}
 
   {% block content %}
     <div class="hero-box">
       {{ content.field_hero }}
 
-      <div class="hero-box__inner-box">
-        <div class="hero-box__inner-box__text">
-          {{ content.field_hero_text }}
-        </div>
-      
-        <div class="hero-box__inner-box__button">
-          {% if not logged_in %}
-          <a href="/user/login">
-          {% else %}
-          <a href="/events">
-          {% endif %}
-            <button class="mdl-button mdl-button--outlined hero-box__inner-box__button__btn">
-                <span class="mdl-button__label">GET YOUR PASS</span>
-            </button>
-          </a>
+      <div class="hero-box__inner-box container">
+        <div class="row">
+          <div class="col-12 col-md-8">
+            <div class="hero-box__inner-box__text">
+              {{ content.field_hero_text }}
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="hero-box__inner-box__button">
+              {% if not logged_in %}
+              <a href="/user/login">
+              {% else %}
+              <a href="/events">
+              {% endif %}
+                <button class="mdl-button mdl-button--outlined hero-box__inner-box__button__btn">
+                    <span class="mdl-button__label">GET YOUR PASS</span>
+                </button>
+              </a>
+            </div> 
+          </div>
         </div>
       </div>
     </div>

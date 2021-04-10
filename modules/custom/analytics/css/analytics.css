@@ -1,6 +1,9 @@
 .graph-container {
     margin: 32px 0;
 }
+.graph-container .row > .col-12 {
+    margin: 16px 0;
+}
 
 .row {
     margin-top: 24px;
@@ -8,19 +11,25 @@
 
 .page-title {
     margin: 0 auto;
-    font-size: 24pt;
+    font-size: 20pt;
     font-weight: bold;
 }
 
 .graph-title {
-    font-size: 16pt;
+    font-size: 14pt;
     font-weight: bold;
     line-height: 1.25;
 }
 
 
 @media (min-width: 768px) { 
+    .page-title {
+        font-size: 24pt;
+    }
     .graph-title {
-        font-size: 20pt;
+        font-size: 16pt;
+    }
+    .graph-container .row > .col-12 {
+        margin: 0;
     }
 }

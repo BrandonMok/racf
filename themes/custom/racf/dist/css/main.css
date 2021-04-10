@@ -22745,6 +22745,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 }
 .racf-footer__content {
   color: #ffffff;
+  font-size: 12pt;
 }
 .racf-footer__content > div {
   padding: 4px 0;

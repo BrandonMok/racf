@@ -23157,6 +23157,10 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 }
 .general-events-listing .view-empty {
   padding-bottom: 16px;
+  font-size: 12pt;
+  color: #ffffff;
+  margin-top: 8px;
+  padding-left: 16px;
 }
 .general-events-listing .view-general-events .view-content {
   display: flex;

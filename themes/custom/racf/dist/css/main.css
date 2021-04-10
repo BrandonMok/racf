@@ -23309,6 +23309,10 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
     margin-left: 16px;
   }
 
+  .event-short__top-bar__title {
+    font-size: 16pt;
+  }
+
   .general-events-listing {
     text-align: left;
     padding-top: 8px;

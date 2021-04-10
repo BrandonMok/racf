@@ -8,7 +8,7 @@
 
     .block-field-blocknodeeventtitle,
     .block-field-blocknodegeneral-eventtitle {
-        font-size: $md-heading5-size;
+        font-size: $title;
         line-height: 1.25;
     }
 
@@ -16,7 +16,7 @@
         margin: 16px 0;
 
         .field--type-daterange {
-            font-size: $md-heading6-size;
+            font-size: $body;
         }
     }
 
@@ -24,7 +24,7 @@
         margin-bottom: 24px;
 
         .field--type-time-range {
-            font-size: $md-heading6-size;
+            font-size: $body;
         }
     }
 
@@ -35,12 +35,7 @@
 
     .block-field-blocknodeeventbody,
     .block-field-blocknodegeneral-eventbody {
-        margin-top: 16px;
-        margin-bottom: 32px;
-
-        h3 {
-            margin-bottom: 0;
-        }
+        margin: 16px 0;
     }
 }
 
@@ -51,7 +46,7 @@
     .general-event  {
         .block-field-blocknodeeventtitle,
         .block-field-blocknodegeneral-eventtitle {
-            font-size: $md-heading4-size;
+            font-size: $headline;
             margin-bottom: 16px;
         }
 
@@ -59,13 +54,13 @@
             margin-top: 24px;
     
             .field--type-daterange {
-                font-size: $md-heading5-size;
+                font-size: $subheader;
             }
         }
 
         .block-field-blocknodeeventfield-time {
             .field--type-time-range {
-                font-size: $md-heading5-size;
+                font-size: $subheader;
             }
         }
     }

@@ -23397,7 +23397,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 .event .block-field-blocknodegeneral-eventtitle,
 .general-event .block-field-blocknodeeventtitle,
 .general-event .block-field-blocknodegeneral-eventtitle {
-  font-size: 24px;
+  font-size: 20pt;
   line-height: 1.25;
 }
 .event .block-field-blocknodeeventfield-date,
@@ -23406,7 +23406,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 }
 .event .block-field-blocknodeeventfield-date .field--type-daterange,
 .general-event .block-field-blocknodeeventfield-date .field--type-daterange {
-  font-size: 20px;
+  font-size: 14pt;
 }
 .event .block-field-blocknodeeventfield-time,
 .general-event .block-field-blocknodeeventfield-time {
@@ -23414,7 +23414,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 }
 .event .block-field-blocknodeeventfield-time .field--type-time-range,
 .general-event .block-field-blocknodeeventfield-time .field--type-time-range {
-  font-size: 20px;
+  font-size: 14pt;
 }
 .event .block-field-blocknodeeventfield-event-image,
 .event .block-field-blocknodegeneral-eventfield-event-image,
@@ -23426,14 +23426,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 .event .block-field-blocknodegeneral-eventbody,
 .general-event .block-field-blocknodeeventbody,
 .general-event .block-field-blocknodegeneral-eventbody {
-  margin-top: 16px;
-  margin-bottom: 32px;
-}
-.event .block-field-blocknodeeventbody h3,
-.event .block-field-blocknodegeneral-eventbody h3,
-.general-event .block-field-blocknodeeventbody h3,
-.general-event .block-field-blocknodegeneral-eventbody h3 {
-  margin-bottom: 0;
+  margin: 16px 0;
 }
 
 /** Media Queries **/
@@ -23442,7 +23435,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 .event .block-field-blocknodegeneral-eventtitle,
 .general-event .block-field-blocknodeeventtitle,
 .general-event .block-field-blocknodegeneral-eventtitle {
-    font-size: 34px;
+    font-size: 24pt;
     margin-bottom: 16px;
   }
   .event .block-field-blocknodeeventfield-date,
@@ -23451,10 +23444,10 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   }
   .event .block-field-blocknodeeventfield-date .field--type-daterange,
 .general-event .block-field-blocknodeeventfield-date .field--type-daterange {
-    font-size: 24px;
+    font-size: 16pt;
   }
   .event .block-field-blocknodeeventfield-time .field--type-time-range,
 .general-event .block-field-blocknodeeventfield-time .field--type-time-range {
-    font-size: 24px;
+    font-size: 16pt;
   }
 }

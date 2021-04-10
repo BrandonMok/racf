@@ -22770,9 +22770,6 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   padding: 16px;
   /** Password fields **/
 }
-.user-login-register__content__form #block-racf-content form p {
-  display: none;
-}
 .user-login-register__content__form #block-racf-content form input {
   display: block;
 }
@@ -22811,6 +22808,16 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   /** Before upload **/
   /** After upload **/
   /** IF: Multiple items allowed **/
+}
+.field--name-field-documents div div.form-item .description {
+  display: block;
+}
+.field--name-field-documents div div.form-item .description p {
+  padding-top: 8px;
+}
+.field--name-field-documents div div.form-item .description :nth-child(2),
+.field--name-field-documents div div.form-item .description :nth-child(3) {
+  display: none;
 }
 .field--name-field-documents div div.form-item div.form-managed-file input.form-file {
   margin-bottom: 8px;

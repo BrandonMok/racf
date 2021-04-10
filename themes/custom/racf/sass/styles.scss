@@ -129,10 +129,6 @@ div#block-racf-local-tasks {
         #block-racf-content {
             form {
                 padding: 16px;
-
-                p {
-                    display: none;
-                }
             
                 input { 
                     display: block; 
@@ -192,6 +188,20 @@ div#block-racf-local-tasks {
         /** one item allowed **/
         /** Before upload **/
         div.form-item {
+            .description {
+                display: block;
+
+                p {
+                    padding-top: 8px;
+                }
+                
+                :nth-child(2),
+                :nth-child(3) {
+                    display: none;
+                }
+            }
+
+
             div.form-managed-file {
                 input.form-file {
                     margin-bottom: 8px;

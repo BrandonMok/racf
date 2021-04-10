@@ -110,7 +110,7 @@
 
 .scan-pass__title,
 .scan-pass-error__title {
-    font-size: 32px;
+    font-size: 16pt;
     font-weight: bold;
     margin: 32px auto;
 }
@@ -135,7 +135,7 @@
 .scan-pass__info__title,
 .scan-pass-error__error-info__title,
 .scan-pass__email__title {
-    font-size: 16px;
+    font-size: 14pt;
     font-weight: bold;
     margin: 16px 0;
 }
@@ -181,13 +181,18 @@
         text-align: center;
         margin: auto;
     }
+
+    .scan-pass__title,
+    .scan-pass-error__title {
+        font-size: 20pt;
+    }
 }
 
 @media (min-width: 992px) { 
     .access-pass__title,
     .not-loggedin__title,
     .access-pass__title-print,
-    .access-pass__content__event-info__title  {
+    .access-pass__content__event-info__title {
         font-size: 20pt;
     }
 }
@@ -249,12 +254,13 @@
     .access-pass__content__title-print-event {
         display: block;
         text-align: center;
+        font-size: 20pt;
     }
 
     /** Date & Time **/
     .access-page__content__event-date,
     .access-page__content__event-time {
-        font-size: 20px;
+        font-size: 14pt;
         margin: 12px 0;
     }
 
@@ -267,7 +273,7 @@
     .access-pass__content__title-print-event,
     .access-page__content__how-to-use__title, 
     .access-page__content__terms-conditions__title {
-        font-size: 20px;
+        font-size: 14pt;
         padding-bottom: 8px;
     }
 

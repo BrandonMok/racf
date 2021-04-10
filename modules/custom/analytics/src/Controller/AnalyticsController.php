@@ -61,7 +61,7 @@ class AnalyticsController extends ControllerBase {
 
                 $attendeeListField = $e->get('field_attendees')->getValue();
                 if (!empty($attendeeListField)) {
-                    $attendeeList = $attendeeListField[0]['value']; // list field of user IDs of users that generated pass to attend
+                    $attendeeList = $attendeeListField[0]['value'];
                     $attendeeArr = explode("\r\n", $attendeeList);
 
                     foreach($attendeeArr as $id) {
@@ -75,10 +75,9 @@ class AnalyticsController extends ControllerBase {
                             if (!is_null($user) && !in_array($id, $attendees)) {
                                 array_push($attendees, $id);    // add this uid of user to attendees array
     
-    
                                 // Preventive precaution if testing and admin / organizer clicks to generate pass
                                 // admins don't have address
-                                if (property_exists($user, 'field_address')) {
+                                if ($user->hasField('field_address')) {
                                     $address = $user->get('field_address')->getValue();
                                     $zipcode = $address[0]["postal_code"];
                                     array_push($allZipcodes, $zipcode); // add this zipcode to allZipCodes array for further analytics

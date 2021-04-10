@@ -48,7 +48,7 @@ class AnalyticsController extends ControllerBase {
 
             foreach($events as $e) {
                 $genPasses = $e->get('field_generated_passes')->getValue();
-                if ($e->hasField('field_generated_passes')) {
+                if (!empty($genPasses)) {
                     $genPasses = $genPasses[0]["value"];
                     $totalGen = $totalGen + $genPasses;
                 }

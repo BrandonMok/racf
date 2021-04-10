@@ -22687,7 +22687,7 @@ nav#block-racf-main-menu ul li,
 nav#block-racf-account-menu ul li,
 nav#block-racf-main-menu--2 ul li {
   list-style-type: none;
-  font-size: 16px;
+  font-size: 12pt;
   display: inline-block;
   padding: 4px;
 }
@@ -22895,7 +22895,7 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   display: none;
 }
 
-.nnavigation__list-item__mobile__icon {
+.navigation__list-item__mobile__icon {
   display: block;
 }
 
@@ -23149,8 +23149,8 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   box-shadow: 0 2px 2px 2px lightgrey;
 }
 .general-events-listing__title {
-  padding-top: 8px;
-  font-size: 20pt;
+  padding-top: 12px;
+  font-size: 16pt;
   line-height: 1.5;
   color: #ffffff;
 }
@@ -23183,16 +23183,16 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 }
 .qa-primary__flexbox__title,
 .qa-secondary__flexbox__title {
-  font-size: 24px;
+  font-size: 16pt;
   font-weight: bold;
   margin-bottom: 16px;
   line-height: 1.5;
 }
 .qa-primary__flexbox__content div.field--type-text-with-summary p a,
 .qa-secondary__flexbox__content div.field--type-text-with-summary p a {
-  color: #09335F;
+  font-size: 12pt;
   text-decoration: underline;
-  font-size: 16px;
+  color: #09335F;
 }
 
 /** Custom Block: Contact Info Block **/
@@ -23210,9 +23210,10 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 .contact-block__flexbox__content__title {
   font-size: 16pt;
   font-weight: bold;
+  margin-bottom: 8px;
 }
 .contact-block__flexbox__content__body p {
-  font-size: 14px;
+  font-size: 12pt;
   opacity: 54.38%;
   margin: 0;
 }
@@ -23314,11 +23315,11 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
     padding-left: 8px;
   }
   .general-events-listing__title {
-    font-size: 24pt;
+    font-size: 16pt;
     padding-left: 16px;
   }
   .general-events-listing .view-empty {
-    font-size: 20pt;
+    font-size: 14pt;
     padding-bottom: 40px;
   }
   .general-events-listing .view-general-events .view-content {
@@ -23340,7 +23341,8 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 @media (min-width: 992px) {
   .hero-box__inner-box__text,
 .get-access__container__label,
-.access-partner__label {
+.access-partner__label,
+.general-events-listing__title {
     font-size: 20pt;
   }
 
@@ -23356,6 +23358,10 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   .qa-primary__flexbox,
 .qa-secondary__flexbox {
     padding: 32px;
+  }
+  .qa-primary__flexbox__title,
+.qa-secondary__flexbox__title {
+    font-size: 20pt;
   }
 
   .contact-form-block__content__title {

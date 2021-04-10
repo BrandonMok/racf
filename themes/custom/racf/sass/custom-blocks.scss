@@ -232,8 +232,8 @@
     box-shadow: 0 2px 2px 2px lightgrey;
 
     &__title {
-        padding-top: 8px;
-        font-size: $title;
+        padding-top: 12px;
+        font-size: $subheader;
         line-height: 1.5;
         color: $white;
     }
@@ -265,7 +265,7 @@
         padding: 8px;
 
         &__title {
-            font-size: $md-heading5-size;
+            font-size: $subheader;
             font-weight: bold;
             margin-bottom: 16px;
             line-height: 1.5;
@@ -273,9 +273,9 @@
 
         &__content {
             div.field--type-text-with-summary p a {
-                color: $tertiary-color;
+                font-size: 12pt;
                 text-decoration: underline;
-                font-size: 16px;
+                color: $tertiary-color;
             }
         }
     }
@@ -299,10 +299,11 @@
             &__title { 
                 font-size: $subheader; 
                 font-weight: bold;
+                margin-bottom: 8px;
             }
 
             &__body p {
-                font-size: 14px;
+                font-size: 12pt;
                 opacity: 54.38%;
                 margin: 0;
             }
@@ -449,12 +450,12 @@
         padding-left: 8px;
     
         &__title {
-            font-size: $headline;
+            font-size: $subheader;
             padding-left: 16px;
         }
 
         .view-empty {
-            font-size: $title;
+            font-size: $body;
             padding-bottom: 40px;
         }
     
@@ -482,7 +483,8 @@
 @include media-breakpoint-up(lg) { 
     .hero-box__inner-box__text,
     .get-access__container__label,
-    .access-partner__label  {
+    .access-partner__label,
+    .general-events-listing__title   {
         font-size: $title;
     }
 
@@ -500,7 +502,11 @@
         padding: 32px;
     
         &__flexbox { 
-            padding: 32px; 
+            padding: 32px;
+            
+            &__title {
+                font-size: $title;
+            }
         }
     }
 

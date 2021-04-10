@@ -24,6 +24,8 @@ $black: #000000;
 $tan: #ece4dc;
 $white: #ffffff;
 $btn-background: #3A4647;
+$localTasksBackground: #ced4da;
+$localTasksBackgroundActive: #6c757d;
 
 
 /** Usable CSS classes that use SASS vars **/
@@ -42,7 +44,7 @@ nav#block-racf-account-menu,
 nav#block-racf-main-menu--2  {
     ul li {
         list-style-type: none;
-        font-size: 16px;
+        font-size: 12pt;
         display: inline-block;
         padding: 4px;
 
@@ -59,7 +61,9 @@ nav#block-racf-main-menu--2  {
 
 
 /** Header from mdl components **/
-.nav-header-row { padding-left: 16px; }
+.nav-header-row { 
+    padding-left: 16px; 
+}
 
 
 /** Local admin tasks **/
@@ -71,7 +75,7 @@ div#block-racf-local-tasks {
         text-align: center;
 
         ul.tabs {
-            background-color: #ced4da;
+            background-color: $localTasksBackground;
             padding: 12px 0;
 
             li a {
@@ -80,7 +84,7 @@ div#block-racf-local-tasks {
             }
 
             li.is-active a {
-                background-color: #6c757d;
+                background-color: $localTasksBackgroundActive;
                 border-radius: 4px;
             }
         }
@@ -119,7 +123,7 @@ div#block-racf-local-tasks {
     &__title {
         text-align: center;
         font-weight: bold;
-        font-size: $subheader
+        font-size: $subheader;
     }
 
     &__form { 
@@ -320,7 +324,7 @@ div#block-racf-local-tasks {
 @include media-breakpoint-up(xs) {
     .main-menu-desktop nav { display: none; }
 
-    .nnavigation__list-item__mobile__icon { display: block; }
+    .navigation__list-item__mobile__icon { display: block; }
     .navigation__list-item__desktop { display: none; }
 
     /** XS: User Login / Registration pages **/

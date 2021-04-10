@@ -13,7 +13,7 @@
 .not-loggedin__title,
 .access-pass__title-print {
     color: white;
-    font-size: 24px;
+    font-size: 16pt;
     text-align: center;
     line-height: 1.5;
     padding: 12px;
@@ -34,8 +34,6 @@
     display: none;
 }
 
-
-
 .access-pass__content,
 .not-loggedin__unavailable {
     display: none;
@@ -49,7 +47,7 @@
     margin: 8px 0;
 }
 .access-pass__content__event-info__title {
-    font-size: 20pt;
+    font-size: 16pt;
     padding: 8px 0;
 }
 .access-pass__content__event-info__date,
@@ -182,6 +180,15 @@
     .scan-pass__qr_col {
         text-align: center;
         margin: auto;
+    }
+}
+
+@media (min-width: 992px) { 
+    .access-pass__title,
+    .not-loggedin__title,
+    .access-pass__title-print,
+    .access-pass__content__event-info__title  {
+        font-size: 20pt;
     }
 }
 

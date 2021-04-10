@@ -79,6 +79,8 @@ class QRBlock extends BlockBase {
    * {@inheritdoc}
    */
   public function build() {
+    global $base_url;
+
     $currNode = \Drupal::routeMatch()->getParameter('node');
 
     if (is_null($currNode)) {
@@ -109,7 +111,8 @@ class QRBlock extends BlockBase {
 
       // Check dates
       if ($today <= $endDate) {
-        $urlEncoded = urlencode("https://dev-racf.pantheonsite.io/checkin/$nid/$currentUID");
+        // $urlEncoded = urlencode("https://dev-racf.pantheonsite.io/checkin/$nid/$currentUID");
+        $urlEncoded = urlencode("$base_url/$nid/$currentUID");
         $markup = "http://api.qrserver.com/v1/create-qr-code/?size=150x150&data=$urlEncoded";
 
         // Reformat date for display on Printed Version of Access Pass.
@@ -137,7 +140,8 @@ class QRBlock extends BlockBase {
         $title = $currNode->getTitle();
         $gen = "";
 
-        $urlEncoded = urlencode("https://dev-racf.pantheonsite.io/checkin/$nid/$currentUID");
+        // $urlEncoded = urlencode("https://dev-racf.pantheonsite.io/checkin/$nid/$currentUID");
+        $urlEncoded = urlencode("$base_url/$nid/$currentUID");
         $markup = "http://api.qrserver.com/v1/create-qr-code/?size=150x150&data=$urlEncoded";
 
         // CHECK: if user has already redeemed the pass -> display depends on this

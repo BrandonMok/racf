@@ -48,7 +48,7 @@ class AnalyticsController extends ControllerBase {
 
             foreach($events as $e) {
                 $genPasses = $e->get('field_generated_passes')->getValue();
-                if (!empty($genPasses)){
+                if ($e->hasField('field_generated_passes')) {
                     $genPasses = $genPasses[0]["value"];
                     $totalGen = $totalGen + $genPasses;
                 }
@@ -75,12 +75,11 @@ class AnalyticsController extends ControllerBase {
                             if (!is_null($user) && !in_array($id, $attendees)) {
                                 array_push($attendees, $id);    // add this uid of user to attendees array
     
-                                // Preventive precaution if testing and admin / organizer clicks to generate pass
-                                // admins don't have address
+                                // SNAP users only have a zipcode.
                                 if ($user->hasField('field_address')) {
                                     $address = $user->get('field_address')->getValue();
                                     $zipcode = $address[0]["postal_code"];
-                                    array_push($allZipcodes, $zipcode); // add this zipcode to allZipCodes array for further analytics
+                                    array_push($allZipcodes, $zipcode); // add this zipcode to allZipCodes array for later display.
                                 }
                             }
                         }
@@ -127,7 +126,7 @@ class AnalyticsController extends ControllerBase {
                             'events_general' => [
                                 $totalGenB ?? 0, $totalScannedB ?? 0
                             ],
-                            'attendees' => $attendees ,
+                            'attendees' => $attendees,
                             'zip_codes' => $allZipcodes
                         ]
                     ],

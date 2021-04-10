@@ -112,7 +112,7 @@ class QRBlock extends BlockBase {
       // Check dates
       if ($today <= $endDate) {
         // $urlEncoded = urlencode("https://dev-racf.pantheonsite.io/checkin/$nid/$currentUID");
-        $urlEncoded = urlencode("$base_url/$nid/$currentUID");
+        $urlEncoded = urlencode("$base_url/checkin/$nid/$currentUID");
         $markup = "http://api.qrserver.com/v1/create-qr-code/?size=150x150&data=$urlEncoded";
 
         // Reformat date for display on Printed Version of Access Pass.
@@ -141,7 +141,7 @@ class QRBlock extends BlockBase {
         $gen = "";
 
         // $urlEncoded = urlencode("https://dev-racf.pantheonsite.io/checkin/$nid/$currentUID");
-        $urlEncoded = urlencode("$base_url/$nid/$currentUID");
+        $urlEncoded = urlencode("$base_url/checkin/$nid/$currentUID");
         $markup = "http://api.qrserver.com/v1/create-qr-code/?size=150x150&data=$urlEncoded";
 
         // CHECK: if user has already redeemed the pass -> display depends on this

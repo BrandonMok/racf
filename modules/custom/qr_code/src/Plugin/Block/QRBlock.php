@@ -45,7 +45,6 @@ class QRBlock extends BlockBase {
       '#title' => $this->t('URL'),
       '#description' => $this->t('Enter a URL to allow users to purchase tickets from your organization.'),
       '#default_value' => $this->configuration['url'],
-      '#required' => TRUE,
     ];
 
     $form['how_to_use'] = [

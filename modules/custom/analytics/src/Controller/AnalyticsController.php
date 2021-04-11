@@ -47,20 +47,21 @@ class AnalyticsController extends ControllerBase {
 
         if (!empty($events)) {
             foreach($events as $e) {
-                $genPasses = $e->get('field_generated_passes')->getValue();
-                if (!empty($genPasses)) {
+                
+                if ($e->hasField('field_generated_passes') && !$e->get('field_generated_passes')->isEmpty()) {
+                    $genPasses = $e->get('field_generated_passes')->getValue();
                     $genPasses = $genPasses[0]["value"];
                     $totalGen = $totalGen + $genPasses;
                 }
     
-                $scannedPasses = $e->get('field_scanned_passes')->getValue();
-                if (!empty($scannedPasses)) {
+                if ($e->hasField('field_scanned_passes') && !$e->get('field_scanned_passes')->isEmpty()) {
+                    $scannedPasses = $e->get('field_scanned_passes')->getValue();
                     $scannedPasses = $scannedPasses[0]["value"];
                     $totalScanned = $totalScanned + $scannedPasses;
                 }
 
-                $attendeeListField = $e->get('field_attendees')->getValue();
-                if (!empty($attendeeListField)) {
+                if ($e->hasField('field_attendees') && !$e->get('field_attendees')->isEmpty()) {
+                    $attendeeListField = $e->get('field_attendees')->getValue();
                     $attendeeList = $attendeeListField[0]['value'];
                     $attendeeArr = explode("\r\n", $attendeeList);
 
@@ -77,7 +78,7 @@ class AnalyticsController extends ControllerBase {
                                 array_push($attendees, $id);    // add this uid of user to attendees array.
     
                                 // SNAP users only have a zipcode.
-                                if ($user->hasField('field_address')) {
+                                if ($user->hasField('field_address') && !$user->get('field_address')->isEmpty()) {
                                     $address = $user->get('field_address')->getValue();
                                     $zipcode = $address[0]["postal_code"];
                                     array_push($allZipcodes, $zipcode); // add this zipcode to allZipCodes array for later display.

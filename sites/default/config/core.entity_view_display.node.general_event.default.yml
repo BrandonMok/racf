@@ -94,21 +94,6 @@ third_party_settings:
                 view_mode: view_mode
             additional: {  }
             weight: 0
-          4704cef6-e060-47d1-807b-3ae13e77e5d9:
-            uuid: 4704cef6-e060-47d1-807b-3ae13e77e5d9
-            region: first
-            configuration:
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              id: 'field_block:node:general_event:field_attendees'
-              formatter:
-                label: above
-                settings: {  }
-                third_party_settings: {  }
-                type: basic_string
-            additional: {  }
-            weight: 3
         third_party_settings: {  }
   layout_builder_restrictions:
     allowed_block_categories: {  }

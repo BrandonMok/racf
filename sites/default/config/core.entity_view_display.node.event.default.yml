@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.event.body
+    - field.field.node.event.field_actual_attendees
     - field.field.node.event.field_attendees
     - field.field.node.event.field_date
     - field.field.node.event.field_event_image
@@ -161,6 +162,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
+  field_actual_attendees:
+    weight: 110
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: first
   field_attendees:
     weight: 109
     label: above

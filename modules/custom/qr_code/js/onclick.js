@@ -9,9 +9,9 @@
     
                     let eventTitle = $('#event-title').text();
                     let nodeType;
-                    let date = $("event-date");
+                    let date = $("#event-date");
 
-                    if (Object.keys(date).length == 0) {
+                    if (Object.keys(date).length != 0) {
                         nodeType = "event";
                     }
                     else {
@@ -24,7 +24,6 @@
                     });
     
                     $("#access-pass").off('click'); 
-
 
                     $("#download-text").trigger("click");
                 });

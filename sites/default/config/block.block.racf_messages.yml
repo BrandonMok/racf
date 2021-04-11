@@ -1,6 +1,6 @@
 uuid: 299ca12a-bd60-4aa4-ac0f-57d5cb5e8a8a
 langcode: en
-status: false
+status: true
 dependencies:
   module:
     - system
@@ -10,8 +10,8 @@ _core:
   default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
 id: racf_messages
 theme: racf
-region: header
-weight: -1
+region: content
+weight: -6
 provider: null
 plugin: system_messages_block
 settings:

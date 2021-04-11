@@ -22729,6 +22729,11 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   border-radius: 4px;
 }
 
+/** Messages **/
+div.messages {
+  text-align: center;
+}
+
 /** Buttons **/
 .white-outlined-btn, .event-short__top-bar__button-div__btn, .hero-box__inner-box__button__btn {
   color: #ffffff;
@@ -22770,9 +22775,6 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   padding: 16px;
   /** Password fields **/
 }
-.user-login-register__content__form #block-racf-content form p {
-  display: none;
-}
 .user-login-register__content__form #block-racf-content form input {
   display: block;
 }
@@ -22811,6 +22813,16 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   /** Before upload **/
   /** After upload **/
   /** IF: Multiple items allowed **/
+}
+.field--name-field-documents div div.form-item .description {
+  display: block;
+}
+.field--name-field-documents div div.form-item .description p {
+  padding-top: 8px;
+}
+.field--name-field-documents div div.form-item .description :nth-child(2),
+.field--name-field-documents div div.form-item .description :nth-child(3) {
+  display: none;
 }
 .field--name-field-documents div div.form-item div.form-managed-file input.form-file {
   margin-bottom: 8px;
@@ -22924,11 +22936,16 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   .navigation__list-item__mobile__icon {
     display: block;
   }
+
+  .layout--twocol-section--50-50 .layout__region--first,
+.layout--twocol-section--50-50 .layout__region--second {
+    flex: 1 1 100% !important;
+  }
 }
 @media (min-width: 768px) {
   .layout--twocol-section--50-50,
 .layout--twocol-section--33-67 {
-    padding: 16px;
+    padding: 32px;
   }
 
   .mobile-bar {
@@ -23057,10 +23074,11 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
 /** Custom Block: Events Short **/
 .event-short {
   padding-bottom: 4em;
+  max-width: 100%;
 }
 .event-short__top-bar {
-  background-color: #09335F;
   padding: 24px;
+  background-color: #09335F;
 }
 .event-short__top-bar__title {
   font-size: 14pt;
@@ -23382,6 +23400,9 @@ div#block-racf-local-tasks nav.tabs ul.tabs li.is-active a {
   }
 }
 @media (min-width: 1200px) {
+  .event-short {
+    max-width: 40rem;
+  }
   .event-short__list .view-event-short .view-content {
     padding: 24px;
   }

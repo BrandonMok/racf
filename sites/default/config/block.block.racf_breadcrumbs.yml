@@ -11,7 +11,7 @@ _core:
 id: racf_breadcrumbs
 theme: racf
 region: header
-weight: -2
+weight: -3
 provider: null
 plugin: system_breadcrumb_block
 settings:

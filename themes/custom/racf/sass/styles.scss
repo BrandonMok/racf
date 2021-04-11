@@ -84,6 +84,11 @@ div#block-racf-local-tasks {
     }
 }
 
+/** Messages **/
+div.messages {
+    text-align: center;
+}
+
 
 /** Buttons **/
 .white-outlined-btn {
@@ -129,10 +134,6 @@ div#block-racf-local-tasks {
         #block-racf-content {
             form {
                 padding: 16px;
-
-                p {
-                    display: none;
-                }
             
                 input { 
                     display: block; 
@@ -192,6 +193,20 @@ div#block-racf-local-tasks {
         /** one item allowed **/
         /** Before upload **/
         div.form-item {
+            .description {
+                display: block;
+
+                p {
+                    padding-top: 8px;
+                }
+                
+                :nth-child(2),
+                :nth-child(3) {
+                    display: none;
+                }
+            }
+
+
             div.form-managed-file {
                 input.form-file {
                     margin-bottom: 8px;
@@ -307,7 +322,7 @@ div#block-racf-local-tasks {
 .layout--twocol-section--50-50 {
     @extend .row;
 
-    > div {
+    & > div {
         @extend .col-12;
         @extend .col-md-6;
     }
@@ -342,12 +357,19 @@ div#block-racf-local-tasks {
             display: block;
         }
     }
+
+    .layout--twocol-section--50-50 { 
+        .layout__region--first,
+        .layout__region--second {
+            flex: 1 1 100% !important;
+        }
+    }
 }
 
 @include media-breakpoint-up(md) {  
     .layout--twocol-section--50-50,
     .layout--twocol-section--33-67 {
-        padding: 16px;
+        padding: 32px;
     }
 
     .mobile-bar { display: none; }

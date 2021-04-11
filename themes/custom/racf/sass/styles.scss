@@ -369,7 +369,7 @@ div.messages {
 @include media-breakpoint-up(md) {  
     .layout--twocol-section--50-50,
     .layout--twocol-section--33-67 {
-        padding: 16px;
+        padding: 32px;
     }
 
     .mobile-bar { display: none; }

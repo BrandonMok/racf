@@ -162,7 +162,7 @@ class QRCodeController extends ControllerBase {
         'title' => $eventTitle,
       ]);
     }
-    elseif ($type == "generalEvent") {
+    elseif ($type == "general_event") {
       $allEvents = $etm->getStorage('node')->loadByProperties([
         'type' => "general_event",
         'title' => $eventTitle,

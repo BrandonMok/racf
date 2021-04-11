@@ -43,9 +43,9 @@ class AnalyticsController extends ControllerBase {
         $attendees = [];    // array of each uid - don't want to count the same ZIP more than once if user appears again for multiple events.
         $allZipcodes = [];  // zipcodes of attendees.
 
-        if (!empty($events)) {
-            $etm = \Drupal::entityTypeManager();
+        $etm = \Drupal::entityTypeManager();
 
+        if (!empty($events)) {
             foreach($events as $e) {
                 $genPasses = $e->get('field_generated_passes')->getValue();
                 if (!empty($genPasses)) {
@@ -95,20 +95,21 @@ class AnalyticsController extends ControllerBase {
         $totalGenB = 0;
         $totalScannedB = 0;
         if (!empty($generalEvents)) {
-            foreach($generalEvents as $genEvent) {
-                $genPasses = $genEvent->get('field_generated_passes')->getValue();
-                if (!empty($genPasses)) {
-                    $genPasses = $genPasses[0]["value"];
-                    $totalGenB = $totalGenB + $genPasses;
+            foreach ($generalEvents as $ge) {
+                if ($ge->hasField('field_generated_passes') && !$ge->get('field_generated_passes')->isEmpty()) {
+                    $genPassesB = $ge->get('field_generated_passes')->getValue();
+                    $genPassesB = $genPassesB[0]["value"];
+                    $totalGenB = $totalGenB + $genPassesB;
                 }
 
-                $scannedPasses = $genEvent->get('field_scanned_passes')->getValue();
-                if (!empty($scannedPasses)) {
-                    $scannedPasses = $scannedPasses[0]["value"];
-                    $totalScannedB = $totalScannedB + $scannedPasses;
+                if ($ge->hasField('field_scanned_passes') && !$ge->get('field_scanned_passes')->isEmpty()) {
+                    $scannedPassesB = $ge->get('field_scanned_passes')->getValue();
+                    $scannedPassesB = $scannedPassesB[0]["value"];
+                    $totalScannedB = $totalScannedB + $scannedPassesB;
                 }
             }
         }
+
 
         //Return Array
         return array(
@@ -125,7 +126,7 @@ class AnalyticsController extends ControllerBase {
                                 $totalGen, $totalScanned
                             ],
                             'events_general' => [
-                                $totalGenB ?? 0, $totalScannedB ?? 0
+                                $totalGenB, $totalScannedB
                             ],
                             'attendees' => $attendees,
                             'zip_codes' => $allZipcodes

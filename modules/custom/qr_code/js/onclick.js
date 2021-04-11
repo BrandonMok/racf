@@ -9,12 +9,13 @@
     
                     let eventTitle = $('#event-title').text();
                     let nodeType;
+                    let date = $("event-date");
 
-                    if ($("event-date")) {
+                    if (Object.keys(date).length == 0) {
                         nodeType = "event";
                     }
                     else {
-                        nodeType = "generalEvent";
+                        nodeType = "general_event";
                     }
 
                     $.ajax({

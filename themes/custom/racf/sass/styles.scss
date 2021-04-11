@@ -322,7 +322,7 @@ div.messages {
 .layout--twocol-section--50-50 {
     @extend .row;
 
-    > div {
+    & > div {
         @extend .col-12;
         @extend .col-md-6;
     }
@@ -355,6 +355,13 @@ div.messages {
 
         &__icon {
             display: block;
+        }
+    }
+
+    .layout--twocol-section--50-50 { 
+        .layout__region--first,
+        .layout__region--second {
+            flex: 1 1 100% !important;
         }
     }
 }

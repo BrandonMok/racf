@@ -107,10 +107,12 @@
 /** Custom Block: Events Short **/
 .event-short {
     padding-bottom: 4em;
+    max-width: 100%;
+    // max-width: 35rem;
 
     &__top-bar {
-        background-color: $tertiary-color;
         padding: 24px;
+        background-color: $tertiary-color;
 
         &__title {
             font-size: $body;
@@ -448,9 +450,15 @@
         margin-left: 16px;
     }
 
-    .event-short__top-bar__title {
-        font-size: $subheader;
+    .event-short {
+        &__top-bar {
+            &__title {
+                font-size: $subheader;
+
+            }
+        }
     }
+
 
     .general-events-listing {
         text-align: left;
@@ -535,6 +543,8 @@
 
 @include media-breakpoint-up(xl) { 
     .event-short {
+        max-width: 40rem;
+    
         &__list {
             .view-event-short .view-content {
                 padding: 24px;

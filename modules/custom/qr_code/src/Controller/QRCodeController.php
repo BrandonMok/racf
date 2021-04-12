@@ -72,12 +72,21 @@ class QRCodeController extends ControllerBase {
         $endTimeDate = gmdate('h:m A', $end);
         $eventTime = "$startTimeDate - $endTimeDate";
 
-        // UPDATE passes scanned field
-        $scannedPasses = $theEvent->get('field_scanned_passes')->getString();
-        $incremented = intval($scannedPasses) + 1;
+        // check actual attendees field of those who actually went.
+        // Prevents the skewing of data if scanned the pass multiple times.
+        $actualAttendees = $theEvent->get('field_actual_attendees')->getString();
+        if ( str_contains($actualAttendees, $uid . "\r\n") === false ) {
+          // UPDATE passes scanned field
+          $scannedPasses = $theEvent->get('field_scanned_passes')->getString();
+          $incremented = intval($scannedPasses) + 1;
+          $theEvent = $theEvent->set('field_scanned_passes', strval($incremented));
 
-        $theEvent = $theEvent->set('field_scanned_passes', strval($incremented));
-        $theEvent = $theEvent->save();
+          // Update this event's actual attendees list
+          $updatedActualAttendees = $actualAttendees . "$uid\r\n";
+          $theEvent = $theEvent->set('field_actual_attendees', $updatedActualAttendees);
+
+          $theEvent = $theEvent->save();
+        }
       }
       else {
         // not an event - is a General Event

@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.event_view_row
     - field.field.node.event.body
+    - field.field.node.event.field_actual_attendees
     - field.field.node.event.field_attendees
     - field.field.node.event.field_date
     - field.field.node.event.field_event_image
@@ -79,6 +80,7 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_actual_attendees: true
   field_attendees: true
   field_generated_passes: true
   field_scanned_passes: true

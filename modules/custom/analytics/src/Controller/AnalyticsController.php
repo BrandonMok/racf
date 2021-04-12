@@ -135,7 +135,9 @@ class AnalyticsController extends ControllerBase {
                     ],
                 ],
             ],
+            '#cache' => [
+                'max-age' => 0
+            ]
         );
-
     }
 }

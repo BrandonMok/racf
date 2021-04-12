@@ -6,23 +6,12 @@
                 // Empty - element hasn't been redeemed
                 $("#access-pass", context).once('myBehavior').click(function() {
                     $(".access-pass__content").fadeIn("slow");
-    
-                    let eventTitle = $('#event-title').text();
-                    let nodeType;
-                    let date = $("#event-date");
-
-                    if (Object.keys(date).length != 0) {
-                        nodeType = "event";
-                    }
-                    else {
-                        nodeType = "general_event";
-                    }
 
                     $.ajax({
                         type: "POST",
-                        url: settings.path.baseUrl + 'passgenerated' + '/' +  nodeType  + '/' + eventTitle,
+                        url: settings.path.baseUrl + 'passgenerated' + '/' + drupalSettings.eventID,
                     });
-    
+
                     $("#access-pass").off('click'); 
 
                     $("#download-text").trigger("click");

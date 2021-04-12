@@ -124,7 +124,7 @@ class AnalyticsController extends ControllerBase {
                             ]);
                             $user = array_pop($userRes);
 
-                            if (!is_null($user) && !in_array($id, $generalEventAttendees)) {
+                            if (!is_null($user) && !in_array($uid, $generalEventAttendees)) {
                                 array_push($generalEventAttendees, $uid);
 
                                 // SNAP users only have a zipcode.

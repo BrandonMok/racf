@@ -7,7 +7,7 @@ qr_code.checkin:
     _permission: 'can checkin event'
 
 qr_code.pass_generated:
-  path: "/passgenerated/{type}/{eventTitle}"
+  path: "/passgenerated/{nid}"
   defaults:
     _controller: '\Drupal\qr_code\Controller\QRCodeController::passGenerated'
     title: 'Pass Generated'

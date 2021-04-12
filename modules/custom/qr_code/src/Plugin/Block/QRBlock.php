@@ -170,6 +170,9 @@ class QRBlock extends BlockBase {
           'qr_code/assets',
           'qr_code/htmltocanvas',
         ],
+        'drupalSettings' => [
+          "eventID" => $nid,
+        ],
       ],
     ];
   }

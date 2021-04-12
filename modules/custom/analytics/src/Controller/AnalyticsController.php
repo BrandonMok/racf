@@ -95,6 +95,9 @@ class AnalyticsController extends ControllerBase {
          */
         $totalGenB = 0;
         $totalScannedB = 0;
+        $generalEventAttendees = [];
+        $allGeneralZipcodes = [];
+
         if (!empty($generalEvents)) {
             foreach ($generalEvents as $ge) {
                 if ($ge->hasField('field_generated_passes') && !$ge->get('field_generated_passes')->isEmpty()) {
@@ -108,9 +111,34 @@ class AnalyticsController extends ControllerBase {
                     $scannedPassesB = $scannedPassesB[0]["value"];
                     $totalScannedB = $totalScannedB + $scannedPassesB;
                 }
+
+                if ($ge->hasField('field_attendees') && !$ge->get('field_attendees')->isEmpty()) {
+                    $generalAttendeeListField = $ge->get('field_attendees')->getValue();
+                    $generalAttendeeList = $generalAttendeeListField[0]['value'];
+                    $generalAttendeeArr = explode("\r\n", $generalAttendeeList);
+
+                    foreach($generalAttendeeArr as $uid) {
+                        if (!empty($uid)) {
+                            $userRes = $etm->getStorage('user')->loadByProperties([
+                                'uid' => intval($uid),
+                            ]);
+                            $user = array_pop($userRes);
+
+                            if (!is_null($user) && !in_array($id, $generalEventAttendees)) {
+                                array_push($generalEventAttendees, $uid);
+
+                                // SNAP users only have a zipcode.
+                                if ($user->hasField('field_address') && !$user->get('field_address')->isEmpty()) {
+                                    $address = $user->get('field_address')->getValue();
+                                    $zipcode = $address[0]['postal_code'];
+                                    array_push($allGeneralZipcodes, $zipcode);
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
-
 
         //Return Array
         return array(
@@ -130,7 +158,9 @@ class AnalyticsController extends ControllerBase {
                                 $totalGenB, $totalScannedB
                             ],
                             'attendees' => $attendees,
-                            'zip_codes' => $allZipcodes
+                            'general_attendees' => $generalEventAttendees,
+                            'zip_codes' => $allZipcodes,
+                            'zip_codes_general' => $allGeneralZipcodes, 
                         ]
                     ],
                 ],

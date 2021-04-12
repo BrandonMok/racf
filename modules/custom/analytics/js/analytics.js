@@ -303,6 +303,37 @@
         });
     }
 
+    // Bar graph for attendee general zipcodes
+    function barZipCodeGeneralGraph(zip_codes, attendees) {
+        let colors = [];
+        let filteredData = filterZipCodeAttendeeData(zip_codes, attendees);
+
+        for(var i = 0; i < filteredData.zip_codes.length; i++) {
+            var newColor = randomColor();
+            colors.push("#" + newColor); 
+        }
+
+        let ctx = $('#bar-zipcode-general-attendees');
+
+        var barChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: filteredData.zip_codes,
+                datasets: [{
+                    data: filteredData.attendees,
+                    backgroundColor: colors,
+                }]
+            },
+            options: {
+                legend: { display: false },
+                title: {
+                  display: true,
+                  text: 'Zip Codes vs. Attendees - General Events'
+                }
+            }
+        });
+    }
+
 
     //pie-zipcode-attendees
     function pieZipCodeAttendeeGraph(zip_codes, attendees) {
@@ -339,12 +370,11 @@
         attach: function(context) {
 
             var events_all = drupalSettings.analytics.graph_data.events_all;
-
             var events_general = drupalSettings.analytics.graph_data.events_general;
-
             var attendees = drupalSettings.analytics.graph_data.attendees;
-
+            var generalAttendees = drupalSettings.analytics.graph_data.general_attendees;
             var zip_codes = drupalSettings.analytics.graph_data.zip_codes;
+            var zipCodesGeneral = drupalSettings.analytics.graph_data.zip_codes_general;
 
             // barAllEventsGraph(events_all)
             pieAllEventsGraph(events_all);
@@ -359,7 +389,7 @@
             // pieAttendeesScannedGraph(events_all, attendees);
 
             barZipCodeAttendeeGraph(zip_codes, attendees);
-            pieZipCodeAttendeeGraph(zip_codes, attendees);
+            barZipCodeGeneralGraph(zipCodesGeneral, generalAttendees);
         }
     }
 })(jQuery, Drupal);

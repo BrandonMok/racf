@@ -160,7 +160,7 @@ class QRCodeController extends ControllerBase {
   /**
    * passGenerated
    * @return NULL
-   * Used for updating the number of passes generated and adding user to attendee list
+   * Used for updating the number of passes generated and adding user to the attendee list.
    */
   public function passGenerated($nid) {
     $etm = \Drupal::entityTypeManager();
@@ -169,7 +169,7 @@ class QRCodeController extends ControllerBase {
       'nid' => $nid,
     ]);
   
-    // If event is found, then update its generated passes field
+    // If event is found, then update its generated passes field.
     if (!empty($allEvents)) {
       $thisEvent = array_pop($allEvents);
   
@@ -187,7 +187,7 @@ class QRCodeController extends ControllerBase {
         $thisEvent = $thisEvent->set('field_attendees', $attendeeList);
       }
 
-      $thisEvent = $thisEvent->save();  // save changes
+      $thisEvent = $thisEvent->save();  // save changes.
     }
 
     return [

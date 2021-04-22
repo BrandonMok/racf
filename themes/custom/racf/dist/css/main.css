@@ -23378,14 +23378,6 @@ div.messages {
     font-size: 20pt;
   }
 
-  .qa-primary,
-.qa-secondary {
-    padding: 32px;
-  }
-  .qa-primary__flexbox,
-.qa-secondary__flexbox {
-    padding: 32px;
-  }
   .qa-primary__flexbox__title,
 .qa-secondary__flexbox__title {
     font-size: 20pt;

@@ -13,35 +13,7 @@
     function graphColors() {
         return ["#0058B3", "#09335F", "#fcbf49", "#88d498"];
     }
-    
-    //bar-all-events
-    function barAllEventsGraph(dataset) {
-        let colors = [];
 
-        for(var i = 0; i < dataset.length; i++) {
-            var newColor = randomColor();
-            colors.push("#" + newColor);
-        }
-        let ctx = $('#bar-all-events');
-
-        var barChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: ["Passes Generated", "Passes Scanned"],
-                datasets: [{
-                    data: dataset,
-                    backgroundColor: colors,
-                }]
-            },
-            options: {
-                legend: { display: false },
-                title: {
-                  display: true,
-                  text: 'Generated Passes vs. Scanned Passes - All Events'
-                }
-            }
-        });
-    }
 
     //pie-all-events
     function pieAllEventsGraph(dataset) {
@@ -68,34 +40,6 @@
         });
     }
     
-    //bar-general-events
-    function barGeneralEventsGraph(dataset) {
-        let colors = [];
-
-        for(var i = 0; i < dataset.length; i++) {
-            var newColor = randomColor();
-            colors.push("#" + newColor);
-        }
-        let ctx = $('#bar-general-events');
-
-        var barChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: ["Passes Generated", "Passes Scanned"],
-                datasets: [{
-                    data: dataset,
-                    backgroundColor: colors,
-                }]
-            },
-            options: {
-                legend: { display: false },
-                title: {
-                  display: true,
-                  text: 'Generated Passes vs. Scanned Passes - General Events'
-                }
-            }
-        });
-    }
 
     //pie-general-events
     function pieGeneralEventsGraph(dataset) {
@@ -147,91 +91,6 @@
                 title: {
                   display: true,
                   text: 'Generated Passes vs. Attendees - All Events'
-                }
-            }
-        });
-    }
-
-    //pie-generated-attendees
-    function pieAttendeesGeneratedGraph(event_data, attendees) {
-        colors = []
-        for(var i = 0; i < event_data.length; i++) {
-            var newColor = randomColor()
-            colors.push("#" + newColor);
-        }
-        let ctx = $('#pie-generated-attendees');
-
-        var pieChart = new Chart(ctx, {
-            type: 'pie',
-            data: {
-                labels: ["Passes Generated", "Passes Scanned"],
-                datasets: [{
-                    data: [event_data[0], attendees.length],
-                    backgroundColor: colors,
-                }]
-            },
-            options: {
-                legend: { display: false },
-                title: {
-                  display: true,
-                  text: 'Generated Passes vs. Attendees - All Events'
-                }
-            }
-        });
-    }
-
-    //bar-scanned-attendees
-    function barAttendeesScannedGraph(event_data, attendees) {
-        let colors = [];
-
-        for(var i = 0; i < event_data.length; i++) {
-            var newColor = randomColor();
-            colors.push("#" + newColor);
-        }
-        let ctx = $('#bar-scanned-attendees');
-
-        var barChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: ["Passes Scanned", "Attendees"],
-                datasets: [{
-                    data: [event_data[1], attendees.length],
-                    backgroundColor: colors,
-                }]
-            },
-            options: {
-                legend: { display: false },
-                title: {
-                  display: true,
-                  text: 'Scanned Passes vs. Attendees - All Events'
-                }
-            }
-        });
-    }
-
-    //pie-scanned-attendees
-    function pieAttendeesScannedGraph(event_data, attendees) {
-        colors = []
-        for(var i = 0; i < event_data.length; i++) {
-            var newColor = randomColor()
-            colors.push("#" + newColor);
-        }
-        let ctx = $('#pie-scanned-attendees');
-
-        var pieChart = new Chart(ctx, {
-            type: 'pie',
-            data: {
-                labels: ["Passes Scanned", "Attendees"],
-                datasets: [{
-                    data: [event_data[1], attendees.length],
-                    backgroundColor: colors,
-                }]
-            },
-            options: {
-                legend: { display: false },
-                title: {
-                  display: true,
-                  text: 'Scanned Passes vs. Attendees - All Events'
                 }
             }
         });
@@ -335,37 +194,6 @@
     }
 
 
-    //pie-zipcode-attendees
-    function pieZipCodeAttendeeGraph(zip_codes, attendees) {
-        colors = [];
-        let filteredData = filterZipCodeAttendeeData(zip_codes, attendees);
-        
-        for(var i = 0; i < filteredData.zip_codes.length; i++) {
-            var newColor = randomColor()
-            colors.push("#" + newColor);
-        }
-        
-        let ctx = $('#pie-zipcode-attendees');
-
-        var pieChart = new Chart(ctx, {
-            type: 'pie',
-            data: {
-                labels: filteredData.zip_codes,
-                datasets: [{
-                    data: filteredData.attendees,
-                    backgroundColor: colors,
-                }]
-            },
-            options: {
-                legend: { display: false },
-                title: {
-                  display: true,
-                  text: 'Zip Codes vs. Attendees - All Events'
-                }
-            }
-        });
-    }
-
     Drupal.behaviors.showGraphs = {
         attach: function(context) {
 
@@ -376,18 +204,8 @@
             var zip_codes = drupalSettings.analytics.graph_data.zip_codes;
             var zipCodesGeneral = drupalSettings.analytics.graph_data.zip_codes_general;
 
-            // barAllEventsGraph(events_all)
             pieAllEventsGraph(events_all);
-
-            // barGeneralEventsGraph(events_general);
             pieGeneralEventsGraph(events_general);
-            
-            // barAttendeesGeneratedGraph(events_all, attendees);
-            // pieAttendeesGeneratedGraph(events_all, attendees);
-            
-            // barAttendeesScannedGraph(events_all, attendees);
-            // pieAttendeesScannedGraph(events_all, attendees);
-
             barZipCodeAttendeeGraph(zip_codes, attendees);
             barZipCodeGeneralGraph(zipCodesGeneral, generalAttendees);
         }

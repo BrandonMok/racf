@@ -122,8 +122,8 @@ class QRBlock extends BlockBase {
         $start = substr($fullTime, 0, 5);
         $end = substr($fullTime, 7, strlen($fullTime));
 
-        $startTimeDate = gmdate('h:m A', $start);
-        $endTimeDate = gmdate('h:m A', $end);
+        $startTimeDate = gmdate('h:i A', $start);
+        $endTimeDate = gmdate('h:i A', $end);
         $eventTime = "$startTimeDate - $endTimeDate";
 
         // CHECK: if user has already redeemed the pass -> display depends on this

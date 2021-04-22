@@ -108,7 +108,6 @@
 .event-short {
     padding-bottom: 4em;
     max-width: 100%;
-    // max-width: 35rem;
 
     &__top-bar {
         padding: 24px;
@@ -515,11 +514,7 @@
 
     .qa-primary, 
     .qa-secondary {
-        padding: 32px;
-    
         &__flexbox { 
-            padding: 32px;
-            
             &__title {
                 font-size: $title;
             }

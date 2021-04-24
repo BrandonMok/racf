@@ -1,0 +1,14 @@
+uuid: d69f1728-b6e9-4d47-9c18-234c8033ab9e
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.dhs
+  module:
+    - user
+id: user_remove_role_action.dhs
+label: 'Remove the DHS role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: dhs

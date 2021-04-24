@@ -1,0 +1,14 @@
+uuid: 97f940bb-7f35-4ae7-849b-1a14260a6b5d
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.dhs
+  module:
+    - user
+id: user_add_role_action.dhs
+label: 'Add the DHS role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: dhs

@@ -1,0 +1,20 @@
+uuid: 481a49fd-60ca-452a-af1a-6c441698f4ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - user_bundle.user_type.dhs
+id: user.dhs.default
+targetEntityType: user
+bundle: dhs
+mode: default
+content:
+  account:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  contact: true
+  language: true
+  timezone: true

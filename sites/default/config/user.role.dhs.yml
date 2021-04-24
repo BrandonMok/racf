@@ -1,0 +1,16 @@
+uuid: 433f46ff-7e4d-4f86-a221-6adfc5ca6a70
+langcode: en
+status: true
+dependencies: {  }
+id: dhs
+label: DHS
+weight: -8
+is_admin: null
+permissions:
+  - 'access contextual links'
+  - 'access toolbar'
+  - 'access user profiles'
+  - 'administer menu'
+  - 'administer users'
+  - 'cancel account'
+  - 'view the administration theme'

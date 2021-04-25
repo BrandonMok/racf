@@ -4,6 +4,7 @@ namespace Drupal\qr_code\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Cache\Cache;
 
 /**
  * Provides a 'QR' Block.
@@ -110,7 +111,6 @@ class QRBlock extends BlockBase {
 
       // Check dates
       if ($today <= $endDate) {
-        // $urlEncoded = urlencode("https://dev-racf.pantheonsite.io/checkin/$nid/$currentUID");
         $urlEncoded = urlencode("$base_url/checkin/$nid/$currentUID");
         $markup = "http://api.qrserver.com/v1/create-qr-code/?size=150x150&data=$urlEncoded";
 
@@ -139,7 +139,6 @@ class QRBlock extends BlockBase {
         $title = $currNode->getTitle();
         $gen = "";
 
-        // $urlEncoded = urlencode("https://dev-racf.pantheonsite.io/checkin/$nid/$currentUID");
         $urlEncoded = urlencode("$base_url/checkin/$nid/$currentUID");
         $markup = "http://api.qrserver.com/v1/create-qr-code/?size=150x150&data=$urlEncoded";
 
@@ -189,5 +188,13 @@ class QRBlock extends BlockBase {
       $retVal = true; // set to true, so JS knows whether to automatically show or hide the pass' contents
     }
     return $retVal;
+  }
+
+
+  /**
+   * {@inheritdoc}
+   */
+  public function cacheContexts() {
+    return Cache::mergeContexts(parent::getCacheContexts(), array('user'));
   }
 }

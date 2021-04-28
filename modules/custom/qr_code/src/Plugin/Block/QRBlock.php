@@ -94,13 +94,13 @@ class QRBlock extends BlockBase {
     $currentUID = \Drupal::currentUser()->id();
     $title = "";
 
-    // Make sure it's an event content type and user is logged in
+    // Make sure it's an event content type and user is logged in.
     if ($nodeType === "event" && $currentUID != 0) {
       // Get title of the event
       $title = $currNode->getTitle();
       $gen = "";
 
-      // before generating pass, check if today's date isn't past the event's end date
+      // Before generating pass, check if today's date isn't past the event's end date.
       $eventDate = $currNode->get('field_date')->getString();
       $startDate = new \DateTime(substr($eventDate, 0, 12));
       $endDate = new \DateTime(substr($eventDate, 12, 21));
@@ -109,7 +109,8 @@ class QRBlock extends BlockBase {
       $today = $today->format("Y-m-d");
       $endDate = $endDate->format("Y-m-d");
 
-      // Check dates
+      // Check dates.
+      // Today should fall within the event's date range to obtain an Access Pass.
       if ($today <= $endDate) {
         $urlEncoded = urlencode("$base_url/checkin/$nid/$currentUID");
         $markup = "http://api.qrserver.com/v1/create-qr-code/?size=150x150&data=$urlEncoded";
@@ -117,7 +118,7 @@ class QRBlock extends BlockBase {
         // Reformat date for display on Printed Version of Access Pass.
         $displayDate = date_format($startDate,"l, F d Y");
 
-        // Display a date for the Printed Version of Access Pass.
+        // Display a time for the Printed Version of Access Pass.
         $fullTime = $currNode->get('field_time')->getString();
         $start = substr($fullTime, 0, 5);
         $end = substr($fullTime, 7, strlen($fullTime));
@@ -126,7 +127,8 @@ class QRBlock extends BlockBase {
         $endTimeDate = gmdate('h:i A', $end);
         $eventTime = "$startTimeDate - $endTimeDate";
 
-        // CHECK: if user has already redeemed the pass -> display depends on this
+
+        // CHECK: if user has already redeemed the pass. The display depends on this.
         $redeemed = $this->checkList($currNode, $currentUID);
       }
       else {
@@ -135,18 +137,17 @@ class QRBlock extends BlockBase {
       }
     }
     elseif ($nodeType === "general_event" && $currentUID != 0) {
-        // Get title of the event
         $title = $currNode->getTitle();
         $gen = "";
 
         $urlEncoded = urlencode("$base_url/checkin/$nid/$currentUID");
         $markup = "http://api.qrserver.com/v1/create-qr-code/?size=150x150&data=$urlEncoded";
 
-        // CHECK: if user has already redeemed the pass -> display depends on this
+        // CHECK: if user has already redeemed the pass. The display depends on this.
         $redeemed = $this->checkList($currNode, $currentUID);
     }
     else { 
-      // not loggedin
+      // Not loggedin.
       $markup = "/modules/custom/qr_code/images/x-mark.png";
       $gen = "QR Code unavailable. Please login to generate pass.";
     }
@@ -179,13 +180,13 @@ class QRBlock extends BlockBase {
   /**
    * CheckList
    * @param Node, UID
-   * Check's this events' attendee list to see if the user has already generated a pass
+   * Check's this event's attendee list to see if the user has already generated a pass.
    */
   public function checkList($currentNode, $uid) {
     $attendeeList = $currentNode->get('field_attendees')->getString();
     $retVal = false;
     if ( str_contains($attendeeList, $uid . "\r\n") !== false ) {
-      $retVal = true; // set to true, so JS knows whether to automatically show or hide the pass' contents
+      $retVal = true; // set to true, so JS knows whether to automatically show or hide the pass' contents.
     }
     return $retVal;
   }

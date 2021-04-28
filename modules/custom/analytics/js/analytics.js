@@ -4,7 +4,6 @@
  */
 (function ($, Drupal) {
 
-    //Random Color Generator Function
     function randomColor() {
         var randomColor = Math.floor(Math.random()*16777215).toString(16);
         return randomColor;
@@ -15,7 +14,6 @@
     }
 
 
-    //pie-all-events
     function pieAllEventsGraph(dataset) {
         let colors = graphColors();
 
@@ -41,7 +39,6 @@
     }
     
 
-    //pie-general-events
     function pieGeneralEventsGraph(dataset) {
         let colors = graphColors();
 
@@ -67,7 +64,6 @@
     }
 
 
-    //bar-generated-attendees
     function barAttendeesGeneratedGraph(event_data, attendees) {
         let colors = [];
 
@@ -96,7 +92,7 @@
         });
     }
 
-    //Filters Zip Code and Attendee Data to return number of Attendees from each Zip Code
+
     function filterZipCodeAttendeeData(zipCodes, attendeeData) {
         var attend_num = attendeeData.length;
         
@@ -131,7 +127,7 @@
         return filteredZipAttendeeData;
     }
 
-    //bar-zipcode-attendees
+
     function barZipCodeAttendeeGraph(zip_codes, attendees) {
         let colors = [];
         let filteredData = filterZipCodeAttendeeData(zip_codes, attendees);
@@ -162,7 +158,7 @@
         });
     }
 
-    // Bar graph for attendee general zipcodes
+
     function barZipCodeGeneralGraph(zip_codes, attendees) {
         let colors = [];
         let filteredData = filterZipCodeAttendeeData(zip_codes, attendees);

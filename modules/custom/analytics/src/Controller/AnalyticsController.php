@@ -66,14 +66,14 @@ class AnalyticsController extends ControllerBase {
                     $attendeeArr = explode("\r\n", $attendeeList);
 
                     foreach($attendeeArr as $id) {
-                        // make sure that user with this ID still exists.
+                        // Make sure that user with this ID still exists. - as in the account wasn't deleted
                         if ($id !== "") {
                             $userResult = $etm->getStorage('user')->loadByProperties([
                                 'uid' => intval($id)
                             ]);
                             $user = array_pop($userResult);
     
-                            // check to make sure not to add an attendee more than once in the attendees array.
+                            // Check to make sure not to add an attendee more than once in the attendees array.
                             if (!is_null($user) && !in_array($id, $attendees)) {
                                 array_push($attendees, $id);    // add this uid of user to attendees array.
     
@@ -91,7 +91,7 @@ class AnalyticsController extends ControllerBase {
         }
         
         /**
-         * Gathers Total Scanned/Generated Events Data
+         * Gathers Total Scanned/Generated General Events Data
          */
         $totalGenB = 0;
         $totalScannedB = 0;
@@ -127,7 +127,7 @@ class AnalyticsController extends ControllerBase {
                             if (!is_null($user) && !in_array($uid, $generalEventAttendees)) {
                                 array_push($generalEventAttendees, $uid);
 
-                                // SNAP users only have a zipcode.
+                                // SNAP users only have a zipcode - for the most part.
                                 if ($user->hasField('field_address') && !$user->get('field_address')->isEmpty()) {
                                     $address = $user->get('field_address')->getValue();
                                     $zipcode = $address[0]['postal_code'];

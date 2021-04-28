@@ -180,7 +180,7 @@ class QRBlock extends BlockBase {
   /**
    * CheckList
    * @param Node, UID
-   * Check's this event's attendee list to see if the user has already generated a pass.
+   * Checks this event's attendee list to see if the user has already generated a pass.
    */
   public function checkList($currentNode, $uid) {
     $attendeeList = $currentNode->get('field_attendees')->getString();

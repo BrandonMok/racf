@@ -37,7 +37,7 @@ class AnalyticsController extends ControllerBase {
         }
 
 
-        // Analytic fields
+        // Analytic fields.
         $totalGen = 0;
         $totalScanned = 0;
         $attendees = [];    // array of each uid - don't want to count the same ZIP more than once if user appears again for multiple events.
@@ -66,7 +66,7 @@ class AnalyticsController extends ControllerBase {
                     $attendeeArr = explode("\r\n", $attendeeList);
 
                     foreach($attendeeArr as $id) {
-                        // Make sure that user with this ID still exists. - as in the account wasn't deleted
+                        // Make sure that user with this ID still exists. - as in the account wasn't deleted.
                         if ($id !== "") {
                             $userResult = $etm->getStorage('user')->loadByProperties([
                                 'uid' => intval($id)
@@ -91,7 +91,7 @@ class AnalyticsController extends ControllerBase {
         }
         
         /**
-         * Gathers Total Scanned/Generated General Events Data
+         * Gathers Total Scanned/Generated General Events Data.
          */
         $totalGenB = 0;
         $totalScannedB = 0;

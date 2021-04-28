@@ -17,7 +17,7 @@ class QRCodeController extends ControllerBase {
    */
   public function checkin($eventid, $uid) {
 
-    // Get User's snap to show on template
+    // Get the current User to use parts of object for /checkin logic.
     $entityTypeManager = \Drupal::entityTypeManager();
     $userStorage = $entityTypeManager->getStorage('user');
     $userResult = $userStorage->loadByProperties([
@@ -29,7 +29,7 @@ class QRCodeController extends ControllerBase {
 
       $userEmail = $currUsr->getEmail();
 
-      // Get the event and its date to show on template
+      // Get the event and its date to show on template.
       $events = $entityTypeManager->getStorage('node')->loadByProperties([
         'type' => 'event', 
         'nid' => $eventid
@@ -51,9 +51,12 @@ class QRCodeController extends ControllerBase {
         $endDate = new \DateTime(substr($eventDate, 12, strlen($eventDate)));
         $endDate = $endDate->format('m/d/Y');
 
+        // Get today's date for pass date comparison.
         $today = new \DateTime("now");
         $today = $today->format("m/d/Y");
 
+        // Compare the ending date of the event to today.
+        // If today is past the enddate of the event, then pass is invalid / expired.
         if ($endDate < $today) {
           $formattedDate = "EXPIRED";
         }
@@ -64,24 +67,29 @@ class QRCodeController extends ControllerBase {
           $formattedDate = "$startDate - $endDate";
         }
 
-        // Event Time 
+
+        // Event Time.
+        // field_time is stored in seconds.
         $fullTime = $theEvent->get('field_time')->getString();
         $start = substr($fullTime, 0, 5);
         $end = substr($fullTime, 7, strlen($fullTime));
+
+        // Convert the time (in seconds) to an actual understandable time.
         $startTimeDate = gmdate('h:m A', $start);
         $endTimeDate = gmdate('h:m A', $end);
         $eventTime = "$startTimeDate - $endTimeDate";
 
-        // check actual attendees field of those who actually went.
-        // Prevents the skewing of data if scanned the pass multiple times.
+
+        // Check actual attendees field of those who actually went.
+        // This prevents the skewing of data if the pass is scanned multiple times.
         $actualAttendees = $theEvent->get('field_actual_attendees')->getString();
         if ( str_contains($actualAttendees, $uid . "\r\n") === false ) {
-          // UPDATE passes scanned field
+          // UPDATE passes scanned field.
           $scannedPasses = $theEvent->get('field_scanned_passes')->getString();
           $incremented = intval($scannedPasses) + 1;
           $theEvent = $theEvent->set('field_scanned_passes', strval($incremented));
 
-          // Update this event's actual attendees list
+          // UPDATE this event's actual attendees list.
           $updatedActualAttendees = $actualAttendees . "$uid\r\n";
           $theEvent = $theEvent->set('field_actual_attendees', $updatedActualAttendees);
 
@@ -89,7 +97,7 @@ class QRCodeController extends ControllerBase {
         }
       }
       else {
-        // not an event - is a General Event
+        // NOT an event, this is a General Event.
         $formattedDate = "";
 
         $generalEvents = $entityTypeManager->getStorage('node')->loadByProperties([
@@ -98,13 +106,15 @@ class QRCodeController extends ControllerBase {
         ]);
         $theEvent = array_pop($generalEvents);
 
-        // CHECK: if event exists
+        // CHECK: if this general event exists.
         if (isset($theEvent) && !empty($theEvent)) {
           $eventTitle = $theEvent->getTitle();
 
+          // Get field_scanned_passes to update its value.
           $scannedPasses = $theEvent->get('field_scanned_passes')->getString();
           $incremented = intval($scannedPasses) + 1;
   
+          // UPDATE this field's value.
           $theEvent = $theEvent->set('field_scanned_passes', strval($incremented));
           $theEvent = $theEvent->save();
         }
@@ -119,9 +129,10 @@ class QRCodeController extends ControllerBase {
       $returnArr = $this->errorScan();
     }
 
-    // RETURN arr to templates
+
+    // RETURN render array so templates can be built and used.
     if (!isset($returnArr)) {
-      // Good array
+      // Good render array.
       return [
         '#theme' => 'qr_scan_pass',
         '#event' => $eventTitle ?? '',
@@ -173,21 +184,25 @@ class QRCodeController extends ControllerBase {
     if (!empty($allEvents)) {
       $thisEvent = array_pop($allEvents);
   
+      // Get field_generated_passes field to update.
       $genPasses = $thisEvent->get('field_generated_passes')->getString();
       $incremented = intval($genPasses) + 1;
       $thisEvent = $thisEvent->set('field_generated_passes', strval($incremented));
 
-      // Also add the user to the event's attendee list
+      // Also add the user to the event's attendee list.
       $attendeeList = $thisEvent->get('field_attendees')->getString();
       $currentUID = \Drupal::currentUser()->id();
 
+      
+      // CHECK: if user is already on the field_attendees field.
+      // If not, then add this user's uid to the list.
       if ( str_contains($attendeeList, $currentUID . "\r\n") === false ) {
-        // Not on the list, so add them to the list
         $attendeeList = $attendeeList . "$currentUID\r\n";
         $thisEvent = $thisEvent->set('field_attendees', $attendeeList);
       }
 
-      $thisEvent = $thisEvent->save();  // save changes.
+      // Save all changes / updates.
+      $thisEvent = $thisEvent->save(); 
     }
 
     return [

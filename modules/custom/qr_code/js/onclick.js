@@ -3,6 +3,7 @@
         attach: function(context, settings) {
             let redeemed = $('#redeemed');
             if ( Object.keys(redeemed).length == 0 ) {
+                
                 // Empty - element hasn't been redeemed
                 $("#access-pass", context).once('myBehavior').click(function() {
                     $(".access-pass__content").fadeIn("slow");

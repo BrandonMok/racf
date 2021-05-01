@@ -43,102 +43,29 @@ class AnalyticsController extends ControllerBase {
         $attendees = [];    // array of each uid - don't want to count the same ZIP more than once if user appears again for multiple events.
         $allZipcodes = [];  // zipcodes of attendees.
 
-        $etm = \Drupal::entityTypeManager();
-
         if (!empty($events)) {
-            foreach($events as $e) {
-                
-                if ($e->hasField('field_generated_passes') && !$e->get('field_generated_passes')->isEmpty()) {
-                    $genPasses = $e->get('field_generated_passes')->getValue();
-                    $genPasses = $genPasses[0]["value"];
-                    $totalGen = $totalGen + $genPasses;
-                }
-    
-                if ($e->hasField('field_scanned_passes') && !$e->get('field_scanned_passes')->isEmpty()) {
-                    $scannedPasses = $e->get('field_scanned_passes')->getValue();
-                    $scannedPasses = $scannedPasses[0]["value"];
-                    $totalScanned = $totalScanned + $scannedPasses;
-                }
+            $regularEventArr = $this->getGraphData($events);
 
-                if ($e->hasField('field_attendees') && !$e->get('field_attendees')->isEmpty()) {
-                    $attendeeListField = $e->get('field_attendees')->getValue();
-                    $attendeeList = $attendeeListField[0]['value'];
-                    $attendeeArr = explode("\r\n", $attendeeList);
-
-                    foreach($attendeeArr as $id) {
-                        // Make sure that user with this ID still exists. - as in the account wasn't deleted.
-                        if ($id !== "") {
-                            $userResult = $etm->getStorage('user')->loadByProperties([
-                                'uid' => intval($id)
-                            ]);
-                            $user = array_pop($userResult);
-    
-                            // Check to make sure not to add an attendee more than once in the attendees array.
-                            if (!is_null($user) && !in_array($id, $attendees)) {
-                                array_push($attendees, $id);    // add this uid of user to attendees array.
-    
-                                // SNAP users only have a zipcode.
-                                if ($user->hasField('field_address') && !$user->get('field_address')->isEmpty()) {
-                                    $address = $user->get('field_address')->getValue();
-                                    $zipcode = $address[0]["postal_code"];
-                                    array_push($allZipcodes, $zipcode); // add this zipcode to allZipCodes array for later display.
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+            $totalGen = $regularEventArr['totalGen'];
+            $totalScanned = $regularEventArr['totalScanned'];
+            $attendees = $regularEventArr['attendees'];
+            $allZipcodes = $regularEventArr['allZipCodes'];
         }
-        
-        /**
-         * Gathers Total Scanned/Generated General Events Data.
-         */
+
         $totalGenB = 0;
         $totalScannedB = 0;
         $generalEventAttendees = [];
         $allGeneralZipcodes = [];
 
         if (!empty($generalEvents)) {
-            foreach ($generalEvents as $ge) {
-                if ($ge->hasField('field_generated_passes') && !$ge->get('field_generated_passes')->isEmpty()) {
-                    $genPassesB = $ge->get('field_generated_passes')->getValue();
-                    $genPassesB = $genPassesB[0]["value"];
-                    $totalGenB = $totalGenB + $genPassesB;
-                }
+            $generalEventArr = $this->getGraphData($generalEvents);
 
-                if ($ge->hasField('field_scanned_passes') && !$ge->get('field_scanned_passes')->isEmpty()) {
-                    $scannedPassesB = $ge->get('field_scanned_passes')->getValue();
-                    $scannedPassesB = $scannedPassesB[0]["value"];
-                    $totalScannedB = $totalScannedB + $scannedPassesB;
-                }
-
-                if ($ge->hasField('field_attendees') && !$ge->get('field_attendees')->isEmpty()) {
-                    $generalAttendeeListField = $ge->get('field_attendees')->getValue();
-                    $generalAttendeeList = $generalAttendeeListField[0]['value'];
-                    $generalAttendeeArr = explode("\r\n", $generalAttendeeList);
-
-                    foreach($generalAttendeeArr as $uid) {
-                        if (!empty($uid)) {
-                            $userRes = $etm->getStorage('user')->loadByProperties([
-                                'uid' => intval($uid),
-                            ]);
-                            $user = array_pop($userRes);
-
-                            if (!is_null($user) && !in_array($uid, $generalEventAttendees)) {
-                                array_push($generalEventAttendees, $uid);
-
-                                // SNAP users only have a zipcode - for the most part.
-                                if ($user->hasField('field_address') && !$user->get('field_address')->isEmpty()) {
-                                    $address = $user->get('field_address')->getValue();
-                                    $zipcode = $address[0]['postal_code'];
-                                    array_push($allGeneralZipcodes, $zipcode);
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+            $totalGenB = $generalEventArr['totalGen'];
+            $totalScannedB = $generalEventArr['totalScanned'];
+            $generalEventAttendees = $generalEventArr['attendees'];
+            $allGeneralZipcodes = $generalEventArr['allZipCodes'];
         }
+
 
         //Return Array
         return array(
@@ -169,5 +96,72 @@ class AnalyticsController extends ControllerBase {
                 'max-age' => 0
             ]
         );
+    }
+    
+    
+    /**
+     * getGraphData
+     * @param $arr - either array of events or general events
+     * @return array - array containing all the keys necesssary
+     */
+    public function getGraphData($arr) {
+        $totalGen = 0;
+        $totalScanned = 0;
+        $attendees = [];    // array of each uid - don't want to count the same ZIP more than once if user appears again for multiple events.
+        $allZipcodes = [];  // zipcodes of attendees.
+
+        $etm = \Drupal::entityTypeManager();
+        
+        if (!empty($arr)) {
+            foreach($arr as $e) {
+                
+                if ($e->hasField('field_generated_passes') && !$e->get('field_generated_passes')->isEmpty()) {
+                    $genPasses = $e->get('field_generated_passes')->getValue();
+                    $genPasses = $genPasses[0]["value"];
+                    $totalGen = $totalGen + $genPasses;
+                }
+
+                if ($e->hasField('field_scanned_passes') && !$e->get('field_scanned_passes')->isEmpty()) {
+                    $scannedPasses = $e->get('field_scanned_passes')->getValue();
+                    $scannedPasses = $scannedPasses[0]["value"];
+                    $totalScanned = $totalScanned + $scannedPasses;
+                }
+
+                if ($e->hasField('field_attendees') && !$e->get('field_attendees')->isEmpty()) {
+                    $attendeeListField = $e->get('field_attendees')->getValue();
+                    $attendeeList = $attendeeListField[0]['value'];
+                    $attendeeArr = explode("\r\n", $attendeeList);
+                    
+                    foreach($attendeeArr as $id) {
+                        // Make sure that user with this ID still exists. - as in the account wasn't deleted.
+                        if ($id !== "") {
+                            $userResult = $etm->getStorage('user')->loadByProperties([
+                                'uid' => intval($id)
+                            ]);
+                            $user = array_pop($userResult);
+                            
+                            // Check to make sure not to add an attendee more than once in the attendees array.
+                            if (!is_null($user) && !in_array($id, $attendees)) {
+                                array_push($attendees, $id);    // add this uid of user to attendees array.
+                                
+                                // SNAP users only have a zipcode.
+                                if ($user->hasField('field_address') && !$user->get('field_address')->isEmpty()) {
+                                    $address = $user->get('field_address')->getValue();
+                                    $zipcode = $address[0]["postal_code"];
+                                    array_push($allZipcodes, $zipcode); // add this zipcode to allZipCodes array for later display.
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        return [
+            "totalGen" => $totalGen,
+            "totalScanned" => $totalScanned,
+            "attendees" => $attendees,
+            "allZipCodes" => $allZipcodes
+        ];
     }
 }

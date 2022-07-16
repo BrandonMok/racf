@@ -27,6 +27,10 @@ sites/simpletest
 sites/*/settings*.php
 sites/*/services*.yml
 
+# Composer / Vendor
+core
+vendor
+
 # Packages #
 ############
 *.7z

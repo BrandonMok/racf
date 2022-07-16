@@ -27,7 +27,7 @@ sites/simpletest
 sites/*/settings*.php
 sites/*/services*.yml
 
-# Composer / Vendor
+# Core / Vendor
 core
 vendor
 
